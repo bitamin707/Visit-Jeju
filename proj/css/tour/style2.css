@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+img {
+  display: block;
+  border-radius: 10px;
+}
+
+
+.container {
+  position: relative;
+  width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+  }
+
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 98%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.prev {
+  left: 0px;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.199)
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.column {
+  margin-top: 3%;
+  width: 13%;
+  display: inline-block;
+  margin-right: -18px;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+.tour_name {
+  position: relative;
+  font-family: 'NanumSquareRound';
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(228, 166, 52);
+  margin-left: 10%;
+  margin-top: -5%;
+}
+
+.tour_star{
+  font-size: 36px;
+  position: relative;
+  margin-left: 72%;
+  margin-top: -3%;
+}
+
+.checked {
+  color: orange;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>관광지</title>
+    <link rel="stylesheet" href="../../css/tour/utils/reset.css">
+    <link rel="stylesheet" href="../../css/tour/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="../../img/tour/seongeup1.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="../../img/tour/seongeup2.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="../../img/tour/seongeup3.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="../../img/tour/seongeup4.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="../../img/tour/seongeup5.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="../../img/tour/seongeup6.jpg" style="width:100%">
+      </div>
+        
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    
+
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="../../img/tour/seongeup1.jpg" style="width:80%" onclick="currentSlide(1)" alt="seongeup1">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../../img/tour/seongeup2.jpg" style="width:80%" onclick="currentSlide(2)" alt="seongeup2">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../../img/tour/seongeup3.jpg" style="width:80%" onclick="currentSlide(3)" alt="seongeup3">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../../img/tour/seongeup4.jpg" style="width:80%" onclick="currentSlide(4)" alt="seongeup4">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../../img/tour/seongeup5.jpg" style="width:80%" onclick="currentSlide(5)" alt="seongeup5">
+        </div>    
+        <div class="column">
+          <img class="demo cursor" src="../../img/tour/seongeup6.jpg" style="width:80%" onclick="currentSlide(6)" alt="seongeup6">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tour_main">
+      <div class="tour_title">
+        <div class="tour_name">
+          <h1>
+            성읍녹차마을
+          </h1>
+        </div>
+        
+        <div class="tour_heart">
+        </div>
+
+        <div class="tour_star">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+    </script>
+  
+        
+</body>
+</html>
