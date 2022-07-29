@@ -160,8 +160,12 @@
     border-radius:20%;
     
 }
-
-.foodBest{
+.bestLogo{
+    position:absolute;
+    width:200px;
+    z-index: 3;
+}
+.mainContainerin1_1 img{
     
     height:300px; 
     width:100%; 
@@ -169,12 +173,7 @@
     transition: all 0.2s linear;
 }
 
-.bestLogo{
-    position:absolute;
-    width:200px;
-    z-index: 3;
-}
-.foodBest:hover{
+.mainContainerin1_1 img:hover{
     transform: scale(1.4);
     
 }
