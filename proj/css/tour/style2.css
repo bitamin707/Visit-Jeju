@@ -20,9 +20,15 @@ img {
 }
 
 
+.mother {
+  width:1190px;
+  margin: 100px auto;
+}
+
+
 .container {
   position: relative;
-  width: 1000px;
+  width: 1190px;
   margin: 100px auto;
   text-align: center;
   }
@@ -105,17 +111,98 @@ img {
   font-size: 40px;
   font-weight: bold;
   color: rgb(228, 166, 52);
-  margin-left: 10%;
-  margin-top: -5%;
+  margin-top: -3%;
 }
 
 .tour_star{
   font-size: 36px;
   position: relative;
-  margin-left: 72%;
+  margin-left: 81%;
   margin-top: -3%;
 }
 
 .checked {
   color: orange;
+}
+
+
+.tour_line {
+  margin-top:26px;
+  color:rgba(122, 148, 148, 0.082);
+}
+
+
+
+.tour_adr{
+  width: 1190px;
+  height: 50px;
+  margin-top:40px;
+  color: #000000e0;
+  font-family: 'NanumSquareRound';
+}
+
+.address{
+  list-style: none;
+}
+
+.adr_a{
+  float: left;
+  margin-right: 110px;
+  margin-left: 10%;
+}
+
+.tour_main {
+  width:1190px;
+}
+.tour_list {
+  width:1190px;
+  text-align: center;
+}
+
+
+
+.tour_exp {
+  font-family: 'NanumSquareRound';
+  width:660px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  margin-top:26px;
+}
+
+.tour_expl h1{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.tour_expl ul{
+  list-style: none;
+}
+
+
+
+#more {
+  display: none;
+}
+
+#myBtn{
+  border: solid rgba(0, 0, 0, 0.678);
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left:300px;
+}
+
+
+.tour_drc{
+  width:530px;
+  font-family: 'NanumSquareRound';
+  margin-left: 58%;
+  margin-top: -37%;
+}
+
+.tour_drc h2{
+  font-size: 30px;
+  margin-bottom: 27px;
 }
