@@ -6,10 +6,63 @@
     <title>관광지</title>
     <link rel="stylesheet" href="../../css/tour/utils/reset.css">
     <link rel="stylesheet" href="../../css/tour/style2.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style_header.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style_footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
 <body>
+
+    <!-- ============== 헤더 =============== -->
+    <div id="header">
+      <div id="container">
+          <h1 class="logo">
+              <a href="../main/main.html"><img id="img1" src="../../img/main/jeju.png"></a>
+          </h1>
+          <nav class="menu">
+              <ul class="depth">
+                  <li><a class="menu_a" href="../acco/jeju.html">숙박</a></li>
+                  <li><a class="menu_a" href="../festival/festival.html">축제</a></li>
+                  <li><a class="menu_a" href="">쇼핑</a></li>
+                  <li><a class="menu_a" href="../tour/main1.html">관광지</a></li>
+                  <li><a class="menu_a" href="">음식</a></li>
+                  
+              </ul>
+          </nav>
+          <div class="language-wrap">
+              <a href="#" id="login">로그인</a>
+              <a href="#" id="search">검색</a>
+          </div>
+          <!--
+          <form id="search_Form" action="#">
+              <div class="search_open">
+                  <div class="input_field">
+                      <input type="text" id="search_name" placeholder="검색">
+                      <button type="submit" id="search_btn"></button>
+                  </div>
+              </div>
+          </form>
+          -->
+      </div>
+    </div>
+    <!-- ============== 헤더 =============== -->
+
+    <!-- ============== 이미지 =============== -->
+    <!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
+        width:1280px;    margin: 0 auto; 스타일 통일-->
+        
+    <!-- ↓↓start class wrap -->
+    <div class="wrap"> 
+        <div class="intro_bg">
+            <div class="intro_text">
+                <h1>관광지</h1>
+                <h4>제주도 관광지 소개</h4>
+            </div>  
+    </div>
+    <!-- ============== 이미지 =============== -->
+
+
 
   <div class="mother">
   
@@ -138,11 +191,33 @@
         </div>
       </div>
 
+      <div class="tour_rvw">
+        <h2>RREVIEW</h2>
+      </div>
+
+
+      <div class="tour_tags">
+        <h2>TAGS</h2>
+        <ul>
+          <li>마을관광</li>
+          <li>밭</li>
+          <li>사진</li>
+          <li>풍경</li>
+          <li>아이스크림</li>
+          <li>족욕</li>
+          <li>블ㄹ라블라</li>
+          <li>블ㄹ라블라</li>
+        </ul>
+      </div>
+
+      <div class="tour_pplr">
+        <h2>성별 인기도</h2>
+
+      </div>
    
-   
+
+
     </div>
-
-
 
   </div>
 
@@ -206,6 +281,29 @@
         }
       }
     </script>
+
+
+
+  <footer id="footer">
+    <div class="footer_wrap">
+        <div class="footer_title">
+            <div class="footer_box">
+                <img src="../../img/jeju.png" style="margin-top: 30px;" >
+            </div>
+        </div>
+        <div id="v-line"></div>
+        <div class="footer_intro">
+            <div class="footer_box">
+                <table class="footer_table">
+                    <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
+                    <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
+                    <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
+                    <tr><th>일정공유</th><td>누구</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+  </footer>
   
         
 </body>
