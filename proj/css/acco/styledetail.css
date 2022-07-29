@@ -148,10 +148,16 @@
     margin-left: 00px;
     padding-top: 200px;
     padding-left: 50px;
-    background-color:rgba(223, 175, 175, 0.2);
+    
+    background-color:rgba(77, 15, 15, 0.2);
     height: 300px;
     width: 300px;
     
+    
+}
+
+.intro_text  h3, p, a{
+    color: rgb(250, 250, 250);
     
 }
 
