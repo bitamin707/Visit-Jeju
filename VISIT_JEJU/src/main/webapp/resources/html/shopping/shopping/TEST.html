@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    $(document).ready(function(){
+    $(".checkBoxId").change(function(){
+      if($(this).is(":checked")){
+            alert("체크박스 체크!");
+        } else {
+          alert("헤제!");
+        }
+      // else($('input:not(:checked')){
+      //       alert("헤제!");
+      //   }
+    });
+});
+  </script>
+
+  <input type="checkbox" class="checkBoxId" checked="checked">yes
+  <input type="checkbox" class="checkBoxId" checked="checked">yes
+</body>
+</html>
