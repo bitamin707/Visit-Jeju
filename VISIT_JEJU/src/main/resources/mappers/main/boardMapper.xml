@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.main.IBoardDaoBest">
+<select id="read" resultType="BoardDtoBest">
+select * from best where bno=#{bno}
+</select>
+<update id="update">
+update best set imgLink=#{imgLink},name=#{name} where bno=#{bno}
+</update>
+<select id="listAll" resultType="com.human.dto.main.BoardDtoBest">
+select * from best
+</select>
+</mapper>
+
+
+
+
+
+
+
+
+
