@@ -160,7 +160,11 @@
     border-radius:20%;
     
 }
-
+.bestLogo{
+    position:absolute;
+    width:200px;
+    z-index: 3;
+}
 .mainContainerin1_1 img{
     
     height:300px; 
