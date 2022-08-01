@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+
+* {
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+
+body {
+    height: 100%;
+    min-width: 1300px;
+}
+section {
+    padding-bottom: 200px;
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+.content {
+    width: 1280px;
+    margin: 0px auto;
+}
+
+.intro_bg {
+    height: 600px;
+}
+
+.intro_bg > img{
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro_text {
+    position: absolute;
+    top: 400px;
+    width: 1233px;
+    height: 200px;
+    padding-left: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 17px;
+}
+
+.intro_text h1 {
+    margin-bottom: 10px;
+    padding-top:10px;
+    color: white;
+    font-weight: 700;
+}
+.intro_text h3 {
+    width: auto;
+    color: white;
+}
+
+.intro_text h3:after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 1200px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.info {
+    width: 550px;
+    float: left;
+}
+
+.info p {
+    color: white;
+}
+.info a {
+    color: white;
+}
+
+.info_sub_tit {
+    float: left;
+    width: 100px;
+}
+
+.info_sub_cont {
+    width: 550px;
+}
+
+.info_btn {
+    float: right;
+    width: 265px;
+    height: 95px;
+}
+
+.info_btn p {
+    color: white;
+}
+
+.info_btn button {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+#icon_like {
+    width: 80px;
+    height: 50px;
+    background: url("https://www.visitjeju.net/image/common/ico_app_like.png") no-repeat 50% 7px;
+    display: block;
+}
+#icon_like_click {
+    width: 80px;
+    height: 50px;
+    background: url("https://www.visitjeju.net/image/common/ico_app_like.png") no-repeat 50% -40px;
+    display: none;
+}
+
+.info_btn .icon_review {
+    width: 80px;
+    height: 50px;
+    background: url("https://www.visitjeju.net/image/common/ico_app_review.png") no-repeat 50% 7px;
+}
+
+.info_btn .icon_schedule {
+    width: 80px;
+    height: 50px;
+    background: url("https://www.visitjeju.net/image/common/ico_app_schedule.png") no-repeat 50% 5px;
+}
+
+.detail {
+    margin: 0 auto;
+}
+
+.detail_img > img{
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.detail_cont p {
+    width: 1200px;
+    font-size: 18px;
+    padding-left: 10px;
+    line-height: 35px;
+}
+
+.detail_cont_link {
+    text-decoration: underline;
+    color: rgb(184, 49, 47);
+    font-weight: bold;
+}
+
+#review {
+    width: 1280px;
+    margin-left: 10px;
+}
+
+.review_box {
+    width: 1240px;
+    height: 70px;
+    display: flex;
+    padding: 15px 0px 10px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.review_login {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.review_login input {
+    height: 25px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+.review_cont > textarea {
+    padding-left: 10px;
+    padding-top: 5px;
+    resize: none;
+}
+
+.review_btn_box {
+    margin-left: 10px;
+    width: 50px;
+}
+
+.review_btn_box > button {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#review > hr {
+    width: 1250px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.review_comments {
+    width: 1240px;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px 0px 10px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+}
+
+.review_userName {
+    font-weight: 700;
+    width: 170px;
+    margin-right: 20px;
+}
+
+.review_comment {
+    width: 1040px;
+}
