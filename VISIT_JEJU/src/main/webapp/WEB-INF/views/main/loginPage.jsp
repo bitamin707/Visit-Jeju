@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="entire">
-        <img src="../../img/bg.png" style="width:100%; opacity:0.5;">
+        <img src="https://api.cdn.visitjeju.net/photomng/imgpath/201902/26/b08349e7-88f1-4517-8969-78e9a07e78e9.jpg" style="width:100%; opacity:0.5;">
         <div class="login">
             <div class="interface">
                 <form method="GET" action="main" name="infor">
@@ -55,7 +55,7 @@
                 <input class="input1" type="text" placeholder="Password" name="pw"><br><br>
                 
                 
-                <input id="loginbt1" type="submit" value="로그인">
+                <input id="loginbt1" type="submit" value="Login">
                 </form>
             </div>
         </div>
