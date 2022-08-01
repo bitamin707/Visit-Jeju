@@ -14,12 +14,11 @@
 		</h1>
 		<nav class="menu">
 			<ul class="depth">
-				<li><a class="menu_a" href="#">숙박</a></li>
+				<li><a class="menu_a" href="/ex/acco/jeju">숙박</a></li>
 				<li><a class="menu_a" href="/ex/festival/festival">축제</a></li>
 				<li><a class="menu_a" href="/ex/shopping/main/Main">쇼핑</a></li>
 				<li><a class="menu_a" href="">관광지</a></li>
 				<li><a class="menu_a" href="">음식</a></li>
-
 			</ul>
 		</nav>
 		<div class="language-wrap">
