@@ -19,7 +19,6 @@
 				<li><a class="menu_a" href="/ex/shopping/main/Main">쇼핑</a></li>
 				<li><a class="menu_a" href="">관광지</a></li>
 				<li><a class="menu_a" href="">음식</a></li>
-
 			</ul>
 		</nav>
 		<div class="language-wrap">
