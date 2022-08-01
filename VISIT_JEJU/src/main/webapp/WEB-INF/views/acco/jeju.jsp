@@ -4,47 +4,23 @@
 <%@ page session="false" %>
 <html>
 <head>
+	 <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/acco/style12.css">
+
+    
 	<title>숙박메인</title>
 </head>
 <body>
  <!-- ============== 헤더 =============== -->
-    <div id="header">
-      <div id="container">
-          <h1 class="logo">
-              <a href="../main/main.html"><img id="img1" src="../../img/main/jeju.png"></a>
-          </h1>
-          <nav class="menu">
-              <ul class="depth">
-                  <li><a class="menu_a" href="../acco/jeju.html">숙박</a></li>
-                  <li><a class="menu_a" href="../festival/festival.html">축제</a></li>
-                  <li><a class="menu_a" href="">쇼핑</a></li>
-                  <li><a class="menu_a" href="../tour/main1.html">관광지</a></li>
-                  <li><a class="menu_a" href="">음식</a></li>
-                  
-              </ul>
-          </nav>
-          <div class="language-wrap">
-              <a href="#" id="login">로그인</a>
-              <a href="#" id="search">검색</a>
-          </div>
-          <!--
-          <form id="search_Form" action="#">
-              <div class="search_open">
-                  <div class="input_field">
-                      <input type="text" id="search_name" placeholder="검색">
-                      <button type="submit" id="search_btn"></button>
-                  </div>
-              </div>
-          </form>
-          -->
-      </div>
-    </div>
+   <%@include file="../header.jsp"%>
 <!-- ============== 헤더 =============== -->
 
   <div class="wrap">
     
     <div class="intro_bg">
-        
+    
     </div>
     <!-- 태그부분-->
     <div class="container">
@@ -127,7 +103,7 @@
         <br>
         <hr>
         <div  class="event_area">
-          <a href="나미송.html">
+          <a href="나미송">
             <div id="event_area_img">
               <img src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202001/21/565e5bb9-1188-479c-b786-555532779d88.jpg" alt="나미송 머무는 곳 대표이미지">
             </div>
@@ -217,25 +193,7 @@
       </div>
     </div>
     
-    <footer id="footer">
-      <div class="footer_wrap">
-          <div class="footer_title">
-              <div class="footer_box">
-                  <img src="../../img/jeju.png" style="margin-top: 30px;" >
-              </div>
-          </div>
-          <div id="v-line"></div>
-          <div class="footer_intro">
-              <div class="footer_box">
-                  <table class="footer_table">
-                      <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
-                      <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
-                      <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
-                  </table>
-              </div>
-          </div>
-      </div>
-  </footer>
+    <%@include file="../footer.jsp"%>
     
   </div>
   

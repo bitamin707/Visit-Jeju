@@ -12,6 +12,9 @@ public class AccoController {
 	@RequestMapping(value = "/jeju", method = RequestMethod.GET)
 	public void Main() {
 	}
+	@RequestMapping(value = "/나미송", method = RequestMethod.GET)
+	public void page1() {
+	}
 	
 
 }
