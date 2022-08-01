@@ -54,7 +54,7 @@
                 <div class="event_area">
                     
                     <div class="event_img" >
-                        <img src="1/ex/resources/img/acco/나미송2.jpg" alt="나미송 머무는 곳 이미지 2" width="100%">
+                        <img src="/ex/resources/img/acco/나미송2.jpg" alt="나미송 머무는 곳 이미지 2" width="100%">
                     </div>
                 </div>
                 <div class="event_area">
