@@ -342,8 +342,6 @@ img {vertical-align: middle;}
     padding-left: 30px;
 }
 
-
-
 .remocon{
     position:fixed;
     right:0%;
@@ -354,6 +352,7 @@ img {vertical-align: middle;}
     border:1px solid; 
     background-color:hwb(39 87% 0%);
     border-color:hsl(39, 100%, 54%);
+    z-index: 3;
 
     text-align: center;
     
@@ -423,11 +422,14 @@ img {vertical-align: middle;}
     background-color:rgb(70, 165, 255);
     border:1px solid; 
     border-color:rgb(51, 121, 185); 
+    
 }
 .best h2{
     color:white;
+    
 }
 .best img{
+    
     margin-left:500px;
     height:80px; 
     float:left;
@@ -435,6 +437,7 @@ img {vertical-align: middle;}
 }
 
 .mainRecommend{
+    
     border:1px solid; 
     border-color:rgb(51, 121, 185); 
     height:235px;
@@ -446,11 +449,13 @@ img {vertical-align: middle;}
     width:250px; 
     height:190px; 
     float:left; 
+    box-shadow:2px 2px 8px 0px #000;
     border-bottom:1px solid; 
     border-color:rgb(51, 121, 185);
 }
 
 .recommend2,.recommend3,.recommend4{
+    box-shadow:2px 2px 8px 0px #000;
     border-radius:20%; 
     margin:25px; 
     width:250px; 
@@ -463,20 +468,29 @@ img {vertical-align: middle;}
 
 .mainRecommend div a div{
     text-align: center;
+    overflow:hidden;
+    border-radius:20%;
 }
 
 .mainRecommend div a div img{
     border-radius:20%; 
     width:250px; 
     height:150px;
+    transition: all 0.2s linear;
+}
+
+.mainRecommend div a div img:hover{
+    transform: scale(1.4);
 }
 
 .mainContainer{
+    
     clear:left; 
     border-top:1px dashed;
 }
 
 .mainContainerin1{
+    
     margin:50px; 
     width:40%; 
     height:500px; 
@@ -484,13 +498,28 @@ img {vertical-align: middle;}
 }
 
 .mainContainerin1_1{
+    
     width:100%; height:300px;
+    overflow:hidden;
+    border-radius:20%;
+    
 }
-
+.bestLogo{
+    position:absolute;
+    width:200px;
+    z-index: 3;
+}
 .mainContainerin1_1 img{
+    
     height:300px; 
     width:100%; 
     border-radius:20%;
+    transition: all 0.2s linear;
+}
+
+.mainContainerin1_1 img:hover{
+    transform: scale(1.4);
+    
 }
 .mainContainerin1_2{
     width:100%; 
@@ -501,71 +530,178 @@ img {vertical-align: middle;}
     width:100%; 
     height:100px;
 }
+
+
+
+/* ======================= 이런 먹거리가 있어요 ========================= */
 .mainContainerin2{
-    margin:50px; 
-    width:40%; 
-    height:500px; 
+    max-width:1200px; 
+    width:50%; 
+    height:600px;
+    margin:0 auto; 
     float:left;
 }
-.mainContainerin2_1{
-    width:45%; 
-    height:50px; 
-    float:left; 
-    text-align:center;
+.mainContainerin2 div{
+    max-width:270px;
+    width:100%;
+    vertical-align:top;
+    margin:0 auto;
+    display:inline-block;
+    box-shadow:2px 2px 8px 0px #000;
 }
-.mainContainerin2_2{
-    width:45%; 
-    height:50px; 
-    float:left; 
-    margin-left:30px; 
-    text-align:center;
+.in2_a1 {
+    display:block;
+    width:auto;
+    text-decoration: none;
+    margin:10px;
+    text-align: center;
 }
-.mainContainerin2_3{
-    width:45%; 
-    height:50px; 
-    float:left; 
-    margin-top:200px; 
-    text-align:center;
+.in2_a1 .screen {
+    position:relative;
+    overflow:hidden;
+    width:250px;
+    height:220px;
 }
-.mainContainerin2_4{
-    width:45%; 
-    height:50px; 
-    float:left; 
-    margin-left:30px; 
-    margin-top:200px; 
-    text-align:center;
+.in2_a1 .screen .top {
+    position:absolute;
+    bottom:150%;
+    z-index:2;
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    transition:all .35s;
 }
-.mainContainerin2 div img{
-    height:200px; 
-    width:100%; 
-    border-radius:20%;
+.in2_a1 .screen .bottom {
+    position:absolute;
+    top:150%;
+    z-index:2;
+    color:#fff;
+    font-size:20px;
+    font-weight:900;
+    transition:all .35s;
 }
+.in2_a1 .screen img{
+    width:100%;
+    height:100%;
+}
+
+.in2_a1:hover .top {
+    bottom:60%;
+}
+.in2_a1:hover .bottom {
+    top:60%;
+}
+
+.in2_a1 .screen::after{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:1;
+    opacity:0;
+    transition:all .3s5;
+}
+
+.in2_a1:hover .screen::after{
+    opacity:1;
+}
+
+
+/* ======================= 이런 상품이 있어요 ========================= */
+
 .mainContainer3{
     clear:left; 
-    border-top:1px 
-    dashed;
+    border-top:1px dashed;
+    margin:0 auto; 
+    
 }
 
 .mainContainerin3{
-    margin:10px; 
-    width:30%; 
+    max-width:1200px; 
+    width:100%; 
+    height:1000px;
+    margin:0 auto; 
     float:left;
 }
 
-.mainContainerin3 a div{
-    margin:30px; 
+.mainContainerin3 div{
+    max-width:380px;
     width:100%;
-    height:450px;
-    text-align:center;
+    vertical-align:top;
+    margin:0 auto;
+    display:inline-block;
 }
 
-.mainContainerin3 a div img{
-    height:300px; 
-    width:100%; 
+.in3_a {
+    display:block;
+    width:auto;
+    text-decoration: none;
+}
+.in3_a .screen {
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    height:100%;
+    text-align: center;
+    margin:30px;
+    
+}
+.in3_a .screen .top {
+    position:absolute;
+    bottom:150%;
+    z-index:2;
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    transition:all .35s;
+}
+.in3_a .screen .bottom {
+    position:absolute;
+    top:150%;
+    left:15px;
+    z-index:2;
+    color:#fff;
+    font-size:20px;
+    font-weight:900;
+    transition:all .35s;
+}
+.in3_a .screen img{
+    width:100%;
+    height:350px;
     border-radius:20%;
 }
 
-.bottom{
+.in3_a:hover .top {
+    bottom:60%;
+}
+.in3_a:hover .bottom {
+    top:60%;
+}
+
+.in3_a .screen::after{
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:1;
+    opacity:0;
+    transition:all .3s5;
+    border-radius:20%;
+}
+
+.in3_a:hover .screen::after{
+    opacity:1;
+}
+
+.bottom2{
     margin-top:1200px; 
     width:100%; 
     height:150px;
@@ -594,120 +730,152 @@ img {vertical-align: middle;}
     text-align: center;
     color: white;
 }
-
-<form:from action="${pageContext.request.contextPath }/Logout" method="POST">
-	<input type="submit" value="로그아웃" />
-</form:from>
 </style>
 </head>
 <body>
-<!-- ============== 헤더 =============== -->
-<div id="header">
-    <div id="container">
-        <h1 class="logo">
-            <img id="img1" src="${path}/resources/img/jeju.png" style="height:80px;">
-        </h1>
-        <nav class="menu">
-            <ul class="depth">
-                <li><a class="menu_a" href="jeju.html">숙박</a></li>
-                <li><a class="menu_a" href="festival.html">축제</a></li>
-                <li><a class="menu_a" href="">쇼핑</a></li>
-                <li><a class="menu_a" href="">관광지</a></li>
-                <li><a class="menu_a" href="page1.html">음식</a></li>
-                <li><a class="menu_a" href="일정공유.html">일정 공유</a></li>
-            </ul>
-        </nav>
-        <div class="language-wrap">
-            <a href="#" id="login">로그인</a>
-            <a id="lang">한국어</a>
-            <button type="button" class="btn"></button>
+    <!-- ============== 헤더 =============== -->
+    <div id="header">
+        <div id="container">
+            <h1 class="logo">
+                <a href="../main/main.html"><img id="img1" src="/ex/resources/img/main/jeju.png"></a>
+            </h1>
+            <nav class="menu">
+                <ul class="depth">
+                    <li><a class="menu_a" href="../acco/jeju.html">숙박</a></li>
+                    <li><a class="menu_a" href="../festival/festival.html">축제</a></li>
+                    <li><a class="menu_a" href="">쇼핑</a></li>
+                    <li><a class="menu_a" href="../tour/main1.html">관광지</a></li>
+                    <li><a class="menu_a" href="">음식</a></li>
+
+                </ul>
+            </nav>
+            <div class="language-wrap">
+                <a href="project(login).html" id="login">로그인</a>
+                <a href="#" id="search">검색</a>
+            </div>
+            <!--
+        <form id="search_Form" action="#">
+            <div class="search_open">
+                <div class="input_field">
+                    <input type="text" id="search_name" placeholder="검색">
+                    <button type="submit" id="search_btn"></button>
+                </div>
+            </div>
+        </form>
+        -->
         </div>
     </div>
-</div>
 
-<!-- ============== 헤더 =============== -->
+    <!-- ============== 헤더 =============== -->
 
     <!-- ============== 이미지 =============== -->
     <!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
         width:1280px;    margin: 0 auto; 스타일 통일-->
-        
-    <!-- ↓↓start class wrap -->
-    <div class="wrap"> 
-        <div class="intro_bg">
-            <div class="slideshow-container" style="width:100%; height:500px;">
 
-                <div class="mySlides fade mySlidesDisplay1">
-                  <img src="${path}/resources/img/1.jpg" style="width:100%; height:800px;">
-                  <div class="imgtext">제주도의 자연경관</div>
-                  <div class="imgtext2">천지연 폭포</div>
-                </div>
-                
-                <div class="mySlides fade mySlidesDisplay2">
-                  <div class="imgtext">제주도의 자연경관</div>
-                  <div class="imgtext2">성산 일출봉</div>
-                  <img src="${path}/resources/img/2.jpg" style="width:100%; height:800px;">
-                </div>
-                
-                <div class="mySlides fade mySlidesDisplay3">
-                  <div class="imgtext">제주도의 자연경관</div>
-                  <div class="imgtext2">제주 올레</div>
-                  <img src="${path}/resources/img/3.jpg" style="width:100%; height:800px;">
-                </div>
-                
-                <a class="prev" onclick="plusSlides(-1)" style="top:450px;">❮</a>
-                <a class="next" onclick="plusSlides(1)" style="top:450px;">❯</a>
-                
+    <!-- ↓↓start class wrap -->
+    <div class="wrap">
+        <section>
+            <div class="intro_bg">
+                <div class="slideshow-container" style="width:100%; height:500px;">
+
+                    <div class="mySlides fade mySlidesDisplay1">
+                        <img src="/ex/resources/img/main/1.jpg" style="width:100%; height:800px;">
+                        <div class="imgtext">제주도의 자연경관</div>
+                        <div class="imgtext2">천지연 폭포</div>
+                    </div>
+
+                    <div class="mySlides fade mySlidesDisplay2">
+                        <div class="imgtext">제주도의 자연경관</div>
+                        <div class="imgtext2">성산 일출봉</div>
+                        <img src="/ex/resources/img/main/2.jpg" style="width:100%; height:800px;">
+                    </div>
+
+                    <div class="mySlides fade mySlidesDisplay3">
+                        <div class="imgtext">제주도의 자연경관</div>
+                        <div class="imgtext2">제주 올레</div>
+                        <img src="/ex/resources/img/main/3.jpg" style="width:100%; height:800px;">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)" style="top:450px;">❮</a>
+                    <a class="next" onclick="plusSlides(1)" style="top:450px;">❯</a>
+
                 </div>
                 <div class="dotDiv" style="text-align:center;">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
-            <div class="intro_text">
-            </div>  
-        </div>
+                <div class="intro_text">
+                </div>
+            </div>
     </div><br>
     <div class="remocon" id="remocon">
         <div class="remoconHead">
             <h2><br>관리자 리모콘</h2>
         </div>
-        <br><button class="bestBT"><h2>금주의 베스트</h2></button>
-        <br><button class="foodBestBT"><h2>음식 베스트</h2></button>
-        <br><button class="foodBT"><h2>음식</h2></button>
-        <br><button class="merchBT"><h2>상품</h2></button>
+        <br><button class="bestBT">
+            <h2>금주의 베스트</h2>
+        </button>
+        <br><button class="foodBestBT">
+            <h2>음식 베스트</h2>
+        </button>
+        <br><button class="foodBT">
+            <h2>음식</h2>
+        </button>
+        <br><button class="merchBT">
+            <h2>상품</h2>
+        </button>
     </div>
     <div class="wrap2">
         <div class="best">
-            <img src="${path}/resources/img/ariplain.jpg"><h2><br>금주의 베스트</h2>
+            <img src="${path}/resources/img/main/ariplain.jpg">
+            <h2><br>금주의 베스트</h2>
         </div>
         <div class="mainRecommend">
             <div class="recommend1">
                 <a href="../festival/detail/휴애리 봄 수국축제.html">
-                    <div class="recommend1_1"><img src="${list[0].imgLink }"></div>
-                    <div class="recommend1_2"><h3>${list[0].name }</h3></div>
+                    <div class="recommend1_1"><img
+                            src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202105/17/5ffe6841-1401-4282-9d40-2cf9d5447f2a.jpg">
+                    </div>
+                    <div class="recommend1_2">
+                        <h3>휴애리 봄 수국축제</h3>
+                    </div>
                 </a>
             </div>
             <div class="recommend2">
                 <a href="../festival/detail/마노르블랑 수국축제.html">
-                    <div class="recommend2_1"><img src="${list[1].imgLink }"></div>
-                    <div class="recommend2_2"><h3>${list[1].name }</h3></div>
+                    <div class="recommend2_1"><img
+                            src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202204/18/e86e6d5d-de1c-4436-95ab-7d2732cedcc4.jpg">
+                    </div>
+                    <div class="recommend2_2">
+                        <h3>마노르블랑 수국축제</h3>
+                    </div>
                 </a>
             </div>
             <div class="recommend3">
                 <a href="../festival/detail/제주국제관악제제.html">
-                    <div class="recommend3_1"><img src="${list[2].imgLink }"></div>
-                    <div class="recommend3_2"><h3>${list[2].name }</h3></div>
+                    <div class="recommend3_1"><img
+                            src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202205/26/fecde995-8c79-4ed3-88b2-e8eb9b9517ab.jpg">
+                    </div>
+                    <div class="recommend3_2">
+                        <h3>제주국제관악제제</h3>
+                    </div>
                 </a>
             </div>
             <div class="recommend4">
                 <a href="../festival/detail/제주 문화유산 체험프로그램.html">
-                    <div class="recommend4_1"><img src="${list[3].imgLink }"></div>
-                    <div class="recommend4_2"><h3>${list[3].name }</h3></div>
+                    <div class="recommend4_1"><img
+                            src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202205/03/c63c24f5-c17c-4909-b960-c3f5d9d2dc64.jpg">
+                    </div>
+                    <div class="recommend4_2">
+                        <h3>제주문화유산 프로그램</h3>
+                    </div>
                 </a>
             </div>
         </div><br><br><br><br><br><br><br><br><br>
         <div class="mainContainer">
-            <h1>이런 먹거리가 있어요</h1>    
+            <h1>이런 먹거리가 있어요</h1>
+            <img src="${path}/resources/img/main/best.png" class="bestLogo">
         </div>
                 <!-- ============== 하단 =============== -->
                 <div class="mainContainerin1">
@@ -728,112 +896,118 @@ img {vertical-align: middle;}
                 </div>
     
                 <div class="mainContainerin2">
-                    <a href="#">
-                        <div class="mainContainerin2_1">
-                            <img src="${listFood[0].imgLink}">
-                            <h2>${listFood[0].name}</h2>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="mainContainerin2_2">
-                            <img src="${listFood[1].imgLink}">
-                            <h2>${listFood[1].name}</h2>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="mainContainerin2_3">
-                            <img src="${listFood[2].imgLink}">
-                            <h2>${listFood[2].name}</h2>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="mainContainerin2_4">
-                            <img src="${listFood[3].imgLink}">
-                            <h2>${listFood[3].name}</h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="mainContainer3">
-                    <h1>이런 상품이 있어요</h1>    
-                </div>
-                <div class="mainContainerin3">
-                        <a href="#">
-                            <div>
-                                <img src="${listMerch[0].imgLink}">
-                                <h2><br>${listMerch[0].name}</h2>
-                                <h3><br>$${listMerch[0].price}</h3>
-                                <h3><br>${listMerch[0].content}</h3>
+                    <div class="gallerylist1">
+                        <a href="#" class="in2_a1">
+                            <div class="screen">
+                                <div class="top">${listFood[0].name}</div>
+                                <img src="${listFood[0].imgLink}">
                             </div>
                         </a>
+                    </div>
+                    <div class="gallerylist2">
+                        <a href="#" class="in2_a1">
+                            <div class="screen">
+                                <div class="top">${listFood[1].name}</div>
+                                <div class="bottom"></div>
+                                <img src="${listFood[1].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallerylist3">
+                        <a href="#" class="in2_a1">
+                            <div class="screen">
+                                <div class="top">${listFood[2].name}</div>
+                                <div class="bottom"></div>
+                                <img src="${listFood[2].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallerylist4">
+                        <a href="#" class="in2_a1">
+                            <div class="screen">
+                                <div class="top">${listFood[3].name}</div>
+                                <div class="bottom"></div>
+                                <img src="${listFood[3].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="mainContainer3">
+                    <h1>이런 관광지가 있어요</h1>    
                 </div>
                 <div class="mainContainerin3">
-                    <a href="#">
-                        <div>
-                            <img src="${listMerch[1].imgLink}">
-                            <h2><br>${listMerch[1].name}</h2>
-                            <h3><br>$${listMerch[1].price}</h3>
-                            <h3><br>${listMerch[1].content}</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="mainContainerin3">
-                    <a href="#">
-                        <div>
-                            <img src="${listMerch[2].imgLink}">
-                            <h2><br>${listMerch[2].name}</h2>
-                            <h3><br>$${listMerch[2].price}</h3>
-                            <h3><br>${listMerch[2].content}</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="mainContainerin3">
-                    <a href="#">
-                        <div>
-                            <img src="${listMerch[3].imgLink}">
-                            <h2><br>${listMerch[3].name}</h2>
-                            <h3><br>$${listMerch[3].price}</h3>
-                            <h3><br>${listMerch[3].content}</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="mainContainerin3">
-                    <a href="#">
-                        <div>
-                            <img src="${listMerch[4].imgLink}">
-                            <h2><br>${listMerch[4].name}</h2>
-                            <h3><br>$${listMerch[4].price}</h3>
-                            <h3><br>${listMerch[4].content}</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="mainContainerin3">
-                    <a href="#">
-                        <div>
-                            <img src="${listMerch[5].imgLink}">
-                            <h2><br>${listMerch[5].name}</h2>
-                            <h3><br>$${listMerch[5].price}</h3>
-                            <h3><br>${listMerch[5].content}</h3>
-                        </div>
-                    </a>
+                    <div class="gallerylist5">
+                        <a href="../tour/data2.html" class="in3_a">
+                            <div class="screen">
+                                <div class="top">${listMerch[0].name}</div> 
+                                <img src="${listMerch[0].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallerylist6">
+                        <a href="#" class="in3_a">
+                            <div class="screen">
+                                <div class="top">${listMerch[1].name}</div>
+                                <img src="${listMerch[1].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallerylist7">
+                        <a href="#" class="in3_a">
+                            <div class="screen">
+                                <div class="top">${listMerch[2].name}</div>
+                                <img src="${listMerch[2].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="gallerylist8">
+                        <a href="#" class="in3_a">
+                            <div class="screen">
+                                <div class="top">${listMerch[3].name}</div>
+                                <img src="${listMerch[3].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallerylist9">
+                        <a href="#" class="in3_a">
+                            <div class="screen">
+                                <div class="top">${listMerch[4].name}</div>
+                                <img src="${listMerch[4].imgLink}">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallerylist10">
+                        <a href="#" class="in3_a">
+                            <div class="screen">
+                                <div class="top">${listMerch[5].name}</div>
+                                <img src="${listMerch[5].imgLink}">
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <!-- =============== 하단 ============== -->
         </div> 
     </div>
-    
-    <div class="bottom">
-        <br><br>
-        <footer id="footer">
-            <div class="footer_wrap">
-                <div class="footer_title">
-                    <h2>제주도 소개 사이트</h2>
-                </div>
-                <div class="footer_intro">
-                    <p>대표 : xx</p>
-                    <p>연락처 : xx</p>
+    <footer id="footer">
+        <div class="footer_wrap">
+            <div class="footer_title">
+                <div class="footer_box">
+                    <img src="../../img/jeju.png" style="margin-top: 30px;" >
                 </div>
             </div>
-        </footer>
-    
-    </div>
+            <div id="v-line"></div>
+            <div class="footer_intro">
+                <div class="footer_box">
+                    <table class="footer_table">
+                        <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
+                        <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
+                        <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
