@@ -114,9 +114,9 @@
                     </ul>
                 </div>
                <div class="url">
-                <a href="page1.jsp" >1</a>
-                <a href="page2.jsp" >2</a>
-                <a href="page3.jsp" >3</a>
+                <a href="page1" >1</a>
+                <a href="page2" >2</a>
+                <a href="page3" >3</a>
                </div>
             </section>
             <!-- ↑↑end class event -->
