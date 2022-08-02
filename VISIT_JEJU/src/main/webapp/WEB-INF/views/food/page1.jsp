@@ -11,11 +11,10 @@
    
 </head>
 <body>
-<%@include file="../header.jsp" %>
 
-    <!-- ============== 이미지 =============== -->
-    <!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
-        width:1280px;    margin: 0 auto; 스타일 통일-->
+	<!-- ============== 헤더 =============== -->
+	<%@include file="../header.jsp" %>
+    <!-- ============== 헤더 =============== -->
         
     <!-- ↓↓start class wrap -->
     <div class="wrap"> 
@@ -60,15 +59,29 @@
                     <ul class="list">   
                         <li>
                             <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="">
-                            <h3> <a href="/ex/food/Detail"  id="red">하하호호</a>  </h3>                
+                            <h3> <a href="/ex/food/Detail">하하호호</a>  </h3>                
                             <p>제주특별자치도 제주시 우도면 우도해안길 532 </p>
                            
-                        </li>
+                       		 </li>
+                        
+                         <li>
+                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
+                                <h3><a href="/ex/food/Detail2">봄날</a></h3>                      
+                                <p>제주특별자치도 제주시 애월읍 애월로1길 25</p>
+                                 
+                        	 </li>
+                            
+                        <li>
+                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
+                                <h3> <a href="/ex/food/Detail3"> 바다속 고등어쌈밥</a></h3>                          
+                                <p>제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
+                              </li>  
                         <li>
                             <img src="/ex/resources/img/food/우도)섬소나이.jpg" alt="" >
-                            <h3>섬소나이</h3>                       
+                             <h3> <a href="/ex/food/Detail4"> 섬소나이</a></h3>                    
                                 <p> 제주특별자치도 제주시 우도면 우도해안길 814 </p> 
-                        </li>
+                        	  </li>
+                        	  
                         <li>
                             <img src="/ex/resources/img/food/우도)블랑로쉐.jpg" alt="">
                             <h3>블랑로쉐</h3>
@@ -81,39 +94,25 @@
                                 <h3>리치망고</h3>                            
                                 <p> 제주특별자치도 제주시 애월읍 애월해안로 272</p>   
                             </li>
-                            <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a></h3>                      
-                                <p>제주특별자치도 제주시 애월읍 애월로1길 25</p>
-                                 
-                            </li>
+                           
                 
-                            <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3> 바다속 고등어쌈밥</h3>                          
-                                <p>제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                            </li>        
+                                  
                     </ul>
                 </div>
                <div class="url">
                
-                <a href="food/page1.jsp" >1</a>
-                <a href="food/page2.jsp" >2</a>
-                <a href="food/page3.jsp" >3</a>
+                <a href="page1" >1</a>
+                <a href="page2" >2</a>
+                <a href="page3" >3</a>
                </div>
             </section>
-            <!-- ↑↑end class event -->
             <!-- =============== 하단 ============== -->
-    </div> 
-    <!-- ↑↑end class wrap -->
+            <%@include file="../footer.jsp" %>
+            <!-- =============== 하단 ============== -->
 
-
-<%@include file="../footer.jsp" %>
  <script src="/ex/resources/js/food/wodo.js"></script>
  <script src="/ex/resources/js/food/awol.js"></script>
  <script src="/ex/resources/js/food/seo.js"></script>
  <script src="/ex/resources/js/food/jmoon.js"></script>
  <script src="/ex/resources/js/food/jejuc.js"></script>
  <script src="/ex/resources/js/food/search.js"></script>
-</body>
-</html>

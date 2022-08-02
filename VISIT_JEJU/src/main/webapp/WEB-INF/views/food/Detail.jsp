@@ -11,7 +11,34 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
+<<<<<<< HEAD
+    <div id="header">
+        <div id="container">
+            <h1 class="logo">
+       
+                <img id="img1" src="/ex/resources/img/main/jeju.png" >
+            
+            </h1>
+            <nav class="menu">
+                <ul class="depth">
+                    <li><a class="menu_a">여행지</a></li>
+                    <li><a class="menu_a">추천</a></li>
+                    <li><a class="menu_a">쇼핑</a></li>
+                    <li><a class="menu_a">브랜드</a></li>
+                    <li><a class="menu_a">여행정보</a></li>
+                    <li><a class="menu_a">나의 여행</a></li>
+                </ul>
+            </nav>
+            <div class="language-wrap">
+                <a id="login">로그인</a>
+                <a id="lang">한국어</a>
+                <button type="button" class="btn"></button>
+            </div>
+        </div>
+    </div>
+=======
 <%@include file="../header.jsp" %>
+>>>>>>> branch 'master' of https://github.com/bitamin707/Visit-Jeju.git
     
     <section>
         <div class="img">
@@ -47,11 +74,11 @@
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
                             </li>
                 
-                            <li>
+                             <li>
                                 <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3> 바다속 고등어쌈밥</h3>
+                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                            </li>        
+                            </li>       
                     </ul>
                 </div>
                 <div class="review">
