@@ -42,28 +42,28 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
+             <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
             <div class="img-content">
-                <h1>봄날</h1>
+                <h1>바자속 고등어 쌈밥</h1>
                 <p>#애월</p>
                 <h3>기본정보</h3>
-                <p>주소:제주특별자치도 제주시 애월읍 애월로1길 25</p>
+                <p>주소:제주특별자치도 제주시 애월읍 일주서로 7089</p>
             </div>
         </div>
         <br>
         <div class="main-content">
             <div class="introduce"> 
-                <img src="/ex/resources/img/food/4봄날.jpg" alt="봄날" height="400px" width="100%"><br>
-                <p>드라마의 주인공이 일하던 카페라서 유명해졌다.
-                    해변을 바라보며 차 한잔의 여유를 즐기기에 좋으며 제주 돌담의 정취를 느낄 수 있다.</p>
-                <img src="/ex/resources/img/food/2봄날.jpg" alt="봄날" height="300px" width="49%" >
-                <img src="/ex/resources/img/food/3봄날.jpg" alt="봄날" height="300px" width="50%">
-                <p>카페견 웰시코키 네마리가 반겨주는데 애견인들에게는 반가운 소식이 아닐 수 없다.
-                    근처 한담해변을 산책하거나 올레길을 걷다가 카페에 들러 휴식을 취할 수 있다.</p>
-                <img src="/ex/resources/img/food/1봄날.jpg" alt="봄날" height="400px" width="100%">
+                <img src="/ex/resources/img/food/3_4.jpg" alt="봄날" height="400px" width="100%"><br>
+                <p>공항에서 애월 해안도로로 15분쯤 달리다 보면 도로변에 위치한 바다속고등어쌈밥을 발견할 수 있다.
+					이곳은 고등어 요리 전문점이지만 갈치조림이나 옥돔구이, 해물뚝배기, 한치물회 등 여러 해산물 요리를 같이 판매하고 있다.
+				</p>
+                <img src="/ex/resources/img/food/3_2.jpg" alt="봄날" height="300px" width="49%" >
+                <img src="/ex/resources/img/food/3_3.jpg" alt="봄날" height="300px" width="50%">
+                <p>대표 메뉴 쌈밥은 묵은지를 넣은 고등어조림으로, 고등어와 묵은지를 채소에 싸먹는 요리이다.
+					고등어 쌈밥과 함께 흑돼지를 넣은 두루치기 쌈밥도 인기있는 메뉴이다.</p>
+                <img src="/ex/resources/img/food/3_1.jpg" alt="봄날" height="400px" width="100%">
                <p>
-                자가용 이용시 주차장이 혼잡하니 큰 길에 세우고 걸어 내려 가는게 좋다. 
-                대중교통을 이용한다면 한담동 정류장에서 하차해  3분거리에 위치해있다.
+           		 밑반찬으로 나오는 간장게장은 별도로 판매를 하고 있고 전국에 택배 가능하다.
                </p>
             </div>
             <div class="right-content">
@@ -77,10 +77,10 @@
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                            </li>        
+                                <img src="/ex/resources/img/food/4_1.jpg" alt="" >
+                                <h3><a href="/ex/food/Detail4"  id="red">섬소나이</a> </h3>
+                                <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 814</p>   
+                            </li>      
                     </ul>
                 </div>
                 <div class="review">
