@@ -42,6 +42,10 @@
             background-color:white;
             width:100px;
             height:30px;
+            cursor:pointer;
+        }
+        #loginbt1:hover{
+            background-color:gray;
         }
     </style>
 </head>
