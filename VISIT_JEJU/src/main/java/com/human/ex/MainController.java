@@ -78,7 +78,7 @@ public class MainController {
 			,RedirectAttributes rttr) throws Exception {
 		service.update(boardDtoBest);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:/main/main";
+		return "redirect:/main/main?id=admin&pw=1234";
 	}
 	@RequestMapping(value = "/main/bestModify", method = RequestMethod.GET)
 	public void modify(@RequestParam("bno")int bno,Model model) throws Exception {
@@ -100,7 +100,7 @@ public class MainController {
 			,RedirectAttributes rttr) throws Exception {
 		serviceFoodBest.updateFoodBest(boardDtoFoodBest);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:/main/main";
+		return "redirect:/main/main?id=admin&pw=1234";
 	}
 	@RequestMapping(value = "/main/foodBestModify", method = RequestMethod.GET)
 	public void foodBestModify(Model model) throws Exception {
@@ -121,7 +121,7 @@ public class MainController {
 			,RedirectAttributes rttr) throws Exception {
 		serviceFood.updateFood(boardDtoFood);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:/main/main";
+		return "redirect:/main/main?id=admin&pw=1234";
 	}
 	@RequestMapping(value = "/main/foodModify", method = RequestMethod.GET)
 	public void modifyFood(@RequestParam("bno")int bno,Model model) throws Exception {
@@ -146,7 +146,7 @@ public class MainController {
 			,RedirectAttributes rttr) throws Exception {
 		serviceMerch.updateMerch(boardDtoMerch);
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:/main/main";
+		return "redirect:/main/main?id=admin&pw=1234";
 	}
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.GET)
 	public void modifyMerch(@RequestParam("bno")int bno,Model model) throws Exception {
