@@ -15,7 +15,8 @@
     <div id="header">
         <div id="container">
             <h1 class="logo">
-                <img id="img1" src="/ex/resources/img/food/jeju.JPG">
+                <img id="img1" src="/ex/resources/img/food/jeju.JPG" >
+                <a href="/ex/food/page1"></a> 
             </h1>
             <nav class="menu">
                 <ul class="depth">
@@ -83,7 +84,7 @@
                     <ul class="list">   
                         <li>
                             <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="">
-                            <h3> <a href="/ex/food/Detail"  id="red">하하호호</a>  </h3>                
+                            <h3> <a href="/ex/food/Detail">하하호호</a>  </h3>                
                             <p>제주특별자치도 제주시 우도면 우도해안길 532 </p>
                            
                         </li>
@@ -106,7 +107,7 @@
                             </li>
                             <li>
                                 <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a></h3>                      
+                                <h3><a href="/ex/food/Detail2">봄날</a></h3>                      
                                 <p>제주특별자치도 제주시 애월읍 애월로1길 25</p>
                                  
                             </li>

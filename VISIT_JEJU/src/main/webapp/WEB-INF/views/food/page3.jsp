@@ -15,7 +15,7 @@
     <div id="header">
         <div id="container">
             <h1 class="logo">
-                <img id="img1" src="/ex/resources/img/food/jeju.JPG">
+                <img id="img1" src="/ex/resources/img/food/jeju.JPG" href="/ex/food/page1">
             </h1>
             <nav class="menu">
                 <ul class="depth">
@@ -105,12 +105,32 @@
             <!-- =============== 하단 ============== -->
     </div> 
     <!-- ↑↑end class wrap -->
- <script src="/ex/resources/js/wodo.js"></script>
- <script src="/ex/resources/js/awol.js"></script>
- <script src="/ex/resources/js/seo.js"></script>
- <script src="/ex/resources/js/jmoon.js"></script>
- <script src="/ex/resources/js/jejuc.js"></script>
- <script src="/ex/resources/js/search.js"></script>
+ <footer id="footer">
+    <div class="footer_wrap">
+        <div class="footer_title">
+            <div class="footer_box">
+                <img src="../../img/jeju.png" style="margin-top: 30px;" >
+            </div>
+        </div>
+        <div id="v-line"></div>
+        <div class="footer_intro">
+            <div class="footer_box">
+                <table class="footer_table">
+                    <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
+                    <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
+                    <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
+                    <tr><th>일정공유</th><td>누구</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</footer>
+ <script src="/ex/resources/js/food/wodo.js"></script>
+ <script src="/ex/resources/js/food/awol.js"></script>
+ <script src="/ex/resources/js/food/seo.js"></script>
+ <script src="/ex/resources/js/food/jmoon.js"></script>
+ <script src="/ex/resources/js/food/jejuc.js"></script>
+ <script src="/ex/resources/js/food/search.js"></script>
 
 </body>
 </html>
