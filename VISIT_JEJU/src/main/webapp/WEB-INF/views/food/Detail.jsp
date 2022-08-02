@@ -11,28 +11,7 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
-    <div id="header">
-        <div id="container">
-            <h1 class="logo">
-                <img id="img1" src="/ex/resources/img/food/jeju.JPG">
-            </h1>
-            <nav class="menu">
-                <ul class="depth">
-                    <li><a class="menu_a">여행지</a></li>
-                    <li><a class="menu_a">추천</a></li>
-                    <li><a class="menu_a">쇼핑</a></li>
-                    <li><a class="menu_a">브랜드</a></li>
-                    <li><a class="menu_a">여행정보</a></li>
-                    <li><a class="menu_a">나의 여행</a></li>
-                </ul>
-            </nav>
-            <div class="language-wrap">
-                <a id="login">로그인</a>
-                <a id="lang">한국어</a>
-                <button type="button" class="btn"></button>
-            </div>
-        </div>
-    </div>
+<%@include file="../header.jsp" %>
     
     <section>
         <div class="img">
@@ -93,26 +72,7 @@
         </div>
     </section>
 
-    <footer id="footer" style=" margin-top: 1300px">
-        <div class="footer_wrap">
-            <div class="footer_title">
-                <div class="footer_box">
-                    <img src="../../img/jeju.png" style="margin-top: 30px;" >
-                </div>
-            </div>
-            <div id="v-line"></div>
-            <div class="footer_intro">
-                <div class="footer_box">
-                    <table class="footer_table">
-                        <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
-                        <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
-                        <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
-                        <tr><th>일정공유</th><td>누구</td></tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <%@include file="../footer.jsp" %>
     <script src="/ex/resources/js/food/review.js"></script>
 
 </body>
