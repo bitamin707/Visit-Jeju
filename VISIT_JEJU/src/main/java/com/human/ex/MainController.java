@@ -28,7 +28,7 @@ import com.human.service.main.IBoardServiceMerch;
  * Handles requests for the application home page.
  */
 @Controller
-public class BoardControllerBest {
+public class MainController {
 	
 	@Inject
 	private IBoardServiceBest service;
@@ -40,10 +40,29 @@ public class BoardControllerBest {
 	private IBoardServiceMerch serviceMerch;
 	
 	
+	/*로그인*/
+	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
+	public void loginGet() throws Exception {
+		
+	}	
+		
+	@RequestMapping(value = "/main/loginPage", method = RequestMethod.POST)
+	public String loginPost(Model model) throws Exception {
+		return "redirect:/main/main";
+	}
+		
 	/*메인*/
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {
+		model.addAttribute("list",service.listAll());
+		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
+		model.addAttribute("listFood",serviceFood.listAllFood());
+		model.addAttribute("listMerch",serviceMerch.listAllMerch());
+	}
+	
+	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.GET)
+	public void listNormal(Model model) throws Exception {
 		model.addAttribute("list",service.listAll());
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 		model.addAttribute("listFood",serviceFood.listAllFood());

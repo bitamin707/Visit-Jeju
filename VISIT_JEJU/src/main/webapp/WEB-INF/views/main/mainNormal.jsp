@@ -22,35 +22,6 @@ if(result=='success'){
 	alert('처리가 완료되었습니다.');
 }
 
-var id = "<%= request.getParameter("id") %>";
-var pw = "<%= request.getParameter("pw") %>";
-
-if(id != "admin" || pw != "1234"){
-	location.href="/ex/main/mainNormal";
-}
-
-window.onload=function(){
-	document.getElementsByClassName("bestBT")[0]
-	.addEventListener("click",function(){
-		location.href="/ex/main/bestList";
-	});
-	
-	document.getElementsByClassName("foodBestBT")[0]
-	.addEventListener("click",function(){
-		location.href="/ex/main/foodBestModify";
-	});
-	
-	document.getElementsByClassName("foodBT")[0]
-	.addEventListener("click",function(){
-		location.href="/ex/main/foodList";
-	});
-	
-	document.getElementsByClassName("merchBT")[0]
-	.addEventListener("click",function(){
-		location.href="/ex/main/merchList";
-	});
-}
-
 let slideIndex = 2;
 showSlides(slideIndex);
 
@@ -246,44 +217,6 @@ img {vertical-align: middle;}
 .intro_text {
     padding-top: 400px;
     padding-left: 30px;
-}
-
-.remocon{
-    position:fixed;
-    right:0%;
-    top:100px;
-    width:200px;
-    height:100%;
-    bottom:0px;
-    border:1px solid; 
-    background-color:hwb(39 87% 0%);
-    border-color:hsl(39, 100%, 54%);
-    z-index: 3;
-
-    text-align: center;
-    
-}
-.remocon button{ 
-    width:190px;
-    height:40px;
-    border-color:rgb(207, 152, 0); 
-    background-color:hsl(39, 100%, 54%);
-}
-
-.remocon button :hover{ 
-    border-color:rgb(0, 124, 240);
-    background-color:rgb(0, 124, 240);
-}
-.remocon h2{ 
-    color:white;
-}
-.remoconHead{
-    border-bottom:1px solid; 
-    border-color:hsl(39, 100%, 54%);
-
-    width:100%;
-    height:100px;
-    background-color:hsl(39, 100%, 54%);
 }
 /* 태그 */
 .month {
@@ -683,23 +616,6 @@ img {vertical-align: middle;}
                 </div>
             </div>
     </div><br>
-    <div class="remocon" id="remocon">
-        <div class="remoconHead">
-            <h2><br>관리자 리모콘</h2>
-        </div>
-        <br><button class="bestBT">
-            <h2>금주의 베스트</h2>
-        </button>
-        <br><button class="foodBestBT">
-            <h2>음식 베스트</h2>
-        </button>
-        <br><button class="foodBT">
-            <h2>음식</h2>
-        </button>
-        <br><button class="merchBT">
-            <h2>상품</h2>
-        </button>
-    </div>
     <div class="wrap2">
         <div class="best">
             <img src="${path}/resources/img/main/ariplain.jpg">
