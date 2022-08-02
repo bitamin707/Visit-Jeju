@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/6_3.jpeg" alt="하하호호" width="2500px" height="600px">
+            <img src="/ex/resources/img/food/6_3.jpeg" alt="리치망고"  style="width: 100%; height: 600px; position:relative">
             <div class="img-content">
                 <h1>리치망고</h1>
                 <p>#애월</p>
