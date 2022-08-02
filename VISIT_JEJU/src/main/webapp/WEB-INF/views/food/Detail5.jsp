@@ -17,29 +17,30 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2500px" height="600px">
+            <img src="/ex/resources/img/food/5_0.jpg" alt="하하호호"  width="2500px" height="600px">
             <div class="img-content">
-                <h1>섬소나이</h1>
+                <h1>블랑로쉐</h1>
                 <p>#우도</p>
                 <h3>기본정보</h3>
-                <p>주소:제주특별자치도 제주시 우도면 우도해안길 814</p>
+                <p>주소:제주특별자치도 제주시 우도면 우도해안길 783</p>
             </div>
         </div>
         <br>
         <div class="main-content">
             <div class="introduce"> 
-                <img src="/ex/resources/img/food/4_1.jpg" alt="섬소나이" height="400px" width="100%"><br>
-                <p>우도에 위치한 섬소나이는 짬뽕과 피자를 즐길 수 있는 작고 예쁜 식당이다.짬뽕 세 종류와 피자 두 종류 총 다섯가지다.
-                                           이 집 짬뽕 맛의 비결은 한약재 등 10가지 이상의 재료를 사용하여 12시간 동안 푹 끓여낸 육수에서 나온다. 
-                                           톳을 사용해 면을 만들고 모자반(몸)을 넣어 우도의 맛을 살렸다. 
+                 <img src="/ex/resources/img/food/5_1.jpg" alt="섬소나이" height="300px" width="49%" >
+                <img src="/ex/resources/img/food/5_2.jpg" alt="섬소나이" height="300px" width="50%">
+                <p>우도 하고수동 해변가에 위치한 카페다. 안에서 파랗게 빛나는 하고수동 해변을 볼 수 있다.
+				       날이 좋으면 전면이 창으로된 한쪽 벽을 오픈해 시원한 바닷바람을 만끽하며 휴식을 취할 수 있다. 
 				</p>
-                <img src="/ex/resources/img/food/4_2.jpg" alt="섬소나이" height="300px" width="49%" >
-                <img src="/ex/resources/img/food/4_3.jpg" alt="섬소나이" height="300px" width="50%">
-                <p>면은 매일 직접 뽑아내고 당일생산 당일소모를 원칙으로 삼는다. 신선하게 내기 위해 주문을 받은 후 한 그릇씩 조리하니 정성이 이만저만이 아니다.
-                                            주문 즉시 한 그릇씩 조리를 하기 때문에 대기시간이 좀 있을 수도 있다.</p>
-                <img src="/ex/resources/img/food/4_0.jpg" alt="섬소나이" height="400px" width="100%">
+                <img src="/ex/resources/img/food/5_4.jpg" alt="섬소나이" height="300px" width="49%" >
+                <img src="/ex/resources/img/food/5_5.jpg" alt="섬소나이" height="300px" width="50%">
+                <p>상큼한 에이드와 여러 음료를 파는데 그중에서도 우도땅콩으로 만든 빙수와 크림라떼가 대표메뉴다.
+				땅콩치즈케이크와 제주말차티라미슈 등 지역의 특산품을 녹여낸 다양한 메뉴도 만나볼 수 있다.
+				</p>
+                <img src="/ex/resources/img/food/5_3.jpg" alt="섬소나이" height="400px" width="100%">
                <p>
-           		파이프를 활용한 모던하면서 인더스트리얼한 인테리어가 독특한 감성을 자아낸다. 도의 낭만을 느낄 수 있는 감성 맛집이다.
+           		화이트 톤의 실내와 테라스 등의 전경이 예뻐 사진찍기 좋은 곳으로도 알려졌다.
                </p>
             </div>
             <div class="right-content">
@@ -47,10 +48,10 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail"  id="red">하하호호</a> </h3>
-                                <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>  
-                            </li>
+                                <img src="/ex/resources/img/food/4_1.jpg" alt="" >
+                                <h3><a href="/ex/food/Detail4"  id="red">섬소나이</a> </h3>
+                                <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 814</p>   
+                            </li>  
                 
                             <li>
                                 <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >

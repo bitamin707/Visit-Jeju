@@ -84,14 +84,14 @@
                         	  
                         <li>
                             <img src="/ex/resources/img/food/우도)블랑로쉐.jpg" alt="">
-                            <h3>블랑로쉐</h3>
+                            <h3> <a href="/ex/food/Detail5"> 블랑로쉐</a></h3>
                         
                             <p>제주특별자치도 제주시 우도면 우도해안길 783 </p>     
                         </li>
                         
                             <li>
                                 <img src="/ex/resources/img/food/리치망고.jpg" >
-                                <h3>리치망고</h3>                            
+                                <h3> <a href="/ex/food/Detail6"> 리치망고</a></h3>                        
                                 <p> 제주특별자치도 제주시 애월읍 애월해안로 272</p>   
                             </li>
                            

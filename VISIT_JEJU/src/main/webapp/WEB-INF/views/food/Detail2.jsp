@@ -52,10 +52,10 @@
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                            </li>        
+                                <img src="/ex/resources/img/food/6_2.jpg" alt="" >
+                                <h3><a href="/ex/food/Detail6"  id="red">리치망고</a> </h3>
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 272</p>   
+                            </li>          
                     </ul>
                 </div>
                 <div class="review">
