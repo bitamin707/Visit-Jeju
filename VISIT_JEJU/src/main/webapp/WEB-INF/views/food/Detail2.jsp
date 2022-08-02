@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
-   <%@include file="../header.jsp" %>
+	<!-- ============== 헤더 =============== -->
+	<%@include file="../header.jsp" %>
+    <!-- ============== 헤더 =============== -->
     
     <section>
         <div class="img">
@@ -51,7 +53,7 @@
                 
                             <li>
                                 <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3>바다속 고등어쌈밥</h3>
+                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
                             </li>        
                     </ul>
@@ -73,7 +75,12 @@
             </div>
         </div>
     </section>
-<%@include file="../footer.jsp" %>
+
     <script src="/ex/resources/js/food/review.js"></script>
+    
+    <!-- =============== 하단 ============== -->
+	<%@include file="../footer.jsp"%>
+	<!-- =============== 하단 ============== -->
+	
 </body>
 </html>
