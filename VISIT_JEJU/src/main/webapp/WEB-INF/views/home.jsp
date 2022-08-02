@@ -20,6 +20,7 @@
 		<li><h3><a href="acco/jeju">숙박 홈페이지</a></h3></li>
 		<li><h3><a href="festival/festival">축제 홈페이지</a></h3></li>
 		<li><h3><a href="shopping/main/Main">쇼핑 홈페이지</a></h3></li>
+		<li><h3><a href="food/page1">음식 홈페이지</a></h3></li>
 	</ul>
 </body>
 </html>

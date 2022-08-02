@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
+<<<<<<< HEAD
     <div id="header">
         <div id="container">
             <h1 class="logo">
-             <a href="/ex/food/page1">
-                <img id="img1" src="/ex/resources/img/food/jeju.JPG" >
-              </a>
+       
+                <img id="img1" src="/ex/resources/img/main/jeju.png" >
+            
             </h1>
             <nav class="menu">
                 <ul class="depth">
@@ -35,6 +36,9 @@
             </div>
         </div>
     </div>
+=======
+<%@include file="../header.jsp" %>
+>>>>>>> branch 'master' of https://github.com/bitamin707/Visit-Jeju.git
     
     <section>
         <div class="img">
@@ -70,11 +74,11 @@
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
                             </li>
                 
-                            <li>
+                             <li>
                                 <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3> 바다속 고등어쌈밥</h3>
+                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                            </li>        
+                            </li>       
                     </ul>
                 </div>
                 <div class="review">
@@ -95,26 +99,7 @@
         </div>
     </section>
 
-    <footer id="footer" style=" margin-top: 1300px">
-        <div class="footer_wrap">
-            <div class="footer_title">
-                <div class="footer_box">
-                    <img src="../../img/jeju.png" style="margin-top: 30px;" >
-                </div>
-            </div>
-            <div id="v-line"></div>
-            <div class="footer_intro">
-                <div class="footer_box">
-                    <table class="footer_table">
-                        <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
-                        <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
-                        <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
-                        <tr><th>일정공유</th><td>누구</td></tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <%@include file="../footer.jsp" %>
     <script src="/ex/resources/js/food/review.js"></script>
 
 </body>

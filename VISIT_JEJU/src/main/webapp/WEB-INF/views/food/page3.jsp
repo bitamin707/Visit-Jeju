@@ -15,9 +15,9 @@
     <div id="header">
         <div id="container">
             <h1 class="logo">
-              <a href="/ex/food/page1">
-                <img id="img1" src="/ex/resources/img/food/jeju.JPG" >
-               </a> 
+             
+                <img id="img1" src="/ex/resources/img/main/jeju.png" >
+             
             </h1>
             <nav class="menu">
                 <ul class="depth">

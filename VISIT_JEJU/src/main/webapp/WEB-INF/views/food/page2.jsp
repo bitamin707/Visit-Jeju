@@ -11,13 +11,14 @@
    
 </head>
 <body>
+<<<<<<< HEAD
     <!-- ============== 헤더 =============== -->
     <div id="header">
         <div id="container">
              <h1 class="logo">
-              <a href="/ex/food/page1">
-                <img id="img1" src="/ex/resources/img/food/jeju.JPG" >
-                </a> 
+             
+                <img id="img1" src="/ex/resources/img/main/jeju.png" >
+             
             </h1>
             <nav class="menu">
                 <ul class="depth">
@@ -38,6 +39,9 @@
     </div>
     <!-- ============== 헤더 =============== -->
 
+=======
+<%@include file="../header.jsp" %>
+>>>>>>> branch 'master' of https://github.com/bitamin707/Visit-Jeju.git
     <!-- ============== 이미지 =============== -->
     <!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
         width:1280px;    margin: 0 auto; 스타일 통일-->
@@ -125,6 +129,8 @@
             <!-- =============== 하단 ============== -->
     </div> 
     <!-- ↑↑end class wrap -->
+    
+ <%@include file="../footer.jsp" %>
  <script src="/ex/resources/js/food/wodo.js"></script>
  <script src="/ex/resources/js/food/awol.js"></script>
  <script src="/ex/resources/js/food/seo.js"></script>s
