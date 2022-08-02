@@ -29,6 +29,12 @@ public class FoodController {
 	@RequestMapping(value = "/food/Detail4", method = RequestMethod.GET)
 	public void Detail4(Model model) {
 	}	
+	@RequestMapping(value = "/food/Detail5", method = RequestMethod.GET)
+	public void Detail5(Model model) {
+	}	
+	@RequestMapping(value = "/food/Detail6", method = RequestMethod.GET)
+	public void Detail6(Model model) {
+	}	
 	
 
 }
