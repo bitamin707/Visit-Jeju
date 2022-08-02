@@ -42,28 +42,29 @@
     
     <section>
         <div class="img">
-             <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
+            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
             <div class="img-content">
-                <h1>바자속 고등어 쌈밥</h1>
-                <p>#애월</p>
+                <h1>섬소나이</h1>
+                <p>#우도</p>
                 <h3>기본정보</h3>
-                <p>주소:제주특별자치도 제주시 애월읍 일주서로 7089</p>
+                <p>주소:제주특별자치도 제주시 우도면 우도해안길 814</p>
             </div>
         </div>
         <br>
         <div class="main-content">
             <div class="introduce"> 
-                <img src="/ex/resources/img/food/3_4.jpg" alt="봄날" height="400px" width="100%"><br>
-                <p>공항에서 애월 해안도로로 15분쯤 달리다 보면 도로변에 위치한 바다속고등어쌈밥을 발견할 수 있다.
-					이곳은 고등어 요리 전문점이지만 갈치조림이나 옥돔구이, 해물뚝배기, 한치물회 등 여러 해산물 요리를 같이 판매하고 있다.
+                <img src="/ex/resources/img/food/4_1.jpg" alt="섬소나이" height="400px" width="100%"><br>
+                <p>우도에 위치한 섬소나이는 짬뽕과 피자를 즐길 수 있는 작고 예쁜 식당이다.짬뽕 세 종류와 피자 두 종류 총 다섯가지다.
+                                           이 집 짬뽕 맛의 비결은 한약재 등 10가지 이상의 재료를 사용하여 12시간 동안 푹 끓여낸 육수에서 나온다. 
+                                           톳을 사용해 면을 만들고 모자반(몸)을 넣어 우도의 맛을 살렸다. 
 				</p>
-                <img src="/ex/resources/img/food/3_2.jpg" alt="봄날" height="300px" width="49%" >
-                <img src="/ex/resources/img/food/3_3.jpg" alt="봄날" height="300px" width="50%">
-                <p>대표 메뉴 쌈밥은 묵은지를 넣은 고등어조림으로, 고등어와 묵은지를 채소에 싸먹는 요리이다.
-					고등어 쌈밥과 함께 흑돼지를 넣은 두루치기 쌈밥도 인기있는 메뉴이다.</p>
-                <img src="/ex/resources/img/food/3_1.jpg" alt="봄날" height="400px" width="100%">
+                <img src="/ex/resources/img/food/4_2.jpg" alt="섬소나이" height="300px" width="49%" >
+                <img src="/ex/resources/img/food/4_3.jpg" alt="섬소나이" height="300px" width="50%">
+                <p>면은 매일 직접 뽑아내고 당일생산 당일소모를 원칙으로 삼는다. 신선하게 내기 위해 주문을 받은 후 한 그릇씩 조리하니 정성이 이만저만이 아니다.
+                                            주문 즉시 한 그릇씩 조리를 하기 때문에 대기시간이 좀 있을 수도 있다.</p>
+                <img src="/ex/resources/img/food/4_0.jpg" alt="섬소나이" height="400px" width="100%">
                <p>
-           		 밑반찬으로 나오는 간장게장은 별도로 판매를 하고 있고 전국에 택배 가능하다.
+           		파이프를 활용한 모던하면서 인더스트리얼한 인테리어가 독특한 감성을 자아낸다. 도의 낭만을 느낄 수 있는 감성 맛집이다.
                </p>
             </div>
             <div class="right-content">
@@ -71,15 +72,15 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="" >
+                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
                                 <h3><a href="/ex/food/Detail"  id="red">하하호호</a> </h3>
                                 <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>  
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/4_1.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail4"  id="red">섬소나이</a> </h3>
-                                <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 814</p>   
+                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
+                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a> </h3>
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
                             </li>      
                     </ul>
                 </div>
