@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
-
-<%@include file="../header.jsp" %>
->>>>>>> branch 'master' of https://github.com/bitamin707/Visit-Jeju.git
+<!-- ============== 헤더 =============== -->
+	<%@include file="../header.jsp" %>
+    <!-- ============== 헤더 =============== -->
     
     <section>
         <div class="img">
@@ -97,6 +97,7 @@
         </div>
     </footer>
 	<!-- =============== 하단 ============== -->
+
     <script src="/ex/resources/js/food/review.js"></script>
 
 </body>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
-	<!-- ============== 헤더 =============== -->
+<!-- ============== 헤더 =============== -->
 	<%@include file="../header.jsp" %>
     <!-- ============== 헤더 =============== -->
     
@@ -75,7 +75,9 @@
             </div>
         </div>
     </section>
-    <script src="/ex/resources/js/food/review.js"></script>
+
+
+
     
 	<!-- =============== 하단 ============== -->
 	<footer id="footer" style=" margin-top: 1300px">
@@ -100,6 +102,7 @@
     </footer>
 	<!-- =============== 하단 ============== -->
 	
-    
+  <script src="/ex/resources/js/food/review.js"></script>
+
 </body>
 </html>

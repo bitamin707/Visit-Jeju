@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/6_0.jpg" alt="하하호호"  width="2500px" height="600px">
+            <img src="/ex/resources/img/food/6_3.jpeg" alt="하하호호" width="2500px" height="600px">
             <div class="img-content">
                 <h1>리치망고</h1>
                 <p>#애월</p>
@@ -28,13 +28,13 @@
         <br>
         <div class="main-content">
             <div class="introduce"> 
-                <img src="/ex/resources/img/food/6_3.jpeg" alt="섬소나이" height="400px" width="100%"><br>
+                <img src="/ex/resources/img/food/6_0.jpg" alt="섬소나이" height="400px" width="100%"><br>
                 <p>제주에서 런칭한 리치망고는 프렌차이즈로 현재 우도, 모슬포 성산 등 제주전역으로 확장하였다.
 				</p>
                 <img src="/ex/resources/img/food/6_1.jpg" alt="섬소나이" height="300px" width="49%" >
                 <img src="/ex/resources/img/food/6_2.jpg" alt="섬소나이" height="300px" width="50%">
                 <p>100% 리얼 망고가 들어간 스페셜망고쉐이크는 물론 망고라떼, 수제 망고 코코넛 잼, 망고 코코넛 쿠키 등 망고로 만든 다양한 제품을 만날 수 있다.</p>
-                <img src="/ex/resources/img/food/6_0.jpg" alt="섬소나이" height="400px" width="100%">
+                <img src="/ex/resources/img/food/6_3.jpeg" alt="섬소나이" height="400px" width="100%">
                <p>
            		대기자에게 번호표 대신 연예인 이름이 적힌 대기표를 주는 것이 특징이다.
                </p>

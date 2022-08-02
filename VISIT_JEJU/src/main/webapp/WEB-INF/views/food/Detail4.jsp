@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
-	<!-- ============== 헤더 =============== -->
+<!-- ============== 헤더 =============== -->
 	<%@include file="../header.jsp" %>
     <!-- ============== 헤더 =============== -->
-    
     <section>
         <div class="img">
             <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2500px" height="600px">
@@ -76,8 +75,7 @@
             </div>
         </div>
     </section>
-    <script src="/ex/resources/js/food/review.js"></script>
-    
+
 	<!-- =============== 하단 ============== -->
 	<footer id="footer" style=" margin-top: 1300px">
         <div class="footer_wrap">
@@ -101,6 +99,6 @@
     </footer>
 	<!-- =============== 하단 ============== -->
 	
-    
+   
 </body>
 </html>
