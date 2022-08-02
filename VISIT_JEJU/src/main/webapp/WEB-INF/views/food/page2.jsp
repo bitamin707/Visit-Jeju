@@ -11,10 +11,10 @@
    
 </head>
 <body>
-<%@include file="../header.jsp" %>
-    <!-- ============== 이미지 =============== -->
-    <!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
-        width:1280px;    margin: 0 auto; 스타일 통일-->
+
+	<!-- ============== 헤더 =============== -->
+	<%@include file="../header.jsp" %>
+    <!-- ============== 헤더 =============== -->
         
     <!-- ↓↓start class wrap -->
     <div class="wrap"> 
@@ -90,23 +90,20 @@
                     </ul>
                 </div>
                <div class="url">
-                <a href="page1.jsp" >1</a>
-                <a href="page2.jsp" >2</a>
-                <a href="page3.jsp" >3</a>
+                <a href="page1" >1</a>
+                <a href="page2" >2</a>
+                <a href="page3" >3</a>
                </div>
             </section>
             <!-- ↑↑end class event -->
+            
             <!-- =============== 하단 ============== -->
-    </div> 
-    <!-- ↑↑end class wrap -->
-    
- <%@include file="../footer.jsp" %>
+            <%@include file="../footer.jsp" %>
+            <!-- =============== 하단 ============== -->
+
  <script src="/ex/resources/js/food/wodo.js"></script>
  <script src="/ex/resources/js/food/awol.js"></script>
- <script src="/ex/resources/js/food/seo.js"></script>s
+ <script src="/ex/resources/js/food/seo.js"></script>
  <script src="/ex/resources/js/food/jmoon.js"></script>
  <script src="/ex/resources/js/food/jejuc.js"></script>
  <script src="/ex/resources/js/food/search.js"></script>
-
-</body>
-</html>
