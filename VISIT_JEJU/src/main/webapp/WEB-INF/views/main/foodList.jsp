@@ -11,7 +11,7 @@
 window.onload=function(){
 	document.getElementsByClassName("btn")[0]
 	.addEventListener("click",function(){
-		location.href="/ex/main/main";
+		location.href='/ex/main/main?id=admin&pw=1234';
 	});
 }
 </script>
