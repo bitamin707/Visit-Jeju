@@ -11,40 +11,10 @@
    
 </head>
 <body>
-<<<<<<< HEAD
-    <!-- ============== 헤더 =============== -->
-    <div id="header">
-        <div id="container">
-             <h1 class="logo">
-             
-                <img id="img1" src="/ex/resources/img/main/jeju.png" >
-             
-            </h1>
-            <nav class="menu">
-                <ul class="depth">
-                    <li><a class="menu_a">여행지</a></li>
-                    <li><a class="menu_a">추천</a></li>
-                    <li><a class="menu_a">쇼핑</a></li>
-                    <li><a class="menu_a">브랜드</a></li>
-                    <li><a class="menu_a">여행정보</a></li>
-                    <li><a class="menu_a">나의 여행</a></li>
-                </ul>
-            </nav>
-            <div class="language-wrap">
-                <a id="login">로그인</a>
-                <a id="lang">한국어</a>
-                <button type="button" class="btn"></button>
-            </div>
-        </div>
-    </div>
-    <!-- ============== 헤더 =============== -->
 
-=======
-<%@include file="../header.jsp" %>
->>>>>>> branch 'master' of https://github.com/bitamin707/Visit-Jeju.git
-    <!-- ============== 이미지 =============== -->
-    <!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
-        width:1280px;    margin: 0 auto; 스타일 통일-->
+	<!-- ============== 헤더 =============== -->
+	<%@include file="../header.jsp" %>
+    <!-- ============== 헤더 =============== -->
         
     <!-- ↓↓start class wrap -->
     <div class="wrap"> 
@@ -126,17 +96,14 @@
                </div>
             </section>
             <!-- ↑↑end class event -->
+            
             <!-- =============== 하단 ============== -->
-    </div> 
-    <!-- ↑↑end class wrap -->
-    
- <%@include file="../footer.jsp" %>
+            <%@include file="../footer.jsp" %>
+            <!-- =============== 하단 ============== -->
+
  <script src="/ex/resources/js/food/wodo.js"></script>
  <script src="/ex/resources/js/food/awol.js"></script>
- <script src="/ex/resources/js/food/seo.js"></script>s
+ <script src="/ex/resources/js/food/seo.js"></script>
  <script src="/ex/resources/js/food/jmoon.js"></script>
  <script src="/ex/resources/js/food/jejuc.js"></script>
  <script src="/ex/resources/js/food/search.js"></script>
-
-</body>
-</html>
