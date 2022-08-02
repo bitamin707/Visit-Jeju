@@ -42,7 +42,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
+            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2500px" height="600px">
             <div class="img-content">
                 <h1>섬소나이</h1>
                 <p>#우도</p>

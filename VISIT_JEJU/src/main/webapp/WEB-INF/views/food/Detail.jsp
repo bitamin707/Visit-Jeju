@@ -42,7 +42,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/하하호호top.jpg" alt="하하호호"  width="2000px" height="600px">
+            <img src="/ex/resources/img/food/하하호호top.jpg" alt="하하호호"  width="2500px" height="600px">
             <div class="img-content">
                 <h1>하하호호</h1>
                 <h2>(HAHAHOHO)</h2>
