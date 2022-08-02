@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-             <img src="/ex/resources/img/food/1봄날.jpg" alt="바다속 고등어 쌈밥"  style="width: 100%; height: 600px; position:relative">
+             <img src="/ex/resources/img/food/3_2.jpg" alt="바다속 고등어 쌈밥"  style="width: 100%; height: 600px; position:relative">
             <div class="img-content">
                 <h1>바자속 고등어 쌈밥</h1>
                 <p>#애월</p>
