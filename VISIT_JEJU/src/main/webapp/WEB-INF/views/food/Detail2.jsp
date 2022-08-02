@@ -11,9 +11,34 @@
     <link rel="stylesheet" href="/ex/resources/css/food/styles.css">
 </head>
 <body>
-	<!-- ============== 헤더 =============== -->
-	<%@include file="../header.jsp" %>
-    <!-- ============== 헤더 =============== -->
+<<<<<<< HEAD
+    <div id="header">
+        <div id="container">
+            <h1 class="logo">
+              
+                <img id="img1" src="/ex/resources/img/main/jeju.png" >
+             
+            </h1>
+            <nav class="menu">
+                <ul class="depth">
+                    <li><a class="menu_a">여행지</a></li>
+                    <li><a class="menu_a">추천</a></li>
+                    <li><a class="menu_a">쇼핑</a></li>
+                    <li><a class="menu_a">브랜드</a></li>
+                    <li><a class="menu_a">여행정보</a></li>
+                    <li><a class="menu_a">나의 여행</a></li>
+                </ul>
+            </nav>
+            <div class="language-wrap">
+                <a id="login">로그인</a>
+                <a id="lang">한국어</a>
+                <button type="button" class="btn"></button>
+            </div>
+        </div>
+    </div>
+=======
+   <%@include file="../header.jsp" %>
+>>>>>>> branch 'master' of https://github.com/bitamin707/Visit-Jeju.git
     
     <section>
         <div class="img">
@@ -75,12 +100,7 @@
             </div>
         </div>
     </section>
+<%@include file="../footer.jsp" %>
     <script src="/ex/resources/js/food/review.js"></script>
-    
-	<!-- =============== 하단 ============== -->
-	<%@include file="../footer.jsp"%>
-	<!-- =============== 하단 ============== -->
-	
-    
 </body>
 </html>
