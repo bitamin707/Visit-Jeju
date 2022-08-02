@@ -11,7 +11,7 @@
 window.onload=function(){
 
 	document.getElementById('main').addEventListener("click",function(){
-		location.href="/ex/main/main";
+		location.href='/ex/main/main?id=admin&pw=1234';
 	})
 	
 	document.getElementById('modify').addEventListener("click",function(){
