@@ -40,7 +40,7 @@ public class MainController {
 	private IBoardServiceMerch serviceMerch;
 	
 	
-	/*로그인*/
+	/*濡쒓렇�씤*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
 	public void loginGet() throws Exception {
 		
@@ -48,10 +48,11 @@ public class MainController {
 		
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.POST)
 	public String loginPost(Model model) throws Exception {
+		
 		return "redirect:/main/main";
 	}
 		
-	/*메인*/
+	/*硫붿씤*/
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {
@@ -70,7 +71,7 @@ public class MainController {
 	}
 	
 	/*
-	 * Best 테이블 기능
+	 * Best �뀒�씠釉� 湲곕뒫
 	 */
 	
 	@RequestMapping(value = "/main/bestModify", method = RequestMethod.POST)
@@ -93,7 +94,7 @@ public class MainController {
 	
 	
 	/*
-	 * FoodBest 테이블 기능
+	 * FoodBest �뀒�씠釉� 湲곕뒫
 	 */
 	@RequestMapping(value = "/main/foodBestModify", method = RequestMethod.POST)
 	public String foodBestModify(BoardDtoFoodBest boardDtoFoodBest,Model model
@@ -114,7 +115,7 @@ public class MainController {
 	
 	
 	/*
-	 * Food 테이블 기능
+	 * Food �뀒�씠釉� 湲곕뒫
 	 */
 	@RequestMapping(value = "/main/foodModify", method = RequestMethod.POST)
 	public String modifyFood(BoardDtoFood boardDtoFood,Model model
@@ -139,7 +140,7 @@ public class MainController {
 	
 	
 	/*
-	 * Merch 테이블 기능
+	 * Merch �뀒�씠釉� 湲곕뒫
 	 */
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.POST)
 	public String modifyMerch(BoardDtoMerch boardDtoMerch,Model model

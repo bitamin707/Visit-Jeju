@@ -27,10 +27,29 @@ public class ShoppingController {
 	public void Test(Model model) {
 	}	
 	
+	@RequestMapping(value = "/main/MainNormal", method = RequestMethod.GET)
+	public void MainNormal(Model model, BoardDtoShop1 dto) throws Exception {
+		model.addAttribute("list",service.listAll());
+	}
+	
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
 		model.addAttribute("list",service.listAll());
 	}
+	
+	@RequestMapping(value = "/main/Remocon_bag", method = RequestMethod.GET)
+	public void remocon_bag(Model model) throws Exception {
+		model.addAttribute("list",service.listAll());
+	}
+	
+	
+	@RequestMapping(value = "/product/Create", method = RequestMethod.GET)
+	public void Create_get(Model model) throws Exception {
+	}
+	@RequestMapping(value = "/product/Create", method = RequestMethod.POST)
+	public void Create_push(Model model) throws Exception {
+	}
+	
 
 
 }

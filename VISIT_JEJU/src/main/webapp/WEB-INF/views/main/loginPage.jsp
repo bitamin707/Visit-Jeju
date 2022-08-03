@@ -52,9 +52,7 @@
             <div class="interface">
                 <form method="GET" action="main" name="infor">
                 <input class="input1" type="text" placeholder="Username" name="id"><br><br>
-                <input class="input1" type="text" placeholder="Password" name="pw"><br><br>
-                
-                
+                <input class="input1" type="text" placeholder="Password" name="pw"><br><br>         
                 <input id="loginbt1" type="submit" value="Login">
                 </form>
             </div>

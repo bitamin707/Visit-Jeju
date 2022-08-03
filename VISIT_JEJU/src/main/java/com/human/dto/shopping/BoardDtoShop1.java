@@ -8,6 +8,7 @@ public class BoardDtoShop1 {
 	private String product_name;
 	private String product_price;
 	private String product_won;
+	private String category;
 	public String getPno() {
 		return pno;
 	}
@@ -32,11 +33,18 @@ public class BoardDtoShop1 {
 	public void setProduct_won(String product_won) {
 		this.product_won = product_won;
 	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	@Override
 	public String toString() {
-		return "BoardDto [pno=" + pno + ", product_name=" + product_name + ", product_price=" + product_price
-				+ ", product_won=" + product_won + "]";
+		return "BoardDtoShop1 [pno=" + pno + ", product_name=" + product_name + ", product_price=" + product_price
+				+ ", product_won=" + product_won + ", category=" + category + "]";
 	}
 	
-	
+
 }
+
