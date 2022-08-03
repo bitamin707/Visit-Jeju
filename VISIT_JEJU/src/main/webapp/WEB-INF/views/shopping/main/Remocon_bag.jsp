@@ -55,7 +55,7 @@ window.onload = function(){
 </table>
 
 <div id="btn_box"> 
-<button id="main"> 메인으로</button>
+<button id="main"> 메인으로 </button>
 <button id="create"> 제품 추가</button>
 <button id="modity"> 수정</button>
 </div>
