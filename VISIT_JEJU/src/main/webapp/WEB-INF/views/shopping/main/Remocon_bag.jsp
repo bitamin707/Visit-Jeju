@@ -37,7 +37,7 @@ window.onload = function(){
 <body>
 <table border="1" width="90%" id="customers">
 	<tr>
-	<th>제품번호</th>
+	<th>제품 번호</th>
 	<th>제품 이름</th>
 	<th>제품 가격</th>
 	<th>제품 원가</th>
