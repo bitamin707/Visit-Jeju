@@ -83,7 +83,7 @@
 					</a></li>
 				</ul>
 
-				<img id="img1" src="/ex/resources/img/shopping/면세점_메인1.JPG">
+				<img id="img_detail" src="/ex/resources/img/shopping/면세점_메인1.JPG">
 				<div id="img_box">
 					<img id="img2" src="/ex/resources/img/shopping/면세점_메인2.JPG">
 					<img class="img3" src="/ex/resources/img/shopping/면세점_메인3.png">
@@ -98,7 +98,7 @@
 
 						<span class="tag_vintage">
 							<div class="product">
-								<a href="Test"> <img src="/ex/resources/img/shopping/술1.jpg"
+								<a href="../product/product1"> <img src="/ex/resources/img/shopping/술1.jpg"
 									class="product_img">
 									<div class="product_name">Champagne Dom Perignon, Vintage
 										2010</div>
@@ -276,17 +276,19 @@
 						<!-- 고야드 플뤼메 크로스백 1,381,300 https://www.trenbe.com/catalogs/91422 -->
 					</div>
 
-					<div class="product">
-						<a href=""> <img src="/ex/resources/img/shopping/가방6.jpg"
-							class="product_img">
-							<div class="product_name">Hermes canvas and leather
-								shoulder bag</div>
-						</a>
-						<div class="product_price">
-							3,800,000원 <span class="won">(28,44EUR)</span>
+					<c:forEach items="${list }" var="boardDto">
+						<div class="product">
+							<a href='/ex/content?pno=${boardDto.pno }'> <img
+								src="/ex/resources/img/shopping/가방6.jpg" class="product_img">
+								<div class="product_name">${boardDto.product_name }</div>
+							</a>
+							<div class="product_price">
+								${boardDto.product_price }원 <span class="won">(${boardDto.product_won }EUR)</span>
+							</div>
+							<!-- 버버리 토트백 1,634,040 https://www.trenbe.com/product/Medium+Soft+Canvas+Belt+Tote+Bag+Blue+80302891+25488552-->
 						</div>
-						<!-- 에르메스 캔버스 레더 숄더백 3,800,000 https://www.trenbe.com/catalogs/229218 -->
-					</div>
+					</c:forEach>
+
 				</div>
 				<!-- ↑↑end class Luxury box -->
 				<!-- ============== 명품 제품 =============== -->

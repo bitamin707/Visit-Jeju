@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/page1_style1.css">
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/page1_style2.css">
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/style_footer.css">
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/style_footer.css">
     
     <script type="text/javascript" src="/ex/resources/js/shopping/SlideShow.js"/></script>
     <title>쇼핑몰</title>
