@@ -23,22 +23,22 @@ window.onload=function(){
 <form id="sighup" method="post" action="/ex/main/sighup">
 <table border="1" width="90%" id="customers">
 	<tr>
-		<td>아이디</td><td><input type="text" name="id" style="width:90%"></td>
+		<td width=10%>아이디</td><td><input type="text" name="accountID" style="width:90%"></td>
 	</tr>
 	<tr>
-		<td>비밀번호</td><td><input type="text" name="pw" style="width:90%"></td>
+		<td width=10%>비밀번호</td><td><input type="text" name="accountpw" style="width:90%"></td>
 	</tr>
 	<tr>
-		<td>생일</td><td><input type="text" name="birth" style="width:90%"></td>
+		<td width=10%>생일</td><td><input type="text" name="birth" style="width:90%"></td>
 	</tr>
 	<tr>
-		<td>휴대폰 번호</td><td><input type="text" name="phoneNum" style="width:90%"></td>
+		<td width=10%>휴대폰 번호</td><td><input type="text" name="phoneNum" style="width:90%"></td>
 	</tr>
 	<tr>
-		<td>성별</td><td><input type="text" name="sex" style="width:90%"></td>
+		<td width=10%>성별</td><td><input type="text" name="sex" style="width:90%"></td>
 	</tr>
 	<tr>
-		<td>이메일</td><td><input type="text" name="email" style="width:90%"></td>
+		<td width=10%>이메일</td><td><input type="text" name="email" style="width:90%"></td>
 	</tr>	
 </table>
 </form>
