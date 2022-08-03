@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+    var result='${msg}';
+    if(result=='success'){
+    	alert('처리가 완료되었습니다.');
+    }
     window.onload=function(){
     	document.getElementById('btn').addEventListener("click",function(){
     		location.href="/ex/main/sighup";
@@ -67,7 +71,7 @@
             <div class="interface">
                 <form method="GET" action="main" name="infor">
                 <input class="input1" type="text" placeholder="Username" name="id"><br><br>
-                <input class="input1" type="text" placeholder="Password" name="pw"><br><br>
+                <input type="password" class="input1" type="text" placeholder="Password" name="pw"><br><br>
                 <input id="loginbt1" type="submit" value="Login">
                 <button id="btn" type="button">Sigh up</button>
                 </form>
