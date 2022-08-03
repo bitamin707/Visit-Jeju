@@ -158,4 +158,15 @@ public class MainController {
 	public void readMerch(Model model) throws Exception {
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
 	}
+	
+
+	
+	
+	/*
+	 * Merch 테이블 기능
+	 */
+	@RequestMapping(value = "/main/sighup", method = RequestMethod.GET)
+	public void sighup(Model model) throws Exception {
+				
+	}	
 }
