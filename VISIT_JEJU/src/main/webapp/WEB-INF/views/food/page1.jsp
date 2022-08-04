@@ -35,7 +35,7 @@
                 <li>#애월<input type="checkbox" class="awolbtn" value="애월" ></li>
                 <li> #서귀포시<input type="checkbox" class="seobtn" value="서귀포시"  ></li>
                 <li>#중문<input type="checkbox" class="jmoonbtn" value="중문" ></li>
-                <li>#제주시내<input type="checkbox" class="jejucbtn" value="제주시내"></li>
+                <li>#제주<input type="checkbox" class="jejucbtn" value="제주시내"></li>
             </ul>
             
            
