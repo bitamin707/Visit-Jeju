@@ -1,5 +1,5 @@
 package com.human.ex;
-import java.text.DateFormat;
+import java.text.DateFormat; 
 import java.util.Date;
 import java.util.Locale;
 
@@ -44,7 +44,7 @@ public class MainController {
 	private IBoardServiceAccount serviceAccount;
 	
 	
-	/*濡쒓렇�씤*/
+	/*로그인*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
 	public void loginGet() throws Exception {
 		
@@ -56,7 +56,7 @@ public class MainController {
 		return "redirect:/main/main";
 	}
 		
-	/*硫붿씤*/
+	/*메인*/
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {
@@ -77,7 +77,7 @@ public class MainController {
 	}
 	
 	/*
-	 * Best �뀒�씠釉� 湲곕뒫
+	 * Best 테이블기능
 	 */
 	
 	@RequestMapping(value = "/main/bestModify", method = RequestMethod.POST)
@@ -100,7 +100,7 @@ public class MainController {
 	
 	
 	/*
-	 * FoodBest �뀒�씠釉� 湲곕뒫
+	 * FoodBest 테이블기능
 	 */
 	@RequestMapping(value = "/main/foodBestModify", method = RequestMethod.POST)
 	public String foodBestModify(BoardDtoFoodBest boardDtoFoodBest,Model model
@@ -121,7 +121,7 @@ public class MainController {
 	
 	
 	/*
-	 * Food �뀒�씠釉� 湲곕뒫
+	 * Food 테이블기능
 	 */
 	@RequestMapping(value = "/main/foodModify", method = RequestMethod.POST)
 	public String modifyFood(BoardDtoFood boardDtoFood,Model model
@@ -146,7 +146,7 @@ public class MainController {
 	
 	
 	/*
-	 * Merch �뀒�씠釉� 湲곕뒫
+	 * Merch 테이블기능
 	 */
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.POST)
 	public String modifyMerch(BoardDtoMerch boardDtoMerch,Model model
@@ -170,7 +170,7 @@ public class MainController {
 	
 	
 	/*
-	 * signup 테이블 기능
+	 * signup 테이블 기능 
 	 */
 	@RequestMapping(value = "/main/sighup", method = RequestMethod.GET)
 	public void sighup(Model model) throws Exception {
