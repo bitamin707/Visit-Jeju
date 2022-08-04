@@ -1,3 +1,8 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/main/java/com/human/ex/MainController.java=UTF-8
+encoding//src/main/java/com/human/ex/ShoppingController.java=UTF-8
+=======
+>>>>>>> branch 'develop' of https://github.com/bitamin707/Visit-Jeju.git
 encoding//src/main/webapp/WEB-INF/views/festival/festival.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/main/loginPage.jsp=UTF-8

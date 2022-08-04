@@ -23,7 +23,7 @@ update product set product_name=#{product_name },product_price=#{product_price }
 </update>
 
 <select id="listAll" resultType="com.human.dto.shopping.BoardDtoShop1">
-select * from product
+select * from product where category='bag'
 
 </select>
 
