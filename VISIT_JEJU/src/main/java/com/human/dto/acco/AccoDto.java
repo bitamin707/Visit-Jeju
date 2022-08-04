@@ -1,24 +1,82 @@
 package com.human.dto.acco;
 
 public class AccoDto {
-	private int ano ;
-	private String content;
-	public int getAno() {
-		return ano;
+	private int acco_id;
+	private String acco_name;
+	private String acco_address1;
+	private String acco_address2;
+	private String acco_tag1;
+	private String acco_tag2;
+	private String acco_tag3;
+	private String acco_tag4;
+	private int acco_like;
+	private int acco_number;
+	public int getAcco_id() {
+		return acco_id;
 	}
-	public void setAno(int ano) {
-		this.ano = ano;
+	public void setAcco_id(int acco_id) {
+		this.acco_id = acco_id;
 	}
-	public String getContent() {
-		return content;
+	public String getAcco_name() {
+		return acco_name;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setAcco_name(String acco_name) {
+		this.acco_name = acco_name;
+	}
+	public String getAcco_address1() {
+		return acco_address1;
+	}
+	public void setAcco_address1(String acco_address1) {
+		this.acco_address1 = acco_address1;
+	}
+	public String getAcco_address2() {
+		return acco_address2;
+	}
+	public void setAcco_address2(String acco_address2) {
+		this.acco_address2 = acco_address2;
+	}
+	public String getAcco_tag1() {
+		return acco_tag1;
+	}
+	public void setAcco_tag1(String acco_tag1) {
+		this.acco_tag1 = acco_tag1;
+	}
+	public String getAcco_tag2() {
+		return acco_tag2;
+	}
+	public void setAcco_tag2(String acco_tag2) {
+		this.acco_tag2 = acco_tag2;
+	}
+	public String getAcco_tag3() {
+		return acco_tag3;
+	}
+	public void setAcco_tag3(String acco_tag3) {
+		this.acco_tag3 = acco_tag3;
+	}
+	public String getAcco_tag4() {
+		return acco_tag4;
+	}
+	public void setAcco_tag4(String acco_tag4) {
+		this.acco_tag4 = acco_tag4;
+	}
+	public int getAcco_like() {
+		return acco_like;
+	}
+	public void setAcco_like(int acco_like) {
+		this.acco_like = acco_like;
+	}
+	public int getAcco_number() {
+		return acco_number;
+	}
+	public void setAcco_number(int acco_number) {
+		this.acco_number = acco_number;
 	}
 	@Override
 	public String toString() {
-		return "AccoReviewDto [ano=" + ano + ", content=" + content + "]";
+		return "AccoDto [acco_id=" + acco_id + ", acco_name=" + acco_name + ", acco_address1=" + acco_address1
+				+ ", acco_address2=" + acco_address2 + ", acco_tag1=" + acco_tag1 + ", acco_tag2=" + acco_tag2
+				+ ", acco_tag3=" + acco_tag3 + ", acco_tag4=" + acco_tag4 + ", acco_like=" + acco_like
+				+ ", acco_number=" + acco_number + "]";
 	}
-	
 	
 }
