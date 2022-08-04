@@ -21,7 +21,7 @@ window.onload=function(){
 </script>
 </head>
 <body>
-<form id="modifyForm" method="post" action="/ex/main/bestModify">
+<form id="modifyForm" method="post" action="/ex/main/accountModify">
 	아이디 : <input type="text" name=accountID style="width:100%" value='${boardDtoAccount.accountID }' readonly="readonly"> <br>
 	패스워드 : <input type="text" name=accountpw style="width:100%" value='${boardDtoAccount.accountpw }' ><br>
 	생일 : <input type="text" name=birth style="width:100%" value='${boardDtoAccount.birth }'><br>
