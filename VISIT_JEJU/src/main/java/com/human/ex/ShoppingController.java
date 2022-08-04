@@ -36,15 +36,13 @@ public class ShoppingController {
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
 		model.addAttribute("list",service.listAll());
-		System.out.println(dto);
-		
+
 	}
 	
 	@RequestMapping(value = "/main/Remocon_bag", method = RequestMethod.GET)
 	public void remocon_bag(Model model) throws Exception {
 		model.addAttribute("list",service.listAll());
 	}
-	
 	
 	@RequestMapping(value = "/product/Create1", method = RequestMethod.GET)
 	public void Create1_get(Model model) throws Exception {
@@ -57,15 +55,14 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value = "/product/Create2", method = RequestMethod.GET)
-	public void Create2_get(@RequestParam("ID") int id, Model model) throws Exception {
-
+	public void Create2_get(@RequestParam(required=false) int pno) throws Exception {
+		System.out.println(pno);
 	}
 	@RequestMapping(value = "/product/Create2", method = RequestMethod.POST)
-	public void Create2_post(Model model) throws Exception {
+	public String Create2_post(BoardDtoShop1 boardDto,Model model, RedirectAttributes rttr) throws Exception {
+		service.create(boardDto);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/shopping/main/Main";
 	}
-	
-	
-	
-
 
 }

@@ -23,6 +23,11 @@ margin-left:5%;
 
 <script>
 
+	var result='${msg}';
+	if(result=='success'){
+		alert('처리가 완료되었습니다. 제품을 선택하여 세부사항도 추가해 주세요.');
+	}
+
 	window.onload = function() {
 		document.getElementById("main").onclick = function() {
 			location.href = "/ex/shopping/main/Main";
@@ -31,8 +36,8 @@ margin-left:5%;
 		document.getElementById("create").onclick = function() {
 			location.href = "/ex/shopping/product/Create1";
 		}
-
 	}
+	
 </script>
 
 </head>
