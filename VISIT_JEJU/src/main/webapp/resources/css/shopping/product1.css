@@ -148,7 +148,6 @@
 .wrap {
     position:relative;
     width:1280px;
-    height: 5000px;
     margin: 0 auto;
 }
 
@@ -313,7 +312,7 @@
 #product_info2 > p {
     word-wrap: break-word;
     color: rgb(72, 63, 54);
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.6;
     font-weight: bold;
     font-style: normal;
