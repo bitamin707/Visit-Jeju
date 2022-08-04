@@ -1,5 +1,5 @@
 package com.human.ex;
-import java.text.DateFormat;
+import java.text.DateFormat; 
 import java.util.Date;
 import java.util.Locale;
 
@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.human.dto.main.BoardDtoAccount;
 import com.human.dto.main.BoardDtoBest;
 import com.human.dto.main.BoardDtoFood;
 import com.human.dto.main.BoardDtoFoodBest;
 import com.human.dto.main.BoardDtoMerch;
+import com.human.service.main.IBoardServiceAccount;
 import com.human.service.main.IBoardServiceBest;
 import com.human.service.main.IBoardServiceFood;
 import com.human.service.main.IBoardServiceFoodBest;
@@ -38,6 +40,8 @@ public class MainController {
 	private IBoardServiceFood serviceFood;
 	@Inject
 	private IBoardServiceMerch serviceMerch;
+	@Inject
+	private IBoardServiceAccount serviceAccount;
 	
 	
 	/*로그인*/
@@ -48,6 +52,7 @@ public class MainController {
 		
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.POST)
 	public String loginPost(Model model) throws Exception {
+		
 		return "redirect:/main/main";
 	}
 		
@@ -59,6 +64,7 @@ public class MainController {
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 		model.addAttribute("listFood",serviceFood.listAllFood());
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
+		model.addAttribute("listAccount",serviceAccount.listAllAccount());
 	}
 	
 	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.GET)
@@ -67,10 +73,11 @@ public class MainController {
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 		model.addAttribute("listFood",serviceFood.listAllFood());
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
+		model.addAttribute("listAccount",serviceAccount.listAllAccount());
 	}
 	
 	/*
-	 * Best 테이블 기능
+	 * Best 테이블기능
 	 */
 	
 	@RequestMapping(value = "/main/bestModify", method = RequestMethod.POST)
@@ -93,7 +100,7 @@ public class MainController {
 	
 	
 	/*
-	 * FoodBest 테이블 기능
+	 * FoodBest 테이블기능
 	 */
 	@RequestMapping(value = "/main/foodBestModify", method = RequestMethod.POST)
 	public String foodBestModify(BoardDtoFoodBest boardDtoFoodBest,Model model
@@ -114,7 +121,7 @@ public class MainController {
 	
 	
 	/*
-	 * Food 테이블 기능
+	 * Food 테이블기능
 	 */
 	@RequestMapping(value = "/main/foodModify", method = RequestMethod.POST)
 	public String modifyFood(BoardDtoFood boardDtoFood,Model model
@@ -139,7 +146,7 @@ public class MainController {
 	
 	
 	/*
-	 * Merch 테이블 기능
+	 * Merch 테이블기능
 	 */
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.POST)
 	public String modifyMerch(BoardDtoMerch boardDtoMerch,Model model
@@ -157,5 +164,38 @@ public class MainController {
 	@RequestMapping(value = "/main/merchList", method = RequestMethod.GET)
 	public void readMerch(Model model) throws Exception {
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
+	}
+	
+
+	
+	
+	/*
+	 * signup 테이블 기능 
+	 */
+	@RequestMapping(value = "/main/sighup", method = RequestMethod.GET)
+	public void sighup(Model model) throws Exception {
+	}
+	@RequestMapping(value = "/main/sighup", method = RequestMethod.POST)
+	public String sighup(BoardDtoAccount boardDtoAccount,Model model,RedirectAttributes rttr) throws Exception {
+		serviceAccount.createAccount(boardDtoAccount);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/main/loginPage";
+	}
+	@RequestMapping(value = "/main/accountModify", method = RequestMethod.POST)
+	public String modifyAccount(BoardDtoAccount boardDtoAccount,Model model
+			,RedirectAttributes rttr) throws Exception {
+		serviceAccount.updateAccount(boardDtoAccount);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/main/main?id=admin&pw=1234";
+	}
+	@RequestMapping(value = "/main/accountModify", method = RequestMethod.GET)
+	public void modifyAccount(@RequestParam("accountID")String accountID,Model model) throws Exception {
+
+		model.addAttribute(serviceAccount.readAccount(accountID));
+		
+	}	
+	@RequestMapping(value = "/main/accountList", method = RequestMethod.GET)
+	public void accountMerch(Model model) throws Exception {
+		model.addAttribute("listAccount",serviceAccount.listAllAccount());
 	}
 }

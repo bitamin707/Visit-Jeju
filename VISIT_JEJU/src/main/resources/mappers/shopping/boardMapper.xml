@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.shopping.IBoardDaoShop1">
+
+<insert id="create">
+insert into product (pno, product_name, product_price, product_won)
+values (SEQ_PRODUCT.nextval, ,#{product_name },#{product_price },#{product_won })
+</insert>
+
+<select id="read" resultType="BoardDtoShop1">
+select * from product where pno=#{pno}
+</select>
+
+<delete id="delete">
+delete from product where pno=#{pno}
+</delete>
+
+<update id="update">
+update product set product_name=#{product_name },product_price=#{product_price },product_won=#{product_won } 
+</update>
+
+<select id="listAll" resultType="com.human.dto.shopping.BoardDtoShop1">
+select * from product where category='bag'
+
+</select>
+
+
+
+</mapper>

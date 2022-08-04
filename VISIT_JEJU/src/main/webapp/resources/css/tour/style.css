@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =========== 웹페이지 폰트 스타일 미지정============= */
+* {
+  list-style: none;
+  text-decoration: none;
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'NanumSquareRound';
+}
+
+
+
+/* 헤더를 재외한 웹페이지 width:1280px 고정. */
+.wrap {
+  width:1280px;
+  margin: 0 auto;
+}
+
+/* 상단의 이미지 */
+.intro_bg {
+  width: 100%;
+  height: 500px;
+  background-image: url("/ex/resources/img/tour/유채꽃.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 상단 이미지 안의 문자. 필요시 위치 수정. */
+.intro_text {
+  padding-top: 400px;
+  padding-left: 30px;
+}
+
+/* 태그 */
+.month {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+/* 각 태그별 간격 */
+.month > li {
+  margin-left: 20px;
+}
+/* ======================= 상단 ========================= */
+
+
+/* main */
+
+.container {
+  max-width: 1280px;
+  margin: 100px auto 0;
+}
+
+.container.travel {
+  position: relative;
+  margin: 5px;
+  padding: 50px 0;
+}
+
+.container.travel .travel-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
+  padding: 10px;
+  row-gap: 40px;
+}
+
+.container.travel .travel-cards .travel-card {
+  position: relative;
+  max-width: 370px;
+  max-height: 370px;
+  margin: 0 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container.travel .travel-cards .travel-card .travel-img {
+  width: 100%;
+  height: 100%;
+}
+
+.container.travel .travel-cards .travel-card .travel-img img {
+  max-width: none;
+  width:370px;
+  height:370px;
+
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed .travel-info {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  display: none;
+  transition: width 0.8s;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed .travel-info button {
+  width: 140px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  margin-top: 40px;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed .travel-info button a {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed:hover {
+  height: 100%;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed:hover .travel-info {
+  position: relative;
+  margin-top: 30px;
+  display: block;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed p {
+  font-size: 16px;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed p .place {
+  display: inline-block;
+  width: 16px;
+  height: 22px;
+  background-image: url(/ex/resources/img/tour/place-yellow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.container.travel .travel-cards .travel-card .travel-dimmed .travel-info p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+
+
+.paging{
+  text-align: center;
+  margin-top: 80px;
+}
+
+
+/* data */
+.data .inner h1{
+		font-size: 2.75em;
+		font-weight: 700;
+		line-height: 1.3;
+		margin: 0 0 1em 0;
+		letter-spacing: -0.035em;
+    color: #585858;
+    margin-top: 50px;
+	}
+
+.image-main img{
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 60px;
+  width:1280px;
+}
+
+.inner p{
+  font-size: 18px;
+  text-align: left;
+  color: #333;
+  line-height: 32px;
+  margin-bottom: 60px;
+}
+
+#map {
+  float: left;
+  margin-bottom: 15px;
+}
+#map img{
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+
+
+/* button(tag) */
+
+section ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+section ul li{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  background-color: #fde472;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 100ph;
+  margin-left: 10px;
+}
+section ul li:hover{
+  background-color: rgba(245, 232, 118, 0.425);
+}
+
+
+
+/*================== 푸터==================*/
+#footer {
+  width: 100%;
+  min-width: 1280px;
+  height: 200px;
+  bottom: 0px;
+  /*position: absolute;*/
+  background-color: #3c3c3c;
+  text-align: center;
+  
+}
+
+.footer_wrap {
+  width: 1280px;
+  height: 200px;
+  margin: 0 auto;
+}
+.footer_title{
+  width: 610px;
+  height: 200px;
+  float: left;
+  margin-left: 30px;
+}
+.footer_intro{
+  width: 600px;
+  height: 200px;
+  float: right;
+  margin-right: 30px;
+}
+
+.footer_box {
+  height: 150px;
+  margin-top: 25px;
+}
+
+.footer_table {
+  width: 500px;
+  font-size: 17px;
+  margin-left: 30px;
+  margin-top:50px;
+}
+.footer_table th {
+  width: 70px;
+  color: white;
+  text-align: left;
+}
+.footer_table td {
+  color: white;
+  width: 150px;
+  text-align: left;
+}
+
+#v-line {
+  float: left;
+  margin-top: 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  height: 150px;
+}
+/*================== 푸터 끝==================*/

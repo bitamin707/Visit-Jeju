@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,46 +59,14 @@
                 </div>
                 <div class="container">
                     <ul class="list">   
-                        <li>
-                            <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="">
-                            <h3> <a href="/ex/food/Detail">하하호호</a>  </h3>                
-                            <p>제주특별자치도 제주시 우도면 우도해안길 532 </p>
+                    <c:forEach items="${list }" var="foodDto">
+                      	  <li>
+                            <img src="${foodDto.imglink }" alt="">
+                            <h3> <a href="/ex/food/Detail">${foodDto.name }</a>  </h3>                
+                            <p>${foodDto.address } </p>
                            
-                       		 </li>
-                        
-                         <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2">봄날</a></h3>                      
-                                <p>제주특별자치도 제주시 애월읍 애월로1길 25</p>
-                                 
-                        	 </li>
-                            
-                        <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3> <a href="/ex/food/Detail3"> 바다속 고등어쌈밥</a></h3>                          
-                                <p>제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                              </li>  
-                        <li>
-                            <img src="/ex/resources/img/food/우도)섬소나이.jpg" alt="" >
-                             <h3> <a href="/ex/food/Detail4"> 섬소나이</a></h3>                    
-                                <p> 제주특별자치도 제주시 우도면 우도해안길 814 </p> 
-                        	  </li>
-                        	  
-                        <li>
-                            <img src="/ex/resources/img/food/우도)블랑로쉐.jpg" alt="">
-                            <h3>블랑로쉐</h3>
-                        
-                            <p>제주특별자치도 제주시 우도면 우도해안길 783 </p>     
-                        </li>
-                        
-                            <li>
-                                <img src="/ex/resources/img/food/리치망고.jpg" >
-                                <h3>리치망고</h3>                            
-                                <p> 제주특별자치도 제주시 애월읍 애월해안로 272</p>   
-                            </li>
-                           
-                
-                                  
+                       	  </li>    
+                       	  </c:forEach> 
                     </ul>
                 </div>
                <div class="url">
