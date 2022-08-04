@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
+            <img src="/ex/resources/img/food/1봄날.jpg" alt="봄날"  style="width: 100%; height: 600px; position:relative">
             <div class="img-content">
                 <h1>봄날</h1>
                 <p>#애월</p>
@@ -78,9 +78,29 @@
 
     <script src="/ex/resources/js/food/review.js"></script>
     
-    <!-- =============== 하단 ============== -->
-	<%@include file="../footer.jsp"%>
+<!-- =============== 하단 ============== -->
+	<footer id="footer" style=" margin-top: 1300px">
+        <div class="footer_wrap">
+            <div class="footer_title">
+                <div class="footer_box">
+                    <img src="/ex/resources/img/main/jeju.png" style="margin-top: 30px;" >
+                </div>
+            </div>
+            <div id="v-line"></div>
+            <div class="footer_intro">
+                <div class="footer_box">
+                    <table class="footer_table">
+                        <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
+                        <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
+                        <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
+                        <tr><th>일정공유</th><td>누구</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </footer>
 	<!-- =============== 하단 ============== -->
+	
 	
 </body>
 </html>

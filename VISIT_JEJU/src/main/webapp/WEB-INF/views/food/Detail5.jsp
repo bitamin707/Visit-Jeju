@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/5_0.jpg" alt="하하호호"  width="2500px" height="600px">
+            <img src="/ex/resources/img/food/5_0.jpg" alt="블랑로쉐"   style="width: 100%; height: 600px; position:relative">
             <div class="img-content">
                 <h1>블랑로쉐</h1>
                 <p>#우도</p>
@@ -77,9 +77,8 @@
             </div>
         </div>
     </section>
-    <script src="/ex/resources/js/food/review.js"></script>
     
-	<!-- =============== 하단 ============== -->
+    <!-- =============== 하단 ============== -->
 	<footer id="footer" style=" margin-top: 1300px">
         <div class="footer_wrap">
             <div class="footer_title">
@@ -101,6 +100,9 @@
         </div>
     </footer>
 	<!-- =============== 하단 ============== -->
+	
+    <script src="/ex/resources/js/food/review.js"></script>
+    
 	
     
 </body>

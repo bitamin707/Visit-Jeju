@@ -51,6 +51,11 @@ window.onload=function(){
 	.addEventListener("click",function(){
 		location.href="/ex/main/merchList";
 	});
+	
+	document.getElementsByClassName("accountBT")[0]
+	.addEventListener("click",function(){
+		location.href="/ex/main/accountList";
+	});
 }
 
 let slideIndex = 2;
@@ -641,6 +646,8 @@ img {vertical-align: middle;}
 </style>
 </head>
 <body>
+
+
 <%@include file="../header.jsp" %>
     <!-- ============== 헤더 =============== -->
 
@@ -699,7 +706,10 @@ img {vertical-align: middle;}
             <h2>음식</h2>
         </button>
         <br><button class="merchBT">
-            <h2>상품</h2>
+            <h2>관광지</h2>
+        </button>
+        <br><button class="accountBT">
+            <h2>계정관리</h2>
         </button>
     </div>
     <div class="wrap2">
