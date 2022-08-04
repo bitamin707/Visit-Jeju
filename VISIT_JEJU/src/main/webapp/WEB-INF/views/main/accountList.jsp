@@ -19,15 +19,23 @@ window.onload=function(){
 <body>
 <table border="1" width="90%" id="customers">
 	<tr>
-	<th>Number</th>
-	<th>Title</th>
-	<th>ImgLink</th>
+	<th>아이디</th>
+	<th>패스워드</th>
+	<th>생일</th>
+	<th>연락처</th>
+	<th>성별</th>
+	<th>이메일</th>
+	<th>관리자 권한</th>
 	</tr>
-	<c:forEach items="${list }" var="boardDtoBest">
+	<c:forEach items="${listAccount }" var="boardDtoAccount">
 	<tr>
-		<td>${boardDtoBest.bno }</td>
-		<td><a href='/ex/main/bestModify?bno=${boardDtoBest.bno}'>${boardDtoBest.name }</a></td>
-		<td>${boardDtoBest.imgLink }</td>
+		<td><a href='/ex/main/accountModify?accountID=${boardDtoAccount.accountID}'>${boardDtoAccount.accountID }</a></td>
+		<td>${boardDtoAccount.accountpw }</td>
+		<td>${boardDtoAccount.birth }</td>
+		<td>${boardDtoAccount.phoneNum }</td>
+		<td>${boardDtoAccount.sex }</td>
+		<td>${boardDtoAccount.email }</td>
+		<td>${boardDtoAccount.adminCheck }</td>
 	</tr>
 	</c:forEach>
 </table>
