@@ -10,7 +10,8 @@ insert into product (pno, product_name, product_price, product_won, product_cate
 values (SEQ_PRODUCT.nextval, #{product_name }, #{product_price }, #{product_won }, #{product_category }, #{product_tag })
 </insert>
 <insert id="create_add">
-insert into product_add (pno,)
+insert into product_add
+values (#{pno }, #{product_max_qty }, #{product_img }, #{product_icon }, #{product_info })
 </insert>
 
 <select id="read" resultType="BoardDtoShop1">

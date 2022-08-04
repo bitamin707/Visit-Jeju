@@ -58,7 +58,7 @@
                 <div class="product_col" id="product_col">
                     <div id="product_name">
                         <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD, SOLDOUT..)</p>
-                        <input type="text" class="post">
+                        <input type="text" name=product_icon class="post">
                     </div>
 
                     <div id="product_price">
@@ -70,15 +70,17 @@
 
                     <div id="product_info1">
                         <p class="post_text">제품을 소개하는 세부내용. (500글자 미만 작성)</p>
-                        <p><textarea cols="56" rows="4" class="post" style="resize: none"></textarea></p>
+                        <p><textarea cols="56" rows="4" class="post" style="resize: none" name=product_info></textarea></p>
                     </div>
 
                     <div id="product_info2">
                         <p class="post_text">제품의 최대 구매수량 (10개 미만)</p>
-                        <input type="text" class="post"><br><br>
+                        <input type="text" class="post" name=product_max_qty><br><br>
                         <p class="post_text">제품번호 (바꿀 수 없는 고유번호 입니다)</p>
-                        <input type="text" class="post" value="<%=request.getParameter("pno") %>" readyonly=readonly><br><br>
+                        <input type="text" class="post" value="<%=request.getParameter("pno") %>" readyonly=readonly name=pno><br><br>
                         <input type="submit" value=" 세부사항 전송" class="post_text">
+                        
+                        <input type="text" class="post" name=product_img>
                     </div>
 
                     <div id="product_stock">

@@ -60,7 +60,7 @@ public class ShoppingController {
 	}
 	@RequestMapping(value = "/product/Create2", method = RequestMethod.POST)
 	public String Create2_post(BoardDtoShop1 boardDto,Model model, RedirectAttributes rttr) throws Exception {
-		service.create(boardDto);
+		service.create_add(boardDto);
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/shopping/main/Main";
 	}
