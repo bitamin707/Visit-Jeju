@@ -6,17 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.human.dao.main.IBoardDaoAccount">
 <insert id="createAccount">
 insert into account values(#{accountID},#{accountpw},#{birth},#{phoneNum},#{sex},#{email},'0')
-
-</insert>
-<insert id="create">
-insert into tbl_board(bno,title,content,writer)
-values(seq_board.nextval,#{title},#{content},#{writer})
 </insert>
 <select id="readAccount" resultType="BoardDtoAccount">
 select * from account where accountID=#{accountID}
 </select>
 <update id="updateAccount">
-update account set accountID=#{accountID},accountpw=#{accountpw},birth=#{birth},phoneNum=#{phoneNum},sex=#{sex},email=#{email},adminCheck=#{adminCheck}
+update account set accountpw=#{accountpw},birth=#{birth},phoneNum=#{phoneNum},sex=#{sex},email=#{email},adminCheck=#{adminCheck} where accountID=#{accountID} 
 </update>
 <select id="listAllAccount" resultType="com.human.dto.main.BoardDtoAccount">
 select * from account
