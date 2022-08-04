@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.human.dao.IBoardDao">
-<select id="listAll" resultType="com.huamn.dao.BoardDto">
+<mapper namespace="com.human.dao.food.FoodDao">
+<select id="listAll" resultType="com.human.dto.food.FoodDto">
 select * from foodcontent order by bno desc
 </select>
 </mapper>
