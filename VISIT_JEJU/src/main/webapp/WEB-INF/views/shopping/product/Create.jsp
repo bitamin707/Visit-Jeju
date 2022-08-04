@@ -12,15 +12,10 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/product1.css?after"> 
-    <script type="text/javascript" src="/ex/resources/js/shopping/product.js"/></script>
-    
-    <title>쇼핑몰_술</title>
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/product1.css?after">
+<title>Insert title here</title>
 </head>
 <body>
-    <!-- ============== 헤더 =============== -->
-			<%@include file="../../header.jsp"%>
-    <!-- ============== 헤더 =============== -->
         <!-- ↓↓start class wrap -->
         <div class="wrap"> 
             <div id="link_side"></div>
@@ -65,7 +60,7 @@
 
                     <div id="product_price">
                         <span id="price">가격</span>
-                        <span id="share">1234</span>
+                        <span id="share">@</span>
                     </div>
 
                     <br><hr><br>
@@ -96,39 +91,22 @@
                             <input type="text" id="stock" value="1" readonly="readonly">
                         </div>
                         <div class="option_btn_price">
-                            <input type="text" id="stock_price" value="" readonly="readonly">
-                            <span>EUR</span>
+                            <input type="text" id="stock_price" value="186" readonly="readonly">
+                            <span>,00EUR</span>
                         </div>
                     </div>
 
                     <div id="product_buy">
                         <div id="doBuy">품절된 상품입니다.</div>
-                        <div id="doFav">장바구니♡</div>
+                        <div id="doFav">찜하기♡</div>
                     </div>
                 </div>
                 <!-- ======= 오른쪽 공간 ======= -->
     <!-- ============== 제품 상단 =============== -->
             </div>
             <!-- ↑↑end id container -->
-    <!-- ============== 제품 하단 =============== -->
-            <!-- ↓↓start id container_info -->
-            <div id="container_info">
-                <div id="info_header">
-                    <div id="info_box">
-                        <div id="detail"><a href="">상품정보</a></div> / 
-                        <div id="review"><a href="">상품평</a></div>
-                    </div>
-                </div>
-
-                <div id="info_img">
-                    <img src="/ex/resources/img/shopping/제품안내1.png">
-                    <img src="/ex/resources/img/shopping/제품안내2.png">
-                </div>
-            </div>
-            <!-- ↑↑end id container_info -->
-    <!-- ============== 제품 하단 =============== -->
-
-
-	<%@include file="../../footer.jsp"%>
+          <!-- ↓↓end class wrap -->
+          </div>
+          
 </body>
 </html>

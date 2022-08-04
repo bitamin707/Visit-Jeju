@@ -29,6 +29,8 @@ if(id != "admin" || pw != "1234"){
 	location.href="/ex/main/mainNormal";
 }
 
+
+
 window.onload=function(){
 	document.getElementsByClassName("bestBT")[0]
 	.addEventListener("click",function(){

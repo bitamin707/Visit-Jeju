@@ -1,6 +1,5 @@
 @charset "EUC-KR";
 
-
 /* =========== 웹페이지 폰트 스타일 미지정============= */
 * {
     list-style: none;
@@ -154,7 +153,7 @@
 }
 
 #link_side{
-    margin-left: 1280px;
+    margin-left: -102px;
     margin-top: 200px;
     height: 140px;
     width: 100px;
@@ -367,7 +366,7 @@
 
 .option_btn_price {
     border:1px solid black;
-    width:100px;
+    width:200px;
     height:34.34px;
     font-size: 20px;
     font-style: normal;
@@ -378,12 +377,16 @@
     vertical-align:bottom;
 }
 .option_btn_price input {
-    margin-top:5px;
+    text-align: right;
+    margin:5px 5px 0px 0px;
     border-style: none;
+    width:150px;
     font-size: 20px;
-    width:35px;
     font-style: normal;
     display:inline-block;
+}
+.option_btn_price span {
+    font-size: 20px;
 }
 
 #product_buy {
