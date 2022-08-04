@@ -13,7 +13,7 @@ values (acco_counter.nextval, #{acco_name}, #{acco_address1}, #{acco_address2}, 
 </insert>
 
 <select id="read" resultType="AccoDto">
-select * from acco where acco_id=#{Sacco_id}
+select * from acco where acco_id=#{acco_id}
 </select>
 
 <delete id="delete">
