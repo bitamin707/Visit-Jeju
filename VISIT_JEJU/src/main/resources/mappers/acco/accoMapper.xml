@@ -3,27 +3,31 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.human.dao.acco.IAccoReviewDao">
+<mapper namespace="com.human.dao.acco.IAccoDao">
 
 <insert id="insert">
-insert into acco_review (acco_id, acco_name, )
-values (acco_review.nextval,#{content})
+insert into acco (acco_id, acco_name, acco_address1, acco_address2, acco_tag1, acco_tag2, acco_tag3, 
+acco_tag4, acco_like, acco_reviewcounter)
+values (acco_counter.nextval, #{acco_name}, #{acco_address1}, #{acco_address2}, #{acco_tag1}, #{acco_tag2}, #{acco_tag3}, 
+#{acco_tag4}, #{acco_like}, #{acco_reviewcounter})
 </insert>
 
-<select id="read" resultType="AccoReviewDto">
-select * from acco_review where ano=#{ano}
+<select id="read" resultType="AccoDto">
+select * from acco where acco_id=#{Sacco_id}
 </select>
 
 <delete id="delete">
-delete from acco_review where ano=#{ano}
+delete from acco where =#{acco_id}
 </delete>
 
 <update id="update">
-update acco_review set content=#{content} } 
+update acco set acco_name=#{acco_name}, acco_address1=#{acco_address1}, acco_address2=#{acco_address2},
+ acco_tag1=#{acco_tag1}, acco_tag2=#{acco_tag2}, acco_tag3=#{acco_tag3}, 
+acco_tag4=#{acco_tag4}, acco_like=#{acco_like}, acco_reviewcounter=#{acco_reviewcounter}
 </update>
 
-<select id="listAll" resultType="com.human.dto.acco.AccoReviewDto">
-select * from acco_review
+<select id="listAll" resultType="com.human.dto.acco.AccoDto">
+select * from acco
 
 </select>
 

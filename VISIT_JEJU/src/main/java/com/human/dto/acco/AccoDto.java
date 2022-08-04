@@ -10,7 +10,7 @@ public class AccoDto {
 	private String acco_tag3;
 	private String acco_tag4;
 	private int acco_like;
-	private int acco_number;
+	private int acco_reviewcounter;
 	public int getAcco_id() {
 		return acco_id;
 	}
@@ -65,18 +65,19 @@ public class AccoDto {
 	public void setAcco_like(int acco_like) {
 		this.acco_like = acco_like;
 	}
-	public int getAcco_number() {
-		return acco_number;
+	public int getAcco_reviewcounter() {
+		return acco_reviewcounter;
 	}
-	public void setAcco_number(int acco_number) {
-		this.acco_number = acco_number;
+	public void setAcco_reviewcounter(int acco_reviewcounter) {
+		this.acco_reviewcounter = acco_reviewcounter;
 	}
 	@Override
 	public String toString() {
 		return "AccoDto [acco_id=" + acco_id + ", acco_name=" + acco_name + ", acco_address1=" + acco_address1
 				+ ", acco_address2=" + acco_address2 + ", acco_tag1=" + acco_tag1 + ", acco_tag2=" + acco_tag2
 				+ ", acco_tag3=" + acco_tag3 + ", acco_tag4=" + acco_tag4 + ", acco_like=" + acco_like
-				+ ", acco_number=" + acco_number + "]";
+				+ ", acco_reviewcounter=" + acco_reviewcounter + "]";
 	}
+	
 	
 }

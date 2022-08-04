@@ -5,7 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.human.dao.main.IBoardDaoAccount">
 <insert id="createAccount">
-
 insert into account values(#{accountID},#{accountpw},#{birth},#{phoneNum},#{sex},#{email},'0')
 
 </insert>
