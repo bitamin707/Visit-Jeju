@@ -45,8 +45,7 @@
 						<div class="event_area">
 							<a href="detail/${festivalDto.fname }">
 								<div class="event_area_img">
-									<img
-										src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202105/17/5ffe6841-1401-4282-9d40-2cf9d5447f2a.jpg">
+									<img src="${festivalDto.imglink }">
 								</div>
 								<div class="event_area_text">
 									<h2>${festivalDto.fname }</h2>

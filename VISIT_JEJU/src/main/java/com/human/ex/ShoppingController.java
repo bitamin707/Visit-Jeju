@@ -34,7 +34,6 @@ public class ShoppingController {
 	
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
-		System.out.println(dto);
 		model.addAttribute("list",service.listAll());
 		
 	}
