@@ -24,7 +24,7 @@ public class IBoardServiceImplAccount implements IBoardServiceAccount {
 	public BoardDtoAccount readAccount(String accountID) throws Exception {
 		IBoardDaoAccount dao=sqlSession.getMapper(IBoardDaoAccount.class);
 		BoardDtoAccount r=dao.readAccount(accountID);
-		return null;
+		return r;
 	}
 
 	@Override
