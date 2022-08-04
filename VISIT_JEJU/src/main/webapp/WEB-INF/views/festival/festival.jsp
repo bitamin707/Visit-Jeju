@@ -56,6 +56,7 @@
 										${festivalDto.fregion }</p>
 								</div>
 							</a>
+							<button type="button"><a href="modify/festivalModify?fno=${festivalDto.fno }">수정</a></button>
 						</div>
 					</c:forEach>
 				</div>

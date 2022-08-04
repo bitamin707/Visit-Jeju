@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <insert id="create">
 insert into festival
-values (seqnum.nextval, #{fname}, #{fcontent}, #{fstart_date}, #{fend_date}, #{flocation}, #{fregion})
+values (seqnum.nextval, #{fname}, #{fcontent}, #{fstart_date}, #{fend_date}, #{flocation}, #{fregion}, #{imglink})
 </insert>
 
 <select id="read" resultType="festivalDto">
@@ -20,7 +20,7 @@ delete from festival where fno=#{fno}
 
 <update id="update">
 update festival 
-set fname=#{fname}, fcontent=#{fcontent}, fstart_date=#{fstart_date}, fend_date=#{fend_date}, flocation=#{flocation}, fregion=#{fregion} 
+set fname=#{fname}, fcontent=#{fcontent}, fstart_date=#{fstart_date}, fend_date=#{fend_date}, flocation=#{flocation}, fregion=#{fregion}, imglink=#{imglink}  
 where fno=#{fno}
 </update>
 

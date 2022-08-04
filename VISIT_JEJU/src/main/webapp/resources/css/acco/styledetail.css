@@ -156,7 +156,7 @@
     
 }
 
-.intro_text  h3, p, a{
+.intro_text h3, .intro_text p, .intro_text a{
     color: rgb(250, 250, 250);
     
 }

@@ -67,7 +67,8 @@ section {
 }
 
 .event{
-    height: 1000px;
+	overflow: hidden;
+    height: auto;
 }
 
 .event_area {
