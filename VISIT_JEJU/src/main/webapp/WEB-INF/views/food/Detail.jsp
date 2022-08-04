@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img  src="/ex/resources/img/food/하하호호top.jpg" alt="하하호호"  style="width: 100%; height: 600px; position:relative">
+            <img class="tophaha" src="/ex/resources/img/food/하하호호top.jpg" alt="하하호호">
             <div class="img-content">
                 <h1>하하호호</h1>
                 <h2>(HAHAHOHO)</h2>
@@ -33,7 +33,7 @@
                 <img src="/ex/resources/img/food/ha2.jpg" alt="하하호호" height="300px" width="49%" >
                 <img src="/ex/resources/img/food/ha3.jpg" alt="하하호호" height="300px" width="50%">
                 <p>두툼한 흑돼지 패티위에 우도 땅콩이나 마늘칩이 뿌린 수제버거가 대표적인 메뉴로 <br>
-                    성인남자가 배부를 정도인 1.5인분의 양이다.</p> 
+                                   성인남자가 배부를 정도인 1.5인분의 양이다.</p> 
                 <img src="/ex/resources/img/food/ha4.jpg" alt="하하호호" height="400px" width="100%">
                
                
@@ -44,15 +44,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a> </h3>
+                              <a href="/ex/food/Detail2">
+                                <img src="/ex/resources/img/food/애월)봄날.jpg" class="foodimg">
+                                <h3>봄날 </h3>
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
+                              </a>
                             </li>
                 
                              <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
+                               <a href="/ex/food/Detail3">
+                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" class="foodimg" >
+                                <h3>바다속 고등어쌈밥</h3>    
                                 <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
+                                </a> 
                             </li>       
                     </ul>
                 </div>

@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="봄날"  style="width: 100%; height: 600px; position:relative">
+            <img class="tophaha" src="/ex/resources/img/food/1봄날.jpg" alt="봄날">
             <div class="img-content">
                 <h1>봄날</h1>
                 <p>#애월</p>
@@ -28,6 +28,7 @@
         <br>
         <div class="main-content">
             <div class="introduce"> 
+            <br/>
                 <img src="/ex/resources/img/food/4봄날.jpg" alt="봄날" height="400px" width="100%"><br>
                 <p>드라마의 주인공이 일하던 카페라서 유명해졌다.
                     해변을 바라보며 차 한잔의 여유를 즐기기에 좋으며 제주 돌담의 정취를 느낄 수 있다.</p>
@@ -46,15 +47,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail"  id="red">하하호호</a> </h3>
+                              <a href="/ex/food/Detail">
+                                <img src="/ex/resources/img/food/우도)하하호호.jpg" class="foodimg">
+                                <h3>하하호호</h3>
                                 <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>  
+                               </a> 
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
+                               <a href="/ex/food/Detail3">
+                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" class="foodimg">
+                                <h3>바다속 고등어쌈밥 </h3>    
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>  
+                                </a> 
                             </li>        
                     </ul>
                 </div>

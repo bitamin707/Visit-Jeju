@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/food/style.css">
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/food/styles.css">
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/food/style.css">
     <title>food</title>
    
 </head>
@@ -21,7 +21,7 @@
     <!-- ↓↓start class wrap -->
     <div class="wrap"> 
         <div class="intro_bg">
-            <img src="/ex/resources/img/food/bg.png" style="width: 100%; height: 100%; position:relative">
+            <img src="/ex/resources/img/food/bg.png" class="topimg">
             <div class="intro_text">
                 <h1>음식</h1>
                 <h4>맛집 소개</h4>
@@ -49,8 +49,7 @@
             </div>
     <!-- =============== 태그 ============== -->
             
-            <!-- ============== 하단 =============== -->
-            <!-- ↓↓start class event -->
+   
             <section class="sowimage">
                 <div class="show">
                     <ul class="showlist">
@@ -61,10 +60,11 @@
                     <ul class="list">   
                     <c:forEach items="${list }" var="foodDto">
                       	  <li>
-                            <img src="${foodDto.imglink }" alt="">
-                            <h3> <a href="/ex/food/Detail">${foodDto.name }</a>  </h3>                
+                      	   <a href="${foodDto.href} ">
+                            <img  src="${foodDto.imglink }" class="foodimg">
+                            <h3> ${foodDto.name } </h3>                
                             <p>${foodDto.address } </p>
-                           
+                           </a> 
                        	  </li>    
                        	  </c:forEach> 
                     </ul>
