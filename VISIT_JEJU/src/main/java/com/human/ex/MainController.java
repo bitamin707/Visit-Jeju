@@ -1,5 +1,5 @@
 package com.human.ex;
-import java.text.DateFormat;
+import java.text.DateFormat; 
 import java.util.Date;
 import java.util.Locale;
 
@@ -52,6 +52,7 @@ public class MainController {
 		
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.POST)
 	public String loginPost(Model model) throws Exception {
+		
 		return "redirect:/main/main";
 	}
 		
@@ -76,7 +77,7 @@ public class MainController {
 	}
 	
 	/*
-	 * Best 테이블 기능
+	 * Best 테이블기능
 	 */
 	
 	@RequestMapping(value = "/main/bestModify", method = RequestMethod.POST)
@@ -99,7 +100,7 @@ public class MainController {
 	
 	
 	/*
-	 * FoodBest 테이블 기능
+	 * FoodBest 테이블기능
 	 */
 	@RequestMapping(value = "/main/foodBestModify", method = RequestMethod.POST)
 	public String foodBestModify(BoardDtoFoodBest boardDtoFoodBest,Model model
@@ -120,7 +121,7 @@ public class MainController {
 	
 	
 	/*
-	 * Food 테이블 기능
+	 * Food 테이블기능
 	 */
 	@RequestMapping(value = "/main/foodModify", method = RequestMethod.POST)
 	public String modifyFood(BoardDtoFood boardDtoFood,Model model
@@ -145,7 +146,7 @@ public class MainController {
 	
 	
 	/*
-	 * Merch 테이블 기능
+	 * Merch 테이블기능
 	 */
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.POST)
 	public String modifyMerch(BoardDtoMerch boardDtoMerch,Model model
@@ -169,7 +170,7 @@ public class MainController {
 	
 	
 	/*
-	 * signup 테이블 기능
+	 * signup 테이블 기능 
 	 */
 	@RequestMapping(value = "/main/sighup", method = RequestMethod.GET)
 	public void sighup(Model model) throws Exception {
