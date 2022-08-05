@@ -22,7 +22,7 @@ public class AccoServiceImpl implements IAccoService {
 	}
 
 	@Override
-	public AccoDto read(String acco_id) throws Exception {
+	public AccoDto read(int acco_id) throws Exception {
 		// TODO Auto-generated method stub
 		IAccoDao dao=sqlSession.getMapper(IAccoDao.class);
 		
@@ -30,7 +30,7 @@ public class AccoServiceImpl implements IAccoService {
 	}
 
 	@Override
-	public void delete(String acco_id) throws Exception {
+	public void delete(int acco_id) throws Exception {
 		// TODO Auto-generated method stub
 		IAccoDao dao=sqlSession.getMapper(IAccoDao.class);
 		dao.delete(acco_id);
