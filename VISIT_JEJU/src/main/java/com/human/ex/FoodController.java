@@ -1,15 +1,23 @@
 package com.human.ex;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.human.service.food.FoodService;
+
 @Controller
 public class FoodController {
+	@Inject
+	private FoodService service;
 	
 	@RequestMapping(value = "/food/page1", method = RequestMethod.GET)
-	public void Page1(Model model) {
+	public void Page1(Model model) throws Exception{
+		System.out.println(service.listAll());
+		model.addAttribute("list",service.listAll());
 	}	
 	@RequestMapping(value = "/food/page2", method = RequestMethod.GET)
 	public void Page2(Model model) {
