@@ -57,6 +57,11 @@
         document.getElementById('taginput').value
             = value;
         }
+        
+        function back() {
+            location.href = '/ex/shopping/main/Remocon_bag';
+        }
+        
     </script>
 </head>
 
@@ -103,8 +108,8 @@
         </tr>
     </table>
         <div id="btn_box"> 
-        <input type="button" value="돌아가기" id="main">
-        <input type="submit" value="추가하기)">
+		<input type="button" value="돌아가기" id="main" onclick="back()">
+        <input type="submit" value="추가하기">
     	</div>
     </form>
 </div>

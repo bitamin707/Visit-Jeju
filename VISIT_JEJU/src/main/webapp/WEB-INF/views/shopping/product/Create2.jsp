@@ -18,12 +18,9 @@
 </head>
 <body>
     <!-- ============== 헤더 =============== -->
-			<%@include file="../../header.jsp"%>
+			
     <!-- ============== 헤더 =============== -->
         <!-- ↓↓start class wrap -->
-        <c:forEach items="${list }" var="boardDto">
-        	${boardDto.id }
-        </c:forEach>
         <div class="wrap"> 
             <div id="link_side"></div>
             <div class="info_header">
@@ -56,36 +53,34 @@
                 <!-- ======= 왼쪽 공간 ======= -->
 
                 <!-- ======= 오른쪽 공간 ======= -->
+                <!-- ==== form start ===== -->
+                <form action="Create2" method="post">
                 <div class="product_col" id="product_col">
                     <div id="product_name">
-                        Champagne Dom Perigon, Vintage 2010, coffret 75cl
-                        <div class="icons_box">
-                            <span>MD</span>
-                            <span>SOLDOUT</span>
-                        </div>
+                        <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD, SOLDOUT..)</p>
+                        <input type="text" name=product_icon class="post">
                     </div>
 
                     <div id="product_price">
                         <span id="price">가격</span>
-                        <span id="share">186</span>
+                        <span id="share">!@#$%^&*()</span>
                     </div>
 
                     <br><hr><br>
 
                     <div id="product_info1">
-                        <p>저명한 샴페인 하우스인 돔페리뇽의 한정판 제품입니다.
-                        2010년산 빈티지로 돔페리뇽 특유의 감성을 느낄 수 있는 박스에 담긴 제품입니다.
-			                        약간의 토스트향에 플로랄하면서 프루티한 노트로
-			                        프레쉬하면서도 완성된 돔페리뇽만의 감각을 느끼실 수 있습니다.&nbsp;</p>
+                        <p class="post_text">제품을 소개하는 세부내용. (500글자 미만 작성)</p>
+                        <p><textarea cols="56" rows="4" class="post" style="resize: none" name=product_info></textarea></p>
                     </div>
 
                     <div id="product_info2">
-                        <p>원산지 fance</p>
-                        <p>구매혜택 1,86 포인트 접릭예정</p>
-                        <p>배송 방법 택배</p>
-                        <p>배송비 12,50 EUR</p>
-                        <p>최소 구매수량 1</p>
-                        <p>최대 구매수량 3</p>
+                        <p class="post_text">제품의 최대 구매수량 (10개 미만)</p>
+                        <input type="text" class="post" name=product_max_qty><br><br>
+                        <p class="post_text">제품번호 (바꿀 수 없는 고유번호 입니다)</p>
+                        <input type="text" class="post" value="<%=request.getParameter("pno") %>" readyonly=readonly name=pno><br><br>
+                        <input type="submit" value=" 세부사항 전송" class="post_text">
+                        
+                        <input type="text" class="post" name=product_img>
                     </div>
 
                     <div id="product_stock">
@@ -105,6 +100,8 @@
                     <div id="product_buy">
                     </div>
                 </div>
+                </form>
+                <!-- ==== form end ===== -->
                 <!-- ======= 오른쪽 공간 ======= -->
     <!-- ============== 제품 상단 =============== -->
             </div>

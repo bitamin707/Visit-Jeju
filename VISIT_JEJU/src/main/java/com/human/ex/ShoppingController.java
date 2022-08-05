@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.human.dto.BoardDto;
 import com.human.dto.shopping.BoardDtoShop1;
 import com.human.service.shopping.IBoardServiceShop1;
 
@@ -36,7 +35,6 @@ public class ShoppingController {
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
 		model.addAttribute("list",service.listAll());
-		System.out.println(dto);
 		
 	}
 	
@@ -46,25 +44,12 @@ public class ShoppingController {
 	}
 	
 	
-	@RequestMapping(value = "/product/Create1", method = RequestMethod.GET)
-	public void Create1_get(Model model) throws Exception {
+	@RequestMapping(value = "/product/Create", method = RequestMethod.GET)
+	public void Create_get(Model model) throws Exception {
 	}
-	@RequestMapping(value = "/product/Create1", method = RequestMethod.POST)
-	public String Create1_post(BoardDtoShop1 boardDto,Model model, RedirectAttributes rttr) throws Exception {
-		service.create(boardDto);
-		rttr.addFlashAttribute("msg","success");
-		return "redirect:/shopping/main/Remocon_bag";
+	@RequestMapping(value = "/product/Create", method = RequestMethod.POST)
+	public void Create_push(Model model) throws Exception {
 	}
-	
-	@RequestMapping(value = "/product/Create2", method = RequestMethod.GET)
-	public void Create2_get(@RequestParam("ID") int id, Model model) throws Exception {
-
-	}
-	@RequestMapping(value = "/product/Create2", method = RequestMethod.POST)
-	public void Create2_post(Model model) throws Exception {
-	}
-	
-	
 	
 
 
