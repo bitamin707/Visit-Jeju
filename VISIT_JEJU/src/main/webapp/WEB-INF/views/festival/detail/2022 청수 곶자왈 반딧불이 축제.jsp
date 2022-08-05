@@ -24,7 +24,7 @@
             
             <div class="content">
                 <div class="intro_text">
-                    <h1>2022 청수 곶자왈 반딧불이 축제</h1>
+                    <h1>2022 청수 곶자왈 반딧불이 축제 </h1>
                     <h3>기본 정보</h3>
                     <div class="info">
                         <div class="info_sub_tit">

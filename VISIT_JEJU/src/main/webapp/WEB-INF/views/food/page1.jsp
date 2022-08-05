@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/food/style.css">
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/food/styles.css">
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/food/style.css">
     <title>food</title>
    
 </head>
@@ -19,7 +21,7 @@
     <!-- ↓↓start class wrap -->
     <div class="wrap"> 
         <div class="intro_bg">
-            <img src="/ex/resources/img/food/bg.png" style="width: 100%; height: 100%; position:relative">
+            <img src="/ex/resources/img/food/bg.png" class="topimg">
             <div class="intro_text">
                 <h1>음식</h1>
                 <h4>맛집 소개</h4>
@@ -47,8 +49,7 @@
             </div>
     <!-- =============== 태그 ============== -->
             
-            <!-- ============== 하단 =============== -->
-            <!-- ↓↓start class event -->
+   
             <section class="sowimage">
                 <div class="show">
                     <ul class="showlist">
@@ -57,45 +58,15 @@
                 </div>
                 <div class="container">
                     <ul class="list">   
-                        <li>
-                            <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="">
-                            <h3> <a href="/ex/food/Detail">하하호호</a>  </h3>                
-                            <p>제주특별자치도 제주시 우도면 우도해안길 532 </p>
-                           
-                       		 </li>
-                        
-                         <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2">봄날</a></h3>                      
-                                <p>제주특별자치도 제주시 애월읍 애월로1길 25</p>
-                                 
-                        	 </li>
-                            
-                        <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3> <a href="/ex/food/Detail3"> 바다속 고등어쌈밥</a></h3>                          
-                                <p>제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
-                              </li>  
-                        <li>
-                            <img src="/ex/resources/img/food/우도)섬소나이.jpg" alt="" >
-                             <h3> <a href="/ex/food/Detail4"> 섬소나이</a></h3>                    
-                                <p> 제주특별자치도 제주시 우도면 우도해안길 814 </p> 
-                        	  </li>
-                        	  
-                        <li>
-                            <img src="/ex/resources/img/food/우도)블랑로쉐.jpg" alt="">
-                             <h3> <a href="/ex/food/Detail5"> 블랑로쉐</a></h3>              
-                            <p>제주특별자치도 제주시 우도면 우도해안길 783 </p>     
-                        </li>
-                        
-                            <li>
-                                <img src="/ex/resources/img/food/리치망고.jpg" >
-                                 <h3> <a href="/ex/food/Detail6"> 리치망고</a></h3>                          
-                                <p> 제주특별자치도 제주시 애월읍 애월해안로 272</p>   
-                            </li>
-                           
-                
-                                  
+                    <c:forEach items="${list }" var="foodDto">
+                      	  <li>
+                      	   <a href="${foodDto.href} ">
+                            <img  src="${foodDto.imglink }" class="foodimg">
+                            <h3> ${foodDto.name } </h3>                
+                            <p>${foodDto.address } </p>
+                           </a> 
+                       	  </li>    
+                       	  </c:forEach> 
                     </ul>
                 </div>
                <div class="url">

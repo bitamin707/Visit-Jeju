@@ -10,6 +10,7 @@ public class festivalDto {
 	private Date fend_date;
 	private String flocation;
 	private String fregion;
+	private String imglink;
 	
 	public Integer getFno() {
 		return fno;
@@ -53,10 +54,16 @@ public class festivalDto {
 	public void setFregion(String fregion) {
 		this.fregion = fregion;
 	}
-	
+	public String getImglink() {
+		return imglink;
+	}
+	public void setImglink(String imglink) {
+		this.imglink = imglink;
+	}
 	@Override
 	public String toString() {
-		return "festivalDao [fno=" + fno + ", fname=" + fname + ", fcontent=" + fcontent + ", fstart_date="
-				+ fstart_date + ", fend_date=" + fend_date + ", flocation=" + flocation + ", fregion=" + fregion + "]";
+		return "festivalDto [fno=" + fno + ", fname=" + fname + ", fcontent=" + fcontent + ", fstart_date="
+				+ fstart_date + ", fend_date=" + fend_date + ", flocation=" + flocation + ", fregion=" + fregion
+				+ ", imglink=" + imglink + "]";
 	}
 }
