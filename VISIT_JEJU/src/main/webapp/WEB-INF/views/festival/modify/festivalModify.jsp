@@ -82,9 +82,11 @@
 <body>
 	<div class="wrap">
 		<section>
-			<h2>컨텐츠 수정 페이지</h2>
 			<form id="modifyForm" action="festivalModify" method="POST">
 				<table>
+					<tr>
+						<th colspan="2"><h2 style="text-align:center; font-size:30px;">컨텐츠 수정 페이지</h2> </th>
+					</tr>
 					<tr>
 						<th>번호</th>
 						<td><input type="hidden" name="fno" id="fno" value="${festivalDto.fno }">${festivalDto.fno }</td>

@@ -74,9 +74,11 @@
 <body>
 	<div class="wrap">
 		<section>
-			<h2>컨텐츠 추가 페이지</h2>
 			<form id="createForm" action="festivalCreate" method="POST">
 				<table>
+					<tr>
+						<th colspan="2"><h2 style="text-align:center; font-size:30px;">컨텐츠 추가 페이지</h2> </th>
+					</tr>
 					<tr>
 						<th>제목</th>
 						<td><input type="text" name="fname" value="${festivalDto.fname }" required></td>
