@@ -9,7 +9,7 @@
 
 
 <body>
-	<!-- ============== 헤더 =============== -->
+
 	<%@include file="../../header.jsp"%>
 	<!-- ============== 헤더 =============== -->
 
@@ -85,11 +85,12 @@
 				<p>
 					가성비<input type="checkbox" name="tag" value="priceLess">
 				</p>
+								<p>
+					무난해요~<input type="checkbox" name="tag" value="soso">
+				</p>
 			</ul>
 			<hr>
-			<!-- =============== 태그 ============== -->
 
-			<!-- ============== 하단 =============== -->
 			<!-- ↓↓start class container -->
 			<div class="container">
 				<ul class="tab">
@@ -143,7 +144,9 @@
 								</div>
 								<!-- Armand de Brignac CHAMPAGNE BRUT GOLD eur398.57 -->
 								<!-- 초고가 -->
-							</div> <span class="tag_priceNess"> <span class="tag_priceLess">
+							</div> 
+						</span>
+							<span class="tag_priceNess">
 									<div class="product">
 										<a href="product3.html"> <img
 											src="/ex/resources/img/shopping/술3.jpg" class="product_img">
@@ -208,7 +211,7 @@
 										<!-- Champagne GOSSET Brut Grande Reserve eur 52,51 -->
 										<!-- 빈티지 -->
 									</div>
-							</span> <span class="tag_priceLess">
+							</span> <span class="tag_soso">
 									<div class="product">
 										<a href=""> <img src="/ex/resources/img/shopping/술4.jpg"
 											class="product_img">
@@ -219,7 +222,7 @@
 											6,413,320원 <span class="won">(48,00EUR)</span>
 										</div>
 										<!-- Champagne Meot & Chandon Imperial Brut eur 48,00-->
-										<!-- 가성비 -->
+										<!-- 무난해요~ -->
 									</div>
 							</span>
 					</div>
@@ -234,10 +237,12 @@
 
 				<!-- ↓↓start class Luxury box -->
 				<div class="product_box">
+				<div id="wine">
 					<!-- ↓↓start id toggle_box1 -->
 					<div id="toggle_box1">
 					
 					<c:forEach items="${list }" var="boardDto">
+					<span class="${boardDto.product_tag }">
 						<div class="product">
 							<a href='/ex/content?pno=${boardDto.pno }'> <img
 								src="/ex/resources/img/shopping/가방1.jpg" class="product_img">
@@ -248,18 +253,15 @@
 							</div>
 							<!-- 버버리 토트백 1,634,040 https://www.trenbe.com/product/Medium+Soft+Canvas+Belt+Tote+Bag+Blue+80302891+25488552-->
 						</div>
+					</span>
 					</c:forEach>
-					
-						
-						
+			
 					</div>
 					<!-- ↑↑end class toggle_box1 -->
-
-
+				</div>
 				</div>
 				<!-- ↑↑end class Luxury box -->
 				<!-- ============== 명품 제품 =============== -->
-
 			</div>
 			<!-- ↑↑end class container -->
 			<!-- =============== 하단 ============== -->
