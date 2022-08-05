@@ -323,9 +323,15 @@ a {
     padding: 3px;
     text-align: center;
     box-sizing:border-box;
+    position:relative;
 }
 
 /* 제품 이미지 */
+.product_img{
+	width:281px;
+	height:281px;
+}
+
 .product_img:hover {
     margin:9px;
     width:90%;

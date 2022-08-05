@@ -244,8 +244,8 @@
 					<c:forEach items="${list }" var="boardDto">
 					<span class="${boardDto.product_tag }">
 						<div class="product">
-							<a href='/ex/content?pno=${boardDto.pno }'> <img
-								src="/ex/resources/img/shopping/가방1.jpg" class="product_img">
+							<a href='/ex/content?pno=${boardDto.pno }' class="dudu"> 
+							<img src="/ex/resources/img/shopping/${boardDto.product_img }" class="product_img">
 								<div class="product_name">${boardDto.product_name }</div>
 							</a>
 							<div class="product_price">
@@ -255,7 +255,6 @@
 						</div>
 					</span>
 					</c:forEach>
-			
 					</div>
 					<!-- ↑↑end class toggle_box1 -->
 				</div>
