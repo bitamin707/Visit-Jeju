@@ -1,0 +1,100 @@
+
+/* =========== 웹페이지 폰트 스타일 미지정============= */
+* {
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+/* ====================================================== */
+
+/* ======================= 상단 ========================= */
+/* ================ 헤더 (건들지 마시오) ================= */
+
+
+/* 헤더를 재외한 웹페이지 width:1280px 고정. */
+
+
+
+
+#event{
+    width: 1280px;
+    margin: 0px auto;
+}
+
+
+
+/* 상단의 이미지 */
+.intro_bg {
+    width: 100%;
+    height: 500px;
+    display: block; margin: 0px auto;
+    background-image: url("../../img/acco/나미송1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 상단 이미지 안의 문자. 필요시 위치 수정. */
+.intro_text {
+    margin-left: 00px;
+    padding-top: 200px;
+    padding-left: 50px;
+    
+    background-color:rgba(77, 15, 15, 0.2);
+    height: 300px;
+    width: 300px;
+    
+    
+}
+
+.intro_text h3, .intro_text p, .intro_text a{
+    color: rgb(250, 250, 250);
+    
+}
+
+/* ======================= 상단 ========================= */
+
+/* ======================= 하단 ========================= */
+.wrap {
+    width:1280px;
+    margin: 0 auto;
+    height: 2000px;
+}
+.container{
+    width: 1280px;
+    margin: 0px auto;
+}
+.event_area {
+    width: 580px;
+    height: 250px;
+    margin: 50px 15px 0px 25px;
+    
+    float: left;
+}
+
+#event_area_img > img {
+    width: 270px;
+    height: 200px;
+    padding: 30px 30px 20px 10px;
+}
+
+.event_area_text {
+    width: 1100px;
+    margin-top: 250px;
+    margin-left: 50px;
+    float: left;
+    
+}
+
+.event_area > a > div > .like{
+    position: relative;
+    text-align:right;
+    
+    margin-right: 10px;
+
+}
+
+
+

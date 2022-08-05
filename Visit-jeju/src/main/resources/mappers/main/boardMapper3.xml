@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.main.IBoardDaoFood">
+<select id="readFood" resultType="BoardDtoFood">
+select * from food where bno=#{bno}
+</select>
+<update id="updateFood">
+update food set imgLink=#{imgLink},name=#{name} where bno=#{bno}
+</update>
+<select id="listAllFood" resultType="com.human.dto.main.BoardDtoFood">
+select * from food
+</select>
+</mapper>
+
+
+
+
+
+
+
+
+

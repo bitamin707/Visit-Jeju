@@ -1,0 +1,377 @@
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  list-style: none;
+  text-decoration: none;
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'NanumSquareRound';
+}
+
+.wrap {
+  width:1280px;
+  margin: 0 auto;
+}
+
+/* 상단의 이미지 */
+.intro_bg {
+  width: 100%;
+  height: 500px;
+  background-image: url(/ex/resources/img/tour/유채꽃.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 상단 이미지 안의 문자. 필요시 위치 수정. */
+.intro_text {
+  padding-top: 400px;
+  padding-left: 30px;
+}
+
+.intro_text h1{
+  font-size: 37px;
+}
+.intro_text h4{
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+img {
+  display: block;
+  border-radius: 10px;
+}
+
+
+.mother {
+  width:1190px;
+  margin: 100px auto;
+}
+
+
+.container {
+  position: relative;
+  width: 1190px;
+  margin: 100px auto;
+  text-align: center;
+  }
+
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 98%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.prev {
+  left: 0px;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.199)
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.column {
+  margin-top: 3%;
+  width: 13%;
+  display: inline-block;
+  margin-right: -18px;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+.tour_name {
+  position: relative;
+  font-family: 'NanumSquareRound';
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(228, 166, 52);
+  margin-top: -3%;
+}
+
+.tour_star{
+  font-size: 36px;
+  position: relative;
+  margin-left: 81%;
+  margin-top: -3%;
+}
+
+.checked {
+  color: orange;
+}
+
+
+.tour_line {
+  margin-top:26px;
+  color:rgba(122, 148, 148, 0.082);
+}
+
+
+
+.tour_adr{
+  width: 1190px;
+  height: 50px;
+  margin-top:40px;
+  color: #000000e0;
+  font-family: 'NanumSquareRound';
+}
+
+.address{
+  list-style: none;
+}
+
+.adr_a{
+  float: left;
+  margin-right: 110px;
+  margin-left: 10%;
+}
+
+.tour_main {
+  width:1190px;
+}
+.tour_list {
+  width:1190px;
+  text-align: center;
+}
+
+
+
+.tour_exp {
+  font-family: 'NanumSquareRound';
+  width:660px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  margin-top:26px;
+}
+
+.tour_expl h1{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.tour_expl ul{
+  list-style: none;
+}
+
+
+
+#more {
+  display: none;
+}
+
+#myBtn{
+  border: solid rgba(0, 0, 0, 0.678);
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left:300px;
+}
+
+
+.tour_drc{
+  width:530px;
+  font-family: 'NanumSquareRound';
+  margin-top: -37%;
+  margin-left: 58%;
+}
+
+.tour_drc h2{
+  font-size: 30px;
+  margin-bottom: 27px;
+}
+
+
+
+
+.tour_rvw{
+  width:660px;
+  font-family: 'NanumSquareRound';
+  margin-bottom: 20px;
+  margin-top:26px;
+}
+
+.tour_rvw h2{
+  font-size: 30px;
+  margin-top: 110px;
+}
+
+
+
+.tour_tags{
+  width:530px;
+  font-family: 'NanumSquareRound';
+  margin-top: -4%;
+  margin-left: 58%;
+}
+
+.tour_tags h2{
+  font-size: 30px;
+}
+
+.tour_tags ul{
+  list-style: none;
+  display: flex;
+  margin-top: 28px;
+  flex-flow : wrap;
+  flex: auto;
+}
+
+.tour_tags ul li{
+  margin: 5px;
+  padding: 0;
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color:rgb(228, 166, 52);
+  color:#f2f2f2;
+  margin-left: 13px;
+  border-radius: 20px;
+}
+
+
+.tour_pplr{
+  width:530px;
+  font-family: 'NanumSquareRound';
+  margin-left: 58%;
+  margin-top: 7%;
+}
+
+.tour_pplr h2{
+  font-size: 30px;
+}
+
+
+
+
+
+
+/*================== 푸터==================*/
+#footer {
+  width: 100%;
+  min-width: 1280px;
+  height: 200px;
+  bottom: 0px;
+  /*position: absolute;*/
+  background-color: #3c3c3c;
+  text-align: center;
+  
+}
+
+.footer_wrap {
+  width: 1280px;
+  height: 200px;
+  margin: 0 auto;
+}
+.footer_title{
+  width: 610px;
+  height: 200px;
+  float: left;
+  margin-left: 30px;
+}
+.footer_intro{
+  width: 600px;
+  height: 200px;
+  float: right;
+  margin-right: 30px;
+}
+
+.footer_box {
+  height: 150px;
+  margin-top: 25px;
+}
+
+.footer_table {
+  width: 500px;
+  font-size: 17px;
+  margin-left: 30px;
+  margin-top:50px;
+}
+.footer_table th {
+  width: 70px;
+  color: white;
+  text-align: left;
+}
+.footer_table td {
+  color: white;
+  width: 150px;
+  text-align: left;
+}
+
+#v-line {
+  float: left;
+  margin-top: 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  height: 150px;
+}
+/*================== 푸터 끝==================*/
