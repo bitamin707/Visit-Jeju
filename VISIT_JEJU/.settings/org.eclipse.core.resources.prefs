@@ -1,3 +1,9 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch 'develop' of https\://github.com/bitamin707/Visit-Jeju.git
 eclipse.preferences.version=1
+encoding//src/main/java/com/human/ex/MainController.java=UTF-8
+encoding//src/main/java/com/human/ex/ShoppingController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/festival/festival.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/main/loginPage.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/shopping/product/Create1.jsp=UTF-8
