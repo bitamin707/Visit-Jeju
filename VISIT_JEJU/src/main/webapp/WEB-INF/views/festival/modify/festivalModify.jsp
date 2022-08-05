@@ -47,29 +47,29 @@
 					</tr>
 					<tr>
 						<th>내용</th>
-						<td><input type="text" name="fcontent" value="${festivalDto.fcontent }"</td>
+						<td><input type="text" name="fcontent" value="${festivalDto.fcontent }"></td>
 					</tr>
 					<tr>
 						<th>시작 날짜</th>
 						<td> ${festivalDto.fstart_date } > 
-						<input type="date" name="fstart_date" value="${festivalDto.fstart_date }"</td>
+						<input type="date" name="fstart_date" value="${festivalDto.fstart_date }"></td>
 					</tr>
 					<tr>
 						<th>종료 날짜</th>
 						<td> ${festivalDto.fend_date } > 
-						<input type="date" name="fend_date" value="${festivalDto.fend_date }"</td>
+						<input type="date" name="fend_date" value="${festivalDto.fend_date }"></td>
 					</tr>
 					<tr>
 						<th>위치</th>
-						<td><input type="text" name="flocation" value="${festivalDto.flocation }"</td>
+						<td><input type="text" name="flocation" value="${festivalDto.flocation }"></td>
 					</tr>
 					<tr>
 						<th>지역</th>
-						<td><input type="text" name="fregion" value="${festivalDto.fregion }"</td>
+						<td><input type="text" name="fregion" value="${festivalDto.fregion }"></td>
 					</tr>
 					<tr>
 						<th>이미지경로</th>
-						<td><input type="text" name="imglink" value="${festivalDto.imglink }"</td>
+						<td><input type="text" name="imglink" value="${festivalDto.imglink }"></td>
 					</tr>
 					<tr>
 						<td colspan="2"> 

@@ -7,11 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.human.dao.acco.IAccoReviewDao;
-import com.human.dao.shopping.IBoardDaoShop1;
 import com.human.dto.acco.AccoReviewDto;
-import com.human.dto.shopping.BoardDtoShop1;
-@Service
 
+@Service
 public class AccoReviewServiceImpl implements IAccoReviewService {
 	@Autowired
 	private SqlSession sqlSession;

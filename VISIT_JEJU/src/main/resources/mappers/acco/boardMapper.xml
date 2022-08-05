@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <insert id="insert">
 insert into acco_review (ano, content)
-values (acco_review.nextval,#{content})
+values (ano_counter.nextval,,#{content})
 </insert>
 
 <select id="read" resultType="AccoReviewDto">
@@ -19,7 +19,7 @@ delete from acco_review where ano=#{ano}
 </delete>
 
 <update id="update">
-update acco_review set content=#{content} } 
+update acco_review set content=#{content}
 </update>
 
 <select id="listAll" resultType="com.human.dto.acco.AccoReviewDto">

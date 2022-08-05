@@ -8,8 +8,11 @@ import com.human.dto.shopping.BoardDtoShop1;
 
 public interface IBoardServiceShop1 {
 	public void create(BoardDtoShop1 dto) throws Exception;
+	public void create_add(BoardDtoShop1 dto) throws Exception;
 	public BoardDtoShop1 read(String pno) throws Exception;
 	public void delete(String pno) throws Exception;
 	public void update(BoardDtoShop1 dto) throws Exception;
+	
 	public List<BoardDtoShop1> listAll() throws Exception;
+	public List<BoardDtoShop1> listPlus() throws Exception;
 }

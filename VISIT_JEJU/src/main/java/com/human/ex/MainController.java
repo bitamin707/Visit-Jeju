@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,20 +46,30 @@ public class MainController {
 	
 	
 	/*로그인*/
+	@RequestMapping(value = "/main/loginPage")
+	public void loginProcess(HttpSession session, 
+			@RequestParam(value="id") String id,
+			@RequestParam(value="pw") String pw)throws Exception {
+	}
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
 	public void loginGet() throws Exception {
-		
-	}	
-		
-	@RequestMapping(value = "/main/loginPage", method = RequestMethod.POST)
-	public String loginPost(Model model) throws Exception {
-		
-		return "redirect:/main/main";
 	}
-		
+	
+	
+	
+	
+	
 	/*메인*/
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
+	public void list() throws Exception {
+		
+	}
+	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.GET)
+	public void listNormal() throws Exception {
+		
+	}
+	@RequestMapping(value = "/main/main", method = RequestMethod.POST)
 	public void list(Model model) throws Exception {
 		model.addAttribute("list",service.listAll());
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
@@ -66,8 +77,7 @@ public class MainController {
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
 		model.addAttribute("listAccount",serviceAccount.listAllAccount());
 	}
-	
-	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.GET)
+	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.POST)
 	public void listNormal(Model model) throws Exception {
 		model.addAttribute("list",service.listAll());
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
@@ -157,9 +167,7 @@ public class MainController {
 	}
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.GET)
 	public void modifyMerch(@RequestParam("bno")int bno,Model model) throws Exception {
-
 		model.addAttribute(serviceMerch.readMerch(bno));
-		
 	}	
 	@RequestMapping(value = "/main/merchList", method = RequestMethod.GET)
 	public void readMerch(Model model) throws Exception {
@@ -182,17 +190,15 @@ public class MainController {
 		return "redirect:/main/loginPage";
 	}
 	@RequestMapping(value = "/main/accountModify", method = RequestMethod.POST)
-	public String modifyAccount(BoardDtoAccount boardDtoAccount,Model model
+	public String updateAccount(BoardDtoAccount boardDtoAccount,Model model
 			,RedirectAttributes rttr) throws Exception {
 		serviceAccount.updateAccount(boardDtoAccount);
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/main?id=admin&pw=1234";
 	}
 	@RequestMapping(value = "/main/accountModify", method = RequestMethod.GET)
-	public void modifyAccount(@RequestParam("accountID")String accountID,Model model) throws Exception {
-
-		model.addAttribute(serviceAccount.readAccount(accountID));
-		
+	public void updateAccount(@RequestParam("accountID")String accountID,Model model) throws Exception {
+		model.addAttribute(serviceAccount.readAccount(accountID));		
 	}	
 	@RequestMapping(value = "/main/accountList", method = RequestMethod.GET)
 	public void accountMerch(Model model) throws Exception {

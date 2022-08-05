@@ -42,11 +42,18 @@
                     // alert("priceLess");
                     $(".tag_priceLess > .product").show();
                 }
+                
+                if($(":checkbox[value='soso']").is(":checked")){
+                    // alert("soso");
+                    $(".tag_soso > .product").show();
+                }
 
                 if($(":checkbox[value='vintage']").is(":not(:checked")){
                     if($(":checkbox[value='priceNess']").is(":not(:checked")){
-                        if($(":checkbox[value='priceLess']").is(":not(:checked")){                          
-                            $("#wine .product").show();
+                        if($(":checkbox[value='priceLess']").is(":not(:checked")){
+                        	 if($(":checkbox[value='soso']").is(":not(:checked")){
+                                 $("#wine .product").show();
+                        	 }
                         }
                     }
                 }
