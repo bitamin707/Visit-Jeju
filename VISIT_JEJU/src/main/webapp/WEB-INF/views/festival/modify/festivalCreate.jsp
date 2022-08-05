@@ -12,31 +12,23 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap"
 	rel="stylesheet">
-<title>컨텐츠 수정 페이지</title>
+<title>컨텐츠 추가 페이지</title>
 
 <script>
 	function goList() {
 		location.href="/ex/festival/festival";
 	}
 	
-	function deleteContent() {
-		if(confirm("삭제하겠습니까?")) {
-			location.href="/ex/festival/modify/festivalDelete?fno=${festivalDto.fno }";
-		}
-		else
-			alert("취소");
-	}
-	
 	function submitBtn() {
 		const startDate = document.getElementById("fstart_date").value;
 		const endDate = document.getElementById("fend_date").value;
-		const modifyForm = document.getElementById("modifyForm");
+		const createForm = document.getElementById("createForm");
 		
 		if(startDate > endDate) {
 			alert("종료 날짜를 시작 날짜 이후로 설정해 주세요.");
 		}
 		else {
-			modifyForm.submit();
+			createForm.submit();
 		}
 		
 	}
@@ -82,13 +74,9 @@
 <body>
 	<div class="wrap">
 		<section>
-			<h2>컨텐츠 수정 페이지</h2>
-			<form id="modifyForm" action="festivalModify" method="POST">
+			<h2>컨텐츠 추가 페이지</h2>
+			<form id="createForm" action="festivalCreate" method="POST">
 				<table>
-					<tr>
-						<th>번호</th>
-						<td><input type="hidden" name="fno" id="fno" value="${festivalDto.fno }">${festivalDto.fno }</td>
-					</tr>
 					<tr>
 						<th>제목</th>
 						<td><input type="text" name="fname" value="${festivalDto.fname }" required></td>
@@ -99,13 +87,11 @@
 					</tr>
 					<tr>
 						<th>시작 날짜</th>
-						<td><span style="color:red;">${festivalDto.fstart_date }</span> > 
-						<input type="date" id="fstart_date" name="fstart_date" value="${festivalDto.fstart_date }" style="width:auto;" required></td>
+						<td><input type="date" id="fstart_date" name="fstart_date" value="${festivalDto.fstart_date }" style="width:auto;" required></td>
 					</tr>
 					<tr>
 						<th>종료 날짜</th>
-						<td><span style="color:red;">${festivalDto.fend_date }</span> > 
-						<input type="date" id="fend_date" name="fend_date" value="${festivalDto.fend_date }" style="width:auto;" required></td>
+						<td><input type="date" id="fend_date" name="fend_date" value="${festivalDto.fend_date }" style="width:auto;" required></td>
 					</tr>
 					<tr>
 						<th>위치</th>
@@ -121,9 +107,8 @@
 					</tr>
 					<tr>
 						<td colspan="2"> 
-							<button type="button" onclick="submitBtn()">수정</button>
+							<button type="button" onclick="submitBtn()">추가</button>
 							<button type="button" onclick="goList()">취소</button>
-							<button type="button" style="float:right; background-color: red;" onclick="deleteContent()">삭제</button>
 						</td>
 					</tr>
 				</table>
