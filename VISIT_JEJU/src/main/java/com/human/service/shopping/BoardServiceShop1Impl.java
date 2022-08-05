@@ -15,12 +15,19 @@ import com.human.dto.shopping.BoardDtoShop1;
 public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 	@Autowired
 	private SqlSession sqlSession;
+	
 	@Override
 	public void create(BoardDtoShop1 dto) throws Exception {
-		//Ï∂îÍ? ÎπÑÏ??ãà?ä§Î°úÏßÅ?ùÑ Í∏∞Ïà†?ïòÍ∏? ?úÑ?ï¥?Ñú service ?ù∏?Ñ∞?éò?ù¥?ä§Î•? Ï∂îÍ??ïò???ã§.
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
 		dao.create(dto);
 	}
+	@Override
+	public void create_add(BoardDtoShop1 dto) throws Exception {
+		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
+		dao.create_add(dto);
+		
+	}
+	
 	@Override
 	public BoardDtoShop1 read(String pno) throws Exception {
 		// TODO Auto-generated method stub
@@ -49,4 +56,11 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		List<BoardDtoShop1> dtos=dao.listAll();
 		return dtos;
 	}
+	@Override
+	public List<BoardDtoShop1> listPlus() throws Exception {
+		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
+		List<BoardDtoShop1> dtos=dao.listAll();
+		return dtos;
+	}
+
 }
