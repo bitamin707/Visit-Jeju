@@ -40,6 +40,7 @@
 					<li><a href="#12" class="12m">12월</a></li>
 				</ul>
 				<hr>
+				<button type="button"><a href="modify/festivalCreate">컨텐츠 추가</a></button>
 				<div class="event">
 					<c:forEach items="${list }" var="festivalDto">
 						<div class="event_area">

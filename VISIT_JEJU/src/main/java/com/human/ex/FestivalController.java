@@ -20,26 +20,43 @@ public class FestivalController {
 	@Inject
 	private festivalService service;
 	
+	// 축제 메인 페이지
 	@RequestMapping(value = "/festival", method = RequestMethod.GET)
 	public void Main(Model model, festivalDto dto) throws Exception {
 		model.addAttribute("list", service.listAll());
 	}
 	
-	@RequestMapping(value = "/detail/*", method = RequestMethod.GET)
-	public void page1() {
+	// 축제 컨텐츠 추가
+	@RequestMapping(value = "/modify/festivalCreate", method = RequestMethod.GET)
+	public void create() throws Exception {
 	}
-	
-	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.GET)
-	public void MainModify(@RequestParam("fno")int fno, Model model) throws Exception {
-		model.addAttribute(service.read(fno));
-	}
-
-	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.POST)
-	public String MainModify(festivalDto dto, RedirectAttributes rttr) throws Exception {
-		System.out.println(dto);
-		service.update(dto);
-		rttr.addFlashAttribute("msg","수정 완료");
+	@RequestMapping(value = "/modify/festivalCreate", method = RequestMethod.POST)
+	public String create(festivalDto dto) throws Exception {
+		service.create(dto);
 		return "redirect:/festival/festival";
 	}
 	
+	// 축제 컨텐츠 수정 
+	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.GET)
+	public void modify(@RequestParam("fno")int fno, Model model) throws Exception {
+		model.addAttribute(service.read(fno));
+	}
+	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.POST)
+	public String modify(festivalDto dto) throws Exception {
+		service.update(dto);
+		return "redirect:/festival/festival";
+	}
+	
+	// 축제 컨텐츠 삭제
+	@RequestMapping(value = "/modify/festivalDelete", method = RequestMethod.GET)
+	public String remove(@RequestParam("fno")int fno) throws Exception {
+		service.delete(fno);
+		return "redirect:/festival/festival";
+	}
+	////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// 축제 세부 페이지 
+	@RequestMapping(value = "/detail/*", method = RequestMethod.GET)
+	public void page1() {
+	}
 }

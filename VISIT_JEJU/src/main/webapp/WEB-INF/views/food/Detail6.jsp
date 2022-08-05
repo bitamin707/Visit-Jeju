@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/6_3.jpeg" alt="리치망고"  style="width: 100%; height: 600px; position:relative">
+            <img  src="/ex/resources/img/food/6_3.jpeg" alt="리치망고" class="tophaha">
             <div class="img-content">
                 <h1>리치망고</h1>
                 <p>#애월</p>
@@ -28,6 +28,7 @@
         <br>
         <div class="main-content">
             <div class="introduce"> 
+                <br/>
                 <img src="/ex/resources/img/food/6_0.jpg" alt="섬소나이" height="400px" width="100%"><br>
                 <p>제주에서 런칭한 리치망고는 프렌차이즈로 현재 우도, 모슬포 성산 등 제주전역으로 확장하였다.
 				</p>
@@ -44,15 +45,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a> </h3>
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
+                            <a href="/ex/food/Detail2">
+                                <img src="/ex/resources/img/food/애월)봄날.jpg"  class="foodimg"  >
+                                <h3>봄날 </h3>
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>  
+                                </a> 
                             </li>    
                 
                             <li>
-                                <img src="/ex/resources/img/food/5_4.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail5"  id="red">블랑로쉐</a> </h3>
-                                <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 783</p>   
+                            <a href="/ex/food/Detail5">
+                                <img src="/ex/resources/img/food/5_4.jpg"  class="foodimg"  >
+                                <h3>블랑로쉐 </h3>
+                                <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 783</p>  
+                                </a> 
                             </li>      
                     </ul>
                 </div>

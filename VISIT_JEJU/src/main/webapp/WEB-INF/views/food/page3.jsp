@@ -19,7 +19,7 @@
     <!-- ↓↓start class wrap -->
     <div class="wrap"> 
         <div class="intro_bg">
-            <img src="/ex/resources/img/food/bg.png" style="width: 100%; height: 100%; position:relative">
+            <img src="/ex/resources/img/food/bg.png" class="topimg">
             <div class="intro_text">
                 <h1>음식</h1>
                 <h4>맛집 소개</h4>

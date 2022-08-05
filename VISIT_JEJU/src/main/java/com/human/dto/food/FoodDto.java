@@ -3,12 +3,15 @@ package com.human.dto.food;
 public class FoodDto {
 	private int bno;
 	private String imglink;
-	@Override
-	public String toString() {
-		return "FoodDto [bno=" + bno + ", imglink=" + imglink + ", name=" + name + ", address=" + address + "]";
-	}
 	private String name;
 	private String address;
+	private String href;
+	public String getHref() {
+		return href;
+	}
+	public void setHref(String href) {
+		this.href = href;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -32,6 +35,11 @@ public class FoodDto {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "FoodDto [bno=" + bno + ", imglink=" + imglink + ", name=" + name + ", address=" + address + ", href="
+				+ href + "]";
 	}
 	
 	

@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-             <img src="/ex/resources/img/food/3_2.jpg" alt="바다속 고등어 쌈밥"  style="width: 100%; height: 600px; position:relative">
+             <img class="tophaha" src="/ex/resources/img/food/3_2.jpg" alt="바다속 고등어 쌈밥" >
             <div class="img-content">
                 <h1>바자속 고등어 쌈밥</h1>
                 <p>#애월</p>
@@ -46,15 +46,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail"  id="red">하하호호</a> </h3>
-                                <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>  
+                            <a href="/ex/food/Detail" >
+                                <img src="/ex/resources/img/food/우도)하하호호.jpg" class="foodimg">
+                                <h3>하하호호</h3>
+                                <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p> 
+                                </a>  
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/4_1.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail4"  id="red">섬소나이</a> </h3>
+                            <a href="/ex/food/Detail4">
+                                <img src="/ex/resources/img/food/4_1.jpg" class="foodimg" >
+                                <h3>섬소나이 </h3>
                                 <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 814</p>   
+                                </a>
                             </li>      
                     </ul>
                 </div>
