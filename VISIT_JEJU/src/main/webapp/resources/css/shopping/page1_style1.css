@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: 'page_font';
-    src: url("font/georgia.ttf") format('truetype');
+    src: url("georgia.ttf") format('truetype');
 }
 /* ====================================================== */
 
@@ -289,6 +289,7 @@ a {
 
 /* 제품 탭 폰트 */
 .page_font {
+	color: #4b3100;
     font-family: 'page_font';
     font-size: 30px;
     margin-bottom: 5px;
@@ -307,10 +308,10 @@ a {
 
 /* 제품 박스공간 */
 .product_box {
-    border-top: 3px solid black;
+    border-top: 3px solid #4b3100;
     width:100%;
     box-sizing: border-box;
-    padding-top:5px;
+    padding-top:20px;
 }
 
 /* 제품 틀 */
@@ -318,24 +319,24 @@ a {
     border: 1px solid white;
     margin:3px;
     width: 300px;
-    height: 392px;
+    height: 370px;
     display: inline-block;
+    position:relative;
     padding: 3px;
     text-align: center;
     box-sizing:border-box;
-    position:relative;
+    box-shadow:2px 2px 8px 0px rgb(0, 0, 0);
 }
 
 /* 제품 이미지 */
-.product_img{
-	width:281px;
-	height:281px;
+.product_img {
+    width:280px;
+    height:250px;
 }
 
-.product_img:hover {
-    margin:9px;
-    width:90%;
-    box-shadow: 0px 8px 30px 10px rgb(255, 225, 186);
+.product_img img {
+    width:100%;
+    height:100%;
 }
 
 /* 제품 이름 */
@@ -421,4 +422,34 @@ a {
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     height: 150px;
 }
-/*================== 푸터 끝==================*/
+
+
+.product:hover .coverIt {
+    content:'';
+    display:block;
+    position:absolute;
+    bottom: 120px;
+    left:0;
+    width:100%;
+    height: 15%;
+    background:rgba(0, 0, 0, 0.765);
+    color:#ffa500;
+    z-index:1;
+    opacity: 1;
+    transition:all .3s5;
+}
+
+
+
+.coverIt {
+    position:absolute;
+    color: black;
+    font-size:24px;
+    font-weight:900;
+    opacity:0;
+    transition:all .35s;
+    bottom: 60px;
+    left:0;
+    width:100%;
+    height:20%;
+}

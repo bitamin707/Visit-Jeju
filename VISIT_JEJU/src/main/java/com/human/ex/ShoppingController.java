@@ -38,6 +38,7 @@ public class ShoppingController {
 		
 	}
 	
+	
 	@RequestMapping(value = "/main/Remocon_bag", method = RequestMethod.GET)
 	public void remocon_bag(Model model) throws Exception {
 		model.addAttribute("list",service.listAll());
