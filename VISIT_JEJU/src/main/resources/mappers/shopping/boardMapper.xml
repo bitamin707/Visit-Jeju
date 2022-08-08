@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <insert id="create">
 insert into product (pno, product_name, product_price, product_won, product_category, product_tag)
-values (SEQ_PRODUCT.nextval, #{product_name }, #{product_price }, #{product_won }, #{product_category }, #{product_tag })
+values (#{pno }, #{product_name }, #{product_price }, #{product_won }, #{product_category }, #{product_tag })
 </insert>
 <insert id="create_add">
 insert into product_add (product_icon, product_info, product_max_qty, pno, product_img)
@@ -15,11 +15,15 @@ values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{prod
 </insert>
 
 <select id="read" resultType="BoardDtoShop1">
-select * from product where pno=#{pno}
+select * from product_add where pno=#{pno}
 </select>
 
 <delete id="delete">
 delete from product where pno=#{pno}
+</delete>
+
+<delete id="delete_add">
+delete from product_add where pno=#{pno}
 </delete>
 
 <update id="update">

@@ -1,6 +1,6 @@
 package com.human.ex;
 
-import javax.inject.Inject;
+import javax.inject.Inject; 
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +36,7 @@ public class ShoppingController {
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
 		model.addAttribute("list",service.listInsert());
 		
-	}
-	
+	}	
 	
 	@RequestMapping(value = "/main/Remocon_bag", method = RequestMethod.GET)
 	public void remocon_bag(Model model) throws Exception {
@@ -51,11 +50,35 @@ public class ShoppingController {
 	@RequestMapping(value = "/product/Create1", method = RequestMethod.POST)
 	public String Create1_post(BoardDtoShop1 boardDto,Model model, RedirectAttributes rttr) throws Exception {
 		service.create(boardDto);
+		System.out.println(boardDto.pno);
+		String a = boardDto.pno;
 		rttr.addFlashAttribute("msg","success");
-		return "redirect:/shopping/main/Remocon_bag";
+		return "redirect:/shopping/product/Create2?pno="+boardDto.pno;
 	}
 	
 	
+	@RequestMapping(value = "/product/read", method = RequestMethod.GET)
+	public void read(@RequestParam("pno") int pno,Model model, BoardDtoShop1 dto) throws Exception {
+		System.out.println(service.read(pno));
+		model.addAttribute(service.read(pno));
+	}
 
+	
+	@RequestMapping(value = "/product/delete", method = RequestMethod.GET)
+	public String delete(@RequestParam(required=false) String pno) throws Exception{
+		System.out.println("delete");
+		service.delete(pno);
+		return "redirect:/shopping/main/Remocon_bag";
+	}
+	
+	@RequestMapping(value = "/product/delete_add", method = RequestMethod.GET)
+	public String delete_add(@RequestParam(required=false) String pno,RedirectAttributes rttr) throws Exception{
+		System.out.println("delete_add");
+		service.delete_add(pno);
+		rttr.addFlashAttribute("okay","success");
+		return "redirect:/shopping/product/delete?pno="+pno;
+	}
+
+	
 
 }

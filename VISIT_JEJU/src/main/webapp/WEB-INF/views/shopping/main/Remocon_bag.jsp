@@ -28,10 +28,10 @@ padding:20px;
 
 <script>
 
-	var result='${msg}';
-	if(result=='success'){
-		alert('처리가 완료되었습니다. 제품을 선택하여 세부사항도 추가해 주세요.');
-	}
+var result='${nice}';
+if(result=='success'){
+	alert('제품이 추가되었습니다.');
+}
 
 	window.onload = function() {
 		document.getElementById("main").onclick = function() {
@@ -59,11 +59,12 @@ padding:20px;
 	<c:forEach items="${list }" var="boardDtoBest">
 	<tr>
 		<td>${boardDtoBest.pno }</td>
-		<td><a href='/ex/shopping/product/Create2?pno=${boardDtoBest.pno}'>${boardDtoBest.product_name }</a></td>
+		<td><a href='/ex/shopping/product/read?pno=${boardDtoBest.pno}'>${boardDtoBest.product_name }</a></td>
 		<td>${boardDtoBest.product_price }</td>
 		<td>${boardDtoBest.product_won }</td>
 		<td>${boardDtoBest.product_category }</td>
 		<td>${boardDtoBest.product_tag }</td>
+		<td><a href='/ex/shopping/product/delete?pno=${boardDtoBest.pno}'>삭제</a></td>
 	</tr>
 	</c:forEach>
 </table>

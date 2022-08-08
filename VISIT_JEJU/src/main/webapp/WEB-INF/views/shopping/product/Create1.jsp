@@ -70,6 +70,10 @@
     <form action="/ex/shopping/product/Create1" method="post">
     <table border="1" width="1000px" id="customers">
         <tr>
+            <th>제품 고유번호</th>
+            <td><input type="text" name=pno></td>
+        </tr>
+        <tr>
             <th>제품 이름</th>
             <td><input type="text" name=product_name></td>
         </tr>
