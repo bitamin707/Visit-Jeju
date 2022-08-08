@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'page_font';
-    src: url("font/georgia.ttf") format('truetype');
+    src: url("georgia.ttf") format('truetype');
 }
 /* ====================================================== */
 
@@ -172,6 +172,7 @@
     font-family: 'page_font';
     font-size: 35px;
     margin: 40px auto;
+    color: #4b3100;
 }
 .back {
     width:300px;
@@ -235,6 +236,7 @@
 
 /* =============== 제품 정보 (오른쪽) ============= */
 #product_name {
+	color: #5e3d00;
     border:1px solid black;
     width: 100%;
     height:60px;
@@ -243,7 +245,7 @@
     word-wrap: break-word;
     margin-bottom: 0.3em;
     margin-bottom: 5px;
-    font-family: 'Cardo','NanumMyeongjo','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic', 'Noto Sans','sans-serif';
+    font-family: 'page_font';
 }
 
 .icons_box{
@@ -292,12 +294,28 @@
     height:111.95px;
     margin-bottom: 24px;
 }
+#product_info1 > p {
+    word-wrap: break-word;
+    color: rgb(125, 74, 15);
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: normal;
+}
 
 
 #product_info2 {
     border:1px solid black;
     height:150.61px;
     margin-bottom: 16px;
+}
+#product_info2 > p {
+    word-wrap: break-word;
+    color: rgb(72, 63, 54);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: normal;
 }
 
 

@@ -10,8 +10,8 @@ insert into product (pno, product_name, product_price, product_won, product_cate
 values (SEQ_PRODUCT.nextval, #{product_name }, #{product_price }, #{product_won }, #{product_category }, #{product_tag })
 </insert>
 <insert id="create_add">
-insert into product_add
-values (#{pno }, #{product_max_qty }, #{product_img }, #{product_icon }, #{product_info })
+insert into product_add (product_icon, product_info, product_max_qty, pno, product_img)
+values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{product_img })
 </insert>
 
 <select id="read" resultType="BoardDtoShop1">
@@ -27,11 +27,17 @@ update product set product_name=#{product_name },product_price=#{product_price }
 </update>
 
 <select id="listAll" resultType="com.human.dto.shopping.BoardDtoShop1">
-select * from product where product_category='bag'
+select * from product
+</select>
+
+<select id="listInsert" resultType="com.human.dto.shopping.BoardDtoShop1">
+select product.*, product_add.product_img from product, product_add 
+where product.pno = product_add.pno 
+and product.product_category='bag'
 </select>
 
 <select id="listPlus" resultType="com.human.dto.shopping.BoardDtoShop1">
-select product_add.* from product, product_add where product.pno=product_add.pno;
+select product_add.* from product, product_add where product.pno=product_add.pno
 </select>
 
 </mapper>

@@ -1,11 +1,13 @@
 const min_qty = 1;
 const max_qty = 3;
 var price = 0;
+var img_name = "";
 
 window.onload=function(){
     price = document.getElementById("share").innerHTML;   
     document.getElementById("stock_price").value = price;
     console.log($("#stock_price").val());
+    
 }
 
 

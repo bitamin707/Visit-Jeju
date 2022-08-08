@@ -19,6 +19,11 @@ text-align:center;
 button {
 margin-left:5%;
 }
+
+th td {
+padding:20px;
+}
+
 </style>
 
 <script>
