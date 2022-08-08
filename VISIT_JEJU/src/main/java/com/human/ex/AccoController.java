@@ -28,13 +28,12 @@ public class AccoController {
 	
 	@RequestMapping(value = "/jeju", method = RequestMethod.GET)
 	public void Main(AccoDto dto, Model model) throws Exception{
-		System.out.println(dto);
 		model.addAttribute("list",service2.listAll());
 	}
 	
 	@RequestMapping(value = "/나미송", method = RequestMethod.GET)
 	public void page1(AccoReviewDto dto, Model model) throws Exception {
-		System.out.println(dto);
+	
 		model.addAttribute("list",service1.listAll());
 	}
 	
@@ -59,10 +58,16 @@ public class AccoController {
 		
 	}
 	@RequestMapping(value = "/function/accoModify", method = RequestMethod.GET)
-	public String MainModify(@RequestParam("acco_id")int acco_id,Model model) throws Exception {
-		System.out.println("modify");
+	public void ModifyGUi(@RequestParam("acco_id")int acco_id,Model model) throws Exception {
 		model.addAttribute(service2.read(acco_id));
-		return "redirect:/acco/function/accoModify";
+		System.out.println(model);
+	}
+	@RequestMapping(value = "/function/accoModify", method = RequestMethod.POST)
+	public String Modify(AccoDto dto) throws Exception {
+		
+		service2.update(dto);
+		System.out.println(dto);
+		return "redirect:/acco/jeju";
 	}
 	@RequestMapping(value = "/function/read", method = RequestMethod.POST)
 	public void read(@RequestParam("acco_id")int acco_id, Model model) throws Exception {

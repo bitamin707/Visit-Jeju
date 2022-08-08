@@ -15,9 +15,10 @@
 <body>
 
 
-	<form method="GET" action="/ex/acco/function/accoModify" name="infor">
-		숙소 이름:<input type=text name=acco_name><br> 숙소 주소:<select
-			id="select1" name="acco_address1">
+	<form method="POST" action="/ex/acco/function/accoModify" name="infor">
+	<input type=hidden value="${accoDto.acco_id }" name=acco_id>
+		숙소 이름:<input type=text name=acco_name value="${accoDto.acco_name }">
+		<br> 숙소 주소:<select id="select1" name="acco_address1">
 			<option value="제주시">제주시</option>
 			<option value="서귀포시" selected="selected">서귀포시</option>
 		</select> <br> 숙소 상세주소:<select id="select2" name="acco_address2">
