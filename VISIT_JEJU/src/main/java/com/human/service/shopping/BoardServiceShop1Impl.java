@@ -56,11 +56,11 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		return dtos;
 	}
 	@Override
-	public List<BoardDtoShop1> listPlus() throws Exception {
+	public BoardDtoShop1 listPlus(int pno) throws Exception {
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
-		List<BoardDtoShop1> dtos=dao.listPlus();
-		return dtos;
+		return dao.listPlus(pno);
 	}
+
 	@Override
 	public List<BoardDtoShop1> listInsert() throws Exception {
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);

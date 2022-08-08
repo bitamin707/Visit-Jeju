@@ -40,8 +40,10 @@ where product.pno = product_add.pno
 and product.product_category='bag'
 </select>
 
-<select id="listPlus" resultType="com.human.dto.shopping.BoardDtoShop1">
-select product_add.* from product, product_add where product.pno=product_add.pno
+<select id="listPlus" resultType="BoardDtoShop1">
+select A.*, B.*
+from product A, product_add B
+where A.pno = B.pno and A.pno= #{pno}
 </select>
 
 </mapper>

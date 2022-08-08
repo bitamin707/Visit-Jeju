@@ -115,7 +115,7 @@
 
 						<span class="tag_vintage">
 							<div class="product">
-								<a href="../product/product1"> 
+								<a href="../product/product"> 
 								<div class="coverIt">제품 상세보기</div> 
 								<img class="product_img"
 									src="/ex/resources/img/shopping/술1.jpg">
@@ -253,7 +253,7 @@
 							<c:forEach items="${list }" var="boardDto">
 								<span class="${boardDto.product_tag }">
 									<div class="product">
-										<a href='/ex/content?pno=${boardDto.pno }'>
+										<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
 									<div class="coverIt">제품 상세보기</div> 
 									<img class="product_img"
 											src="/ex/resources/img/shopping/${boardDto.product_img }">

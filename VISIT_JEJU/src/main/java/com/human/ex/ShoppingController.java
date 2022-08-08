@@ -17,15 +17,9 @@ import com.human.service.shopping.IBoardServiceShop1;
 @Controller
 @RequestMapping("/shopping/*")
 public class ShoppingController {
-	
-	
+		
 	@Inject
 	private IBoardServiceShop1 service;
-	
-	
-	@RequestMapping(value = "/product/product1", method = RequestMethod.GET)
-	public void Test(Model model) {
-	}	
 	
 	@RequestMapping(value = "/main/MainNormal", method = RequestMethod.GET)
 	public void MainNormal(Model model, BoardDtoShop1 dto) throws Exception {
@@ -36,6 +30,12 @@ public class ShoppingController {
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
 		model.addAttribute("list",service.listInsert());
 		
+	}	
+	
+	@RequestMapping(value = "/product/Product", method = RequestMethod.GET)
+	public void Product(@RequestParam("pno") int pno ,Model model) throws Exception {
+		System.out.println(service.listPlus(pno));
+		model.addAttribute(service.listPlus(pno));
 	}	
 	
 	@RequestMapping(value = "/main/Remocon_bag", method = RequestMethod.GET)
@@ -57,26 +57,31 @@ public class ShoppingController {
 	}
 	
 	
-	@RequestMapping(value = "/product/read", method = RequestMethod.GET)
-	public void read(@RequestParam("pno") int pno,Model model, BoardDtoShop1 dto) throws Exception {
+	@RequestMapping(value = "/product/ShowContent", method = RequestMethod.GET)
+	public void Read(@RequestParam("pno") int pno,Model model) throws Exception {
 		System.out.println(service.read(pno));
 		model.addAttribute(service.read(pno));
 	}
 
 	
-	@RequestMapping(value = "/product/delete", method = RequestMethod.GET)
-	public String delete(@RequestParam(required=false) String pno) throws Exception{
-		System.out.println("delete");
+	@RequestMapping(value = "/product/Delete", method = RequestMethod.GET)
+	public String Delete(@RequestParam(required=false) String pno) throws Exception{
+		System.out.println("Delete");
 		service.delete(pno);
 		return "redirect:/shopping/main/Remocon_bag";
 	}
 	
-	@RequestMapping(value = "/product/delete_add", method = RequestMethod.GET)
-	public String delete_add(@RequestParam(required=false) String pno,RedirectAttributes rttr) throws Exception{
-		System.out.println("delete_add");
+	@RequestMapping(value = "/product/Delete_add", method = RequestMethod.GET)
+	public String Delete_add(@RequestParam(required=false) String pno,RedirectAttributes rttr) throws Exception{
+		System.out.println("Delete_add");
 		service.delete_add(pno);
 		rttr.addFlashAttribute("okay","success");
-		return "redirect:/shopping/product/delete?pno="+pno;
+		return "redirect:/shopping/product/Delete?pno="+pno;
+	}
+	
+	@RequestMapping(value = "product/Modify_add", method = RequestMethod.GET)
+	public void Modify_add_get(@RequestParam(required=false) int pno, Model model)throws Exception {
+		model.addAttribute(service.read(pno));
 	}
 
 	

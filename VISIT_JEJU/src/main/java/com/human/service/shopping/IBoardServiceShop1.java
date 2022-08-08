@@ -16,6 +16,7 @@ public interface IBoardServiceShop1 {
 	public void delete_add(String pno) throws Exception;
 	
 	public List<BoardDtoShop1> listAll() throws Exception;
-	public List<BoardDtoShop1> listPlus() throws Exception;
 	public List<BoardDtoShop1> listInsert() throws Exception;
+	public BoardDtoShop1 listPlus(int pno) throws Exception;
+	
 }
