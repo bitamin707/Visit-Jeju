@@ -1,0 +1,476 @@
+@charset "EUC-KR";
+/* =========== 웹페이지 폰트 스타일 미지정============= */
+* {
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+
+@font-face {
+    font-family: 'page_font';
+    src: url("georgia.ttf") format('truetype');
+}
+/* ====================================================== */
+
+/* ======================= 상단 ========================= */
+/* ================ 헤더 (건들지 마시오) ================= */
+
+/* 헤더 틀 */
+#header{
+    height: 110px;
+    background: rgba(0,0,0,.3);
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 600;
+    border-bottom: 1px solid hsla(0,0%,100%,.3);
+    position: fixed;
+    /* position: absolute; */
+    background: #f6f6f6;
+    border-bottom-color: #ccc;
+    display: block;
+}
+
+/* 헤더 안에 컨테이너 박스 */
+#container{
+    margin: 0 auto;
+    height: 90px;
+    width: 1290px;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /* display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; 
+    플렉스와 플렉스 워랩은 페이지를 줄이면 컨텐츠들이 내려간다*/
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;  
+    /* justify-content: space-between; */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* 좌측 박스 (h1 태그로 감싼 로고 이미지) */
+.logo{
+    display: block;
+    height: 90px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+}
+
+.logo > #img1 {
+    margin-top: 15px;
+}
+
+/* 중앙 카테고리 박스 */
+.menu{
+    list-style: none;
+    display: block;
+}
+
+/* 중앙 카테고리 (ul박스) */
+.depth{
+    width: 540px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+}
+
+/* 중앙 카테고리 박스 (폰트 스타일) */
+.menu_a{
+    font-weight: 700;
+    color: #191919;
+    text-align: center;
+    width: 100%;
+    height: 90px;
+    line-height: 120px;
+    font-size: 20px;
+    position:relative;
+}
+
+/* 우측 박스 */
+.language-wrap{
+    position: relative;
+    z-index: 3;
+    width: 222px;
+    height: 90px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* 우측 박스 (한국어)*/
+#lang{
+    position: relative;
+    background: url(login.JPG) no-repeat 0 50%;
+    text-align: left;
+    height: 90px;
+    width: 65px;
+    font-size: 16px;
+    padding-left: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/* 우측 박스 (동그라미 버튼) */
+.btn {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    background: url(login.JPG) no-repeat 50%/20px auto;
+}
+/* ======================= 헤더 ======================= */
+
+
+/* 헤더를 재외한 웹페이지 width:1280px 고정. */
+.wrap {
+    position:relative;
+    width:1280px;
+    margin: 0 auto;
+}
+
+#link_side{
+    margin-left: -102px;
+    margin-top: 200px;
+    height: 140px;
+    width: 100px;
+    text-align: center;
+    position:fixed;
+    background-color: grey;
+}
+
+.info_header {
+    position: relative;
+    margin-top:110px;
+    width: 100%;
+    height: 140px;
+    border: 1px solid black;
+    text-align: center;
+}
+.page_font {
+    font-family: 'page_font';
+    font-size: 35px;
+    margin: 40px auto;
+    color: #4b3100;
+}
+.back {
+    width:300px;
+    height: 40px;
+    border:1px solid black;
+    float:left;
+    list-style: none;
+    padding: 7px 0 0 15px;
+    margin:3px 0;
+}
+#home:hover {
+    color:orange;
+}
+
+/* =============== 제품 상단================ */
+/* =============== 제품 정보 (왼쪽) ================ */
+.content_box {
+    position:relative;
+    border:1px solid black;
+    height:706px;
+    margin-top:46px;
+    padding-top:14px;
+}
+
+/* 607x569 */
+.product_col {
+    width: 50%;
+    height: 571px;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border:1px solid black;
+    
+}
+#product_col {
+    padding-left:8%;
+    height: 691px;
+}
+
+/* 600x120 */
+.product_row {
+    position:absolute;
+    bottom:5px;
+    left:20px;
+    border:1px solid black;
+    width:600px;
+    height:110px;
+    padding:5px;
+}
+.row_box{
+    margin:15px;
+    margin-left:220px;
+}
+.row_box img{
+    cursor:pointer;
+}
+
+/* =============== 제품 정보 (왼쪽) ================ */
+
+/* =============== 제품 정보 (오른쪽) ============= */
+#product_name {
+	color: #5e3d00;
+    border:1px solid black;
+    width: 100%;
+    height:60px;
+    font-size: 21px !important;
+    word-break: normal;
+    word-wrap: break-word;
+    margin-bottom: 0.3em;
+    margin-bottom: 5px;
+    font-family: 'page_font';
+}
+
+.icons_box{
+    display:inline-block;
+    margin:0 3px;
+    position: relative;
+    vertical-align: middle;
+    font-size: initial;
+    margin-top: -5px;
+}
+.icons_box > span {
+    background: rgb(255, 255, 255);
+    color: #000;
+    border: 1px solid #ccc;
+    width: auto;
+    font-weight: normal;
+    font-size: 11px;
+    padding: 2px 10px;
+}
+
+#product_price {
+    border:1px solid black;
+    line-height: 1.5;
+    vertical-align: middle;
+    height:25px;
+}
+#price {
+    border:1px solid black;
+    float:left;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align: middle;
+}
+#share {
+    border:1px solid black;
+    float:right;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+#product_info1 {
+    border:1px solid black;
+    height:111.95px;
+    margin-bottom: 24px;
+}
+#product_info1 > p {
+    word-wrap: break-word;
+    color: rgb(125, 74, 15);
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+#product_info2 {
+    border:1px solid black;
+    height:150.61px;
+    margin-bottom: 16px;
+}
+#product_info2 > p {
+    word-wrap: break-word;
+    color: rgb(72, 63, 54);
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+#product_stock {
+    border:1px solid black;
+    background-color: rgba(23,23,23,0.03);
+    height:111px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size:15px;
+}
+.option_btn{
+    position:relative;
+    display:inline-block;
+    width:100px;
+    height:34.34px;
+}
+.option_btn a {
+    border:0.5px solid black;
+    display:inline-block;
+    font-size: 20px;
+    width: 25px;
+    height:33.5px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: normal;
+    cursor: pointer;
+}
+#stock {
+    border:1px solid black;
+    position:absolute;
+    top:0px;
+    right:2px;
+    width: 48px;
+    height:34px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.option_btn_price {
+    border:1px solid black;
+    width:200px;
+    height:34.34px;
+    font-size: 20px;
+    font-style: normal;
+    float: right;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align:bottom;
+}
+.option_btn_price input {
+    text-align: right;
+    margin:5px 5px 0px 0px;
+    border-style: none;
+    width:150px;
+    font-size: 20px;
+    font-style: normal;
+    display:inline-block;
+}
+.option_btn_price span {
+    font-size: 20px;
+}
+
+#product_buy {
+    position: relative;
+    border:1px solid black;
+    height: 46px;
+}
+#doBuy {
+    display:inline-block;
+    border-radius: 5px;
+    background-color: rgba(255, 128, 0, 0.725);
+    text-align: center;
+    padding-top:10px;
+    font-size: 20px;
+    color:white;
+    width:320px;
+    height:100%;
+}
+/* 옆에 존재하는 #doBuy 태그가 inline-block 임에도 불구하고
+아래로 내려가는 문제가 존재하여 absulute 포지션으로 강제로 위치선정함. */
+#doFav {
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:170px;
+    height:100%;
+    padding-top:10px;
+    text-align: center;
+    font-size: 15px;
+    color:rgb(255, 135, 149);
+    border-radius: 5px;
+    border:1px solid rgb(136, 136, 136);
+}
+#doFav:hover {
+    color:rgb(255, 25, 52);
+    border:1px solid rgb(255, 25, 52);
+}
+
+/* =============== 제품 정보 (오른쪽) ================ */
+/* =============== 제품 상단================ */
+
+/* =============== 제품 하단 ================ */
+#container_info {
+    border:1px solid black;
+    padding-top:15px;
+    width:100%;
+    height:4000px;
+}
+
+#info_header {
+    border:1px solid black;
+    border-bottom: 1px solid red;
+    width:95%;
+    height:53px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#info_box{
+    border:1px solid black;
+    width:390px;
+    height:53px;
+    margin:0px auto;
+    position: relative;
+    text-align: center;
+}
+#info_box div{
+    display:inline-block;
+    border:1px solid black;
+    padding:15px 20px;
+    width:145px;
+    height:53px;   
+}
+
+#info_img {
+    margin:60px 20%;
+}
+
+.post {
+    font-size: 16px;
+    background-color: beige;
+}
+.post_text {
+    color: red;
+}
+
+/* =============== 제품 하단 ================ */

@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
+            <img class="tophaha" src="/ex/resources/img/food/4_0.jpg" alt="섬소나이">
             <div class="img-content">
                 <h1>섬소나이</h1>
                 <p>#우도</p>
@@ -28,6 +28,7 @@
         <br>
         <div class="main-content">
             <div class="introduce"> 
+             <br/>
                 <img src="/ex/resources/img/food/4_1.jpg" alt="섬소나이" height="400px" width="100%"><br>
                 <p>우도에 위치한 섬소나이는 짬뽕과 피자를 즐길 수 있는 작고 예쁜 식당이다.짬뽕 세 종류와 피자 두 종류 총 다섯가지다.
                                            이 집 짬뽕 맛의 비결은 한약재 등 10가지 이상의 재료를 사용하여 12시간 동안 푹 끓여낸 육수에서 나온다. 
@@ -47,15 +48,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail"  id="red">하하호호</a> </h3>
+                            <a href="/ex/food/Detail">
+                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" class="foodimg" >
+                                <h3>하하호호 </h3>
                                 <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>  
+                               </a>
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a> </h3>
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
+                            <a href="/ex/food/Detail2">
+                                <img src="/ex/resources/img/food/애월)봄날.jpg" class="foodimg" >
+                                <h3>봄날</h3>
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>  
+                                </a>  
                             </li>      
                     </ul>
                 </div>
@@ -79,9 +84,29 @@
     
     <script src="/ex/resources/js/food/review.js"></script>
     
+<!-- =============== 하단 ============== -->
+	<footer id="footer" style=" margin-top: 1300px">
+        <div class="footer_wrap">
+            <div class="footer_title">
+                <div class="footer_box">
+                    <img src="/ex/resources/img/main/jeju.png" style="margin-top: 30px;" >
+                </div>
+            </div>
+            <div id="v-line"></div>
+            <div class="footer_intro">
+                <div class="footer_box">
+                    <table class="footer_table">
+                        <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
+                        <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
+                        <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
+                        <tr><th>일정공유</th><td>누구</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </footer>
 	<!-- =============== 하단 ============== -->
-	<%@include file="../footer.jsp"%>
-	<!-- =============== 하단 ============== -->
+	
 	    
 </body>
 </html>

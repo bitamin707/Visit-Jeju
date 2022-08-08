@@ -1,6 +1,7 @@
 @charset "EUC-KR";
 
 
+
 /* =========== 웹페이지 폰트 스타일 미지정============= */
 * {
     list-style: none;
@@ -13,26 +14,14 @@
 
 @font-face {
     font-family: 'page_font';
-    src: url("font/georgia.ttf") format('truetype');
+    src: url("georgia.ttf") format('truetype');
 }
 /* ====================================================== */
 
 /* ======================= 상단 ========================= */
-/* ================ 헤더 (건들지 마시오) ================= */
-
-
-body {
-    height: 100%;
-    min-width: 1300px;
-}
-section {
-    padding-bottom: 200px;
-}
-
-
-/* 헤더 틀 */
+/*================== 헤더 ==================*/
 #header{
-    height: 110px;
+    height: 100px;
     background: rgba(0,0,0,.3);
     width: 100%;
     left: 0;
@@ -44,40 +33,34 @@ section {
     background: #f6f6f6;
     border-bottom-color: #ccc;
     display: block;
+    
 }
 
 /* 헤더 안에 컨테이너 박스 */
 #container{
     margin: 0 auto;
-    height: 90px;
+    height: 100px;
     width: 1290px;
     max-width: 100%;
     display: -webkit-box;
-    display: -ms-flexbox;
-    /* display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; 
-    플렉스와 플렉스 워랩은 페이지를 줄이면 컨텐츠들이 내려간다*/
     -webkit-box-pack: justify;
-    -ms-flex-pack: justify;  
-    /* justify-content: space-between; */
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    justify-content: space-between;
 }
 
 /* 좌측 박스 (h1 태그로 감싼 로고 이미지) */
 .logo{
     display: block;
-    height: 90px;
+    height: 100px;
     cursor: pointer;
     text-decoration: none;
     border: 0;
 }
 
-.logo > #img1 {
-    margin-top: 15px;
+#img_detail {
+    margin-top: 26px;
+    width:100%;
 }
+
 
 /* 중앙 카테고리 박스 */
 .menu{
@@ -89,14 +72,8 @@ section {
 .depth{
     width: 540px;
     display: -webkit-box;
-    display: -ms-flexbox;
-
     -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     list-style: none;
 }
 
@@ -106,69 +83,80 @@ section {
     color: #191919;
     text-align: center;
     width: 100%;
-    height: 90px;
-    line-height: 120px;
+    height: 100px;
+    line-height: 100px;
     font-size: 20px;
     position:relative;
 }
 
 /* 우측 박스 */
 .language-wrap{
-    position: relative;
     z-index: 3;
     width: 222px;
-    height: 90px;
+    height: 100px;
     display: -webkit-box;
-    display: -ms-flexbox;
-
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    align-items: center;
-    font-size: 20px;
+    opacity: 70%;
 }
 
 /* 우측 박스 (한국어)*/
-#lang{
-    position: relative;
-    background: url(login.JPG) no-repeat 0 50%;
-    text-align: left;
-    height: 90px;
-    width: 65px;
-    font-size: 16px;
+#search{
     padding-left: 20px;
     margin-left: 20px;
-    font-size: 20px;
 }
 
-/* 우측 박스 (동그라미 버튼) */
-.btn {
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background: url(login.JPG) no-repeat 50%/20px auto;
+#search_Form {
+    position: absolute;
+    top: 95px;
+    left: 70%;
+    width: 270px;
+    height: 60px;
+    z-index: 10;
+    border: 1px solid #ccc;
+    background-color: hsla(0,0%,100%);
 }
-/* ======================= 헤더 ======================= */
+
+.input_field {
+    width: 250px;
+    height: 50px;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+#search_name {
+    width: 200px;
+    height: 40px;
+    border: none;
+}
+
+#search_btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-image: url("https://korean.visitseoul.net/humanframe/theme/visitseoul/assets/images/2021/common/icn_search@2x.png");
+    background-position: 7px 7px;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-color: gray;
+    border: none;
+    
+}
+/*================== 헤더 끝==================*/
 
 
 /* 헤더를 재외한 웹페이지 width:1280px 고정. */
 .wrap {
     width:1280px;
-    height: 20000px;
     margin: 0 auto;
 }
 
 /* 상단의 이미지 */
 .intro_bg {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100%;
-    height: 500px;
+    height: 580px;
 }
 .intro_bg img {
-    height:500px;
+    height:580px;
 }
 
 /* 상단 이미지 안의 문자. 필요시 위치 수정. */
@@ -209,8 +197,7 @@ a {
 }
 
 .container{
-    border:1px solid black;
-    height:10000px;
+
     box-sizing: border-box;
     padding: 3px 10px;
 }
@@ -269,16 +256,16 @@ a {
 /* ======================= 면세점, 렌트카 버튼 ======================== */
 
 /* ======================= 컨텐츠 이미지 ======================== */
-#img1 {
+#shopping_main {
     margin: 35px auto;
     width:100%;
 }
 
 /* ============== 이미지+absolute이미지 ============== */
 #img_box{
+	margin-top: 30px;
     box-sizing: border-box;
     position:relative;
-    border:1px solid black;
 }
 #img2 {
     margin: 60px 25%;
@@ -302,6 +289,7 @@ a {
 
 /* 제품 탭 폰트 */
 .page_font {
+	color: #4b3100;
     font-family: 'page_font';
     font-size: 30px;
     margin-bottom: 5px;
@@ -320,31 +308,35 @@ a {
 
 /* 제품 박스공간 */
 .product_box {
-    border:1px solid black;
-    border-top: 1px solid red;
+    border-top: 3px solid #4b3100;
     width:100%;
-    height:815px;
     box-sizing: border-box;
-    padding-top:5px;
+    padding-top:20px;
 }
 
 /* 제품 틀 */
 .product {
+    border: 1px solid white;
     margin:3px;
-    border:1px solid black;
     width: 300px;
-    height: 392px;
+    height: 370px;
     display: inline-block;
+    position:relative;
     padding: 3px;
     text-align: center;
     box-sizing:border-box;
+    box-shadow:2px 2px 8px 0px rgb(0, 0, 0);
 }
 
 /* 제품 이미지 */
-.product_img:hover {
-    margin:9px;
-    width:90%;
-    box-shadow: 0px 8px 30px 10px rgb(255, 225, 186);
+.product_img {
+    width:280px;
+    height:250px;
+}
+
+.product_img img {
+    width:100%;
+    height:100%;
 }
 
 /* 제품 이름 */
@@ -364,4 +356,100 @@ a {
 .won {
     font-size: 17px;
     font-weight: 400;
+}
+
+
+/*================== 푸터==================*/
+#footer {
+    width: 100%;
+    min-width: 1280px;
+    height: 200px;
+    bottom: 0px;
+    /*position: absolute;*/
+    background-color: #3c3c3c;
+    text-align: center;
+    
+}
+
+.footer_wrap {
+    width: 1280px;
+    height: 200px;
+    margin: 0 auto;
+}
+.footer_title{
+    width: 610px;
+    height: 200px;
+    float: left;
+    margin-left: 30px;
+}
+.footer_intro{
+    width: 600px;
+    height: 200px;
+    float: right;
+    margin-right: 30px;
+}
+
+.footer_box {
+    height: 150px;
+    margin-top: 25px;
+}
+
+.footer_box > img {
+    width: 215px;
+    height: 85px;
+}
+
+.footer_table {
+    width: 500px;
+    font-size: 17px;
+    margin-left: 30px;
+    margin-top:50px;
+}
+.footer_table th {
+    width: 70px;
+    color: white;
+    text-align: left;
+}
+.footer_table td {
+    color: white;
+    width: 150px;
+    text-align: left;
+}
+
+#v-line {
+    float: left;
+    margin-top: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    height: 150px;
+}
+
+
+.product:hover .coverIt {
+    content:'';
+    display:block;
+    position:absolute;
+    bottom: 120px;
+    left:0;
+    width:100%;
+    height: 15%;
+    background:rgba(0, 0, 0, 0.765);
+    color:#ffa500;
+    z-index:1;
+    opacity: 1;
+    transition:all .3s5;
+}
+
+
+
+.coverIt {
+    position:absolute;
+    color: black;
+    font-size:24px;
+    font-weight:900;
+    opacity:0;
+    transition:all .35s;
+    bottom: 60px;
+    left:0;
+    width:100%;
+    height:20%;
 }

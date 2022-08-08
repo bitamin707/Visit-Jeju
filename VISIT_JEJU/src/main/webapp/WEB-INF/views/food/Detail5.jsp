@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/5_0.jpg" alt="하하호호"  width="2500px" height="600px">
+            <img  class="tophaha" src="/ex/resources/img/food/5_0.jpg" alt="블랑로쉐">
             <div class="img-content">
                 <h1>블랑로쉐</h1>
                 <p>#우도</p>
@@ -28,6 +28,7 @@
         <br>
         <div class="main-content">
             <div class="introduce"> 
+            <br/>
                  <img src="/ex/resources/img/food/5_1.jpg" alt="섬소나이" height="300px" width="49%" >
                 <img src="/ex/resources/img/food/5_2.jpg" alt="섬소나이" height="300px" width="50%">
                 <p>우도 하고수동 해변가에 위치한 카페다. 안에서 파랗게 빛나는 하고수동 해변을 볼 수 있다.
@@ -48,15 +49,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/4_1.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail4"  id="red">섬소나이</a> </h3>
+                            <a href="/ex/food/Detail4"  >
+                                <img src="/ex/resources/img/food/4_1.jpg"  class="foodimg"  >
+                                <h3>섬소나이 </h3>
                                 <p>주소 : 제주특별자치도 제주시 우도면 우도해안길 814</p>   
+                                </a>
                             </li>  
                 
                             <li>
-                                <img src="/ex/resources/img/food/애월)봄날.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail2"  id="red">봄날</a> </h3>
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>   
+                            <a href="/ex/food/Detail2">
+                                <img src="/ex/resources/img/food/애월)봄날.jpg"  class="foodimg"  >
+                                <h3>봄날 </h3>
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월로1길 25</p>  
+                                </a> 
                             </li>      
                     </ul>
                 </div>
@@ -77,9 +82,8 @@
             </div>
         </div>
     </section>
-    <script src="/ex/resources/js/food/review.js"></script>
     
-	<!-- =============== 하단 ============== -->
+    <!-- =============== 하단 ============== -->
 	<footer id="footer" style=" margin-top: 1300px">
         <div class="footer_wrap">
             <div class="footer_title">
@@ -101,6 +105,9 @@
         </div>
     </footer>
 	<!-- =============== 하단 ============== -->
+	
+    <script src="/ex/resources/js/food/review.js"></script>
+    
 	
     
 </body>

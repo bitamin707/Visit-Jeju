@@ -14,9 +14,6 @@ window.onload=function(){
 		location.href="/ex/main/merchList";
 	})
 	
-	document.getElementById('modify').addEventListener("click",function(){
-		document.getElementById('ModifyForm').submit();
-	})
 }
 </script>
 </head>
@@ -27,9 +24,10 @@ window.onload=function(){
 	imgLink:<input type="text" name=imgLink style="width:100%" value='${boardDtoMerch.imgLink }'><br>
 	price:<input type="text" name=price style="width:100%" value='${boardDtoMerch.price }'><br>
 	Content:<textarea name=content  rows="8" style="width:100%"	>${boardDtoMerch.content }</textarea><br>
+	
 </form>
-<button id=modify > 저장</button>
-<button id=main > 취소</button>
+<button id=modify type="submit"> 저장</button>
+<button id=main type="button"> 취소</button>
 
 </body>
 </html>

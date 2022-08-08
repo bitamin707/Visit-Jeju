@@ -14,17 +14,17 @@
 /* ================ 헤더 (건들지 마시오) ================= */
 
 
-
 /* 헤더를 재외한 웹페이지 width:1280px 고정. */
 .wrap {
     width:1280px;
     margin: 0 auto;
+   
 }
 
-/* 상단의 이미지 */
-.intro_bg {
-    width: 100%;
-    height: 500px;
+.topimg{
+	width:100%;
+	height:600px;
+	position:relative;
 }
 
 /* 상단 이미지 안의 문자. 필요시 위치 수정. */
@@ -50,73 +50,42 @@
     margin-left: 20px;
 }
 /* ======================= 상단 ========================= */
-
-/* ======================= 하단 ========================= */
-.event {
-    background-color: blue;
-}
-.tags{
-    display:flex;
-    justify-content: center;   
-}
-.taglist li{
-    padding:10px;
-    list-style-type: none;
-    margin-right:3px;
-    border-radius: 100%;
-    border:solid 1px;
-    float:left;
+/* 헤더를 재외한 웹페이지 width:1280px 고정. */
+.wrap {
+    width:1280px;
+    margin: 0 auto;
+   
 }
 
-.event_area {
-    width: 590px;
-    height: 250px;
-    margin: 30px 15px 0px 25px;
-    border: 1px solid black;
-    float: left;
+.topimg{
+	width:100%;
+	height:600px;
+	position:relative;
 }
 
-.event_area > a > div {
-    float: left;
+/* 상단 이미지 안의 문자. 필요시 위치 수정. */
+.intro_text {
+	 width:1280px;
+    margin: 0 auto;
+    /*position:absolute;
+    bottom: 550px; 
+    left: 200px;*/
+    /* 바텀이 0에 가까울수록 내려감 */
+    /* 레프트가 0에 가까울수록 왼쪽에 붙음 */
 }
 
-#event_area_img {
-    width: 320px;
-}
-
-#event_area_img > img {
-    width: 270px;
-    height: 200px;
-    padding: 30px 30px 20px 30px;
-}
-
-.event_area_text {
-    width: 240px;
+/* 태그 */
+.month {
+    display: flex;
     margin-top: 30px;
-    float: left;
+    justify-content: center;
+    padding-bottom: 30px;
 }
-
-.event_area_text > h2 {
-    background-color: rgba(255, 0, 0, 0.425);
+/* 각 태그별 간격 */
+.month > li {
+    margin-left: 20px;
 }
-
-.event_area_text > .event_content {
-    margin-top: 20px;
-    height: 80px;
-    background-color: skyblue;
-}
-
-.event_area_text > .event_date {
-    margin-top: 20px;
-    height: 20px;
-    background-color: skyblue;
-}
-
-.event_area_text > .event_local {
-    margin-top: 10px;
-    height: 20px;
-    background-color: skyblue;
-}
+/* ======================= 상단 ========================= */
 
 /*================== 푸터==================*/
 #footer {

@@ -17,7 +17,7 @@
     
     <section>
         <div class="img">
-            <img src="/ex/resources/img/food/1봄날.jpg" alt="하하호호"  width="2000px" height="600px">
+            <img class="tophaha" src="/ex/resources/img/food/1봄날.jpg" alt="봄날">
             <div class="img-content">
                 <h1>봄날</h1>
                 <p>#애월</p>
@@ -28,6 +28,7 @@
         <br>
         <div class="main-content">
             <div class="introduce"> 
+            <br/>
                 <img src="/ex/resources/img/food/4봄날.jpg" alt="봄날" height="400px" width="100%"><br>
                 <p>드라마의 주인공이 일하던 카페라서 유명해졌다.
                     해변을 바라보며 차 한잔의 여유를 즐기기에 좋으며 제주 돌담의 정취를 느낄 수 있다.</p>
@@ -46,15 +47,19 @@
                     <h3>추천페이지</h3>
                     <ul class="list-img">
                             <li>
-                                <img src="/ex/resources/img/food/우도)하하호호.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail"  id="red">하하호호</a> </h3>
+                              <a href="/ex/food/Detail">
+                                <img src="/ex/resources/img/food/우도)하하호호.jpg" class="foodimg">
+                                <h3>하하호호</h3>
                                 <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>  
+                               </a> 
                             </li>
                 
                             <li>
-                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" alt="" >
-                                <h3><a href="/ex/food/Detail3"  id="red">바다속 고등어쌈밥</a> </h3>    
-                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>   
+                               <a href="/ex/food/Detail3">
+                                <img src="/ex/resources/img/food/바다속 고등어쌈밥.jpg" class="foodimg">
+                                <h3>바다속 고등어쌈밥 </h3>    
+                                <p>주소 : 제주특별자치도 제주시 애월읍 애월해안로 7089</p>  
+                                </a> 
                             </li>        
                     </ul>
                 </div>
@@ -78,9 +83,29 @@
 
     <script src="/ex/resources/js/food/review.js"></script>
     
-    <!-- =============== 하단 ============== -->
-	<%@include file="../footer.jsp"%>
+<!-- =============== 하단 ============== -->
+	<footer id="footer" style=" margin-top: 1300px">
+        <div class="footer_wrap">
+            <div class="footer_title">
+                <div class="footer_box">
+                    <img src="/ex/resources/img/main/jeju.png" style="margin-top: 30px;" >
+                </div>
+            </div>
+            <div id="v-line"></div>
+            <div class="footer_intro">
+                <div class="footer_box">
+                    <table class="footer_table">
+                        <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
+                        <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
+                        <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
+                        <tr><th>일정공유</th><td>누구</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </footer>
 	<!-- =============== 하단 ============== -->
+	
 	
 </body>
 </html>

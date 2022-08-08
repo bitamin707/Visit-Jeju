@@ -15,10 +15,6 @@ window.onload=function(){
 	});
 }
 </script>
-<style>
-th
-
-</style>
 </head>
 <body>
 <table border="1" width="90%" id="customers">

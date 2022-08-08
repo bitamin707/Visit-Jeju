@@ -13,117 +13,9 @@
 /* ======================= 상단 ========================= */
 /* ================ 헤더 (건들지 마시오) ================= */
 
-/* 헤더 틀 */
-#header{
-    height: 110px;
-    background: rgba(0,0,0,.3);
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 600;
-    border-bottom: 1px solid hsla(0,0%,100%,.3);
-    position: fixed;
-    /* position: absolute; */
-    background: #f6f6f6;
-    border-bottom-color: #ccc;
-    display: block;
-}
-
-/* 헤더 안에 컨테이너 박스 */
-#container{
-    margin: 0 auto;
-    height: 90px;
-    width: 1290px;
-    max-width: 100%;
-    display: -webkit-box;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-}
-
-/* 좌측 박스 (h1 태그로 감싼 로고 이미지) */
-.logo{
-    display: block;
-    height: 90px;
-    cursor: pointer;
-    text-decoration: none;
-    border: 0;
-}
-
-.logo > #img1 {
-    margin-top: 15px;
-}
-
-/* 중앙 카테고리 박스 */
-.menu{
-    list-style: none;
-    display: block;
-}
-
-/* 중앙 카테고리 (ul박스) */
-.depth{
-    width: 540px;
-    display: -webkit-box;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    list-style: none;
-}
-
-/* 중앙 카테고리 박스 (폰트 스타일) */
-.menu_a{
-    font-weight: 700;
-    color: #191919;
-    text-align: center;
-    width: 100%;
-    height: 90px;
-    line-height: 120px;
-    font-size: 20px;
-    position:relative;
-}
-
-/* 우측 박스 */
-.language-wrap{
-    position: relative;
-    z-index: 3;
-    width: 222px;
-    height: 90px;
-    display: -webkit-box;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    font-size: 20px;
-}
-
-/* 우측 박스 (한국어)*/
-#lang{
-    position: relative;
-    background: url(login.JPG) no-repeat 0 50%;
-    text-align: left;
-    height: 90px;
-    width: 65px;
-    font-size: 16px;
-    padding-left: 20px;
-    margin-left: 20px;
-    font-size: 20px;
-}
-
-/* 우측 박스 (동그라미 버튼) */
-.btn {
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background: url(login.JPG) no-repeat 50%/20px auto;
-}
-/* ======================= 헤더 ======================= */
-
 
 /* 헤더를 재외한 웹페이지 width:1280px 고정. */
-.wrap {
-    width: 100%;
-    margin: 0 auto;
-    min-height: 100vh;
-    position: relative;
-}
+
 
 
 
@@ -131,6 +23,7 @@
     width: 1280px;
     margin: 0px auto;
 }
+
 
 
 /* 상단의 이미지 */
@@ -156,11 +49,10 @@
     
 }
 
-.intro_text  h3, p, a{
+.intro_text h3, .intro_text p, .intro_text a{
     color: rgb(250, 250, 250);
     
 }
-
 
 /* ======================= 상단 ========================= */
 
@@ -177,24 +69,23 @@
 .event_area {
     width: 580px;
     height: 250px;
-    margin: 200px 15px 0px 25px;
+    margin: 50px 15px 0px 25px;
     
     float: left;
 }
 
-
-
 #event_area_img > img {
     width: 270px;
     height: 200px;
-    padding: 30px 30px 20px 30px;
+    padding: 30px 30px 20px 10px;
 }
 
 .event_area_text {
     width: 1100px;
-    margin-top: 300px;
+    margin-top: 250px;
     margin-left: 50px;
     float: left;
+    
 }
 
 .event_area > a > div > .like{
@@ -207,62 +98,3 @@
 
 
 
-/*================== 푸터==================*/
-#footer {
-    width: 100%;
-    min-width: 1280px;
-    height: 200px;
-    bottom: 0px;
-    /*position: absolute;*/
-    background-color: #3c3c3c;
-    text-align: center;
-    
-}
-
-.footer_wrap {
-    width: 1280px;
-    height: 200px;
-    margin: 0 auto;
-}
-.footer_title{
-    width: 610px;
-    height: 200px;
-    float: left;
-    margin-left: 30px;
-}
-.footer_intro{
-    width: 600px;
-    height: 200px;
-    float: right;
-    margin-right: 30px;
-}
-
-.footer_box {
-    height: 150px;
-    margin-top: 25px;
-}
-
-.footer_table {
-    width: 500px;
-    font-size: 17px;
-    margin-left: 30px;
-    margin-top:50px;
-}
-.footer_table th {
-    width: 70px;
-    color: white;
-    text-align: left;
-}
-.footer_table td {
-    color: white;
-    width: 150px;
-    text-align: left;
-}
-
-#v-line {
-    float: left;
-    margin-top: 30px;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    height: 150px;
-}
-/*================== 푸터 끝==================*/

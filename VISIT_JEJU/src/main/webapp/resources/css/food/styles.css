@@ -35,9 +35,10 @@ input,button{
     flex-basis: 30%;
     margin-top: 20px;
 }
-.list>li>img{
-    width: 500px ;
-    height: 400px;
+
+.foodimg{
+	width: 500px;   
+	height: 400px;
 }
 
 .url{
@@ -55,11 +56,12 @@ input,button{
 .img-content{
     position: relative;
     top: -150px;
-    left: 5%;
+    left: 23%;
 }
 .introduce{
     position: relative;
     top: -120px;
+    left: 3%;
 }
 .main-content{
     margin: 0 auto;
@@ -74,6 +76,9 @@ input,button{
     width: 35%;
     position: relative;
     top: -120px;
+}
+.container{
+	left: 1%
 }
 .review, .travel{
     margin-top: 20px;
@@ -114,4 +119,11 @@ button{
     background-color: black;
     border-radius: 15px;
     color: white;
+}
+.tophaha{
+	width: 1200px;
+	height: 600px;
+	display: block;
+	margin: 0px auto;
+	
 }
