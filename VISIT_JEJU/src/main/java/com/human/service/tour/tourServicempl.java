@@ -29,19 +29,21 @@ public class tourServicempl implements tourService{
 	@Override
 	public void update(tourDto dto) throws Exception {
 		tourDao dao=sqlSession.getMapper(tourDao.class);
-		return dao.read(tno);
+		dao.update(dto);
 	}
 
 	@Override
 	public void delete(int tno) throws Exception {
-		// TODO Auto-generated method stub
+		tourDao dao=sqlSession.getMapper(tourDao.class);
+		dao.delete(tno);
 		
 	}
 
 	@Override
 	public List<tourDto> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		tourDao dao=sqlSession.getMapper(tourDao.class);
+		List<tourDto> dtos=dao.listAll();
+		return dtos;
 	}
 
 }
