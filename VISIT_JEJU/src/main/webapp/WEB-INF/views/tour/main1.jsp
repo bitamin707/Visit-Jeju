@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>관광지</title>
   <link rel="stylesheet" href="/ex/resources/css/tour/utils/reset.css">
-  <link rel="stylesheet" href="/ex/resources/css/tour/style.css">
+  <link rel="stylesheet" href="/ex/resources/css/tour/style.css?after">
   <link rel="stylesheet" type="text/css" href="/ex/resources/css/style_footer.css">
 </head>
 
@@ -30,13 +30,14 @@
                 <h4>제주도 관광지 소개</h4>
             </div>  
       </div>
+
     <!-- ============== 이미지 =============== -->
 
     <!-- ============= 태그 ================ -->
 
   <section>
         <ul>
-          <li class="active">전체</li>
+          <li>전체</li>
           <li>예술및문화문화</li>
           <li>역사</li>
           <li>해변</li>
@@ -241,32 +242,8 @@
       </div>
 
     </div>
+   </div>
 
-
-    <script>
-      const liItem = document.querySelectorAll('section ul li');
-      const imgItem = document.querySelectorAll('.travel-cards img');
-
-      liItem.forEach(li => {
-        li.onclick = function() {
-          //active
-          liItem.forEach(li => {
-            li.className = "";
-          })
-          li.className = "active";        
-        }
-
-        //filter
-        const value = li.textContent;
-        imgItem.forEach(img => {
-          if (img.getAttribute('data-filter') == value.toLocaleLowerCase() || value == "전체") {
-              img.style.display = 'block';
-          }
-
-        })
-      });
-
-    </script>
 
   <footer id="footer">
     <div class="footer_wrap">
