@@ -70,8 +70,8 @@
     <form action="/ex/shopping/product/Create1" method="post">
     <table border="1" width="1000px" id="customers">
         <tr>
-            <th>제품 고유번호</th>
-            <td><input type="text" name=pno required></td>
+            <th>제품 고유번호 (6자리)</th>
+            <td><input type="text" name=pno required maxlength="6"></td>
         </tr>
         <tr>
             <th>제품 이름</th>
@@ -106,7 +106,7 @@
                         <option value="tag_vintage">빈티지</option>
                         <option value="tag_priceNess">초고가</option>
                         <option value="tag_priceLess">가성비</option>
-                        <option value="soso">무난해요~</option>
+                        <option value="tag_soso">무난해요~</option>
                 </select>
             </td>
         </tr>

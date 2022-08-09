@@ -29,7 +29,7 @@
             </div>
 
             <ul class="back">
-                <li style="display:inline-block"><a href="Shop_page1.html" id="home">Home</a> > </li>
+                <li style="display:inline-block"><a href="/ex/shopping/main/Main" id="home">Home</a> > </li>
                 <li style="display:inline-block"><a>${boardDtoShop1.product_category }</a></li>
             </ul>
 

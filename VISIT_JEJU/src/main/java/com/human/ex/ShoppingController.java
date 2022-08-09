@@ -1,7 +1,8 @@
 package com.human.ex;
 
-import javax.inject.Inject; 
+import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.shopping.BoardDtoShop1;
 import com.human.service.shopping.IBoardServiceShop1;
-
+import com.human.service.shopping.IBoardServiceShop2;
+import com.human.vo.shopping.PageMaker;
 
 
 @Controller
@@ -20,6 +22,9 @@ public class ShoppingController {
 		
 	@Inject
 	private IBoardServiceShop1 service;
+	
+	@Autowired
+		private IBoardServiceShop2 bm;
 	
 	@RequestMapping(value = "/main/MainNormal", method = RequestMethod.GET)
 	public void MainNormal(Model model, BoardDtoShop1 dto) throws Exception {
@@ -109,6 +114,15 @@ public class ShoppingController {
 		rttr.addFlashAttribute("keeping","success");
 		service.update(dto);
 		return "redirect:/shopping/main/Remocon_bag";
+	}
+	
+	@RequestMapping(value = "product/test", method = RequestMethod.GET)
+	public void list(PageMaker pm,Model model) throws Exception {
+		System.out.println(pm);
+		model.addAttribute("list",bm.listSearchCriteria(pm));
+
+		pm.setTotalCount(bm.listSearchCount(pm));
+
 	}
 
 	

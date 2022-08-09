@@ -118,7 +118,7 @@
                         <option value="tag_vintage">빈티지</option>
                         <option value="tag_priceNess">초고가</option>
                         <option value="tag_priceLess">가성비</option>
-                        <option value="soso">무난해요~</option>
+                        <option value="tag_soso">무난해요~</option>
                 </select>
             </td>
         </tr>
