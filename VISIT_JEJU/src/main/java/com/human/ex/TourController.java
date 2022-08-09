@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.human.dto.tour.tourDto;
+
 @Controller
 public class TourController {
 	
@@ -23,6 +25,9 @@ public class TourController {
 	@RequestMapping(value = "/tour/data2", method = RequestMethod.GET)
 	public void data2(Model model) {
 	}
+}
+	
+	
+	
 		
-	}
 	
