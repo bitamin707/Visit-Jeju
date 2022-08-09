@@ -5,30 +5,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.human.dao.festival.festivalDao">
 
-<insert id="create">
-insert into festival
-values (seqnum.nextval, #{fname}, #{fcontent}, #{fstart_date}, #{fend_date}, #{flocation}, #{fregion}, #{imglink})
-</insert>
+	<insert id="create">
+		insert into festival
+		values (seqnum.nextval, #{fname}, #{fcontent}, #{fstart_date}, #{fend_date},
+		#{flocation}, #{fregion}, #{imglink})
+	</insert>
 
-<select id="read" resultType="festivalDto">
-select * from festival where fno=#{fno}
-</select>
+	<select id="read" resultType="festivalDto">
+		select * from festival where fno=#{fno}
+	</select>
 
-<delete id="delete">
-delete from festival where fno=#{fno}
-</delete>
+	<delete id="delete">
+		delete from festival where fno=#{fno}
+	</delete>
 
-<update id="update">
-update festival 
-set fname=#{fname}, fcontent=#{fcontent}, fstart_date=#{fstart_date}, fend_date=#{fend_date}, flocation=#{flocation}, fregion=#{fregion}, imglink=#{imglink}  
-where fno=#{fno}
-</update>
+	<update id="update">
+		update festival
+		set fname=#{fname}, fcontent=#{fcontent}, fstart_date=#{fstart_date},
+		fend_date=#{fend_date}, flocation=#{flocation}, fregion=#{fregion},
+		imglink=#{imglink}
+		where fno=#{fno}
+	</update>
 
-<select id="listAll" resultType="com.human.dto.festival.festivalDto">
-select * from festival
+	<select id="listAll"
+		resultType="com.human.dto.festival.festivalDto">
+		select * from festival order by fstart_date
 
-</select>
-
-
+	</select>
 
 </mapper>

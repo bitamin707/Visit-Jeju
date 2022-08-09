@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>관광지</title>
 	<link rel="stylesheet" href="/ex/resources/css/tour/utils/reset.css">
-	<link rel="stylesheet" href="/ex/resources/css/tour/style2.css">
+	<link rel="stylesheet" href="/ex/resources/css/tour/style2.css?after">
 	<link rel="stylesheet" type="text/css" href="/ex/resources/css/style_footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -30,6 +30,7 @@
                 <h4>제주도 관광지 소개</h4>
             </div>  
       </div>
+    </div>
     <!-- ============== 이미지 =============== -->
     
     
@@ -136,7 +137,7 @@
               그 것을 이용한 떡, 아이스크림 등을 판매하는 카페도 같이 운영하고 있다. 카페에서는 족욕도 체험할 수 있고, 다원 안에 동굴도 있어서, 이모저모 구경할 거리와 즐길 거리가 있다. 성읍녹차마을에 들러 푸르른 녹차 밭도 구경하며 차 한 잔의 여유도 만끽해보자.</p>
             <br>
             <ul>
-              제주의 자연조건
+              	제주의 자연조건
               <li>우수한 토양조건: 물빠짐이 좋은 화산회토</li>
               <li>화산암반수: 청정제주의 맑은 물</li>
               <li>평균기온: 연 평균기온 섭시 15~16도(차 재배 최적온도 12~17)</li>

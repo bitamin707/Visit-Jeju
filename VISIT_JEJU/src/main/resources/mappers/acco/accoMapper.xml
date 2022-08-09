@@ -17,13 +17,15 @@ select * from acco where acco_id=#{acco_id}
 </select>
 
 <delete id="delete">
-delete from acco where =#{acco_id}
+delete from acco where acco_id=#{acco_id}
 </delete>
 
 <update id="update">
-update acco set acco_name=#{acco_name}, acco_address1=#{acco_address1}, acco_address2=#{acco_address2},
+update acco 
+set acco_name=#{acco_name}, acco_address1=#{acco_address1}, acco_address2=#{acco_address2},
  acco_tag1=#{acco_tag1}, acco_tag2=#{acco_tag2}, acco_tag3=#{acco_tag3}, 
-acco_tag4=#{acco_tag4}, acco_like=#{acco_like}, acco_reviewcounter=#{acco_reviewcounter}
+ acco_tag4=#{acco_tag4}, acco_like=#{acco_like}, acco_reviewcounter=#{acco_reviewcounter} 
+where acco_id=#{acco_id}
 </update>
 
 <select id="listAll" resultType="com.human.dto.acco.AccoDto">
