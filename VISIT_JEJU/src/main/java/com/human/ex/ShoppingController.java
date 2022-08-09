@@ -59,8 +59,9 @@ public class ShoppingController {
 	
 	@RequestMapping(value = "/product/ShowContent", method = RequestMethod.GET)
 	public void Read(@RequestParam("pno") int pno,Model model) throws Exception {
-		System.out.println(service.read(pno));
-		model.addAttribute(service.read(pno));
+		System.out.print("ShowContect");
+		System.out.println(service.read_add(pno));
+		model.addAttribute(service.read_add(pno));
 	}
 
 	
@@ -79,9 +80,35 @@ public class ShoppingController {
 		return "redirect:/shopping/product/Delete?pno="+pno;
 	}
 	
+	
 	@RequestMapping(value = "product/Modify_add", method = RequestMethod.GET)
 	public void Modify_add_get(@RequestParam(required=false) int pno, Model model)throws Exception {
+		model.addAttribute(service.read_add(pno));
+	}
+	
+	@RequestMapping(value = "product/Modify_add", method = RequestMethod.POST)
+	public String Modify_add_post(BoardDtoShop1 dto, RedirectAttributes rttr) throws Exception {
+		System.out.println("Modify_add");
+		System.out.println(dto);
+		rttr.addFlashAttribute("keeping","success");
+		service.update_add(dto);
+		String a = dto.pno;
+		return "redirect:/shopping/product/Modify?pno="+a;
+	}
+	
+	
+	@RequestMapping(value = "product/Modify", method = RequestMethod.GET)
+	public void Modify_get(@RequestParam(required=false) int pno, Model model)throws Exception {
 		model.addAttribute(service.read(pno));
+	}
+	
+	@RequestMapping(value = "product/Modify", method = RequestMethod.POST)
+	public String Modify_post(BoardDtoShop1 dto, RedirectAttributes rttr) throws Exception {
+		System.out.println("Modify");
+		System.out.println(dto);
+		rttr.addFlashAttribute("keeping","success");
+		service.update(dto);
+		return "redirect:/shopping/main/Remocon_bag";
 	}
 
 	

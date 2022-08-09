@@ -42,6 +42,7 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		dao.delete_add(pno);
 	}
 
+	
 	@Override
 	public void update(BoardDtoShop1 dto) throws Exception {
 		// TODO Auto-generated method stub
@@ -49,6 +50,14 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		dao.update(dto);
 	}
 
+	@Override
+	public void update_add(BoardDtoShop1 dto) throws Exception {
+		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
+		dao.update_add(dto);
+		
+	}
+	
+	
 	@Override
 	public List<BoardDtoShop1> listAll() throws Exception {
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
@@ -68,9 +77,16 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		return dtos;
 	}
 
+	
 	@Override
 	public BoardDtoShop1 read(int pno) throws Exception {
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
 		return dao.read(pno);
 	}
+	@Override
+	public BoardDtoShop1 read_add(int pno) throws Exception {
+		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
+		return dao.read_add(pno);
+	}
+
 }

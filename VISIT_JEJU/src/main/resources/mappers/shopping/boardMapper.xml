@@ -14,21 +14,31 @@ insert into product_add (product_icon, product_info, product_max_qty, pno, produ
 values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{product_img })
 </insert>
 
+
 <select id="read" resultType="BoardDtoShop1">
+select * from product where pno=#{pno}
+</select>
+<select id="read_add" resultType="BoardDtoShop1">
 select * from product_add where pno=#{pno}
 </select>
+
 
 <delete id="delete">
 delete from product where pno=#{pno}
 </delete>
-
 <delete id="delete_add">
 delete from product_add where pno=#{pno}
 </delete>
 
+
 <update id="update">
-update product set product_name=#{product_name },product_price=#{product_price },product_won=#{product_won } 
+update product set product_name=#{product_name }, product_price=#{product_price }, product_won=#{product_won }, product_category=#{product_category }, product_tag=#{product_tag } where pno=#{pno }
 </update>
+<update id="update_add">
+update product_add set product_icon=#{product_icon }, product_max_qty=#{product_max_qty }, product_info=#{product_info }, product_img=#{product_img } where pno=#{pno }
+</update>
+
+
 
 <select id="listAll" resultType="com.human.dto.shopping.BoardDtoShop1">
 select * from product

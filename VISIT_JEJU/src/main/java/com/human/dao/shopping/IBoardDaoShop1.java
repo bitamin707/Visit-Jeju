@@ -9,8 +9,12 @@ import com.human.dto.shopping.BoardDtoShop1;
 public interface IBoardDaoShop1 {
 	public void create(BoardDtoShop1 dto) throws Exception;
 	public void create_add(BoardDtoShop1 dto) throws Exception;
+	
 	public BoardDtoShop1 read(int pno) throws Exception;
+	public BoardDtoShop1 read_add(int pno) throws Exception;
+
 	public void update(BoardDtoShop1 dto) throws Exception;
+	public void update_add(BoardDtoShop1 dto) throws Exception;
 	
 	public void delete(String pno) throws Exception;
 	public void delete_add(String pno) throws Exception;

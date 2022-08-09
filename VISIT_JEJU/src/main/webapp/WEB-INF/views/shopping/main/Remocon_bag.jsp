@@ -20,7 +20,8 @@ text-align:center;
 }
 
 button {
-margin-left:5%;
+	margin-left:5%;
+	height:30px;
 }
 
 tr td {
