@@ -116,13 +116,12 @@ public class ShoppingController {
 		return "redirect:/shopping/main/Remocon_bag";
 	}
 	
-	@RequestMapping(value = "product/test", method = RequestMethod.GET)
+	@RequestMapping(value = "product/list", method = RequestMethod.GET)
 	public void list(PageMaker pm,Model model) throws Exception {
 		System.out.println(pm);
 		model.addAttribute("list",bm.listSearchCriteria(pm));
 
 		pm.setTotalCount(bm.listSearchCount(pm));
-
 	}
 
 	

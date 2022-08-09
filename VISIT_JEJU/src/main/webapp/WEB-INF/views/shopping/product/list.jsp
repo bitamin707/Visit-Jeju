@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
     <style>
         * {
@@ -226,43 +228,43 @@ border-radius: 5px;
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
+</style>
 
+<script>
+  var result = '${msg}';
 
-    </style>
+	if (result == 'success') {
+		alert("처리가 완료되었습니다.");
+	}
+  $(document).ready(function(){
+	  $('#searchBtn').on("click",function(event){
+		  alert("list"+'${pageMaker.makePage(1)}'
+				  +'&searchType='+$("select option:selected").val()
+				  +"&keyword="+$('#keywordInput').val());
+		  
+		  self.location="list"+'${pageMaker.makePage(1)}'
+		  +'&searchType='+$("select option:selected").val()
+		  +"&keyword="+$('#keywordInput').val();
+		  
+	  })
+	  // 검색 버튼을 눌렀을 때, 카테고리, 검색어 등등의 밸류값을 전송합니다.
+	  // PageMaker에서 setter로 받습니다.
+	  // pageMaker문서의 makePage를 참조하세요.
+	  // 쿼리스트링으로 값이 바뀐 PageMaker를 컨트롤러에서 받아와 전송합니다.
+	  
+	  $('.writeBtn').on("click",function(event){
+		  location.href="/ex/shopping/product/list";
+	  });
+		$('#newBtn').on("click",function(event){
+		  self.location="write";
+	  });
+	  
+  });
+  	
+  </script>
+
 </head>
 <body>
-    <script>
-        var result = '${msg}';
-      
-          if (result == 'success') {
-              alert("처리가 완료되었습니다.");
-          }
-        $(document).ready(function(){
-            $('#searchBtn').on("click",function(event){
-                alert("list"+'${pageMaker.makePage(1)}'
-                        +'&searchType='+$("select option:selected").val()
-                        +"&keyword="+$('#keywordInput').val());
-                
-                self.location="list"+'${pageMaker.makePage(1)}'
-                +'&searchType='+$("select option:selected").val()
-                +"&keyword="+$('#keywordInput').val();
-                
-            })
-            // 검색 버튼을 눌렀을 때, 카테고리, 검색어 등등의 밸류값을 전송합니다.
-            // PageMaker에서 setter로 받습니다.
-            // pageMaker문서의 makePage를 참조하세요.
-            // 쿼리스트링으로 값이 바뀐 PageMaker를 컨트롤러에서 받아와 전송합니다.
-            
-            $('.writeBtn').on("click",function(event){
-                location.href="/ex/sboard/write";
-            });
-              $('#newBtn').on("click",function(event){
-                self.location="write";
-            });
-            
-        });
-            
-        </script>
         <div class="board_main">
             <h2 class="review_board">구매자 상품 후기</h2>
             <h5 class="review_board_menu">일반 리뷰(0)</h5>
@@ -279,11 +281,11 @@ border-radius: 5px;
                   <!-- <option value="n" selected>----</option>
                   <option value="n">----</option> -->
                   <option value="t"
-                      <c:out value="${pageMaker.searchType eq 't'?'selected':'' }"/>>title</option>
+                      <c:out value="${pageMaker.searchType eq 't'?'selected':'' }"/>>제품이름</option>
                   <option value="c"
-                      <c:out value="${pageMaker.searchType eq 'c'?'selected':'' }"/>>content</option>
+                      <c:out value="${pageMaker.searchType eq 'c'?'selected':'' }"/>>추천</option>
                   <option value="w"
-                      <c:out value="${pageMaker.searchType eq 'w'?'selected':'' }"/>>writer</option>
+                      <c:out value="${pageMaker.searchType eq 'w'?'selected':'' }"/>>유저아이디</option>
               </select> 
               <input type="text" name="keyword" id="keywordInput"
                   value="${pageMaker.keyword}">
