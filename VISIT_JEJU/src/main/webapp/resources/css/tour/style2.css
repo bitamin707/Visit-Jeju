@@ -24,7 +24,7 @@
 .intro_bg {
   width: 100%;
   height: 500px;
-  background-image: url(/ex/resources/img/tour/유채꽃.jpg");
+  background-image: url("/ex/resources/img/tour/유채꽃.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
