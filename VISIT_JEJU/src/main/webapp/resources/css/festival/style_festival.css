@@ -47,6 +47,7 @@ section {
 .content {
     width: 1280px;
     margin: 0px auto;
+    
 }
 
 .month {
@@ -55,20 +56,18 @@ section {
     justify-content: center;
     padding-bottom: 30px;
 }
-.month > li > a {
+.selectMonth {
     margin-left: 20px;
     cursor: pointer;
     font-size: 18px;
     color: rgba(0, 0, 0, 50%);
 }
 .month > li > a:hover {
-    color: orange;
     font-weight: 700;
 }
 
 .event{
 	overflow: hidden;
-    height: auto;
 }
 
 .event_area {

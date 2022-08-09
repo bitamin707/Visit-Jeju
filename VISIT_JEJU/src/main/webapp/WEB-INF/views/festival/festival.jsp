@@ -20,28 +20,28 @@
 		<section>
 			<div class="intro_bg"></div>
 			<div class="content">
-				<div class="intro_text">
+				<div class="intro_text" id="MonthLink">
 					<h1>축제와 행사</h1>
 					<h4>제주도 축제와 행사</h4>
 				</div>
 				<ul class="month">
-					<li><a href="#" class="0m">전체</a></li>
-					<li><a href="#1" class="1m">1월</a></li>
-					<li><a href="#2" class="2m">2월</a></li>
-					<li><a href="#3" class="3m">3월</a></li>
-					<li><a href="#4" class="4m">4월</a></li>
-					<li><a href="#5" class="5m">5월</a></li>
-					<li><a href="#6" class="6m">6월</a></li>
-					<li><a href="#7" class="7m">7월</a></li>
-					<li><a href="#8" class="8m">8월</a></li>
-					<li><a href="#9" class="9m">9월</a></li>
-					<li><a href="#10" class="10m">10월</a></li>
-					<li><a href="#11" class="11m">11월</a></li>
-					<li><a href="#12" class="12m">12월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="0m" onclick="selectAll()">전체</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="1m" onclick="inputMonth(1)">1월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="2m" onclick="inputMonth(2)">2월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="3m" onclick="inputMonth(3)">3월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="4m" onclick="inputMonth(4)">4월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="5m" onclick="inputMonth(5)">5월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="6m" onclick="inputMonth(6)">6월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="7m" onclick="inputMonth(7)">7월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="8m" onclick="inputMonth(8)">8월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="9m" onclick="inputMonth(9)">9월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="10m" onclick="inputMonth(10)">10월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="11m" onclick="inputMonth(11)">11월</a></li>
+					<li><a href="#MonthLink" class="selectMonth" id="12m" onclick="inputMonth(12)">12월</a></li>
 				</ul>
 				<hr>
 				<button type="button"><a href="modify/festivalCreate">컨텐츠 추가</a></button>
-				<div class="event">
+				<div class="event" id="eventList">
 					<c:forEach items="${list }" var="festivalDto">
 						<div class="event_area">
 							<a href="detail/${festivalDto.fname }">
@@ -51,14 +51,15 @@
 								<div class="event_area_text">
 									<h2>${festivalDto.fname }</h2>
 									<p class="event_content">${festivalDto.fcontent }</p>
-									<p class="event_date">${festivalDto.fstart_date }~
-										${festivalDto.fend_date }</p>
-									<p class="event_local">${festivalDto.flocation }>
+									<p class="event_date"><input type="hidden" class="start_date" value="${festivalDto.fstart_date }">${festivalDto.fstart_date } ~
+										<input type="hidden" class="end_date" value="${festivalDto.fend_date }">${festivalDto.fend_date }</p>
+									<p class="event_local">${festivalDto.flocation } >
 										${festivalDto.fregion }</p>
 								</div>
 							</a>
 							<button type="button"><a href="modify/festivalModify?fno=${festivalDto.fno }">수정</a></button>
 						</div>
+						
 					</c:forEach>
 				</div>
 			</div>
@@ -66,4 +67,5 @@
 		<%@include file="../footer.jsp"%>
 	</div>
 </body>
+<script src="/ex/resources/js/festival/selectMonth.js"></script>
 </html>
