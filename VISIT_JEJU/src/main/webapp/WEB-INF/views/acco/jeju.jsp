@@ -119,16 +119,23 @@
 										class="count">${AccoDto.acco_like} </span> <span>리뷰</span> <span
 										class="count">${AccoDto.acco_reviewcounter} </span>
 								</p>
-								<a href='/ex/acco/function/delete?acco_id=${AccoDto.acco_id }'>삭제</a>
-								<button type="button"><a href="/ex/acco/function/accoModify?acco_id=${AccoDto.acco_id }">수정</a></button>
-								
+								<p
+									style="position: relative; text-align: right; margin-right: 10px;">
+									<button type="button">
+									<a href='/ex/acco/function/delete?acco_id=${AccoDto.acco_id }'>삭제</a>
+									</button>
+									<button type="button">
+										<a
+											href="/ex/acco/function/accoModify?acco_id=${AccoDto.acco_id }">수정</a>
+									</button>
+								</p>
 							</div>
 						</a>
 
 
 					</div>
 				</c:forEach>
-				
+
 			</div>
 		</div>
 

@@ -70,7 +70,13 @@
 			<option value="#가족호텔">가족호텔</option>
 			<option value="#와이파이존">와이파이존</option>
 			<option value="" selected="selected">태그없음</option>
-		</select><br> <input type="submit" value=전송>
+		</select><br> <input type="submit" value=전송><br>
+		사진 1 : <input type=text name=acco_photo1><br>
+		사진 2 : <input type=text name=acco_photo2><br>
+		사진 3 : <input type=text name=acco_photo3><br>
+		사진 4 : <input type=text name=acco_photo4><br>
+		내용 <br>
+		<input type=text name=acco_content style="  width:200px; height:100px; font-size:20px;"><br>
 	</form>
 
 </body>
