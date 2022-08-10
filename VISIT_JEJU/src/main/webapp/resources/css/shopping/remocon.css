@@ -2,8 +2,8 @@
 
 .remocon{
     position:fixed;
-    right:0%;
-    top:100px;
+    right:100px;
+    top:200px;
     width:200px;
 	padding: 10px;
     border:1px solid; 
@@ -15,24 +15,23 @@
     
 }
 .remocon button{ 
-    width:190px;
+    width:100%;
     height:40px;
     border-color:rgb(207, 152, 0); 
     background-color: rgb(216, 53, 72);
 }
 
 .remocon button :hover{ 
-    border-color:rgb(0, 124, 240);
-    background-color:hsl(39, 100%, 54%);
+    border-color:hwb(39 87% 0%);
+    background-color:hwb(39 87% 0%);
 }
 .remocon h2{ 
     color:white;
 }
 .remoconHead{
-
     border-bottom:1px solid; 
     border-color:hsl(39, 100%, 54%);
 	background-color: rgb(216, 53, 72);
-	width:190px;
+	width:100%;
     height:100px;
 }
