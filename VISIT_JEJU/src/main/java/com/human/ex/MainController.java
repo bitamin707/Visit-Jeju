@@ -180,7 +180,7 @@ public class MainController {
 	public void sighup(Model model) throws Exception {
 	}
 	@RequestMapping(value = "/main/sighup", method = RequestMethod.POST)
-	public String sighup(BoardDtoAccount boardDtoAccount,Model model,RedirectAttributes rttr) throws Exception {
+	public String sighup(BoardDtoAccount boardDtoAccount,RedirectAttributes rttr) throws Exception {
 		serviceAccount.createAccount(boardDtoAccount);
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/loginPage";
@@ -200,12 +200,11 @@ public class MainController {
 	public void accountMerch(Model model) throws Exception {
 		model.addAttribute("listAccount",serviceAccount.listAllAccount());
 	}
-//	@RequestMapping(value = "/main/accountRemove", method = RequestMethod.GET)
-//	public String remove(@RequestParam("accountID")String accountID
-//			,RedirectAttributes rttr) throws Exception {
-//		serviceAccount.deleteAccount(accountID);
-//		rttr.addFlashAttribute("msg","success");
-//		return "redirect:/main/accountList";
-//		
-//	}
+	@RequestMapping(value = "/main/accountRemove", method = RequestMethod.GET)
+	public String remove(@RequestParam("accountID")String accountID
+			,RedirectAttributes rttr) throws Exception {
+		serviceAccount.deleteAccount(accountID);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/main/accountList";
+	}
 }
