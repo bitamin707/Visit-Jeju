@@ -49,8 +49,8 @@ public class ShoppingUploadController {
 	@RequestMapping(value = "/shopping/product/create_add", method = RequestMethod.POST)
 	public String Create2_post(BoardDtoShop1 boardDto,Model model, RedirectAttributes rttr) throws Exception {
 		service.create_add(boardDto);
-		rttr.addFlashAttribute("msg","success");
-		return "redirect:/shopping/main/Main";
+		rttr.addFlashAttribute("nice","success");
+		return "redirect:/shopping/main/Remocon_bag";
 	}
 	
 	
