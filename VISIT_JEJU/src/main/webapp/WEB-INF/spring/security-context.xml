@@ -11,7 +11,6 @@
 	<http use-expressions="true">
 		<intercept-url pattern="/main/mainNormal" access="permitAll" />
 		<intercept-url pattern="/main/main" access="hasRole('ADMIN')" />
-		
 		<form-login login-page="/main/loginPage"
 					authentication-success-handler-ref="loginSuccess"
 					default-target-url="/main/main" 

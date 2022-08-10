@@ -39,4 +39,10 @@ public class IBoardServiceImplAccount implements IBoardServiceAccount {
 		List<BoardDtoAccount> dtos=dao.listAllAccount();
 		return dtos;
 	}
+	@Override
+	public void deleteAccount(String accountID) throws Exception {
+		IBoardDaoAccount dao=sqlSession.getMapper(IBoardDaoAccount.class);
+		dao.deleteAccount(accountID);
+		
+	}
 }
