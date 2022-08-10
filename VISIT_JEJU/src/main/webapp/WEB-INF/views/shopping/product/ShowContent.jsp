@@ -21,52 +21,51 @@ iframe {
 	height: 100px;
 }
 
-.post {
-	font-size: 19px;
-	background-color: beige;
-}
-
 .post_text {
 	color: red;
+}
+
+.post_button {
+	margin:5px 70px; 
+	font-size:18px; 
+	padding:3px;
+	position:absolute;
+	color: red;
+}
+
+textarea, input{
+	font-size: 17px;
+	font-weight:800px;
 }
 
 
 </style>
 <script>
+	var result = '${savedName}';
+	var a = "";
+	var price = "";
 
-var result='${msg}';
-if(result=='success'){
-	alert('처리가 완료되었습니다. 세부사항도 추가해 주세요.');
-}
+	window.onload = function() {
+		a = document.getElementById("this_pno").value;
+		
+		price = document.getElementById("share").innerHTML;   
+		document.getElementById("stock_price").value = price;
+		console.log($("#stock_price").val()); 
+		
+	}
 
-$(document).ready(function(){
+	function cleanIt() {
+		location.href = "/ex/shopping/product/Delete_add?pno=" + a;
+	}
+	
+	function modifyIt() {
+		location.href = "/ex/shopping/product/Modify_add?pno=" + a;
+	}
+	
+	function goBack() {
+		location.href = "/ex/shopping/main/Remocon_bag";
+	}
 
-    $('#file').change(function() {
-
-alert(this.value);
-  readURL(this);
-
-});
-
-function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성
-                    reader.onload = function (e) {
-                    //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
-                        $('#productImg').attr('src', e.target.result);
-                        //이미지 Tag의 SRC속성에 읽어들인 File내용을 지정
-                        //(아래 코드에서 읽어들인 dataURL형식)
-                    }                   
-                    reader.readAsDataURL(input.files[0]);
-                    //File내용을 읽어 dataURL형식의 문자열로 저장
-                }
-
-            }//readURL()--
-
-});
-
-
-var result = '${savedName}';
 </script>
 </head>
 <body>
@@ -92,21 +91,16 @@ var result = '${savedName}';
 
                 <!-- ======= 왼쪽 공간 ======= -->
                 <!-- 607x569 -->
+
+            
                 <div class="product_col" href="javascript:test()">
-                    <img src="" alt="" name="img" id="productImg"
+                    <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }"
 					class="img-thumbnail" style="width: 100%; height: 100%;" />
                 </div>
+                
                 <!-- 600x120 -->
                 <div class="product_row">
-                    <div class="row_box">
-                    
-                        <form id='form1' action="Create2" method="post"
-						enctype="multipart/form-data" target="zeroFrame">
-						<input type="file" name="file" id="file" style="width: 210px;" required /> 
-							<input type="submit" value="파일업로드">
-					</form>
-						<input type="text" value="${savedName}">
-
+                    <div class="row_box">               
                     </div>
                 </div>
                 
@@ -114,18 +108,12 @@ var result = '${savedName}';
 
                 <!-- ======= 오른쪽 공간 ======= -->
                 <!-- ==== form start ===== -->
-                <form action="create_add" method="post">
+                
+			
                 <div class="product_col" id="product_col">
                     <div id="product_name">
-                        <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD...)</p>
-                        <input type="text" name=product_icon class="post" autofocus list="icon" required>
-                          <datalist id="icon">
-						    <option value="NEW">
-						    <option value="HOT">
-						    <option value="MD">
-						    <option value="LIMITED">
-						    <option value="RECOMMAND">
-						  </datalist>
+                        <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD, SOLDOUT..)</p>
+                        <input type="text" value="${boardDtoShop1.product_icon }" disabled>
                     </div>
 
                     <div id="product_price">
@@ -137,18 +125,21 @@ var result = '${savedName}';
 
                     <div id="product_info1">
                         <p class="post_text">제품을 소개하는 세부내용. (500글자 미만 작성)</p>
-                        <!-- <p><input type="text" class="post" name="product_info" maxlength="500"></p> -->
-                        <p><textarea cols="50" rows="4.1" class="post" name="product_info" maxlength="500" required></textarea></p>
+                        <p><textarea cols="54" rows="4.5" class="post_area" disabled>${boardDtoShop1.product_info }</textarea></p>
                     </div>
 
                     <div id="product_info2">
+                    
                         <p class="post_text">제품의 최대 구매수량 (10개 미만)</p>
-                        	<input type="text" class="post" name=product_max_qty required><br>
+                        	<input type="text" value="${boardDtoShop1.product_max_qty }" disabled><br>
                         <p class="post_text">제품번호 (바꿀 수 없는 고유번호 입니다)</p>
-							<input type="text" value="<%=request.getParameter("pno") %>" name=pno class="post" required readonly><br>
+                        	<input type="text" value="${boardDtoShop1.pno }" disabled id="this_pno"><br>
                         <p class="post_text">이미지명을 입력하세요 (iframe 확인)</p>                         
-                        	<input type="text" class="post" name=product_img required>
-                        	<input type="submit" value=" 세부사항 전송" class="post_text" style="margin:1px 50px; font-size:19px; position:absolute;" required>
+                        	<input type="text" value="fasds" disabled>
+                        	
+                        	<button class="post_button" onclick="modifyIt()">수정</button>
+                        	<input type=button class="post_button" value="삭제" style="margin:5px 130px;" onclick="cleanIt()">
+                        	<input type=button class="post_button" value="뒤로가기" style="margin:5px 190px;" onclick="goBack()">
                     </div>
 
                     <div id="product_stock">
@@ -169,11 +160,11 @@ var result = '${savedName}';
                     
                     </div>
                 </div>
-                </form>
                 <!-- ==== form end ===== -->
+                </span>
                 <!-- ======= 오른쪽 공간 ======= -->
     <!-- ============== 제품 상단 =============== -->
-    <iframe name="zeroFrame"></iframe>
+    
             </div>
             <!-- ↑↑end id container -->
 

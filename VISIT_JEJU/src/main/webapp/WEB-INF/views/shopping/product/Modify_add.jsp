@@ -22,22 +22,51 @@ iframe {
 }
 
 .post {
-	font-size: 19px;
+	height: 27px;
+	font-size: 17px;
 	background-color: beige;
+	margin-bottom:10px;
+}
+.post_area {
+	font-size: 17px;
+	font-weight:800px;
+	background-color: beige;
+	margin-bottom:10px;
 }
 
 .post_text {
+	font-size: 21px;
 	color: red;
+	margin-top:10px;
+}
+
+.post_button {
+	font-size:18px;
+	padding:3px; 
+	color: red;
+	margin:auto 5px;
 }
 
 
 </style>
 <script>
 
+
+var a ="";
+window.onload = function() {
+     a = document.getElementById("thisvalue").value;
+}
+
+function goBack() {
+	document.getElement
+	location.href = "/ex/shopping/product/ShowContent?pno="+a;
+}
+
 var result='${msg}';
 if(result=='success'){
 	alert('처리가 완료되었습니다. 세부사항도 추가해 주세요.');
 }
+
 
 $(document).ready(function(){
 
@@ -93,7 +122,7 @@ var result = '${savedName}';
                 <!-- ======= 왼쪽 공간 ======= -->
                 <!-- 607x569 -->
                 <div class="product_col" href="javascript:test()">
-                    <img src="" alt="" name="img" id="productImg"
+                    <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" alt="" name="img" id="productImg"
 					class="img-thumbnail" style="width: 100%; height: 100%;" />
                 </div>
                 <!-- 600x120 -->
@@ -113,69 +142,31 @@ var result = '${savedName}';
                 <!-- ======= 왼쪽 공간 ======= -->
 
                 <!-- ======= 오른쪽 공간 ======= -->
-                <!-- ==== form start ===== -->
-                <form action="create_add" method="post">
-                <div class="product_col" id="product_col">
-                    <div id="product_name">
-                        <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD...)</p>
-                        <input type="text" name=product_icon class="post" autofocus list="icon" required>
-                          <datalist id="icon">
-						    <option value="NEW">
-						    <option value="HOT">
-						    <option value="MD">
-						    <option value="LIMITED">
-						    <option value="RECOMMAND">
-						  </datalist>
-                    </div>
-
-                    <div id="product_price">
-                        <span id="price">가격</span>
-                        <span id="share">!@#$%^&*()</span>
-                    </div>
-
-                    <br><hr><br>
-
-                    <div id="product_info1">
-                        <p class="post_text">제품을 소개하는 세부내용. (500글자 미만 작성)</p>
-                        <!-- <p><input type="text" class="post" name="product_info" maxlength="500"></p> -->
-                        <p><textarea cols="50" rows="4.1" class="post" name="product_info" maxlength="500" required></textarea></p>
-                    </div>
-
-                    <div id="product_info2">
-                        <p class="post_text">제품의 최대 구매수량 (10개 미만)</p>
-                        	<input type="text" class="post" name=product_max_qty required><br>
-                        <p class="post_text">제품번호 (바꿀 수 없는 고유번호 입니다)</p>
-							<input type="text" value="<%=request.getParameter("pno") %>" name=pno class="post" required readonly><br>
-                        <p class="post_text">이미지명을 입력하세요 (iframe 확인)</p>                         
-                        	<input type="text" class="post" name=product_img required>
-                        	<input type="submit" value=" 세부사항 전송" class="post_text" style="margin:1px 50px; font-size:19px; position:absolute;" required>
-                    </div>
-
-                    <div id="product_stock">
-                        수량
-                        <hr style="margin: 15px auto">
-                        <div class="option_btn">
-                            <a href="javascript:minus_qty('a')">-</a>                        
-                            <a href="javascript:plus_qty('b')">+</a>
-                            <input type="text" id="stock" value="1" readonly="readonly">
-                        </div>
-                        <div class="option_btn_price">
-                            <input type="text" id="stock_price" value="" readonly="readonly">
-                            <span>EUR</span>
-                        </div>
-                    </div>
-
-                    <div id="product_buy">
-                    
-                    </div>
-                </div>
-                </form>
-                <!-- ==== form end ===== -->
-                <!-- ======= 오른쪽 공간 ======= -->
-    <!-- ============== 제품 상단 =============== -->
-    <iframe name="zeroFrame"></iframe>
+             <div class="product_col" id="product_col">
+             
+           	<form action=Modify_add method=POST>
+			<h5 class="post_text">제품 고유번호</h5>
+			<input type=text class="post" value="${boardDtoShop1.pno }" readonly name=pno id="thisvalue" required>
+    		
+    		<h5 class="post_text">제품 아이콘</h5>
+			<input type=text class="post" value="${boardDtoShop1.product_icon}" name=product_icon required>
+			
+			<h5 class="post_text">최대 구매수량</h5>
+			<input type=text class="post" value="${boardDtoShop1.product_max_qty }" name=product_max_qty required>
+			
+			<h5 class="post_text">제품 정보</h5>
+			<p><textarea cols="53" rows="4.5" class="post_area" name="product_info" maxlength="500" required>${boardDtoShop1.product_info}</textarea></p>
+			
+			<h5 class="post_text">제품 이미지</h5>
+			<input type=text class="post" value="${boardDtoShop1.product_img }" name=product_img required>
+    		
+    		<input type=submit value=수정완료 class="post_button">
+    		<input type=button value=뒤로가기 onclick="goBack()" class="post_button">
+    		</form>
+    		
             </div>
             <!-- ↑↑end id container -->
+            <iframe name="zeroFrame"></iframe>
 
 </body>
 </html>
