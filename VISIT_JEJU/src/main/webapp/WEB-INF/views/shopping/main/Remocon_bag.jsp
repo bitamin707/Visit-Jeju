@@ -9,29 +9,38 @@
 <title>Insert title here</title>
 
 <style>
+* {
+font-size:20px;
+}
+
 #btn_box {
-border:1px solid black; 
 width:90%; 
 margin:10px 0px; 
 text-align:center;
 }
 
 button {
-margin-left:5%;
+	margin-left:5%;
+	height:30px;
 }
 
-th td {
-padding:20px;
+tr td {
+padding:17px 13px;
 }
+tr th {
+padding:7px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
 
 </style>
 
 <script>
 
-	var result='${msg}';
-	if(result=='success'){
-		alert('처리가 완료되었습니다. 제품을 선택하여 세부사항도 추가해 주세요.');
-	}
+var result='${nice}';
+if(result=='success'){
+	alert('제품이 추가되었습니다.');
+}
 
 	window.onload = function() {
 		document.getElementById("main").onclick = function() {
@@ -59,11 +68,12 @@ padding:20px;
 	<c:forEach items="${list }" var="boardDtoBest">
 	<tr>
 		<td>${boardDtoBest.pno }</td>
-		<td><a href='/ex/shopping/product/Create2?pno=${boardDtoBest.pno}'>${boardDtoBest.product_name }</a></td>
+		<td><a href='/ex/shopping/product/ShowContent?pno=${boardDtoBest.pno}'>${boardDtoBest.product_name }</a></td>
 		<td>${boardDtoBest.product_price }</td>
 		<td>${boardDtoBest.product_won }</td>
 		<td>${boardDtoBest.product_category }</td>
 		<td>${boardDtoBest.product_tag }</td>
+		<td><a href='/ex/shopping/product/Delete?pno=${boardDtoBest.pno}'>X</a></td>
 	</tr>
 	</c:forEach>
 </table>
@@ -71,7 +81,6 @@ padding:20px;
 <div id="btn_box"> 
 <button id="main"> 메인으로 </button>
 <button id="create"> 제품 추가</button>
-<button id="modity"> 수정</button>
 </div>
 
 

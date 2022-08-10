@@ -29,7 +29,7 @@
                 $("#wine .product").hide();
 
                 if($(":checkbox[value='vintage']").is(":checked")){
-                    // alert("체크박스 체크했음!");
+                    // alert("체크박스 체크했음!!");
                     $(".tag_vintage>.product").show();
                 } 
                 

@@ -9,6 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <title>Document</title>
     <style>
+		* {
+			font-size:20px;
+		}
+		    
         #tbl_box {
             margin: auto;
         }
@@ -19,8 +23,7 @@
             width: 500px;
             height:25px;
         }
-        #btn_box {
-        border:1px solid black; 
+        #btn_box { 
         width:1000px;
         margin:10px 0px; 
         text-align:center;
@@ -38,10 +41,19 @@
             width: 390px;
             background-color: rgb(228, 228, 228);
         }
+        .btn {
+        		margin-left:5%;
+				height:30px;
+        }
         
     </style>
 
     <script>
+    var result='${keeping}';
+    if(result=='success'){
+    	alert('세부 수정을 완료하였습니다. 다음 페이지에서 일반사항도 수정이 가능합니다. ');
+    }
+    
         function categoryInput(e) {
         // 선택된 데이터 가져오기
         const value = e.value;
@@ -58,8 +70,8 @@
             = value;
         }
         
-        function back() {
-            location.href = '/ex/shopping/main/Remocon_bag';
+        function goBack() {
+        	location.href="/ex/shopping/main/Remocon_bag";
         }
         
     </script>
@@ -67,28 +79,28 @@
 
 <body>
     <div id="tbl_box">
-    <form action="/ex/shopping/product/Create1" method="post">
+    <form action="/ex/shopping/product/Modify" method="POST">
     <table border="1" width="1000px" id="customers">
         <tr>
-            <th>제품 고유번호 (6자리)</th>
-            <td><input type="text" name=pno required maxlength="6"></td>
+            <th>제품 고유번호</th>
+            <td><input type="text" name=pno value="${boardDtoShop1.pno }" readonly></td>
         </tr>
         <tr>
             <th>제품 이름</th>
-            <td><input type="text" name=product_name required></td>
+            <td><input type="text" name=product_name value="${boardDtoShop1.product_name }"></td>
         </tr>
         <tr>
             <th>제품 가격</th>
-            <td><input type="text" name=product_price required></td>
+            <td><input type="text" name=product_price value="${boardDtoShop1.product_price }"></td>
         </tr>
         <tr>
             <th>제품 원가</th>
-            <td><input type="text" name=product_won required></td>
+            <td><input type="text" name=product_won value="${boardDtoShop1.product_won }"></td>
         </tr>
         <tr>
             <th>제품 카테고리</th>
             <td>
-                <input type="text" id="categoryinput" name=product_category readonly required>
+                <input type="text" id="categoryinput" name=product_category readonly value="${boardDtoShop1.product_category }">
                     <select onchange="categoryInput(this)">
                         <option selected disabled>---</option> 
                             <!-- 옵션에서 기본선택, 선택안되게 설정. -->
@@ -100,7 +112,7 @@
         <tr>
             <th>제품 태그</th>
             <td>
-                <input type="text" id="taginput" name=product_tag readonly required>
+                <input type="text" id="taginput" name=product_tag readonly value="${boardDtoShop1.product_tag }">
                     <select onchange="tagInput(this)">
                         <option selected disabled>---</option>
                         <option value="tag_vintage">빈티지</option>
@@ -112,8 +124,8 @@
         </tr>
     </table>
         <div id="btn_box"> 
-		<input type="button" value="돌아가기" id="main" onclick="back()">
-        <input type="submit" value="추가하기">
+		<input type="button" value="수정 그만하기" class="btn" onclick="goBack()">
+        <input type="submit" value="추가하기" class="btn">
     	</div>
     </form>
 </div>
