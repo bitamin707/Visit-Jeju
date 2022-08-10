@@ -4,8 +4,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.human.dao.shopping.IBoardDaoShop2">
 <insert id="create">
-insert into tbl_board(bno, what_product, review, recommand, userID)
-values (seq_board.nextval, what_product=#{what_product}, review=#{review}, recommand=#{recommand}, userID=#{userID})
+insert into tbl_board (userid, review, what_product, recommand, recommand2, bno)
+values (#{userid }, #{review }, #{what_product }, #{recommand }, #{recommand2 }, seq_tbl_board.nextval)
 </insert>
 
 <delete id="delete">
@@ -21,9 +21,9 @@ delete from tbl_board where bno=#{bno}
 </sql>
 
 <select id="listSearch" resultType="com.human.dto.shopping.BoardDtoShop2">
-<![CDATA[select bno, what_product, review, recommand, userID from
+<![CDATA[select bno, what_product, review, recommand, recommand2, userID from
 (select /*+INDEX_DESC(tbl_board)*/ 
-rownum rn,bno, what_product, review, recommand, userID
+rownum rn,bno, what_product, review, recommand, recommand2, userID
 from tbl_board where 1=1  ]]> 
 <include refid="search"/>
 <![CDATA[ and rownum <= #{page} * #{perPageNum} and bno > 0 ) 

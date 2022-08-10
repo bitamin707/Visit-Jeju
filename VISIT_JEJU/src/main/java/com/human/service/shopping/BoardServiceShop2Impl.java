@@ -21,7 +21,7 @@ public class BoardServiceShop2Impl implements IBoardServiceShop2 {
 	private SqlSession sqlSession;
 
 	@Override
-	public void write(BoardDtoShop2 board) throws Exception {
+	public void create(BoardDtoShop2 board) throws Exception {
 		System.out.println(sqlSession);
 		IBoardDaoShop2 dao=sqlSession.getMapper(IBoardDaoShop2.class);
 		dao.create(board);

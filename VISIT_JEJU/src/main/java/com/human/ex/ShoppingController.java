@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.shopping.BoardDtoShop1;
+import com.human.dto.shopping.BoardDtoShop2;
 import com.human.service.shopping.IBoardServiceShop1;
 import com.human.service.shopping.IBoardServiceShop2;
 import com.human.vo.shopping.PageMaker;
@@ -33,15 +34,28 @@ public class ShoppingController {
 	
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
 	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
-		model.addAttribute("list",service.listInsert());
-		
+		model.addAttribute("list",service.listInsert());		
 	}	
 	
+	
 	@RequestMapping(value = "/product/Product", method = RequestMethod.GET)
-	public void Product(@RequestParam("pno") int pno ,Model model) throws Exception {
+	public void Product(@RequestParam("pno") int pno ,Model model, PageMaker pm) throws Exception {
 		System.out.println(service.listPlus(pno));
 		model.addAttribute(service.listPlus(pno));
-	}	
+		
+		System.out.println(pm);
+		model.addAttribute("list",bm.listSearchCriteria(pm));
+		pm.setTotalCount(bm.listSearchCount(pm));
+	}
+	
+//	@RequestMapping(value = "product/list", method = RequestMethod.GET)
+//	public void list(PageMaker pm,Model model) throws Exception {
+//		System.out.println(pm);
+//		model.addAttribute("list",bm.listSearchCriteria(pm));
+//		pm.setTotalCount(bm.listSearchCount(pm));
+//	}
+	
+	
 	
 	@RequestMapping(value = "/main/Remocon_bag", method = RequestMethod.GET)
 	public void remocon_bag(Model model) throws Exception {
@@ -116,14 +130,33 @@ public class ShoppingController {
 		return "redirect:/shopping/main/Remocon_bag";
 	}
 	
-	@RequestMapping(value = "product/list", method = RequestMethod.GET)
-	public void list(PageMaker pm,Model model) throws Exception {
-		System.out.println(pm);
-		model.addAttribute("list",bm.listSearchCriteria(pm));
+	
+	@RequestMapping(value = "product/remove", method = RequestMethod.GET)
+	public String remove(@RequestParam("bno") int bno,PageMaker pm,Model model,RedirectAttributes rttr) throws Exception {
+		bm.remove(bno);
+		
+		rttr.addAttribute("page", pm.getPage());
+		rttr.addAttribute("perPageNum", pm.getPerPageNum());
+		rttr.addAttribute("searchType", pm.getSearchType());
+		rttr.addAttribute("keyword", pm.getKeyword());
 
-		pm.setTotalCount(bm.listSearchCount(pm));
+		rttr.addFlashAttribute("remove","success");
+		return "redirect:/shopping/product/list";
 	}
-
+	
+	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.GET)
+	public void Write_Review_get(Model model, BoardDtoShop1 dto) throws Exception {
+		model.addAttribute("list",service.showProduct());
+	}
+	
+	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.POST)
+	public String Write_Review_post(Model model, BoardDtoShop2 dto, RedirectAttributes rttr) throws Exception {
+		bm.create(dto);
+		System.out.println("Write_Review");
+		System.out.println(dto);
+		rttr.addFlashAttribute("write","success");
+		return "redirect:/shopping/product/list";
+	}
 	
 
 }

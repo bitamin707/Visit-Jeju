@@ -1,0 +1,246 @@
+@charset "EUC-KR";
+
+* {
+	box-sizing: border-box;
+	font-size: 18px;
+}
+
+h5 {
+	display: inline-block;
+	margin-left: 2%;
+}
+
+/* Style the body */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+	padding: 80px;
+	text-align: center;
+	background: #1abc9c;
+	color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+	font-size: 40px;
+}
+
+.review_board {
+	font-size: 23px;
+	margin-left: 2%;
+}
+
+.review_board_menu {
+	margin: -5px 0px 20px 2%;
+	font-size: 21px;
+}
+
+.review_board_menu2 {
+	border: 3px solid skyblue;
+	color: rgb(86, 188, 228);
+	padding: 3px;
+	font-size: 11px;
+}
+
+.review_event {
+	font-size: 15px;
+	color: rgb(105, 105, 105);
+}
+
+.review_button {
+	margin-top: 3px;
+	margin-bottom: 15px;
+}
+
+.review_button>select, input, button {
+	margin-right: 10px;
+}
+
+#newBtn, #searchBtn {
+	background-color: #fafafa;
+	border: 1.5px solid #cc880a;
+	border-radius: 5px;
+	color: #c28616;
+	font-weight: 700;
+	padding: 3px;
+	cursor: pointer;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+	overflow: hidden;
+	background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+	float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* Column container */
+.row {
+	display: -ms-flexbox; /* IE10 */
+	display: flex;
+	-ms-flex-wrap: wrap; /* IE10 */
+	flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+	-ms-flex: 30%; /* IE10 */
+	flex: 30%;
+	background-color: #f1f1f1;
+	padding: 20px;
+}
+
+/* Main column */
+.board_main {
+	border: 1px solid black;
+	position: relative;
+	-ms-flex: 70%; /* IE10 */
+	flex: 70%;
+	background-color: white;
+	padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+	background-color: #aaa;
+	width: 100%;
+	padding: 20px;
+}
+
+/* Footer */
+.footer {
+	padding: 20px;
+	text-align: center;
+	background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+	.row {
+		flex-direction: column;
+	}
+}
+
+/* Responsive layout when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+	.navbar a {
+		float: none;
+		width: 100%;
+	}
+}
+
+/* table css*/
+.customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.customers td, .customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+td:nth-child(1) {
+	text-align: left;
+	font-weight: 720;
+	vertical-align: middle;
+	height: 200px;
+}
+
+td:nth-child(2) {
+	text-align: left;
+	vertical-align: top;
+}
+
+td:nth-child(3) p {
+	border: 1px solid #dd9309;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 3px auto;
+}
+
+td {
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+}
+
+#remove_btn {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.customers tr:hover {
+	background-color: #ddd;
+}
+
+.customers th {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: left;
+	background-color: #dd9309;
+	color: white;
+}
+
+/*pagination*/
+.pagination {
+	text-align: center;
+	margin: 10px auto;
+}
+
+.pagination_btn {
+	display: inline-block;
+}
+
+.pagination a {
+	border-radius: 5px;
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: 1px solid #ddd;
+}
+
+.pagination a.active {
+	border-radius: 5px;
+	background-color: #dd9309;
+	color: white;
+	border: 1px solid #dd9309;
+}
+
+.pagination a:hover:not (.active ) {
+	background-color: #ddd;
+}
