@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -22,14 +23,7 @@ if(result=='success'){
 	alert('처리가 완료되었습니다.');
 }
 
-var id = "<%= request.getParameter("id") %>";
-var pw = "<%= request.getParameter("pw") %>";
-
-if(id != "admin" || pw != "1234"){
-	location.href="/ex/main/mainNormal";
-}
-
-
+var adminCheck = "<%= request.getParameter("adminCheck") %>";
 
 window.onload=function(){
 	document.getElementsByClassName("bestBT")[0]
@@ -260,23 +254,30 @@ img {vertical-align: middle;}
     right:0%;
     top:100px;
     width:200px;
-    height:100%;
-    bottom:0px;
-    border:1px solid; 
-    background-color:hwb(39 87% 0%);
-    border-color:hsl(39, 100%, 54%);
+	border_bottom:1px solid;
+    border-color:rgb(207, 152, 0); 
+    background-color:hsl(39, 100%, 54%);
     z-index: 3;
 
     text-align: center;
     
 }
+.bestBT{
+	margin-top:1px;
+}
+
+}
+.logoutBT{
+	background-color:red;
+}
+
+
 .remocon button{ 
-    width:190px;
+    width:200px;
     height:40px;
     border-color:rgb(207, 152, 0); 
     background-color:hsl(39, 100%, 54%);
 }
-
 .remocon button :hover{ 
     border-color:rgb(0, 124, 240);
     background-color:rgb(0, 124, 240);
@@ -285,12 +286,11 @@ img {vertical-align: middle;}
     color:white;
 }
 .remoconHead{
-    border-bottom:1px solid; 
-    border-color:hsl(39, 100%, 54%);
+    border-color:rgb(207, 152, 0); 
+    background-color:hsl(39, 100%, 54%);
 
     width:100%;
     height:100px;
-    background-color:hsl(39, 100%, 54%);
 }
 /* 태그 */
 .month {
@@ -696,7 +696,7 @@ img {vertical-align: middle;}
         <div class="remoconHead">
             <h2><br>관리자 리모콘</h2>
         </div>
-        <br><button class="bestBT">
+        <button class="bestBT">
             <h2>금주의 베스트</h2>
         </button>
         <br><button class="foodBestBT">
@@ -711,6 +711,11 @@ img {vertical-align: middle;}
         <br><button class="accountBT">
             <h2>계정관리</h2>
         </button>
+		<sec:authorize access="isAuthenticated()">
+			<form:form action="${pageContext.request.contextPath}/main/logout" method="POST">
+				<button type="submit" value="로그아웃"><h2>로그아웃</h2></button>
+			</form:form>
+		</sec:authorize>
     </div>
     <div class="wrap2">
         <div class="best">
@@ -876,6 +881,7 @@ img {vertical-align: middle;}
         </div> 
     </div>
     <%@include file="../footer.jsp" %>
+    
 </body>
 
 </html>

@@ -8,10 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Admin페이지 관리자만 들어 올수 있습니다.
-<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-    <input type="submit" value="로그아웃" />
-</form:form>
+403 Error 페이지 권한없음
+<h2>${SPRING_SECURITY_403_EXCEPTION.message }</h2>
+
+<a href="/ex/main/main">사용자 페이지로 이동</a>
 
 </body>
 </html>
