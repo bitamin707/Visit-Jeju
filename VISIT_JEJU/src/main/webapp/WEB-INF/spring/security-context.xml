@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<beans:bean id="loginSuccess" class="com.human.Handller.LoginRedirectHandler"/>
+
+<!-- URL 설정 -->
+	<http use-expressions="true">
+		<intercept-url pattern="/main/mainNormal" access="permitAll" />
+		<intercept-url pattern="/main/main" access="hasRole('ADMIN')" />
+		<form-login login-page="/main/loginPage"
+					authentication-success-handler-ref="loginSuccess"
+					default-target-url="/main/main" 
+		            authentication-failure-url="/main/loginPage?error" 
+		            username-parameter="id" 
+		            password-parameter="pw" />
+		<logout logout-url="/main/logout" invalidate-session="true"   />
+		<!--해댕주소로오면 session이 지워지고 로그아웃이 진행됨   -->
+		<access-denied-handler error-page="/main/login/error" /> 
+	</http>
+
+	<!-- provider -->
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="member" password="1234" authorities="ROLE_MEMBER" />
+				<user name="admin" password="1234" authorities="ROLE_ADMIN,ROLE_MEMBER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

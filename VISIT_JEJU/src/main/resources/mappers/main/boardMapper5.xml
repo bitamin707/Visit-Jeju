@@ -10,6 +10,9 @@ insert into account values(#{accountID},#{accountpw},#{birth},#{phoneNum},#{sex}
 <select id="readAccount" resultType="BoardDtoAccount">
 select * from account where accountID=#{accountID}
 </select>
+<delete id="deleteAccount">
+delete from account where accountID=#{accountID}
+</delete>
 <update id="updateAccount">
 update account set accountpw=#{accountpw},birth=#{birth},phoneNum=#{phoneNum},sex=#{sex},email=#{email},adminCheck=#{adminCheck} where accountID=#{accountID} 
 </update>

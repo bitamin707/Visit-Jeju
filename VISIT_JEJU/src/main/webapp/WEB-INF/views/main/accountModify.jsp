@@ -13,7 +13,9 @@ window.onload=function(){
 	document.getElementById('cancle').addEventListener("click",function(){
 		location.href="/ex/main/accountList";
 	})
-	
+	document.getElementById('remove').addEventListener("click",function(){
+		location.href="/ex/main/accountRemove?accountID=${boardDtoAccount.accountID}";
+	})
 	document.getElementById('save').addEventListener("click",function(){
 		document.getElementById('modifyForm').submit();
 	})
@@ -29,8 +31,10 @@ window.onload=function(){
 	성별 : <input type="text" name=sex style="width:100%" value='${boardDtoAccount.sex }'><br>
 	이메일 : <input type="text" name=email style="width:100%" value='${boardDtoAccount.email }'><br>
 	관리자 권한 : <input type="text" name=adminCheck style="width:100%" value='${boardDtoAccount.adminCheck }'><br>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 <button id=save > 저장</button>
+<button id=remove > 삭제</button>
 <button id=cancle > 취소</button>
 
 </body>
