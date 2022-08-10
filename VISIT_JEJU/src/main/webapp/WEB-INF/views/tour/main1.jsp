@@ -53,6 +53,7 @@
   <!-- main -->
   <main>
 
+
     <!-- travel section -->
     <div class="container travel">
       <div class="travel-cards">
@@ -62,6 +63,7 @@
           <div class="travel-img" data-filter="마을관광">
             <img src="/ex/resources/img/tour/seongeup1.jpg" alt="성읍녹차마을">
           </div>
+                     
 
           <div class="travel-dimmed">
             <h3>성읍녹차마을</h3>
