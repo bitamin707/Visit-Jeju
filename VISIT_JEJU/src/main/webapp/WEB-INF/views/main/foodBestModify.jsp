@@ -26,6 +26,7 @@ window.onload=function(){
 	ImgLink:<input type="text" name=imgLink style="width:100%" value='${listFoodBest[0].imgLink }' ><br>
 	Content:<textarea name=content  rows="8" style="width:100%"	>${listFoodBest[0].content }</textarea><br>
 	Tag:<input type="text" name=tag style="width:100%" value='${listFoodBest[0].tag }' ><br>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 <button id=modify > 저장</button>
 <button id=main > 취소</button>

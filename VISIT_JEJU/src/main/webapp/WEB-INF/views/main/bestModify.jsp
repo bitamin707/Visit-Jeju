@@ -25,6 +25,7 @@ window.onload=function(){
 	Number:<input type="text" name=bno style="width:10px" value='${boardDtoBest.bno }' readonly="readonly"> <br>
 	Title:<input type="text" name=name style="width:100%" value='${boardDtoBest.name }' ><br>
 	imgLink:<input type="text" name=imgLink style="width:100%" value='${boardDtoBest.imgLink }'><br>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 <button id=modify > 저장</button>
 <button id=main > 취소</button>

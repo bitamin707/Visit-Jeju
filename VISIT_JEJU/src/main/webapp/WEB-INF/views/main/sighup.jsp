@@ -20,7 +20,7 @@ window.onload=function(){
 </script>
 </head>
 <body>
-<form id="sighup" method="post" action="/ex/main/sighup">
+<form id="sighup" method="POST" action="/ex/main/sighup">
 <table border="1" width="90%" id="customers">
 	<tr>
 		<td width=10%>아이디</td><td><input type="text" name="accountID" style="width:90%"></td>
@@ -40,6 +40,7 @@ window.onload=function(){
 	<tr>
 		<td width=10%>이메일</td><td><input type="text" name="email" style="width:90%"></td>
 	</tr>	
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </table>
 </form>
 <button id="save">저장</button>
