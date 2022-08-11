@@ -10,7 +10,7 @@ public interface tourDao {
 	public tourDto read(int tno) throws Exception;
 	public void update(tourDto dto) throws Exception;
 	public void delete(int tno) throws Exception;
-	public List<tourDto> listAll() throws Exception;
+	public List<tourDto> listAll() throws Exception; 
 	
 	
 }
