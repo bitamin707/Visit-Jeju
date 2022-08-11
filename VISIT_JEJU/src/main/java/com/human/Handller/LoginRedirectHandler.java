@@ -24,6 +24,7 @@ public class LoginRedirectHandler implements AuthenticationSuccessHandler {
 		});
 		
 		if(roleNames.contains("ROLE_ADMIN")) {
+			
 			response.sendRedirect("/ex/main/main");
 			return;
 		}
