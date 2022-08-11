@@ -2,11 +2,14 @@ const min_qty = 1;
 const max_qty = 3;
 var price = 0;
 var img_name = "";
+var show_what;
 
 window.onload=function(){
+	$('#board_main').hide();
     price = document.getElementById("share").innerHTML;   
     document.getElementById("stock_price").value = price;
-    console.log($("#stock_price").val()); 
+    console.log($("#stock_price").val());
+    document.getElementById('board_main').scrollIntoView();
 }
 
 
@@ -60,11 +63,11 @@ if(result=='success'){
 	
   $(document).ready(function(){
 	  $('#searchBtn').on("click",function(event){
-		  alert("list"+'${pageMaker.makePage(1)}'
+		  alert("Product"+'${pageMaker.makePage(1)}'
 				  +'&searchType='+$("select option:selected").val()
 				  +"&keyword="+$('#keywordInput').val());
 		  
-		  self.location="list"+'${pageMaker.makePage(1)}'
+		  self.location="Product"+'${pageMaker.makePage(1)}'
 		  +'&searchType='+$("select option:selected").val()
 		  +"&keyword="+$('#keywordInput').val();
 		  
@@ -77,24 +80,24 @@ if(result=='success'){
 	  $('#writeBtn').on("click",function(event){
 		  location.href="/ex/shopping/product/Write_Review";
 	  })
-	  
-	  $('.board_main').hide();	  
+	    
 			  
   });
   
+  
   function detail() {
-	  $('.board_main').hide()
-	  $('.info_images').show();
+  	$('.info_images').show();
+	$('#board_main').hide();
   }
   
   function review() {
-	  $('.board_main').show()
-	  $('.info_images').hide();
+  	$('.info_images').hide();
+	$('#board_main').show();
   }
   
   
-	function removeIt(thisBno) {
-		location.href="/ex/shopping/product/remove?bno="+thisBno;
+	function removeIt(thisBno, thisPno) {
+		location.href="/ex/shopping/product/remove?bno="+thisBno+"&pno="+thisPno;
   	}
 	
 	
