@@ -16,6 +16,7 @@
 
 
 	<form method="POST" action="/ex/acco/function/accoModify" name="infor">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<input type=hidden value="${accoDto.acco_id }" name=acco_id>
 		숙소 이름:<input type=text name=acco_name value="${accoDto.acco_name }">
 		<br> 숙소 주소:<select id="select1" name="acco_address1">
@@ -66,12 +67,25 @@
 			<option value="#수영장">수영장</option>
 			<option value="#관광호텔">관광호텔</option>
 			<option value="#독채">독채</option>
-			<option value="#휴양펜션">휴양펜션</option>
+			<option value="#휴양펜션">휴양펜션</option>S
 			<option value="#게스트하우스">게스트하우스</option>
 			<option value="#가족호텔">가족호텔</option>
 			<option value="#와이파이존">와이파이존</option>
 			<option value="" selected="selected">태그없음</option>
-		</select><br> <input type="submit" value=전송>
+		</select><br>
+		<br>상세주소: <input type=text name=acco_detail_address value="${accoDto.acco_detail_address }"><br>
+		내용 <br>
+		<input type=text name=acco_detail_content style="  width:200px; height:100px; font-size:20px;" value="${accoDto.acco_detail_content }"><br>
+		
+		<br>
+		사진 1 : <input type=text name=acco_detail_photo1 value="${accoDto.acco_detail_photo1 }"><br>
+		사진 2 : <input type=text name=acco_detail_photo2 value="${accoDto.acco_detail_photo2 }"><br>
+		사진 3 : <input type=text name=acco_detail_photo3 value="${accoDto.acco_detail_photo3 }"><br>
+		사진 4 : <input type=text name=acco_detail_photo4 value="${accoDto.acco_detail_photo4 }"><br>
+		숙소 전화번호 : <input type=text name=acco_phonenum value="${accoDto.acco_phonenum }"><br>
+		메인사진 : <input type=text name=acco_photo value="${accoDto.acco_photo }">
+		 <input type="submit" value=전송>
+		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</form>
 
 </body>
