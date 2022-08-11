@@ -249,8 +249,9 @@
 					<div id="wine">
 						<!-- ↓↓start id toggle_box1 -->
 						<div id="toggle_box1">
-
+							
 							<c:forEach items="${list }" var="boardDto">
+							<c:if test="${boardDto.product_category eq 'bag'}">
 								<span class="${boardDto.product_tag }">
 									<div class="product">
 										<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
@@ -265,6 +266,7 @@
 										<!-- 버버리 토트백 1,634,040 https://www.trenbe.com/product/Medium+Soft+Canvas+Belt+Tote+Bag+Blue+80302891+25488552-->
 									</div>
 								</span>
+							</c:if>								
 							</c:forEach>
 						</div>
 						<!-- ↑↑end class toggle_box1 -->

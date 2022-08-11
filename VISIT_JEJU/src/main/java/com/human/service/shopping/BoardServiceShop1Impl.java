@@ -88,5 +88,11 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
 		return dao.read_add(pno);
 	}
+	@Override
+	public List<BoardDtoShop1> showProduct() throws Exception {
+		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
+		List<BoardDtoShop1> dtos=dao.showProduct();
+		return dtos;
+	}
 
 }

@@ -24,6 +24,7 @@ window.onload=function(){
 	imgLink:<input type="text" name=imgLink style="width:100%" value='${boardDtoMerch.imgLink }'><br>
 	price:<input type="text" name=price style="width:100%" value='${boardDtoMerch.price }'><br>
 	Content:<textarea name=content  rows="8" style="width:100%"	>${boardDtoMerch.content }</textarea><br>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	
 </form>
 <button id=modify type="submit"> 저장</button>

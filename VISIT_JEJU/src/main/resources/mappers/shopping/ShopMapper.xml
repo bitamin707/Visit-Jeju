@@ -46,14 +46,17 @@ select * from product
 
 <select id="listInsert" resultType="com.human.dto.shopping.BoardDtoShop1">
 select product.*, product_add.product_img from product, product_add 
-where product.pno = product_add.pno 
-and product.product_category='bag'
+where product.pno = product_add.pno
 </select>
 
 <select id="listPlus" resultType="BoardDtoShop1">
 select A.*, B.*
 from product A, product_add B
 where A.pno = B.pno and A.pno= #{pno}
+</select>
+
+<select id="showProduct" resultType="com.human.dto.shopping.BoardDtoShop1">
+select product_name from product
 </select>
 
 </mapper>
