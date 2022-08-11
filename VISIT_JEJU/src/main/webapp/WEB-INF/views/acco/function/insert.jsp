@@ -16,11 +16,11 @@
 
 
 	<form method="POST" action="/ex/acco/function/insert" name="infor">
-		숙소 이름:<input type=text name=acco_name><br> 숙소 주소:<select
+		숙소 이름:<input type=text name=acco_name><br> 태그 주소:<select
 			id="select1" name="acco_address1">
 			<option value="제주시">제주시</option>
 			<option value="서귀포시" selected="selected">서귀포시</option>
-		</select> <br> 숙소 상세주소:<select id="select2" name="acco_address2">
+		</select> <br> 태그주소:<select id="select2" name="acco_address2">
 			<option value="제주시내" selected="selected">제주시내</option>
 			<option value="애월">애월</option>
 			<option value="한림">한림</option>
@@ -70,13 +70,20 @@
 			<option value="#가족호텔">가족호텔</option>
 			<option value="#와이파이존">와이파이존</option>
 			<option value="" selected="selected">태그없음</option>
-		</select><br> <input type="submit" value=전송><br>
-		사진 1 : <input type=text name=acco_photo1><br>
-		사진 2 : <input type=text name=acco_photo2><br>
-		사진 3 : <input type=text name=acco_photo3><br>
-		사진 4 : <input type=text name=acco_photo4><br>
+		</select>
+		<br>상세주소: <input type=text name=acco_detail_address  value="${accoDto.acco_detail_address }"><br>
 		내용 <br>
-		<input type=text name=acco_content style="  width:200px; height:100px; font-size:20px;"><br>
+		<input type=text name=acco_detail_content style="  width:200px; height:100px; font-size:20px;"><br>
+		
+		<br>
+		사진 1 : <input type=text name=acco_detail_photo1><br>
+		사진 2 : <input type=text name=acco_detail_photo2><br>
+		사진 3 : <input type=text name=acco_detail_photo3><br>
+		사진 4 : <input type=text name=acco_detail_photo4><br>
+		숙소 전화번호 : <input type=text name=acco_phonenum><br>
+		메인사진 : <input type=text name=acco_photo>
+		 <input type="submit" value=전송><br>
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</form>
 
 </body>

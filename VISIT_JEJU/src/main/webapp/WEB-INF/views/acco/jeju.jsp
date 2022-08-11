@@ -80,6 +80,9 @@
 					</div>
 				</ul>
 			</form>
+			<button>
+				<a href="/ex/acco/function/insert">숙박추가</a>
+			</button>
 
 			<div class="recommend">
 				<div class="order_type">
@@ -99,11 +102,9 @@
 				<hr>
 				<c:forEach items="${list }" var="AccoDto">
 					<div class="event_area">
-						<a href="${AccoDto.acco_name }">
+						<a href="/ex/acco/function/detail?acco_id=${AccoDto.acco_id }">
 							<div id="event_area_img">
-								<img
-									src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202001/21/565e5bb9-1188-479c-b786-555532779d88.jpg"
-									alt="나미송 머무는 곳 대표이미지">
+								<img src="${AccoDto.acco_photo}" alt="메인사진">
 							</div>
 							<div class="event_area_text">
 								<p class="s_tit">
@@ -111,8 +112,7 @@
 								</p>
 								<p class="region">${AccoDto.acco_address1 }&gt;
 									${AccoDto.acco_address2 }</p>
-								<p class="tag">${AccoDto.acco_tag1 }${AccoDto.acco_tag2 }
-									${AccoDto.acco_tag3 } ${AccoDto.acco_tag4 }</p>
+								<p class="tag">${AccoDto.acco_tag1 } ${AccoDto.acco_tag2 } ${AccoDto.acco_tag3 } ${AccoDto.acco_tag4 }</p>
 
 								<p class="like">
 									<br> <br> <br> <br> <span>좋아요</span> <span
@@ -122,7 +122,7 @@
 								<p
 									style="position: relative; text-align: right; margin-right: 10px;">
 									<button type="button">
-									<a href='/ex/acco/function/delete?acco_id=${AccoDto.acco_id }'>삭제</a>
+										<a href='/ex/acco/function/delete?acco_id=${AccoDto.acco_id }'>삭제</a>
 									</button>
 									<button type="button">
 										<a
