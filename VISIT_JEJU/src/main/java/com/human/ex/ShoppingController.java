@@ -133,7 +133,7 @@ public class ShoppingController {
 	
 	@RequestMapping(value = "product/remove", method = RequestMethod.GET)
 	public String remove(@RequestParam("bno") int bno,PageMaker pm,Model model,RedirectAttributes rttr) throws Exception {
-		bm.remove(bno);
+		bm.remove(bno);	
 		
 		rttr.addAttribute("page", pm.getPage());
 		rttr.addAttribute("perPageNum", pm.getPerPageNum());
@@ -144,12 +144,12 @@ public class ShoppingController {
 		return "redirect:/shopping/product/list";
 	}
 	
-	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.GET)
+	@RequestMapping(value = "product/Write_Review", method = RequestMethod.GET)
 	public void Write_Review_get(Model model, BoardDtoShop1 dto) throws Exception {
 		model.addAttribute("list",service.showProduct());
 	}
 	
-	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.POST)
+	@RequestMapping(value = "product/Write_Review", method = RequestMethod.POST)
 	public String Write_Review_post(Model model, BoardDtoShop2 dto, RedirectAttributes rttr) throws Exception {
 		bm.create(dto);
 		System.out.println("Write_Review");

@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/product1.css?after">
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/product1_review.css?after"> 
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/Product.css?after">
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/Product_Review.css?after"> 
     <script type="text/javascript" src="/ex/resources/js/shopping/product.js"/></script>
     
     <title>쇼핑몰_술</title>

@@ -91,7 +91,7 @@
 
 <body>
     <div id="tbl_box">
-    <form action="/ex/shopping/product/Write_Review" method="POST">
+    <form action="/ex/shopping/product/Write_Review" method="post">
 			<table border="1" width="1000px" id="customers">
 
 				<tr>
