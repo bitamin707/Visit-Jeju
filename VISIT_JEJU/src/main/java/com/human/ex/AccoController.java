@@ -31,9 +31,10 @@ public class AccoController {
 		model.addAttribute("list",service2.listAll());
 	}
 	
-	@RequestMapping(value = "/나미송", method = RequestMethod.GET)
-	public void page1(AccoReviewDto dto, Model model) throws Exception {
-	
+	@RequestMapping(value = "/function/detail", method = RequestMethod.GET)
+	public void page1(@RequestParam("acco_id")int acco_id, Model model) throws Exception {
+		System.out.println("read");
+		model.addAttribute(service2.read(acco_id));
 		model.addAttribute("list",service1.listAll());
 	}
 	
