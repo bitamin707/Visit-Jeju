@@ -155,7 +155,7 @@ var result = '${savedName}';
 			<input type=text class="post" value="${boardDtoShop1.product_max_qty }" name=product_max_qty required>
 			
 			<h5 class="post_text">제품 정보</h5>
-			<p><textarea cols="53" rows="4.5" class="post_area" name="product_info" maxlength="500" required>${boardDtoShop1.product_info}</textarea></p>
+			<p><textarea cols="53" rows="4.5" class="post_area" name="product_info" maxlength="100" required>${boardDtoShop1.product_info}</textarea></p>
 			
 			<h5 class="post_text">제품 이미지</h5>
 			<input type=text class="post" value="${boardDtoShop1.product_img }" name=product_img required>

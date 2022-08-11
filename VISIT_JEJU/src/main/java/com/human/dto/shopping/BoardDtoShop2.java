@@ -3,11 +3,13 @@ package com.human.dto.shopping;
 import java.util.Date;
 
 public class BoardDtoShop2 {
+	
 	private int bno;
 	private String what_product;
 	private String review;
 	private String recommand;
-	private String userID;
+	private String userid;
+	private String recommand2;
 	public int getBno() {
 		return bno;
 	}
@@ -32,17 +34,22 @@ public class BoardDtoShop2 {
 	public void setRecommand(String recommand) {
 		this.recommand = recommand;
 	}
-	public String getUserID() {
-		return userID;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public String getRecommand2() {
+		return recommand2;
+	}
+	public void setRecommand2(String recommand2) {
+		this.recommand2 = recommand2;
 	}
 	@Override
 	public String toString() {
 		return "BoardDtoShop2 [bno=" + bno + ", what_product=" + what_product + ", review=" + review + ", recommand="
-				+ recommand + ", userID=" + userID + "]";
+				+ recommand + ", userid=" + userid + ", recommand2=" + recommand2 + "]";
 	}
 
-	
 }
