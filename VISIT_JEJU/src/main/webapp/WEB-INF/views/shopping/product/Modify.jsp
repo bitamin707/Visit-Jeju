@@ -126,6 +126,7 @@
         <div id="btn_box"> 
 		<input type="button" value="수정 그만하기" class="btn" onclick="goBack()">
         <input type="submit" value="추가하기" class="btn">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     	</div>
     </form>
 </div>
