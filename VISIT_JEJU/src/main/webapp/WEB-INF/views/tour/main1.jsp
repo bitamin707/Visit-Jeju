@@ -58,19 +58,23 @@
     <!-- travel section -->
     <div class="container travel">
       <div class="travel-cards">
+      
+      <!-- DB넣음 수정가능 --> 
+      
+      <c:forEach items="${list }" var="tourDto">
 
         <div class="travel-card">
 
-          <div class="travel-img" data-filter="마을관광">
-            <img src="/ex/resources/img/tour/seongeup1.jpg" alt="성읍녹차마을">
+          <div class="travel-img" >
+            <img src=${tourDto.imglink } alt="수정가능">
           </div>
-                     
+                  
 
           <div class="travel-dimmed">
-            <h3>성읍녹차마을</h3>
-            <p><span class="place"></span>제주특별자치도 표선면 중산간동로 4778</p>
+            <h3>${tourDto.tname }</h3>
+            <p><span class="place"></span>${tourDto.tadrs }</p>
             <span class="travel-info">
-              <p>성읍녹차마을은 녹차를 키워 생산해내는 다원이다. 유기물 함량이 높고 물 빠짐이 좋은 화산회토와 깨끗한 화산 암반수를 지닌 천혜의 자연 조건 제주에서 키워 만들어낸 녹차를 생산한다</p>
+              <p>${tourDto.tinfo }</p>
               <button>
                 <a href="data2">
                   자세히보기
@@ -79,43 +83,11 @@
             </span>
           </div>
         </div>
+		
+       </c:forEach>
+       
+       <!-- 여기까지 DB넣음 수정가능 --> 
 
-        <div class="travel-card">
-          <div class="travel-img" data-filter="예술및문화">
-            <img src="/ex/resources/img/tour/museum2.jpg" alt="오설록 티 뮤지엄">
-          </div>
-          <div class="travel-dimmed">
-            <h3>오설록 티 뮤지엄</h3>
-            <p><span class="place"></span>서귀포시 안덕면 신화역사로 15 </p>
-            <span class="travel-info">
-              <p>국내외 차 관련 물품과 박물관이며, 푸른 녹차밭이 펼쳐지는 제주도 서광다원 입구에 위치하고 있다.  </p>
-              <button>
-                <a href="#">
-                  자세히보기
-                </a>
-              </button>
-            </span>
-          </div>
-        </div>
-
-        <div class="travel-card" data-filter="예술및문화">
-          <div class="travel-img">
-            <img src="/ex/resources/img/tour/국립제주박물관1.jpg" alt="국립제주박물관">
-          </div>
-
-          <div class="travel-dimmed">
-            <h3>국립제주박물관</h3>
-            <p><span class="place"></span>제주특별자치도 제주시 일주동로 17 </p>
-            <span class="travel-info">
-              <p>제주의 역사와 문화유산을 체계적으로 전시·보존·연구하는 고고·역사박물관이다. 동북아시아지역 문화교류의 주요 거점인 제주도의 독특한 역사와 문화를 압축해서 만나볼 수 있다. </p>
-              <button>
-                <a href="#">
-                  자세히보기
-                </a>
-              </button>
-            </span>
-          </div>
-        </div>
 
 
         <div class="travel-card" data-filter="해변">

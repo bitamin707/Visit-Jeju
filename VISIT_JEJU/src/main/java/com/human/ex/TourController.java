@@ -7,7 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.human.dto.tour.TourReviewsDto;
 import com.human.dto.tour.tourDto;
+import com.human.service.tour.TourReviewsService;
 import com.human.service.tour.tourService;
 
 @Controller
@@ -15,6 +17,8 @@ public class TourController {
 	
 	@Inject
 	private tourService service;
+	@Inject
+	private TourReviewsService serviceReviews;
 	
 	@RequestMapping(value = "/tour/main1", method = RequestMethod.GET)
 	public void Main1(Model model, tourDto dto) throws Exception {
@@ -31,6 +35,11 @@ public class TourController {
 	}
 	@RequestMapping(value = "/tour/data2", method = RequestMethod.GET)
 	public void data2(Model model) {
+	}
+	
+	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
+	public void test(Model model, TourReviewsDto dto) throws Exception {
+		model.addAttribute("list",serviceReviews.listAll());
 	}
 }
 	
