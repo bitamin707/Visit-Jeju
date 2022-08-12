@@ -186,6 +186,13 @@ public class ShoppingController {
 		return "redirect:/shopping/product/Product?pno="+pno;
 	}
 	
+	
+	
+	
+	@RequestMapping(value = "/main/ShoppingBasket", method = RequestMethod.GET)
+	public void ShoppingBasket(Model model) throws Exception {
+	}
+	
 
 }
 
