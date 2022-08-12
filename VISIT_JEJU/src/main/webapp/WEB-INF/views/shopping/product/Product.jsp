@@ -17,6 +17,32 @@
     <script type="text/javascript" src="/ex/resources/js/shopping/product.js"/></script>
     
     <title>쇼핑몰_술</title>
+    <script>
+    
+    <!-- JS 문서에 따로 두면 값을 못 가져와서 여기에 둠 -->
+    
+    $(document).ready(function(){
+  	  $('#searchBtn').on("click",function(event){
+  		  alert("Product"+'${pageMaker.makePage(1)}'
+  				  +'&searchType='+$("select option:selected").val()
+  				  +"&keyword="+$('#keywordInput').val());
+  		  
+  		  self.location="Product"+'${pageMaker.makePage(1)}'
+  		  +'&searchType='+$("select option:selected").val()
+  		  +"&keyword="+$('#keywordInput').val()
+  		  +"&pno="+"${boardDtoShop1.pno }"
+  		  +"#board_main";
+  		  
+  		document.getElementById('#board_main').scrollintoview();
+  	  })
+  	  
+  	  $('#writeBtn').on("click",function(event){
+  		  location.href="/ex/shopping/product/Write_Review?"
+  		  + 'pno=' + '${boardDtoShop1.pno }'; 		
+  	  })
+  	    		  
+    });
+    </script>
 </head>
 <body>
     <!-- ============== 헤더 =============== -->
@@ -149,7 +175,7 @@
 			</select> <input type="text" name="keyword" id="keywordInput"
 				value="${pageMaker.keyword}">
 			<button id="searchBtn">검색하기</button>
-			<button id="writeBtn" style="float: right;">글쓰기</button>
+			<button id="writeBtn" style="float: right;" >글쓰기</button>
 		</div>
 
 		<table class='customers' width=100% border="1">
