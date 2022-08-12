@@ -118,7 +118,7 @@ body {
 
 /* Main column */
 .board_main {
-	border: 1px solid black;
+	border: 1px solid rgb(140, 140, 140);
 	position: relative;
 	-ms-flex: 70%; /* IE10 */
 	flex: 70%;

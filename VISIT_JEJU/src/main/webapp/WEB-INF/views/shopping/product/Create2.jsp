@@ -104,6 +104,7 @@ var result = '${savedName}';
 						enctype="multipart/form-data" target="zeroFrame">
 						<input type="file" name="file" id="file" style="width: 210px;" required /> 
 							<input type="submit" value="파일업로드">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
 						<input type="text" value="${savedName}">
 
@@ -149,6 +150,7 @@ var result = '${savedName}';
                         <p class="post_text">이미지명을 입력하세요 (iframe 확인)</p>                         
                         	<input type="text" class="post" name=product_img required>
                         	<input type="submit" value=" 세부사항 전송" class="post_text" style="margin:1px 50px; font-size:19px; position:absolute;" required>
+                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </div>
 
                     <div id="product_stock">

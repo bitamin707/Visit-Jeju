@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/product1.css?after">
-    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/product1_review.css?after"> 
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/Product.css?after">
+    <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/Product_Review.css?after"> 
     <script type="text/javascript" src="/ex/resources/js/shopping/product.js"/></script>
     
     <title>쇼핑몰_술</title>
@@ -125,7 +125,7 @@
                     <img src="/ex/resources/img/shopping/제품안내1.png" class="info_images">
                     <img src="/ex/resources/img/shopping/제품안내2.png" class="info_images">
 
-                    <div class="board_main">
+                    <div id="board_main">
 		<h2 class="review_board">구매자 상품 후기</h2>
 		<h5 class="review_board_menu">일반 리뷰(${pageMaker.totalCount})</h5>
 		<h5 class="review_board_menu">포토 리뷰(0)</h5>
@@ -169,7 +169,7 @@
 							${dto.recommand2 }</p>
 					</td>
 					<td>${dto.userid }
-						<button id="remove_btn" onclick="removeIt(${dto.bno })">삭제</button>
+						<button id="remove_btn" onclick="removeIt(${dto.bno }, ${boardDtoShop1.pno })">삭제</button>
 					</td>
 				</tr>
 			</c:forEach>
@@ -182,21 +182,21 @@
 				<!-- 현재 페이지가 1이 아니면 <<를 보여준다. 클릭하면 강제로 1페이지로 이동 -->
 				<!-- << -->
 				<c:if test="${pageMaker.page !=1}">
-					<a href='list${pageMaker.makeSearch(1)}'>&laquo;</a>
+					<a href='Product${pageMaker.makeSearch(1)}&pno=${boardDtoShop1.pno }' onclick="review()">&laquo;</a>
 				</c:if>
 
 				<!-- 현재  startPage 11~20 endPage 이라면,
                버튼은 TRUE값이 되며 누를시에 10페이지로 넘어간다. -->
 				<!-- < -->
 				<c:if test="${pageMaker.prev }">
-					<a href='list${pageMaker.makeSearch(pageMaker.startPage-1)}'>&lt;</a>
+					<a href='Product${pageMaker.makeSearch(pageMaker.startPage-1)}&pno=${boardDtoShop1.pno }' >&lt;</a>
 				</c:if>
 
 				<!-- start,end 페이지를 forEach로 출력. 11~20 -->
 				<c:forEach begin="${pageMaker.startPage }"
 					end="${ pageMaker.endPage}" var="idx">
 					<!-- 현재 페이지와 idx값이 같다면 클래스 이름을 정해주고 css 스타일을 부여합니다. -->
-					<a href='list${pageMaker.makeSearch(idx)}'
+					<a href='Product${pageMaker.makeSearch(idx)}&pno=${boardDtoShop1.pno }'
 						<c:out value="${pageMaker.page==idx?' class=active ':'' }"/>>
 						${idx}</a>
 				</c:forEach>
@@ -210,14 +210,14 @@
 				<!-- <를 누를시, 현재 11~20페이지를 보여준다면, 21페이지로 넘어간다. -->
 				<!-- > -->
 				<c:if test="${pageMaker.next }">
-					<a href='list${pageMaker.makeSearch(pageMaker.endPage+1)}'>&gt;</a>
+					<a href='Product${pageMaker.makeSearch(pageMaker.endPage+1)}&pno=${boardDtoShop1.pno }'>&gt;</a>
 
 				</c:if>
 
 				<!-- 현재 페이지가 데이터 마지막이 아니면 >>를 보여준다. 클릭하면 강제로 totalEndPage로 이동 -->
 				<!-- >> -->
 				<c:if test="${pageMaker.page != pageMaker.totalEndPage}">
-					<a href='list${pageMaker.makeSearch(pageMaker.totalEndPage)}'>&raquo;</a>
+					<a href='Product${pageMaker.makeSearch(pageMaker.totalEndPage) }&pno=${boardDtoShop1.pno }'>&raquo;</a>
 				</c:if>
 
 			</div>

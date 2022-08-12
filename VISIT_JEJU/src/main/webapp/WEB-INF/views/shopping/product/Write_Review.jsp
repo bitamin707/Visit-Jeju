@@ -83,15 +83,25 @@
             }
         
         function back() {
-            location.href = '/ex/shopping/product/list';
+            location.href = '/ex/shopping/product/Product';
         }
+        
+        $.ajaxPrefilter(function (options) {
+        	  var headerName = '${_csrf.headerName}';
+        	  var token = '${_csrf.token}';
+        	  if (options.method === 'POST') {
+        	      options.headers = options.headers || {};
+        	      options.headers[headerName] = token;
+        	  }
+        	});
+        	
         
     </script>
 </head>
 
 <body>
     <div id="tbl_box">
-    <form action="/ex/shopping/product/Write_Review" method="POST">
+    <form action="/ex/shopping/product/Write_Review" method="post">
 			<table border="1" width="1000px" id="customers">
 
 				<tr>
@@ -144,7 +154,9 @@
 			
 		<div id="btn_box"> 
 			<input type="button" value="돌아가기" id="main" onclick="back()">
-        	<input type="submit" value="추가하기">
+			
+        	<input type="submit" value="추가하기" />
+        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     	</div>
     </form>
 </div>

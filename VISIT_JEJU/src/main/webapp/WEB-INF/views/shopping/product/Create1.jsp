@@ -114,7 +114,8 @@
     </table>
         <div id="btn_box"> 
 		<input type="button" value="돌아가기" id="main" onclick="back()">
-        <input type="submit" value="추가하기">
+        <input type="submit" value="추가하기" >
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     	</div>
     </form>
 </div>
