@@ -315,6 +315,67 @@ img {
 
 
 
+/* reviews test */
+
+.rvw{
+	width:660px;
+	
+}
+
+.rvw_btn input[type=submit] {
+	padding: 2px 24px;
+	margin: 15px 6px;
+  	background-color: rgb(0, 0, 0);
+  	color:#f2f2f2;
+  	border-radius: 5px;
+  	border: none;
+  	cursor: pointer;
+  	position: relative;
+  	left: 580px;
+	
+}
+
+.rvw_inesrt input[type=text] {
+	border:2px solid; 
+	padding:10px;
+	width:660px;
+	height:130px;
+}
+
+.rvw_line {
+	border : 0px;
+	border-top : 1px solid #dcdcdc;
+	margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+.rvw_list {
+	border:2px solid #dcdcdc; 
+	padding:18px;
+	height:none;
+	border-radius: 7px;
+	margin-bottom: 3%;
+}
+
+.rvw_info {
+	margin-bottom: 2%;
+}
+
+.rvw_info h3 {
+	font-size: 18px;
+}
+
+.rvw_info p {
+	font-size: 14px;
+	margin-top: 1%;
+}
+
+.rvw_content {
+	font-size: 14px;
+	margin-bottom: 1%;	
+}
+
+
 
 /*================== 푸터==================*/
 #footer {
