@@ -26,7 +26,6 @@ window.onload=function(){
 	Title:<input type="text" name=name style="width:100%" value='${boardDtoFood.name }' ><br>
 	imgLink:<input type="text" name=imgLink style="width:100%" value='${boardDtoFood.imgLink }'><br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	
 </form>
 <button id=modify > 저장</button>
 <button id=main > 취소</button>

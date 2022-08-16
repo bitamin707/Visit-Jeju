@@ -1,63 +1,30 @@
 package com.human.dto.main;
 
 public class BoardDtoAccount {
-	private String accountID;
-	private String accountpw;
-	private String birth;
-	private String phoneNum;
-	private String sex;
-	private String email;
-	private String adminCheck;
-	
-	
-	public String getAccountID() {
-		return accountID;
+	private String username;
+	private String password;
+	private String enabled;
+	public String getUsername() {
+		return username;
 	}
-	public void setAccountID(String accountID) {
-		this.accountID = accountID;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getAccountpw() {
-		return accountpw;
+	public String getPassword() {
+		return password;
 	}
-	public void setAccountpw(String accountpw) {
-		this.accountpw = accountpw;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getBirth() {
-		return birth;
+	public String getEnabled() {
+		return enabled;
 	}
-	public void setBirth(String birth) {
-		this.birth = birth;
-	}
-	public String getPhoneNum() {
-		return phoneNum;
-	}
-	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
-	}
-	public String getSex() {
-		return sex;
-	}
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getAdminCheck() {
-		return adminCheck;
-	}
-	public void setAdminCheck(String adminCheck) {
-		this.adminCheck = adminCheck;
+	public void setEnabled(String enabled) {
+		this.enabled = enabled;
 	}
 	@Override
 	public String toString() {
-		return "BoardDtoAccount [accountID=" + accountID + ", accountpw=" + accountpw + ", birth=" + birth
-				+ ", phoneNum=" + phoneNum + ", sex=" + sex + ", email=" + email + ", adminCheck=" + adminCheck + "]";
+		return "BoardDtoAccount [username=" + username + ", password=" + password + ", enabled=" + enabled + "]";
 	}
-	
-	
-	
+
 }
