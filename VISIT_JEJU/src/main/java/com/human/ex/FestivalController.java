@@ -59,4 +59,8 @@ public class FestivalController {
 	@RequestMapping(value = "/detail/*", method = RequestMethod.GET)
 	public void page1() {
 	}
+	
+	@RequestMapping(value = "/modify/festival_detailCreate", method = RequestMethod.GET)
+	public void detailCreate() throws Exception {
+	}
 }
