@@ -8,11 +8,11 @@
 <script>
 var result='${okay}';
 if(result=='success'){
-	alert('세부사항과 제품을 삭제합니다.');
+	alert('제품이 삭제되었습니다.');
 }
 </script>
 </head>
 <body>
-hi
+
 </body>
 </html>

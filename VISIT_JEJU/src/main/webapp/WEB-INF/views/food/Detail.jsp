@@ -26,7 +26,7 @@
                 <p>주소:제주특별자치도 제주시 우도면 우도해안길 532</p>
             </div>
         </div>
-        <div class="main-content">
+         <div class="main-content">
             <div class="introduce"> 
                 <img src="/ex/resources/img/food/ha1.jpg" alt="하하호호" height="400px" width="100%"><br>
                 <p>하하호호는 하우목동항 북측에 위치한 간이음식점이다.</p>
@@ -66,10 +66,10 @@
                     </ul>
                 </div>
                 <div class="travel">
-                    <h2>리뷰쓰기</h2>
+                    <h2>리뷰</h2>
                     <form id="todo-form">
-                        <input type="text" placeholder="Write a To Do Press Enter" required>
-                        <input type="submit" value="저장" class="submit">
+                       <a href="listAll"><input type="button" value="리뷰 자세히 보기" class="submit"></a>
+                        
                     </form>
                     <ul id="todo-list"></ul>
                     

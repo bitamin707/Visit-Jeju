@@ -16,7 +16,7 @@
 
 	<P>The time on the server is ${serverTime}.</P>
 	<ul>
-		<li><h3><a href="main/main">메인 홈페이지</a></h3></li>
+		<li><h3><a href="main/mainNormal">메인 홈페이지</a></h3></li>
 		<li><h3><a href="acco/jeju">숙박 홈페이지</a></h3></li>
 		<li><h3><a href="festival/festival">축제 홈페이지</a></h3></li>
 		<li><h3><a href="shopping/main/Main">쇼핑 홈페이지</a></h3></li>

@@ -7,7 +7,7 @@ public class PageMaker {
 	
 
 	private int page=1;//현재 페이지
-	private int perPageNum=10;//한 페이지당 보여줄 게시글 데이터 갯수
+	private int perPageNum=5;//한 페이지당 보여줄 게시글 데이터 갯수
 	private String searchType;//카테고리
 	private String keyword;//검색박스
 	
@@ -18,7 +18,7 @@ public class PageMaker {
 	private int endPage;//startPage 11~20 endPage
 	private boolean prev;//왼쪽버튼
 	private boolean next;//오른쪽버튼
-	private int displayPageNum = 10;//보여줄 페이지 창 11~20
+	private int displayPageNum = 5;//보여줄 페이지 창 11~20
 	
 	
 	public int getTotalStartPage() {

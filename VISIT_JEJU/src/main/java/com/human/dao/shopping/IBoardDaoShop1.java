@@ -22,5 +22,6 @@ public interface IBoardDaoShop1 {
 	public List<BoardDtoShop1> listAll() throws Exception;
 	public List<BoardDtoShop1> listInsert() throws Exception;
 	public BoardDtoShop1 listPlus(int pno) throws Exception;
+	public List<BoardDtoShop1> showProduct() throws Exception;
 	
 }

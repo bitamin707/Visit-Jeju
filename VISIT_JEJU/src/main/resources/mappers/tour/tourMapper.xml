@@ -20,7 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="delete"> delete from tour where tno=#{tno} 
 	</delete>
 	
-	<select id="ListAll" resultType="com.human.dao.tour.tourDto">
+	<select id="listAll" resultType="com.human.dto.tour.tourDto">
+	select * from tour 
 	</select>
+	
+	
 	
 </mapper>

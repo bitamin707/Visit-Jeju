@@ -16,7 +16,7 @@ public class FoodController {
 	
 	@RequestMapping(value = "/food/page1", method = RequestMethod.GET)
 	public void Page1(Model model) throws Exception{
-		System.out.println(service.listAll());
+		//System.out.println(service.listAll());
 		model.addAttribute("list",service.listAll());
 	}	
 	@RequestMapping(value = "/food/page2", method = RequestMethod.GET)
