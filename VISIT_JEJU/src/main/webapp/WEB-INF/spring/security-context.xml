@@ -19,7 +19,10 @@
 		            password-parameter="password" />
 		<logout logout-url="/main/logout" invalidate-session="true"   />
 		<!--해댕주소로오면 session이 지워지고 로그아웃이 진행됨   -->
-		<access-denied-handler error-page="/main/login/error" /> 
+		<access-denied-handler error-page="/main/login/error" />
+		<headers>
+        	<frame-options policy="SAMEORIGIN"/>
+    	</headers> 
 	</http>
 
 	<!-- provider -->

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.festival.festival_detailDao">
+
+	<insert id="create">
+		insert into festival_detail
+		values (#{fno}, #{fname}, #{faddress}, #{ftel}, #{fhomepage}, #{fcontent}, #{flike_count}, #{freview_count},
+		#{fbg}, #{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5})
+	</insert>
+
+	<select id="read" resultType="festivalDto">
+		select * from festival where fno=#{fno}
+	</select>
+
+	<delete id="delete">
+		delete from festival where fno=#{fno}
+	</delete>
+
+	<update id="update">
+		update festival
+		set fname=#{fname}, fcontent=#{fcontent}, fstart_date=#{fstart_date},
+		fend_date=#{fend_date}, flocation=#{flocation}, fregion=#{fregion},
+		imglink=#{imglink}
+		where fno=#{fno}
+	</update>
+</mapper>
