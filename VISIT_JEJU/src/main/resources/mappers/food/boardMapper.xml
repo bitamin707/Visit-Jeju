@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 의 역할 
+resultType의 역할  read 와 listAll만 있는 이유
+-->
+<mapper namespace="com.human.dao.food.IBoardDao">
+<insert id="create">
+insert into mp_board(bno,title,content,writer)
+values(seqnum1.nextval,#{title},#{content},#{writer})
+</insert>
+
+<insert id="likecreate">
+insert into mp_board(likecount) values(#{likecount})
+</insert>
+
+<select id="read" resultType="com.human.dto.food.BoardDto">
+select * from mp_board where bno=#{bno}
+</select>
+
+<delete id="delete">
+delete from mp_board where bno=#{bno}
+</delete>
+<update id="update">
+update mp_board set title=#{title},content=#{content} where bno =#{bno}
+</update>
+
+<select id="listAll" resultType="com.human.dto.food.BoardDto">
+select * from mp_board order by bno desc,regdate desc
+</select>
+
+
+</mapper>
