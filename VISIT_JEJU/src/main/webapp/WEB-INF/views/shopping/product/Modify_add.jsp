@@ -133,6 +133,7 @@ var result = '${savedName}';
 						enctype="multipart/form-data" target="zeroFrame">
 						<input type="file" name="file" id="file" style="width: 210px;" required /> 
 							<input type="submit" value="파일업로드">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
 						<input type="text" value="${savedName}">
 
@@ -161,6 +162,7 @@ var result = '${savedName}';
 			<input type=text class="post" value="${boardDtoShop1.product_img }" name=product_img required>
     		
     		<input type=submit value=수정완료 class="post_button">
+    		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     		<input type=button value=뒤로가기 onclick="goBack()" class="post_button">
     		</form>
     		

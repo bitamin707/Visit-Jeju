@@ -100,12 +100,12 @@ public class ShoppingController {
 	}
 	
 	
-	@RequestMapping(value = "product/Modify_add", method = RequestMethod.GET)
+	@RequestMapping(value = "/product/Modify_add", method = RequestMethod.GET)
 	public void Modify_add_get(@RequestParam(required=false) int pno, Model model)throws Exception {
 		model.addAttribute(service.read_add(pno));
 	}
 	
-	@RequestMapping(value = "product/Modify_add", method = RequestMethod.POST)
+	@RequestMapping(value = "/product/Modify_add", method = RequestMethod.POST)
 	public String Modify_add_post(BoardDtoShop1 dto, RedirectAttributes rttr) throws Exception {
 		System.out.println("Modify_add");
 		System.out.println(dto);
@@ -116,12 +116,12 @@ public class ShoppingController {
 	}
 	
 	
-	@RequestMapping(value = "product/Modify", method = RequestMethod.GET)
+	@RequestMapping(value = "/product/Modify", method = RequestMethod.GET)
 	public void Modify_get(@RequestParam(required=false) int pno, Model model)throws Exception {
 		model.addAttribute(service.read(pno));
 	}
 	
-	@RequestMapping(value = "product/Modify", method = RequestMethod.POST)
+	@RequestMapping(value = "/product/Modify", method = RequestMethod.POST)
 	public String Modify_post(BoardDtoShop1 dto, RedirectAttributes rttr) throws Exception {
 		System.out.println("Modify");
 		System.out.println(dto);
@@ -131,17 +131,21 @@ public class ShoppingController {
 	}
 	
 	
-	@RequestMapping(value = "product/remove", method = RequestMethod.GET)
-	public String remove(@RequestParam("bno") int bno,PageMaker pm,Model model,RedirectAttributes rttr) throws Exception {
-		bm.remove(bno);
+	@RequestMapping(value = "/product/remove", method = RequestMethod.GET)
+	public String remove(@RequestParam(defaultValue = "bno", required=false) int bno, @RequestParam(defaultValue = "pno", required=false) int pno,PageMaker pm,Model model,RedirectAttributes rttr) throws Exception {
+		bm.remove(bno);	
 		
 		rttr.addAttribute("page", pm.getPage());
 		rttr.addAttribute("perPageNum", pm.getPerPageNum());
 		rttr.addAttribute("searchType", pm.getSearchType());
 		rttr.addAttribute("keyword", pm.getKeyword());
-
 		rttr.addFlashAttribute("remove","success");
-		return "redirect:/shopping/product/list";
+		
+		System.out.println(bno);
+		System.out.println(pno);
+		model.addAttribute(service.listPlus(pno));
+		System.out.println(service.listPlus(pno));
+		return "redirect:/shopping/product/Product?pno="+pno;
 	}
 	
 	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.GET)
@@ -155,8 +159,9 @@ public class ShoppingController {
 		System.out.println("Write_Review");
 		System.out.println(dto);
 		rttr.addFlashAttribute("write","success");
-		return "redirect:/shopping/product/list";
+		return "redirect:/shopping/product/Product";
 	}
 	
 
 }
+
