@@ -76,8 +76,8 @@
             <c:url value="/login" var="loginUrl"/>
                 <form method="POST" action="${loginUrl}" name="infor">
                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
-                <input class="input1" type="text" placeholder="Username" name="id"><br><br>        
-                <input type="password" class="input1" type="text" placeholder="pw" name="pw"><br><br>
+                <input class="input1" type="text" placeholder="Username" name="username"><br><br>        
+                <input type="password" class="input1" type="text" placeholder="password" name="password"><br><br>
                 <input id="loginbt1" type="submit" value="Login">
                 <button id="btn" type="button">Sigh up</button>
                 </form>
