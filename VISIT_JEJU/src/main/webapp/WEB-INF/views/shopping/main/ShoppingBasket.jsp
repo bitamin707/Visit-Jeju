@@ -113,13 +113,19 @@
     </style>
     
     <script>
-        function test() {
-            document.getElementById('fcs').scrollIntoView();
-        }
-        
-        document.getElementById().scrollIntoView();
-        
-        
+    function test() {
+        document.getElementById('fcs').scrollIntoView();
+    }
+
+    window.onload = function(){
+        var a = document.getElementById('product_price').innerText;
+        var b = document.getElementById('product_stock').innerText;
+        var c = a * b;
+        document.getElementById('basket_price').innerText = c;
+
+    }   
+
+</script>
     </script>
 </head>
 
@@ -136,29 +142,36 @@
     <div id="basket_main">
         <h2>${user.nickname }님 장바구니</h2>
 
+
         <br>
-        <c:forEach items="${list }" var="boardDto">
-        <table id="tbl" style="width:950px; margin-bottom: 30px;" cellspacing="-10px">
+        <table id="tbl" style="width:950px;" cellspacing="-10px">
             <tr>
                 <th cellsp>취소</th>
                 <th colspan="2">상품명</th>
                 <th>가격</th>
                 <th>수량</th>
                 <th>주문금액</th>
-            </tr>
+            </tr>    
             <tr>	
-                <td rowspan="2"><a>X</a></td>
+            <c:forEach items="${list }" var="boardDto">
+                <td><a>X</a></td>
                 <td>
                 	<img id="basket_img" src="/ex/resources/img/shopping/${boardDto.product_img }">
                 </td>
-                <td rowspan="2">${boardDto.product_name }</td>
-                <td rowspan="2" id="product_price">${boardDto.product_won }</td>
-                <td rowspan="2" id="product_stock">${boardDto.stock }</td>
-                <td rowspan="2" id="basket_price">d</td>
+                
+                <%! 
+                	int a;
+                	int b;
+                	int c;
+                %>                
+                <td>${boardDto.product_name }</td>
+                <td id="a<%out.println(a++);%>">${boardDto.product_won }</td>
+                <td id="b<%out.println(b++);%>">${boardDto.stock }</td>
+                <td id="c<%out.println(c++);%>">d</td>               
             </tr>
+                    </c:forEach>
         </table>
-        </c:forEach>
-        <span style="margin-left: 800px;" id="basket_total_price">총 금액:d </span>
+        <div style="margin-left: 780px; margin-top:40px;" id="basket_total_price">총 금액:d </div>
     </div>
     <br>
     <ul style="padding-left:50px;">
