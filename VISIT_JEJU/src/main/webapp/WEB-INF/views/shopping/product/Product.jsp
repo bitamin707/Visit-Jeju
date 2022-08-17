@@ -50,7 +50,7 @@
     <!-- ============== 헤더 =============== -->
         <!-- ↓↓start class wrap -->
         <div class="wrap"> 
-            <div id="link_side"></div>
+        <a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
             <div class="info_header">
                 <h6 class="page_font">Premium Liquor.</h6>
             </div>
@@ -129,7 +129,7 @@
 
                     <div id="product_buy">
                         <div id="doBuy">품절된 상품입니다.</div>
-                        <div id="doFav">장바구니♡</div>
+                        <a href="/ex/shopping/main/ShoppingBasket?pno=${boardDtoShop1.pno }"><div id="doFav">장바구니♡</div></a>
                     </div>
                     
                 </div>

@@ -35,6 +35,7 @@
 	
 	<!-- ↓↓start class wrap -->
 	<div class="wrap">
+	<a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
 		<section style="margin-bottom: 100px;">
 			<div class="intro_bg">
 				<div class="slideshow-container">

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <title>Document</title>
-    <script>
-        function test() {
-            document.getElementById('fcs').scrollIntoView();
-        }
-        
-        document.getElementById().scrollIntoView();
-    </script>
+
     <style>
     
 		#img1 {
@@ -70,19 +65,25 @@
         }
 
         td:nth-child(1){
-            width:15%;
+            width:10%;
             height:100px;
         }
         td:nth-child(2){
-            width:40%;
+            width:15%;
+            border-right:1px solid white;
         }
         td:nth-child(3){
-            width:15%;
+        	position: relative;
+            width:30%;
+            padding:auto;
         }
         td:nth-child(4){
             width:15%;
         }
         td:nth-child(5){
+            width:15%;
+        }
+        td:nth-child(6){
             width:15%;
         }
 
@@ -103,8 +104,23 @@
             color:white;
         }
         
+        #basket_img {
+        	width:110px;
+        	height:110px;
+        	float:right;
+        }
 
     </style>
+    
+    <script>
+        function test() {
+            document.getElementById('fcs').scrollIntoView();
+        }
+        
+        document.getElementById().scrollIntoView();
+        
+        
+    </script>
 </head>
 
 <body>
@@ -121,23 +137,28 @@
         <h2>${user.nickname }님 장바구니</h2>
 
         <br>
+        <c:forEach items="${list }" var="boardDto">
         <table id="tbl" style="width:950px; margin-bottom: 30px;" cellspacing="-10px">
             <tr>
-                <th cellsp>전체${stock }개</th>
-                <th>상품명</th>
+                <th cellsp>취소</th>
+                <th colspan="2">상품명</th>
                 <th>가격</th>
                 <th>수량</th>
                 <th>주문금액</th>
             </tr>
-            <tr>
-                <td rowspan="2">${number }</td>
-                <td>${img }, ${product }</td>
-                <td rowspan="2">${price }</td>
-                <td rowspan="2">${stock }</td>
-                <td rowspan="2">${price_plus }</td>
+            <tr>	
+                <td rowspan="2"><a>X</a></td>
+                <td>
+                	<img id="basket_img" src="/ex/resources/img/shopping/${boardDto.product_img }">
+                </td>
+                <td rowspan="2">${boardDto.product_name }</td>
+                <td rowspan="2" id="product_price">${boardDto.product_won }</td>
+                <td rowspan="2" id="product_stock">${boardDto.stock }</td>
+                <td rowspan="2" id="basket_price">d</td>
             </tr>
         </table>
-        <span style="margin-left: 800px;">총 금액:${price_total } </span>
+        </c:forEach>
+        <span style="margin-left: 800px;" id="basket_total_price">총 금액:d </span>
     </div>
     <br>
     <ul style="padding-left:50px;">

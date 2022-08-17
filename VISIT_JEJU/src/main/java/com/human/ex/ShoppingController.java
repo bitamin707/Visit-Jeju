@@ -22,7 +22,7 @@ import com.human.vo.shopping.PageMaker;
 public class ShoppingController {
 		
 	@Inject
-	private IBoardServiceShop1 service;
+	public IBoardServiceShop1 service;
 	
 	@Autowired
 		private IBoardServiceShop2 bm;
@@ -79,6 +79,7 @@ public class ShoppingController {
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/shopping/product/Create2?pno="+boardDto.pno;
 	}
+	
 	
 	
 	@RequestMapping(value = "/product/ShowContent", method = RequestMethod.GET)
@@ -188,9 +189,10 @@ public class ShoppingController {
 	
 	
 	
-	
 	@RequestMapping(value = "/main/ShoppingBasket", method = RequestMethod.GET)
-	public void ShoppingBasket(Model model) throws Exception {
+	public void ShoppingBasket(Model model, BoardDtoShop1 dto) throws Exception {
+		System.out.println(service.basket());
+		model.addAttribute("list",service.basket());
 	}
 	
 
