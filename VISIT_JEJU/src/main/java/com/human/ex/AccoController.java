@@ -79,18 +79,37 @@ public class AccoController {
 	//리뷰 페이지
 	
 	@RequestMapping(value = "/function/review/insert", method = RequestMethod.GET)
-	public void insertReview() throws Exception {
+	public void insertReview(AccoReviewDto dto) throws Exception {
 		System.out.println("insert GuI");
+		System.out.println(dto);
 		
 	}
 	@RequestMapping(value = "/function/review/insert", method = RequestMethod.POST)
-	public String insertReviewData(AccoReviewDto dto, RedirectAttributes rttr) throws Exception {
+	public String insertReviewData(@RequestParam("acco_id")int acco_id, AccoReviewDto dto, RedirectAttributes rttr) throws Exception {
 		System.out.println(dto);
 		service1.create(dto);
 		rttr.addFlashAttribute("msg","리뷰작성완료");
-		return "redirect:/acco/function/detail";
+		return "redirect:/acco/function/detail?acco_id="+acco_id;
 		
 	}
-	
+	@RequestMapping(value = "/function/review/delete", method = RequestMethod.GET)
+	public String deleteReviewData(@RequestParam("ano")int ano,Model model, @RequestParam("acco_id")int acco_id) throws Exception {
+		System.out.println("reviewdelete");
+		service1.delete(ano);
+		return "redirect:/acco/function/detail?acco_id="+acco_id;
+		
+	}
+	@RequestMapping(value = "/function/review/modify", method = RequestMethod.POST)
+	public void ModifyReviewDataGUi(@RequestParam("ano")int ano,Model model) throws Exception {
+		model.addAttribute(service1.read(ano));
+		System.out.println(model);
+	}
+	@RequestMapping(value = "/function/review/modify", method = RequestMethod.POST)
+	public String ModifyReviewData(AccoReviewDto dto,  @RequestParam("acco_id")int acco_id) throws Exception {
+		
+		service1.update(dto);
+		System.out.println(dto);
+		return "redirect:/acco/function/detail?acco_id="+acco_id;
+	}
 }
 

@@ -19,7 +19,7 @@ delete from acco_review where ano=#{ano}
 </delete>
 
 <update id="update">
-update acco_review set content=#{content}
+update acco_review set content=#{content} where ano=#{ano}
 </update>
 
 <select id="listAll" resultType="com.human.dto.acco.AccoReviewDto">

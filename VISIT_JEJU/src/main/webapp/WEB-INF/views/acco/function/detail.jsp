@@ -25,7 +25,7 @@
 			<div class="intro_text">
 				<h3 class="">${accoDto.acco_name }</h3>
 				<div class="tag_area">
-					<p class="best_tag">${accoDto.acco_tag1 } ${accoDto.acco_tag2 }
+					<p class="best_tag">${accoDto.acco_tag1 }${accoDto.acco_tag2 }
 						${accoDto.acco_tag3 } ${accoDto.acco_tag4 }</p>
 				</div>
 
@@ -79,22 +79,31 @@
 					<table border="1" width='100%' id='review'
 						style="text-align: center;">
 						<tr>
-							<th>id</th>
+							<th>ANO</th>
 							<th>리뷰내용</th>
+							<th>수정 , 삭제</th>
 						</tr>
 
 						<c:forEach items="${list }" var="AccoReviewDto">
 							<tr>
 								<td>${AccoReviewDto.ano }</td>
 								<td>${AccoReviewDto.content }</td>
+								<td><button type="button">
+										<a href='/ex/acco/function/review/delete?ano=${AccoReviewDto.ano }&acco_id=${accoDto.acco_id }'>삭제</a>
+									</button>
+									<button type="button">
+										<a
+											href="/ex/acco/function/review/modify?ano=${AccoReviewDto.ano }&acco_id=${accoDto.acco_id }">수정</a>
+									</button></td>
 							</tr>
 						</c:forEach>
-						
+
 					</table>
 					<button>
-							<a href="/ex/acco/function/review/insert?acco_id=${AccoDto.acco_id }">리뷰쓰기</a>
+						<a
+							href="/ex/acco/function/review/insert?acco_id=${accoDto.acco_id }">리뷰쓰기</a>
 					</button>
-					
+
 				</div>
 			</div>
 		</div>
