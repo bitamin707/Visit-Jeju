@@ -11,7 +11,7 @@
 		name="dataSource">
 		<property value="oracle.jdbc.driver.OracleDriver"
 			name="driverClassName" />
-		<property value="jdbc:oracle:thin:@192.168.0.151:1521:xe"
+		<property name="url" value="jdbc:oracle:thin:@192.168.0.151:1521:xe"/>
 		<property value="c##human" name="username" />
 		<property value="human" name="password" />
 	</bean>
