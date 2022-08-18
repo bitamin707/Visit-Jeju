@@ -75,6 +75,7 @@
 	<div class="wrap">
 		<section>
 			<form id="createForm" action="festivalCreate" method="POST">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<table>
 					<tr>
 						<th colspan="2"><h2 style="text-align:center; font-size:30px;">컨텐츠 추가 페이지</h2> </th>
@@ -114,7 +115,7 @@
 						</td>
 					</tr>
 				</table>
-				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				
 			</form>
 		</section>
 	</div>

@@ -38,10 +38,14 @@ public class TourController {
 	}
 	
 	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
-	public void test(Model model, TourReviewsDto dto) throws Exception {
+	public void test(Model model) throws Exception {
 		model.addAttribute("list",serviceReviews.listAll());
 	}
+	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
+	public void test(Model model, TourReviewsDto dto) throws Exception {
+	}
 }
+
 	
 	
 	

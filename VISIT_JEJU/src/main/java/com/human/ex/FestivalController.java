@@ -36,10 +36,9 @@ public class FestivalController {
 	public void create() throws Exception {
 	}
 	@RequestMapping(value = "/modify/festivalCreate", method = RequestMethod.POST)
-	public String create(festivalDto dto, Model model) throws Exception {
+	public String create(festivalDto dto) throws Exception {
 		service.create(dto);
-		model.addAttribute(dto.getFno());
-		return "/festival/modify/festival_detailCreate";
+		return "redirect:/festival/festival";
 	}
 	
 	// 축제 컨텐츠 수정 

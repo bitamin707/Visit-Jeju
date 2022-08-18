@@ -11,16 +11,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{fbg}, #{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5})
 	</insert>
 
-	<select id="read" resultType="festivalDto">
-		select * from festival where fno=#{fno}
+	<select id="read" resultType="festival_detailDao">
+		select * from festival_detail where fno=#{fno}
 	</select>
 
 	<delete id="delete">
-		delete from festival where fno=#{fno}
+		delete from festival_detail where fno=#{fno}
 	</delete>
 
 	<update id="update">
-		update festival
+		update festival_detail
 		set fname=#{fname}, fcontent=#{fcontent}, fstart_date=#{fstart_date},
 		fend_date=#{fend_date}, flocation=#{flocation}, fregion=#{fregion},
 		imglink=#{imglink}
