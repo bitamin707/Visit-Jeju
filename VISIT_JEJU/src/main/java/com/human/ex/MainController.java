@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.human.dto.main.BoardDtoAuthority;
 import com.human.dto.main.BoardDtoAccount;
 import com.human.dto.main.BoardDtoBest;
 import com.human.dto.main.BoardDtoFood;
 import com.human.dto.main.BoardDtoFoodBest;
 import com.human.dto.main.BoardDtoMerch;
 import com.human.service.main.IBoardServiceAccount;
+import com.human.service.main.IBoardServiceAuthority;
 import com.human.service.main.IBoardServiceBest;
 import com.human.service.main.IBoardServiceFood;
 import com.human.service.main.IBoardServiceFoodBest;
@@ -43,8 +45,9 @@ public class MainController {
 	private IBoardServiceMerch serviceMerch;
 	@Inject
 	private IBoardServiceAccount serviceAccount;
-	
-	
+	@Inject
+	private IBoardServiceAuthority serviceAuthority;
+
 	/*로그인*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
 	public void loginGet() throws Exception {
@@ -125,7 +128,6 @@ public class MainController {
 	
 	
 	
-	
 	/*
 	 * Food 테이블기능
 	 */
@@ -180,8 +182,9 @@ public class MainController {
 	public void sighup(Model model) throws Exception {
 	}
 	@RequestMapping(value = "/main/sighup", method = RequestMethod.POST)
-	public String sighup(BoardDtoAccount boardDtoAccount,RedirectAttributes rttr) throws Exception {
+	public String sighup(BoardDtoAccount boardDtoAccount,BoardDtoAuthority boardDtoAuthority,RedirectAttributes rttr) throws Exception {
 		serviceAccount.createAccount(boardDtoAccount);
+		serviceAuthority.createAuthority(boardDtoAuthority);
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/loginPage";
 	}
@@ -193,17 +196,17 @@ public class MainController {
 		return "redirect:/main/main";
 	}
 	@RequestMapping(value = "/main/accountModify", method = RequestMethod.GET)
-	public void updateAccount(@RequestParam("accountID")String accountID,Model model) throws Exception {
-		model.addAttribute(serviceAccount.readAccount(accountID));		
+	public void updateAccount(@RequestParam("username")String username,Model model) throws Exception {
+		model.addAttribute(serviceAccount.readAccount(username));		
 	}	
 	@RequestMapping(value = "/main/accountList", method = RequestMethod.GET)
 	public void accountMerch(Model model) throws Exception {
 		model.addAttribute("listAccount",serviceAccount.listAllAccount());
 	}
 	@RequestMapping(value = "/main/accountRemove", method = RequestMethod.GET)
-	public String remove(@RequestParam("accountID")String accountID
+	public String remove(@RequestParam("username")String username
 			,RedirectAttributes rttr) throws Exception {
-		serviceAccount.deleteAccount(accountID);
+		serviceAccount.deleteAccount(username);
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/accountList";
 	}

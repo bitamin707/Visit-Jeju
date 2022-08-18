@@ -5,19 +5,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.human.dao.main.IBoardDaoAccount">
 <insert id="createAccount">
-insert into account values(#{accountID},#{accountpw},#{birth},#{phoneNum},#{sex},#{email},'0')
+insert into users values(#{username},#{password},'1')
 </insert>
 <select id="readAccount" resultType="BoardDtoAccount">
-select * from account where accountID=#{accountID}
+select * from users where username=#{username}
 </select>
 <delete id="deleteAccount">
-delete from account where accountID=#{accountID}
+delete from users where username=#{username}
 </delete>
 <update id="updateAccount">
-update account set accountpw=#{accountpw},birth=#{birth},phoneNum=#{phoneNum},sex=#{sex},email=#{email},adminCheck=#{adminCheck} where accountID=#{accountID} 
+update users set username=#{username},password=#{password},enabled=#{enabled} where username=#{username} 
 </update>
 <select id="listAllAccount" resultType="com.human.dto.main.BoardDtoAccount">
-select * from account
+select * from users
 </select>
 </mapper>
 

@@ -23,8 +23,8 @@
 					authentication-success-handler-ref="loginSuccess"
 					default-target-url="/main/main" 
 		            authentication-failure-url="/main/loginPage?error" 
-		            username-parameter="id" 
-		            password-parameter="pw" />
+		            username-parameter="username" 
+		            password-parameter="password" />
 		<logout logout-url="/main/logout" invalidate-session="true"   />
 		<!--해댕주소로오면 session이 지워지고 로그아웃이 진행됨   -->
 		<access-denied-handler error-page="/main/login/error" /> 
@@ -33,10 +33,9 @@
 	<!-- provider -->
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="member" password="1234" authorities="ROLE_MEMBER" />
-				<user name="admin" password="1234" authorities="ROLE_ADMIN,ROLE_MEMBER" />
-			</user-service>
+			<jdbc-user-service data-source-ref="dataSource2" 
+			users-by-username-query="select username, password, enabled from users where username = ?"
+			authorities-by-username-query="select username, authority from authorities where username = ?"/>
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>
