@@ -169,7 +169,7 @@
                 <td id="b<%out.println(b++);%>">${boardDto.stock }</td>
                 <td id="c<%out.println(c++);%>">d</td>               
             </tr>
-                    </c:forEach>
+            </c:forEach>
         </table>
         <div style="margin-left: 780px; margin-top:40px;" id="basket_total_price">총 금액:d </div>
     </div>
