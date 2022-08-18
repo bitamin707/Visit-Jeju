@@ -9,6 +9,7 @@ import com.human.dto.shopping.BoardDtoShop1;
 public interface IBoardServiceShop1 {
 	public void create(BoardDtoShop1 dto) throws Exception;
 	public void create_add(BoardDtoShop1 dto) throws Exception;
+	public void create_basket(BoardDtoShop1 dto) throws Exception;
 	
 	public BoardDtoShop1 read(int pno) throws Exception;
 	public BoardDtoShop1 read_add(int pno) throws Exception;
@@ -23,6 +24,7 @@ public interface IBoardServiceShop1 {
 	public List<BoardDtoShop1> listInsert() throws Exception;
 	public BoardDtoShop1 listPlus(int pno) throws Exception;
 	public List<BoardDtoShop1> showProduct() throws Exception;
-	
-	
+	public List<BoardDtoShop1> basket() throws Exception;
+
+
 }

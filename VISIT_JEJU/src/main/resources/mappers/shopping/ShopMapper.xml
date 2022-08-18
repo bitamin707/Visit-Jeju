@@ -13,6 +13,10 @@ values (#{pno }, #{product_name }, #{product_price }, #{product_won }, #{product
 insert into product_add (product_icon, product_info, product_max_qty, pno, product_img)
 values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{product_img })
 </insert>
+<insert id="create_basket">
+insert into shopping_basket (pno, stock) 
+values (#{pno }, #{stock } )
+</insert>
 
 
 <select id="read" resultType="BoardDtoShop1">
@@ -44,7 +48,7 @@ update product_add set product_icon=#{product_icon }, product_max_qty=#{product_
 select * from product
 </select>
 
-<select id="listInsert" resultType="com.human.dto.shopping.BoardDtoShop1">
+<select id="listInsert" resultType="BoardDtoShop1">
 select product.*, product_add.product_img from product, product_add 
 where product.pno = product_add.pno
 </select>
@@ -55,8 +59,15 @@ from product A, product_add B
 where A.pno = B.pno and A.pno= #{pno}
 </select>
 
-<select id="showProduct" resultType="com.human.dto.shopping.BoardDtoShop1">
-select product_name from product
+<select id="showProduct" resultType="BoardDtoShop1">
+select product_name, pno from product
 </select>
+
+<select id="basket" resultType="BoardDtoShop1">
+select p1.product_name, p1.product_won,
+p2.product_img, p3.stock from product p1, product_add p2, shopping_basket p3
+where p1.pno = p3.pno and p2.pno = p3.pno
+</select>
+
 
 </mapper>

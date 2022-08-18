@@ -22,7 +22,7 @@ import com.human.vo.shopping.PageMaker;
 public class ShoppingController {
 		
 	@Inject
-	private IBoardServiceShop1 service;
+	public IBoardServiceShop1 service;
 	
 	@Autowired
 		private IBoardServiceShop2 bm;
@@ -39,7 +39,12 @@ public class ShoppingController {
 	
 	
 	@RequestMapping(value = "/product/Product", method = RequestMethod.GET)
-	public void Product(@RequestParam("pno") int pno ,Model model, PageMaker pm) throws Exception {
+	public void Product(@RequestParam("pno") int pno 
+			,Model model
+			, PageMaker pm) 
+					throws Exception {
+		
+		System.out.println(pno);
 		System.out.println(service.listPlus(pno));
 		model.addAttribute(service.listPlus(pno));
 		
@@ -48,12 +53,12 @@ public class ShoppingController {
 		pm.setTotalCount(bm.listSearchCount(pm));
 	}
 	
-//	@RequestMapping(value = "product/list", method = RequestMethod.GET)
-//	public void list(PageMaker pm,Model model) throws Exception {
-//		System.out.println(pm);
-//		model.addAttribute("list",bm.listSearchCriteria(pm));
-//		pm.setTotalCount(bm.listSearchCount(pm));
-//	}
+	@RequestMapping(value = "product/list", method = RequestMethod.GET)
+	public void list(PageMaker pm,Model model) throws Exception {
+		System.out.println(pm);
+		model.addAttribute("list",bm.listSearchCriteria(pm));
+		pm.setTotalCount(bm.listSearchCount(pm));
+	}
 	
 	
 	
@@ -74,6 +79,7 @@ public class ShoppingController {
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/shopping/product/Create2?pno="+boardDto.pno;
 	}
+	
 	
 	
 	@RequestMapping(value = "/product/ShowContent", method = RequestMethod.GET)
@@ -132,7 +138,14 @@ public class ShoppingController {
 	
 	
 	@RequestMapping(value = "/product/remove", method = RequestMethod.GET)
-	public String remove(@RequestParam(defaultValue = "bno", required=false) int bno, @RequestParam(defaultValue = "pno", required=false) int pno,PageMaker pm,Model model,RedirectAttributes rttr) throws Exception {
+	public String remove(
+				@RequestParam(defaultValue = "bno", required=false) int bno
+				, @RequestParam(defaultValue = "pno", required=false) int pno
+				,PageMaker pm
+				,Model model
+				,RedirectAttributes rttr
+			) throws Exception {
+		
 		bm.remove(bno);	
 		
 		rttr.addAttribute("page", pm.getPage());
@@ -149,17 +162,37 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.GET)
-	public void Write_Review_get(Model model, BoardDtoShop1 dto) throws Exception {
-		model.addAttribute("list",service.showProduct());
+	public void Write_Review_get(
+			@RequestParam(defaultValue = "pno", required = false) int pno
+			, Model model
+			, BoardDtoShop1 dto)
+			throws Exception {
+		
+		System.out.println(pno);
+		model.addAttribute("list", service.showProduct());
+		model.addAttribute(service.read_add(pno));
 	}
 	
 	@RequestMapping(value = "/product/Write_Review", method = RequestMethod.POST)
-	public String Write_Review_post(Model model, BoardDtoShop2 dto, RedirectAttributes rttr) throws Exception {
+	public String Write_Review_post(
+			Model model
+			, BoardDtoShop2 dto
+			, RedirectAttributes rttr
+			,@RequestParam(defaultValue = "pno", required = false) int pno
+			) throws Exception {
 		bm.create(dto);
 		System.out.println("Write_Review");
 		System.out.println(dto);
 		rttr.addFlashAttribute("write","success");
-		return "redirect:/shopping/product/Product";
+		return "redirect:/shopping/product/Product?pno="+pno;
+	}
+	
+	
+	
+	@RequestMapping(value = "/main/ShoppingBasket", method = RequestMethod.GET)
+	public void ShoppingBasket(Model model, BoardDtoShop1 dto) throws Exception {
+		System.out.println(service.basket());
+		model.addAttribute("list",service.basket());
 	}
 	
 

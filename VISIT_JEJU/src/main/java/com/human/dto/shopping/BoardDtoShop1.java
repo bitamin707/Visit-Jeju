@@ -15,6 +15,9 @@ public class BoardDtoShop1 {
 	private String product_max_qty;
 	private String product_img;
 	private String product_icon;
+	
+	private String stock;
+	
 	public String getPno() {
 		return pno;
 	}
@@ -75,6 +78,13 @@ public class BoardDtoShop1 {
 	public void setProduct_icon(String product_icon) {
 		this.product_icon = product_icon;
 	}
+	public String getStock() {
+		return stock;
+	}
+	public void setStock(String stock) {
+		this.stock = stock;
+	}
+	
 	@Override
 	public String toString() {
 		return "BoardDtoShop1 [pno=" + pno + ", product_name=" + product_name + ", product_price=" + product_price
@@ -82,7 +92,6 @@ public class BoardDtoShop1 {
 				+ product_tag + ", product_info=" + product_info + ", product_max_qty=" + product_max_qty
 				+ ", product_img=" + product_img + ", product_icon=" + product_icon + "]";
 	}
-	
 
 
 }
