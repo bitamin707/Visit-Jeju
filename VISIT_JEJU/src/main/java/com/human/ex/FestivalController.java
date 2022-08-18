@@ -38,7 +38,8 @@ public class FestivalController {
 	@RequestMapping(value = "/modify/festivalCreate", method = RequestMethod.POST)
 	public String create(festivalDto dto) throws Exception {
 		service.create(dto);
-		return "redirect:/festival/festival";
+		System.out.println("fno : " + dto.getFno());
+		return "redirect:/festival_detailCreate?fno=" + dto.getFno();
 	}
 	
 	// 축제 컨텐츠 수정 
@@ -49,7 +50,8 @@ public class FestivalController {
 	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.POST)
 	public String modify(festivalDto dto) throws Exception {
 		service.update(dto);
-		return "redirect:/festival/modify/festival_detailCreate";
+		int fno = dto.getFno();
+		return "redirect:/modify/festival_detailCreate?fno=" + fno;
 	}
 	
 	// 축제 컨텐츠 삭제

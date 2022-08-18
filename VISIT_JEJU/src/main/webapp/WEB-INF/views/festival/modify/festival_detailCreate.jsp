@@ -64,7 +64,7 @@ button {
 					</tr>
 					<tr>
 						<th>번호</th>
-						<td><input type="text" name="fno"></td>
+						<td><input type="text" name="fno" value="${festival.fno }" readonly></td>
 					</tr>
 					<tr>
 						<th>백그라운드이미지</th>

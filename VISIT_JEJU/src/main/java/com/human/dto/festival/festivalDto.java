@@ -3,7 +3,7 @@ package com.human.dto.festival;
 import java.sql.Date;
 
 public class festivalDto {
-	private Integer fno;
+	public Integer fno;
 	private String fname;
 	private String fcontent;
 	private Date fstart_date;
@@ -11,7 +11,6 @@ public class festivalDto {
 	private String flocation;
 	private String fregion;
 	private String imglink;
-	
 	public Integer getFno() {
 		return fno;
 	}
