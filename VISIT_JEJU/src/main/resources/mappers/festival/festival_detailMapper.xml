@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{fbg}, #{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5})
 	</insert>
 
-	<select id="read" resultType="festival_detailDao">
+	<select id="read" resultType="festival_detailDto">
 		select * from festival_detail where fno=#{fno}
 	</select>
 
