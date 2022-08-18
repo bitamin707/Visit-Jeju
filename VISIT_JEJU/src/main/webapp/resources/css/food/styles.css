@@ -56,16 +56,18 @@ input,button{
 .img-content{
     position: relative;
     top: -150px;
-    left: 23%;
+    left: 20%;
 }
 .introduce{
-    position: relative;
+  	floate: left;
     top: -120px;
     left: 3%;
 }
 .main-content{
+	position: left;
     margin: 0 auto;
     width: 1290px;
+  
 }
 .introduce{
     float: left;
@@ -75,7 +77,7 @@ input,button{
     float: right;
     width: 35%;
     position: relative;
-    top: -120px;
+    top: -100px;
 }
 .container{
 	left: 1%
@@ -86,7 +88,8 @@ input,button{
 /*list-img*/
 .list-img{
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap; 
+    position: relative; 
 }
 .list-img>li{
     padding: 20px;
@@ -121,9 +124,10 @@ button{
     color: white;
 }
 .tophaha{
-	width: 1200px;
+	width: 1400px;
 	height: 600px;
 	display: block;
 	margin: 0px auto;
 	
 }
+
