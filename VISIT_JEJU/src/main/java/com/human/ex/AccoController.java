@@ -11,11 +11,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.acco.AccoDto;
 import com.human.dto.acco.AccoReviewDto;
-import com.human.dto.festival.festivalDto;
-import com.human.dto.main.BoardDtoAccount;
+
 import com.human.service.acco.IAccoReviewService;
 import com.human.service.acco.IAccoService;
-import com.human.service.shopping.IBoardServiceShop1;
+
 
 @Controller
 @RequestMapping("/acco/*")
@@ -99,7 +98,7 @@ public class AccoController {
 		return "redirect:/acco/function/detail?acco_id="+acco_id;
 		
 	}
-	@RequestMapping(value = "/function/review/modify", method = RequestMethod.POST)
+	@RequestMapping(value = "/function/review/modify", method = RequestMethod.GET)
 	public void ModifyReviewDataGUi(@RequestParam("ano")int ano,Model model) throws Exception {
 		model.addAttribute(service1.read(ano));
 		System.out.println(model);

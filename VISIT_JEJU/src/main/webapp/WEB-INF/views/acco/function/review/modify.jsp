@@ -17,6 +17,7 @@
 
 	<form method="POST" action="/ex/acco/function/review/modify">
 	<input type=hidden value="${accoReviewDto.acco_id }" name=acco_id>
+	<input type=hidden value="${accoReviewDto.ano }" name=ano>
 		리뷰 내용:<input type=text value="${accoReviewDto.content }" name=content><br> 
 		 <input type="submit" value=전송><br>
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
