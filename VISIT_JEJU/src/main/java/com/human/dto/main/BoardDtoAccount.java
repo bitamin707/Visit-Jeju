@@ -1,10 +1,10 @@
 package com.human.dto.main;
 
 public class BoardDtoAccount {
-	private String username;
+	private static String username;
 	private String password;
 	private String enabled;
-	public String getUsername() {
+	public static  String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {

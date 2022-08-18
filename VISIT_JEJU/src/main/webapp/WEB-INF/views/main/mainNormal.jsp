@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -16,10 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet">
 <title>메인 화면</title>
 <script>
-var result='${msg}';
-if(result=='success'){
-	alert('처리가 완료되었습니다.');
-}
 
 let slideIndex = 2;
 showSlides(slideIndex);
@@ -206,7 +203,7 @@ dots[slideIndex-1].className += " active";
                     </div>
                 </div>
                 <div class="mainContainer3">
-                    <h1>이런 관광지가 있어요</h1>    
+                    <h1>이런 관광지가 있어요</h1>  
                 </div>
                 <div class="mainContainerin3">
                     <div class="gallerylist5">
