@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.human.dao.acco.IAccoReviewDao">
 
-<insert id="insert">
-insert into acco_review (ano, content)
-values (ano_counter.nextval,,#{content})
+<insert id="create">
+insert into acco_review (ano, content, acco_id)
+values (ano_counter.nextval,#{content}, #{acco_id})
 </insert>
 
 <select id="read" resultType="AccoReviewDto">

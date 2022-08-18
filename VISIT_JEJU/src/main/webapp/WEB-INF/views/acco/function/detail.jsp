@@ -20,13 +20,13 @@
 	<!-- ============== 헤더 =============== -->
 	<div id="wrap">
 
-		<div class="intro_bg"    style="background-image: url(${accoDto.acco_photo });">
+		<div class="intro_bg"
+			style="background-image: url(${accoDto.acco_photo });">
 			<div class="intro_text">
 				<h3 class="">${accoDto.acco_name }</h3>
 				<div class="tag_area">
-					<p class="best_tag">
-						${accoDto.acco_tag1 } ${accoDto.acco_tag2 } ${accoDto.acco_tag3 } ${accoDto.acco_tag4 }
-					</p>
+					<p class="best_tag">${accoDto.acco_tag1 } ${accoDto.acco_tag2 }
+						${accoDto.acco_tag3 } ${accoDto.acco_tag4 }</p>
 				</div>
 
 				<div class="information">
@@ -50,51 +50,51 @@
 					<div class="event_area">
 
 						<div class="event_img">
-							<img src="${accoDto.acco_detail_photo1 }" alt="사진 1"
-								width="100%">
+							<img src="${accoDto.acco_detail_photo1 }" alt="사진 1" width="100%">
 						</div>
 					</div>
 					<div class="event_area">
 
 						<div class="event_img">
-							<img src="${accoDto.acco_detail_photo2 }" alt="사진 2"
-								width="100%">
+							<img src="${accoDto.acco_detail_photo2 }" alt="사진 2" width="100%">
 						</div>
 					</div>
-					<div class="event_area_text">
-						${accoDto.acco_detail_content }
+					<div class="event_area_text">${accoDto.acco_detail_content }
 					</div>
 					<div class="event_area">
 
 						<div class="event_img">
-							<img src="${accoDto.acco_detail_photo3 }" alt="사진3"
-								width="100%">
+							<img src="${accoDto.acco_detail_photo3 }" alt="사진3" width="100%">
 						</div>
 					</div>
 					<div class="event_area">
 
 						<div class="event_img">
-							<img src="${accoDto.acco_detail_photo2 }" alt="사진 4"
-								width="100%">
+							<img src="${accoDto.acco_detail_photo2 }" alt="사진 4" width="100%">
 						</div>
 					</div>
 				</div>
 				<div class="event_area_text">
 					<h2>리뷰</h2>
-					<table border="1" width='100%' id='review' style="text-align: center;">
+					<table border="1" width='100%' id='review'
+						style="text-align: center;">
 						<tr>
 							<th>id</th>
 							<th>리뷰내용</th>
 						</tr>
 
-						<c:forEach items="${list }" var="AccoReviewDto" >
+						<c:forEach items="${list }" var="AccoReviewDto">
 							<tr>
 								<td>${AccoReviewDto.ano }</td>
 								<td>${AccoReviewDto.content }</td>
 							</tr>
 						</c:forEach>
-
+						
 					</table>
+					<button>
+							<a href="/ex/acco/function/review/insert?acco_id=${AccoDto.acco_id }">리뷰쓰기</a>
+					</button>
+					
 				</div>
 			</div>
 		</div>

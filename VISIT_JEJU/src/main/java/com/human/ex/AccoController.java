@@ -75,5 +75,22 @@ public class AccoController {
 		System.out.println("read");
 		model.addAttribute(service2.read(acco_id));
 	}
+	
+	//리뷰 페이지
+	
+	@RequestMapping(value = "/function/review/insert", method = RequestMethod.GET)
+	public void insertReview() throws Exception {
+		System.out.println("insert GuI");
+		
+	}
+	@RequestMapping(value = "/function/review/insert", method = RequestMethod.POST)
+	public String insertReviewData(AccoReviewDto dto, RedirectAttributes rttr) throws Exception {
+		System.out.println(dto);
+		service1.create(dto);
+		rttr.addFlashAttribute("msg","리뷰작성완료");
+		return "redirect:/acco/function/detail";
+		
+	}
+	
 }
 
