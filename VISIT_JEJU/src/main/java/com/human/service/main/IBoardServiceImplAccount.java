@@ -21,9 +21,9 @@ public class IBoardServiceImplAccount implements IBoardServiceAccount {
 		dao.createAccount(dto);
 	}
 	@Override
-	public BoardDtoAccount readAccount(String accountID) throws Exception {
+	public BoardDtoAccount readAccount(String username) throws Exception {
 		IBoardDaoAccount dao=sqlSession.getMapper(IBoardDaoAccount.class);
-		BoardDtoAccount r=dao.readAccount(accountID);
+		BoardDtoAccount r=dao.readAccount(username);
 		return r;
 	}
 
@@ -39,4 +39,11 @@ public class IBoardServiceImplAccount implements IBoardServiceAccount {
 		List<BoardDtoAccount> dtos=dao.listAllAccount();
 		return dtos;
 	}
+	@Override
+	public void deleteAccount(String username) throws Exception {
+		IBoardDaoAccount dao=sqlSession.getMapper(IBoardDaoAccount.class);
+		dao.deleteAccount(username);
+		
+	}
+
 }

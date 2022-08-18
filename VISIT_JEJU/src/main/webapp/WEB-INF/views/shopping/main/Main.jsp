@@ -115,7 +115,7 @@
 
 						<span class="tag_vintage">
 							<div class="product">
-								<a href="../product/product1"> 
+								<a href="../product/product"> 
 								<div class="coverIt">제품 상세보기</div> 
 								<img class="product_img"
 									src="/ex/resources/img/shopping/술1.jpg">
@@ -249,11 +249,12 @@
 					<div id="wine">
 						<!-- ↓↓start id toggle_box1 -->
 						<div id="toggle_box1">
-
+							
 							<c:forEach items="${list }" var="boardDto">
+							<c:if test="${boardDto.product_category eq 'bag'}">
 								<span class="${boardDto.product_tag }">
 									<div class="product">
-										<a href='/ex/content?pno=${boardDto.pno }'>
+										<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
 									<div class="coverIt">제품 상세보기</div> 
 									<img class="product_img"
 											src="/ex/resources/img/shopping/${boardDto.product_img }">
@@ -265,6 +266,7 @@
 										<!-- 버버리 토트백 1,634,040 https://www.trenbe.com/product/Medium+Soft+Canvas+Belt+Tote+Bag+Blue+80302891+25488552-->
 									</div>
 								</span>
+							</c:if>								
 							</c:forEach>
 						</div>
 						<!-- ↑↑end class toggle_box1 -->

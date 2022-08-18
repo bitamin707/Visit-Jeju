@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class BoardDtoShop1 {
 
-	private String pno;
+	public String pno;
 	private String product_name;
 	private String product_price;
 	private String product_won;

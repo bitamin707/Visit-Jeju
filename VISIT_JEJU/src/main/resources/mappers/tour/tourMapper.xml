@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.tour.tourDao">
+
+	<insert id="create">insert into tour (tno,imglink,tname,tadrs,tinfo)
+	values (tour_seq.nextval,#{imglink},#{tname},#{tadrs},#{tinfo})
+	</insert>
+	
+	<select id="read" resultType="tourDto">
+	select * from tour where tno = #{tno} 
+	</select>
+	
+	<update id="update">update tour set imglink=#{imglink}, tname=#{tname}, tadrs=#{tadrs}
+	where tno=#{tno} 
+	</update>
+	
+	<delete id="delete"> delete from tour where tno=#{tno} 
+	</delete>
+	
+	<select id="listAll" resultType="com.human.dto.tour.tourDto">
+	select * from tour 
+	</select>
+	
+	
+	
+</mapper>

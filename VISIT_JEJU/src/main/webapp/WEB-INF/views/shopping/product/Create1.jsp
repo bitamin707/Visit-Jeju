@@ -70,21 +70,25 @@
     <form action="/ex/shopping/product/Create1" method="post">
     <table border="1" width="1000px" id="customers">
         <tr>
+            <th>제품 고유번호 (6자리)</th>
+            <td><input type="text" name=pno required maxlength="6"></td>
+        </tr>
+        <tr>
             <th>제품 이름</th>
-            <td><input type="text" name=product_name></td>
+            <td><input type="text" name=product_name required></td>
         </tr>
         <tr>
             <th>제품 가격</th>
-            <td><input type="text" name=product_price></td>
+            <td><input type="text" name=product_price required></td>
         </tr>
         <tr>
             <th>제품 원가</th>
-            <td><input type="text" name=product_won></td>
+            <td><input type="text" name=product_won required></td>
         </tr>
         <tr>
             <th>제품 카테고리</th>
             <td>
-                <input type="text" id="categoryinput" name=product_category readonly>
+                <input type="text" id="categoryinput" name=product_category readonly required>
                     <select onchange="categoryInput(this)">
                         <option selected disabled>---</option> 
                             <!-- 옵션에서 기본선택, 선택안되게 설정. -->
@@ -93,23 +97,25 @@
                     </select>
             </td>
         </tr>
+        
         <tr>
             <th>제품 태그</th>
             <td>
-                <input type="text" id="taginput" name=product_tag readonly>
+                <input type="text" id="taginput" name=product_tag readonly required>
                     <select onchange="tagInput(this)">
                         <option selected disabled>---</option>
                         <option value="tag_vintage">빈티지</option>
                         <option value="tag_priceNess">초고가</option>
                         <option value="tag_priceLess">가성비</option>
-                        <option value="soso">무난해요~</option>
+                        <option value="tag_soso">무난해요~</option>
                 </select>
             </td>
         </tr>
     </table>
         <div id="btn_box"> 
 		<input type="button" value="돌아가기" id="main" onclick="back()">
-        <input type="submit" value="추가하기">
+        <input type="submit" value="추가하기" >
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     	</div>
     </form>
 </div>

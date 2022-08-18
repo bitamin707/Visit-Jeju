@@ -13,7 +13,9 @@ window.onload=function(){
 	document.getElementById('cancle').addEventListener("click",function(){
 		location.href="/ex/main/accountList";
 	})
-	
+	document.getElementById('remove').addEventListener("click",function(){
+		location.href="/ex/main/accountRemove?username=${boardDtoAccount.username}";
+	})
 	document.getElementById('save').addEventListener("click",function(){
 		document.getElementById('modifyForm').submit();
 	})
@@ -22,15 +24,13 @@ window.onload=function(){
 </head>
 <body>
 <form id="modifyForm" method="post" action="/ex/main/accountModify">
-	아이디 : <input type="text" name=accountID style="width:100%" value='${boardDtoAccount.accountID }' readonly="readonly"> <br>
-	패스워드 : <input type="text" name=accountpw style="width:100%" value='${boardDtoAccount.accountpw }' ><br>
-	생일 : <input type="text" name=birth style="width:100%" value='${boardDtoAccount.birth }'><br>
-	연락처 : <input type="text" name=phoneNum style="width:100%" value='${boardDtoAccount.phoneNum }'><br>
-	성별 : <input type="text" name=sex style="width:100%" value='${boardDtoAccount.sex }'><br>
-	이메일 : <input type="text" name=email style="width:100%" value='${boardDtoAccount.email }'><br>
-	관리자 권한 : <input type="text" name=adminCheck style="width:100%" value='${boardDtoAccount.adminCheck }'><br>
+	아이디 : <input type="text" name=username style="width:100%" value='${boardDtoAccount.username }' readonly="readonly"> <br>
+	패스워드 : <input type="text" name=password style="width:100%" value='${boardDtoAccount.password }' ><br>
+	Enable : <input type="text" name=enabled style="width:100%" value='${boardDtoAccount.enabled }'><br>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 <button id=save > 저장</button>
+<button id=remove > 삭제</button>
 <button id=cancle > 취소</button>
 
 </body>

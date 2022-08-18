@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.shopping.IBoardDaoShop1">
+
+<insert id="create">
+insert into product (pno, product_name, product_price, product_won, product_category, product_tag)
+values (#{pno }, #{product_name }, #{product_price }, #{product_won }, #{product_category }, #{product_tag })
+</insert>
+<insert id="create_add">
+insert into product_add (product_icon, product_info, product_max_qty, pno, product_img)
+values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{product_img })
+</insert>
+
+
+<select id="read" resultType="BoardDtoShop1">
+select * from product where pno=#{pno}
+</select>
+<select id="read_add" resultType="BoardDtoShop1">
+select * from product_add where pno=#{pno}
+</select>
+
+
+<delete id="delete">
+delete from product where pno=#{pno}
+</delete>
+<delete id="delete_add">
+delete from product_add where pno=#{pno}
+</delete>
+
+
+<update id="update">
+update product set product_name=#{product_name }, product_price=#{product_price }, product_won=#{product_won }, product_category=#{product_category }, product_tag=#{product_tag } where pno=#{pno }
+</update>
+<update id="update_add">
+update product_add set product_icon=#{product_icon }, product_max_qty=#{product_max_qty }, product_info=#{product_info }, product_img=#{product_img } where pno=#{pno }
+</update>
+
+
+
+<select id="listAll" resultType="com.human.dto.shopping.BoardDtoShop1">
+select * from product
+</select>
+
+<select id="listInsert" resultType="com.human.dto.shopping.BoardDtoShop1">
+select product.*, product_add.product_img from product, product_add 
+where product.pno = product_add.pno
+</select>
+
+<select id="listPlus" resultType="BoardDtoShop1">
+select A.*, B.*
+from product A, product_add B
+where A.pno = B.pno and A.pno= #{pno}
+</select>
+
+<select id="showProduct" resultType="com.human.dto.shopping.BoardDtoShop1">
+select product_name from product
+</select>
+
+</mapper>

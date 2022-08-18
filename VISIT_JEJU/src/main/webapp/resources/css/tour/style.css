@@ -38,6 +38,15 @@
   padding-left: 30px;
 }
 
+.intro_text h1{
+  font-size: 37px;
+}
+.intro_text h4{
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+
 /* 태그 */
 .month {
   display: flex;

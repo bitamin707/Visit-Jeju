@@ -16,12 +16,29 @@
     <script type="text/javascript" src="/ex/resources/js/shopping/product.js"/></script>
 <title>Insert title here</title>
 <style>
-	iframe {
-		width:500px;
-		height:100px;
-	}
+iframe {
+	width: 500px;
+	height: 100px;
+}
+
+.post {
+	font-size: 19px;
+	background-color: beige;
+}
+
+.post_text {
+	color: red;
+}
+
+
 </style>
 <script>
+
+var result='${msg}';
+if(result=='success'){
+	alert('처리가 완료되었습니다. 세부사항도 추가해 주세요.');
+}
+
 $(document).ready(function(){
 
     $('#file').change(function() {
@@ -85,8 +102,9 @@ var result = '${savedName}';
                     
                         <form id='form1' action="Create2" method="post"
 						enctype="multipart/form-data" target="zeroFrame">
-						<input type="file" name="file" id="file" style="width: 210px;" /> 
+						<input type="file" name="file" id="file" style="width: 210px;" required /> 
 							<input type="submit" value="파일업로드">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
 						<input type="text" value="${savedName}">
 
@@ -100,8 +118,15 @@ var result = '${savedName}';
                 <form action="create_add" method="post">
                 <div class="product_col" id="product_col">
                     <div id="product_name">
-                        <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD, SOLDOUT..)</p>
-                        <input type="text" name=product_icon class="post">
+                        <p class="post_text">아이콘 박스 작성 (EX: NEW, HOT, MD...)</p>
+                        <input type="text" name=product_icon class="post" autofocus list="icon" required>
+                          <datalist id="icon">
+						    <option value="NEW">
+						    <option value="HOT">
+						    <option value="MD">
+						    <option value="LIMITED">
+						    <option value="RECOMMAND">
+						  </datalist>
                     </div>
 
                     <div id="product_price">
@@ -112,18 +137,20 @@ var result = '${savedName}';
                     <br><hr><br>
 
                     <div id="product_info1">
-                        <p class="post_text">제품을 소개하는 세부내용. (500글자 미만 작성)</p>
-                        <p><input type="text" class="post" name="product_info"></p>
+                        <p class="post_text">제품을 소개하는 세부내용. (100글자 미만 작성)</p>
+                        <!-- <p><input type="text" class="post" name="product_info" maxlength="500"></p> -->
+                        <p><textarea cols="50" rows="4.1" class="post" name="product_info" maxlength="100" required></textarea></p>
                     </div>
 
                     <div id="product_info2">
                         <p class="post_text">제품의 최대 구매수량 (10개 미만)</p>
-                        <input type="text" class="post" name=product_max_qty><br>
+                        	<input type="text" class="post" name=product_max_qty required><br>
                         <p class="post_text">제품번호 (바꿀 수 없는 고유번호 입니다)</p>
-                        <input type="text" readyonly=readonly value="<%=request.getParameter("pno") %>" name=pno class="post"><br>
+							<input type="text" value="<%=request.getParameter("pno") %>" name=pno class="post" required readonly><br>
                         <p class="post_text">이미지명을 입력하세요 (iframe 확인)</p>                         
-                        <input type="text" class="post" name=product_img>
-                        <input type="submit" value=" 세부사항 전송" class="post_text" style="margin:1px 100px; position:absolute;">
+                        	<input type="text" class="post" name=product_img required>
+                        	<input type="submit" value=" 세부사항 전송" class="post_text" style="margin:1px 50px; font-size:19px; position:absolute;" required>
+                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </div>
 
                     <div id="product_stock">

@@ -2,42 +2,59 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="com.human.dao.shopping.IBoardDaoShop1">
-
+<mapper namespace="com.human.dao.shopping.IBoardDaoShop2">
 <insert id="create">
-insert into product (pno, product_name, product_price, product_won, product_category, product_tag)
-values (SEQ_PRODUCT.nextval, #{product_name }, #{product_price }, #{product_won }, #{product_category }, #{product_tag })
+insert into tbl_board (userid, review, what_product, recommand, recommand2, bno)
+values (#{userid }, #{review }, #{what_product }, #{recommand }, #{recommand2 }, seq_tbl_board.nextval)
 </insert>
-<insert id="create_add">
-insert into product_add (product_icon, product_info, product_max_qty, pno, product_img)
-values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{product_img })
-</insert>
-
-<select id="read" resultType="BoardDtoShop1">
-select * from product where pno=#{pno}
-</select>
 
 <delete id="delete">
-delete from product where pno=#{pno}
+delete from tbl_board where bno=#{bno}
 </delete>
 
-<update id="update">
-update product set product_name=#{product_name },product_price=#{product_price },product_won=#{product_won } 
-</update>
+<sql id='search'>
+	<if test="searchType!=null">
+		<if test="searchType == 't'.toString()"> and what_product like '%'|| #{keyword}||'%' </if>
+		<if test="searchType == 'c'.toString()"> and recommand like '%'|| #{keyword}||'%' </if>
+		<if test="searchType == 'w'.toString()"> and userID like '%'|| #{keyword}||'%' </if>
+	</if>
+</sql>
 
-<select id="listAll" resultType="com.human.dto.shopping.BoardDtoShop1">
-select * from product
+<select id="listSearch" resultType="com.human.dto.shopping.BoardDtoShop2">
+<![CDATA[select bno, what_product, review, recommand, recommand2, userID from
+(select /*+INDEX_DESC(tbl_board)*/ 
+rownum rn,bno, what_product, review, recommand, recommand2, userID
+from tbl_board where 1=1  ]]> 
+<include refid="search"/>
+<![CDATA[ and rownum <= #{page} * #{perPageNum} and bno > 0 ) 
+where rn > (#{page} -1) * #{perPageNum}]]>
 </select>
+<!-- <select id="listSearch" resultType="com.human.dto.BoardDTO">
+<![CDATA[select bno, title, content, writer, viewcnt, regdate from
+(select /*+INDEX_DESC(tbl_board,pk_board)*/ 
+rownum rn,bno,title,content,writer,viewcnt,regdate
+from tbl_board where 1=1 ]]>
+<include refid="search"/>
+<![CDATA[ and rownum <= #{page} * #{perPageNum} and bno > 0 ) 
+where rn > (#{page} -1) * #{perPageNum}]]>
+</select> -->
 
-<select id="listInsert" resultType="com.human.dto.shopping.BoardDtoShop1">
-select product.*, product_add.product_img from product, product_add 
-where product.pno = product_add.pno 
-and product.product_category='bag'
-</select>
 
-<select id="listPlus" resultType="com.human.dto.shopping.BoardDtoShop1">
-select product_add.* from product, product_add where product.pno=product_add.pno
+
+<select id="listSearchCount" resultType="int">
+<![CDATA[ select count(bno) from tbl_board where 1=1 ]]>
+<include refid="search"/>
+<![CDATA[ and bno > 0 ]]>
 </select>
 
 </mapper>
+
+
+
+
+
+
+
+
+
+

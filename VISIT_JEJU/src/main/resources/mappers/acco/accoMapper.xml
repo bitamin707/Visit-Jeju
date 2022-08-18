@@ -7,9 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <insert id="insert">
 insert into acco (acco_id, acco_name, acco_address1, acco_address2, acco_tag1, acco_tag2, acco_tag3, 
-acco_tag4, acco_like, acco_reviewcounter)
+acco_tag4, acco_like, acco_reviewcounter, acco_detail_address, acco_detail_content, 
+acco_detail_photo1, acco_detail_photo2, acco_detail_photo3, acco_detail_photo4, acco_phonenum, acco_photo)
 values (acco_counter.nextval, #{acco_name}, #{acco_address1}, #{acco_address2}, #{acco_tag1}, #{acco_tag2}, #{acco_tag3}, 
-#{acco_tag4}, #{acco_like}, #{acco_reviewcounter})
+#{acco_tag4}, #{acco_like}, #{acco_reviewcounter},  #{acco_detail_address}, #{acco_detail_content}, 
+#{acco_detail_photo1}, #{acco_detail_photo2}, #{acco_detail_photo3}, #{acco_detail_photo4}, #{acco_phonenum}, #{acco_photo})
 </insert>
 
 <select id="read" resultType="AccoDto">
@@ -24,7 +26,11 @@ delete from acco where acco_id=#{acco_id}
 update acco 
 set acco_name=#{acco_name}, acco_address1=#{acco_address1}, acco_address2=#{acco_address2},
  acco_tag1=#{acco_tag1}, acco_tag2=#{acco_tag2}, acco_tag3=#{acco_tag3}, 
- acco_tag4=#{acco_tag4}, acco_like=#{acco_like}, acco_reviewcounter=#{acco_reviewcounter} 
+ acco_tag4=#{acco_tag4}, acco_like=#{acco_like}, acco_reviewcounter=#{acco_reviewcounter} , 
+ acco_detail_address=#{acco_detail_address}, acco_detail_content=#{acco_detail_content}, 
+acco_detail_photo1=#{acco_detail_photo1}, acco_detail_photo2=#{acco_detail_photo2}, 
+acco_detail_photo3=#{acco_detail_photo3}, acco_detail_photo4=#{acco_detail_photo4},
+acco_phonenum=#{acco_phonenum}, acco_photo=#{acco_photo}
 where acco_id=#{acco_id}
 </update>
 
