@@ -47,7 +47,7 @@ public class MainController {
 	private IBoardServiceAccount serviceAccount;
 	@Inject
 	private IBoardServiceAuthority serviceAuthority;
-	
+
 	/*로그인*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
 	public void loginGet() throws Exception {
@@ -122,7 +122,6 @@ public class MainController {
 	public void foodBestModify(Model model) throws Exception {
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 	}	
-	
 	
 	
 	
