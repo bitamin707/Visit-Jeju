@@ -19,6 +19,7 @@ public interface IBoardDaoShop1 {
 	
 	public void delete(String pno) throws Exception;
 	public void delete_add(String pno) throws Exception;
+	public void delete_basket(String pno) throws Exception;
 	
 	public List<BoardDtoShop1> listAll() throws Exception;
 	public List<BoardDtoShop1> listInsert() throws Exception;

@@ -17,6 +17,8 @@ public class BoardDtoShop1 {
 	private String product_icon;
 	
 	private String stock;
+	private String product_total_won;
+	
 	
 	public String getPno() {
 		return pno;
@@ -84,15 +86,23 @@ public class BoardDtoShop1 {
 	public void setStock(String stock) {
 		this.stock = stock;
 	}
+	public String getProduct_total_won() {
+		return product_total_won;
+	}
+	public void setProduct_total_won(String product_total_won) {
+		this.product_total_won = product_total_won;
+	}
 	
 	@Override
 	public String toString() {
 		return "BoardDtoShop1 [pno=" + pno + ", product_name=" + product_name + ", product_price=" + product_price
 				+ ", product_won=" + product_won + ", product_category=" + product_category + ", product_tag="
 				+ product_tag + ", product_info=" + product_info + ", product_max_qty=" + product_max_qty
-				+ ", product_img=" + product_img + ", product_icon=" + product_icon + "]";
+				+ ", product_img=" + product_img + ", product_icon=" + product_icon + ", stock=" + stock
+				+ ", product_total_won=" + product_total_won + "]";
 	}
-
+	
+	
 
 }
 

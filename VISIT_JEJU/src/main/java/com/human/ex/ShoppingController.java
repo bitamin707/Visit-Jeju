@@ -104,6 +104,15 @@ public class ShoppingController {
 		rttr.addFlashAttribute("okay","success");
 		return "redirect:/shopping/product/Delete?pno="+pno;
 	}
+	@RequestMapping(value = "/main/DeleteBasket", method = RequestMethod.GET)
+	public String DeleteBasket(@RequestParam(required=false) String pno, RedirectAttributes rttr) throws Exception{
+		System.out.println("Delete_Basket");
+		System.out.println(pno);
+		service.delete_basket(pno);
+		rttr.addFlashAttribute("basket","success");
+		return "redirect:/shopping/main/ShoppingBasket";
+	}
+	
 	
 	
 	@RequestMapping(value = "/product/Modify_add", method = RequestMethod.GET)
@@ -193,6 +202,12 @@ public class ShoppingController {
 	public void ShoppingBasket(Model model, BoardDtoShop1 dto) throws Exception {
 		System.out.println(service.basket());
 		model.addAttribute("list",service.basket());
+	}
+	
+	@RequestMapping(value = "/main/MakeBasket", method = RequestMethod.GET)
+	public String MakeBasket(Model model, BoardDtoShop1 dto) throws Exception {
+		service.create_basket(dto);
+		return "redirect:/shopping/main/ShoppingBasket";
 	}
 	
 

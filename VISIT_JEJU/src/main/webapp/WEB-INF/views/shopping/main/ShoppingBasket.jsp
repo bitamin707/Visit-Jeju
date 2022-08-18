@@ -63,7 +63,10 @@
             text-align: center;
             vertical-align: middle;
         }
-
+		
+		tr {
+			background-color: #fbfbfb;
+		}
         td:nth-child(1){
             width:10%;
             height:100px;
@@ -116,17 +119,14 @@
     function test() {
         document.getElementById('fcs').scrollIntoView();
     }
+    
+    var result='${nice}';
+    if(result=='success'){
+    	alert('해당 제품을 장바구니에서 제거했습니다.');
+    }
+ 
+	</script>
 
-    window.onload = function(){
-        var a = document.getElementById('product_price').innerText;
-        var b = document.getElementById('product_stock').innerText;
-        var c = a * b;
-        document.getElementById('basket_price').innerText = c;
-
-    }   
-
-</script>
-    </script>
 </head>
 
 <body>
@@ -154,20 +154,15 @@
             </tr>    
             <tr>	
             <c:forEach items="${list }" var="boardDto">
-                <td><a>X</a></td>
+                <td><a href="/ex/shopping/main/DeleteBasket?pno=${boardDto.pno }"> X </a></td>
                 <td>
                 	<img id="basket_img" src="/ex/resources/img/shopping/${boardDto.product_img }">
                 </td>
-                
-                <%! 
-                	int a;
-                	int b;
-                	int c;
-                %>                
+              
                 <td>${boardDto.product_name }</td>
-                <td id="a<%out.println(a++);%>">${boardDto.product_won }</td>
-                <td id="b<%out.println(b++);%>">${boardDto.stock }</td>
-                <td id="c<%out.println(c++);%>">d</td>               
+                <td >${boardDto.product_won }</td>
+                <td >${boardDto.stock }</td>
+                <td class="coco">${boardDto.product_total_won }</td>               
             </tr>
             </c:forEach>
         </table>
