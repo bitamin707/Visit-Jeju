@@ -19,17 +19,64 @@ window.onload=function(){
 	})
 }
 </script>
+<style>      
+body {font-family: Arial, Helvetica, sans-serif;
+      text-align: center;}
+      * {box-sizing: border-box;}
+      
+      input[type=text], textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      
+      button {
+        background-color: #c59614;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #ffdd43;
+      }
+      
+      .container {
+        width:400px;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+        padding: 20px;
+      }
+
+      form{
+        text-align: left;
+      }
+</style>
 </head>
 <body>
-<form id="modifyForm" method="post" action="/ex/main/bestModify">
-	Number:<input type="text" name=bno style="width:10px" value='${boardDtoBest.bno }' readonly="readonly"> <br>
-	Title:<input type="text" name=name style="width:100%" value='${boardDtoBest.name }' ><br>
-	imgLink:<input type="text" name=imgLink style="width:100%" value='${boardDtoBest.imgLink }'><br>
-	<input type="submit" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-</form>
-<button id=modify > 저장</button>
-<button id=main > 취소</button>
+<div class='container'>
+<h2>데이터 수정</h2>
+	<form id="modifyForm" method="post" action="/ex/main/bestModify">
+   		<input type="hidden" name=bno style="width:10px" value='${boardDtoBest.bno }' readonly="readonly">
+
+    	<label for="fname">Title</label>
+    	<input type="text" name="name" value='${boardDtoBest.name }'>
+
+    	<label for="lname">ImgLink</label>
+    	<input type="text" name=imgLink style="width:100%" value='${boardDtoBest.imgLink }'>
+    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    	<button id=modify > 저장</button>
+		<button id=main > 취소</button>
+	</form>
+</div>
+
 
 </body>
 </html>
