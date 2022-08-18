@@ -22,7 +22,7 @@ if(result=='success'){
 	alert('처리가 완료되었습니다.');
 }
 
-var adminCheck = "<%= request.getParameter("adminCheck") %>";
+var loginCheck = "<%= request.getParameter("userid") %>";
 
 window.onload=function(){
 	document.getElementsByClassName("bestBT")[0]
@@ -85,8 +85,6 @@ dots[slideIndex-1].className += " active";
 </script>
 </head>
 <body>
-
-
 <%@include file="../header.jsp" %>
     <!-- ============== 헤더 =============== -->
 
@@ -150,11 +148,6 @@ dots[slideIndex-1].className += " active";
         <br><button class="accountBT">
             <h2>계정관리</h2>
         </button>
-		<sec:authorize access="isAuthenticated()">
-			<form:form action="${pageContext.request.contextPath}/main/logout" method="POST">
-				<button type="submit" value="로그아웃"><h2>로그아웃</h2></button>
-			</form:form>
-		</sec:authorize>
     </div>
     <div class="wrap2">
         <div class="best">
