@@ -16,8 +16,6 @@
 	<!-- ============== 이미지 =============== -->
 	<!-- 이미지부터 페이지 아래쪽까지 class .wrap으로 묶음. 
         width:1280px;    margin: 0 auto; 스타일 통일-->
-
-	<!-- ↓↓start class wrap -->
 	<div class="remocon" id="remocon">
 		<div class="remoconHead">
 			<h2>
@@ -34,7 +32,10 @@
 				<a href=""><h2>상품</h2></a>
 			</button>
 	</div>
+	
+	<!-- ↓↓start class wrap -->
 	<div class="wrap">
+	<a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
 		<section style="margin-bottom: 100px;">
 			<div class="intro_bg">
 				<div class="slideshow-container">

@@ -35,7 +35,7 @@ body {
 }
 
 .review_board_menu {
-	margin: -5px 0px 20px 2%;
+	margin: 40px 0px 20px 2%;
 	font-size: 21px;
 }
 
@@ -117,13 +117,15 @@ body {
 }
 
 /* Main column */
-.board_main {
-	border: 1px solid rgb(140, 140, 140);
+#board_main {
+	border-top: 1px solid rgb(140, 140, 140);
 	position: relative;
 	-ms-flex: 70%; /* IE10 */
 	flex: 70%;
 	background-color: white;
 	padding: 20px;
+	padding-top:90px;
+	margin: 100px auto;
 }
 
 /* Fake image, just for this example */

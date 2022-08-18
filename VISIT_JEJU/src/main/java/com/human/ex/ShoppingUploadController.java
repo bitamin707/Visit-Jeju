@@ -35,10 +35,10 @@ import com.human.service.shopping.IBoardServiceShop1;
 public class ShoppingUploadController {
 		
 	@Resource(name = "uploadPath")
-	private String uploadPath;
+	public String uploadPath;
 	
 	@Inject
-	private IBoardServiceShop1 service;
+	public IBoardServiceShop1 service;
 	
 	
 	@RequestMapping(value = "/shopping/product/Create2", method = RequestMethod.GET)
@@ -54,8 +54,12 @@ public class ShoppingUploadController {
 	}
 	
 	
-	@RequestMapping(value = "/shopping/product/Create2", method = RequestMethod.POST)
-	public String uploadFormPost(MultipartFile file, Model model) throws Exception {
+	@RequestMapping(value = "/shopping/product/Create2_Result", method = RequestMethod.POST, headers = ("content-type=multipart/*"))
+	public String uploadFormPost(@RequestParam("file") MultipartFile file, Model model) throws Exception {
+		
+		if (file == null) {
+			System.out.println("sad");
+		}
 		
 		System.out.println("/uploadForm");
 		System.out.println(file.getOriginalFilename());
@@ -64,14 +68,25 @@ public class ShoppingUploadController {
 
 		String savedName = uploadFile(file.getOriginalFilename(), file.getBytes());
 		model.addAttribute("savedName", savedName);
+
 		return "/shopping/product/Create2_Result";
 	}
+	
 
-	private String uploadFile(String originalName, byte[] fileData) throws Exception {
+	@RequestMapping(value = "/shopping/product/Create2_Result", method = RequestMethod.GET)
+	public void Create2_Result() throws Exception {
+	}
+
+
+	public String uploadFile(String originalName, byte[] fileData) throws Exception {
 		UUID uid = UUID.randomUUID();
+		System.out.println("check1");
 		String savedName = uid.toString() + "_" + originalName;
+		System.out.println("check2");
 		File target = new File(uploadPath, savedName);
+		System.out.println("check3");
 		FileCopyUtils.copy(fileData, target);
+		System.out.println("check4");
 		return savedName;
 	}
 
