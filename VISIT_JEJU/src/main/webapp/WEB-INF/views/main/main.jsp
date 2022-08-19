@@ -314,6 +314,16 @@ dots[slideIndex-1].className += " active";
     </div>
     <%@include file="../footer.jsp" %>
     
+<script type="text/javascript">
+var check = "${Check}"
+	if(check == "관리자"){
+		document.getElementById("remocon").style.display = "block";	
+	}else {
+		document.getElementById("remocon").style.display = "none";	
+	}
+</script>
+
+    
 </body>
 
 </html>
