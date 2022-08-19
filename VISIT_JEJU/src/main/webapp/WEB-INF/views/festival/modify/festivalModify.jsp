@@ -38,14 +38,8 @@
 		else {
 			modifyForm.submit();
 		}
-		
-	}
-	
-	function goDetail() {
-		location.href="/ex/festival/modify/festival_detailModify?fno=${festivalDto.fno }";
 	}
 </script>
-
 <style>
 	* {
 		margin: 0 auto;
@@ -128,9 +122,8 @@
 					</tr>
 					<tr>
 						<td colspan="2"> 
-							<button type="button" onclick="submitBtn()">수정</button>
+							<button type="button" onclick="submitBtn()">다음</button>
 							<button type="button" onclick="goList()">취소</button>
-							<button type="button" onclick="goDetail()">세부페이지 수정</button>
 							<button type="button" style="float:right; background-color: red;" onclick="deleteContent()">삭제</button>
 						</td>
 					</tr>

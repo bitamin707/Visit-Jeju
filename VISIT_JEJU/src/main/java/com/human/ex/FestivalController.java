@@ -1,7 +1,10 @@
 package com.human.ex;
 
+import java.security.Principal;
+
 import javax.inject.Inject;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,8 +30,22 @@ public class FestivalController {
 	
 	// 축제 메인 페이지
 	@RequestMapping(value = "/festival", method = RequestMethod.GET)
-	public void Main(Model model, festivalDto dto) throws Exception {
+	public void Main(Model model, festivalDto dto, Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute("list", service.listAll());
+		
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
 	}
 	
 	// 축제 컨텐츠 추가
@@ -49,7 +66,7 @@ public class FestivalController {
 	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.POST)
 	public String modify(@RequestParam("fno")int fno, festivalDto dto) throws Exception {
 		service.update(dto);
-		return "redirect:/festival/festival";
+		return "redirect:/festival/modify/festival_detailModify?fno=" + fno + "&fname=" + dto.getFname();
 	}
 	
 	// 축제 컨텐츠 삭제
@@ -61,13 +78,9 @@ public class FestivalController {
 	////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// 축제 세부 페이지
-//	@RequestMapping(value = "/detail/*", method = RequestMethod.GET)
-//	public void page1() {
-//	}
 	@RequestMapping(value = "/detail/festivalDetail", method = RequestMethod.GET)
 	public void detail_page(@RequestParam("fno")int fno, Model model) throws Exception {
 		model.addAttribute(detail_service.read(fno));
-		System.out.println(model);
 	}
 	
 	
@@ -82,11 +95,12 @@ public class FestivalController {
 	}
 	
 	@RequestMapping(value = "/modify/festival_detailModify", method = RequestMethod.GET)
-	public void detail_modify(@RequestParam("fno")int fno, Model model) throws Exception {
+	public void detail_modify(@RequestParam("fno")int fno, @RequestParam("fname")String fname,Model model) throws Exception {
+		model.addAttribute("changeFname",fname);
 		model.addAttribute(detail_service.read(fno));
 	}
 	@RequestMapping(value = "/modify/festival_detailModify", method = RequestMethod.POST)
-	public String detail_modify(@RequestParam("fno")int fno, festival_detailDto dto) throws Exception {
+	public String detail_modify(festival_detailDto dto) throws Exception {
 		detail_service.update(dto);
 		return "redirect:/festival/festival";
 	}

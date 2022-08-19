@@ -10,8 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(fno, fname, fbg, faddress, ftel, fhomepage, fcontent, fimg1, fimg2, fimg3, fimg4, fimg5)
 		values (
 			#{fno}, #{fname}, #{fbg}, #{faddress}, #{ftel}, #{fhomepage}, #{fcontent}, 
-			#{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5}
-		)
+			#{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5})
 	</insert>
 
 	<select id="read" resultType="festival_detailDto">
@@ -22,6 +21,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update festival_detail
 		set fname=#{fname}, fbg=#{fbg}, faddress=#{faddress}, ftel=#{ftel}, fhomepage=#{fhomepage},
 			fcontent=#{fcontent}, fimg1=#{fimg1}, fimg2=#{fimg2}, fimg3=#{fimg3}, fimg4=#{fimg4}, fimg5=#{fimg5}
-		where fno=#{fno} 
+		where fno=#{fno}
 	</update>
 </mapper>
