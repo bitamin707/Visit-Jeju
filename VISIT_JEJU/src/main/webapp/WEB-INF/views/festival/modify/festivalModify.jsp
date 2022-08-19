@@ -42,7 +42,7 @@
 	}
 	
 	function goDetail() {
-		location.href="/ex/festival/modify/festival_detailCreate?fno=${festivalDto.fno }";
+		location.href="/ex/festival/modify/festival_detailModify?fno=${festivalDto.fno }";
 	}
 </script>
 
@@ -130,7 +130,7 @@
 						<td colspan="2"> 
 							<button type="button" onclick="submitBtn()">수정</button>
 							<button type="button" onclick="goList()">취소</button>
-							<button type="button" onclick="goDetail()">세부페이지 추가</button>
+							<button type="button" onclick="goDetail()">세부페이지 수정</button>
 							<button type="button" style="float:right; background-color: red;" onclick="deleteContent()">삭제</button>
 						</td>
 					</tr>

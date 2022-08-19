@@ -55,7 +55,7 @@ button {
 	<div class="wrap">
 		<section>
 			<form action="festival_detailCreate" method="POST">
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			
 				<table>
 					<tr>
 						<th colspan="2"><h2
@@ -64,11 +64,11 @@ button {
 					</tr>
 					<tr>
 						<th>번호</th>
-						<td><input type="text" name="fno" value="${festivalDto.fno }" readonly></td>
+						<td><input type="text" name="fno" value="${festival_detailDto.fno }" readonly></td>
 					</tr>
 					<tr>
 						<th>축제 제목</th>
-						<td><input type="text" name="fname" value="${festivalDto.fname }" ></td>
+						<td><input type="text" name="fname" value="${festival_detailDto.fname }" ></td>
 					</tr>
 					<tr>
 						<th>백그라운드이미지</th>
@@ -87,7 +87,7 @@ button {
 						<td><input type="text" name="fhomepage" value="${festival_detailDto.fhomepage }" placeholder="홈페이지 주소"></td>
 					<tr>
 						<td colspan="2"><textarea name="fcontent" id="ir1" rows="30"
-								cols="150" placeholder="축제 내용"></textarea></td>
+								cols="150" placeholder="축제 내용">${festival_detailDto.fcontent }</textarea></td>
 					</tr>
 					<tr>
 						<th>이미지 1</th>
@@ -116,6 +116,7 @@ button {
 							<button type="reset" style="float:right;">리셋</button></td>
 					</tr>
 				</table>
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			</form>
 		</section>
 	</div>
