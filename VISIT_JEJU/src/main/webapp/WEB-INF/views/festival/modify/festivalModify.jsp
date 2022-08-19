@@ -38,11 +38,7 @@
 		else {
 			modifyForm.submit();
 		}
-		
-	}
-	
 </script>
-
 <style>
 	* {
 		margin: 0 auto;
