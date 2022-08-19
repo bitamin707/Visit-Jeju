@@ -38,6 +38,7 @@
 		else {
 			modifyForm.submit();
 		}
+	}
 </script>
 <style>
 	* {
