@@ -47,9 +47,19 @@ body {font-family: Arial, Helvetica, sans-serif;
       
       .container {
         width:400px;
+        margin:0 auto;
         border-radius: 5px;
-        background-color: #e6e6e6;
+        background: #f6f6f6;
         padding: 20px;
+      }
+      
+       .container2 {
+        width:400px;
+        margin:0 auto;
+        border-radius: 5px;
+        background: #f6f6f6;
+        padding: 20px;
+        margin-top:150px;
       }
 
       form{
@@ -59,6 +69,9 @@ body {font-family: Arial, Helvetica, sans-serif;
 </head>
 
 <body>
+<div class='container2'>
+	<a href="/ex/main/main"><img style="width:100%" id="img1" src="/ex/resources/img/jeju.png"></a>
+</div>
 <div class='container'>
 <h2>데이터 수정</h2>
 <form id="ModifyForm" method="post" action="/ex/main/merchModify">

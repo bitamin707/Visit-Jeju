@@ -38,14 +38,11 @@
 		else {
 			modifyForm.submit();
 		}
-		
 	}
-	
 	function goDetail() {
 		location.href="/ex/festival/modify/festival_detailModify?fno=${festivalDto.fno }";
 	}
 </script>
-
 <style>
 	* {
 		margin: 0 auto;
