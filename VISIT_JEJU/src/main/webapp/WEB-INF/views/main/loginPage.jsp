@@ -61,7 +61,7 @@
 <c:if test="${param.error != null}">
 	<script type="text/javascript">
 		alert('아이디나 비밀번호가 잘못되었습니다.')
-		location.href='/ex/main/mainNormal';
+		location.href='/ex/main/main';
 	</script>
 </c:if>
 <c:if test="${param.logout != null}">

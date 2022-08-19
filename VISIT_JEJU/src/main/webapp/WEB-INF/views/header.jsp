@@ -9,7 +9,7 @@
 <div id="header">
 	<div id="container">
 		<h1 class="logo">
-			<a href="/ex/main/mainNormal"><img id="img1"
+			<a href="/ex/main/main"><img id="img1"
 				src="/ex/resources/img/jeju.png"></a>
 		</h1>
 		<nav class="menu">
@@ -31,16 +31,14 @@
 </div>
 
 	<script type="text/javascript">
-	var userid = "${userid}"
-	if(userid != "" && userid != "비회원"){
+	var check = "${Check}"
+	if(check == "관리자" || check == "회원"){
 		document.getElementById("login").href="";
 		document.getElementById("login").innerText = "${userid}" + "님 안녕하세요";
-		document.getElementById("logout").style.display = "";	
-	}else if(userid == "비회원" || userid == ""){
+		document.getElementById("logout").style.display = "block";	
+	}else if(check == ""){
 		document.getElementById("login").href="/ex/main/loginPage";
 		document.getElementById("login").innerText = "로그인";
 		document.getElementById("logout").style.display = "none";
-	}
-	
-	
+	}	
 	</script>
