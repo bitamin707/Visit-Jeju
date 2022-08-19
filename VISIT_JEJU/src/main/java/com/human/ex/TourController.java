@@ -40,13 +40,6 @@ public class TourController {
 	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
 	public void test(Model model) throws Exception {
 	}
-	
-	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
-	public String test(TourReviewsDto TourReviewsDto, Model mode) throws Exception {
-		service2.insert(TourReviewsDto);
-		return "redirect:/tour/test";
-		
-	}
 }
 
 	

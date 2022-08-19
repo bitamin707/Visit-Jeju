@@ -58,11 +58,6 @@
                                 <p>0</p>
                             </a>
                         </button>
-                        <button type="button" class="schedule_btn" >
-                            <div class="icon_schedule"></div>
-                            <p>일정 등록</p>
-                            <p>0</p>
-                        </button>
                     </div>
                 </div>
                 <div class="detail">

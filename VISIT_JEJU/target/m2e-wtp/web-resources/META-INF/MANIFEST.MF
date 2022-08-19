@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
 Built-By: admin
+<<<<<<< HEAD
 Build-Jdk: 1.8.0_333
+=======
+Build-Jdk: 1.8.0_341
+>>>>>>> branch 'develop' of https://github.com/bitamin707/Visit-Jeju.git
 Created-By: Maven Integration for Eclipse
 

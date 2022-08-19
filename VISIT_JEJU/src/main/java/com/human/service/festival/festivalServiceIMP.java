@@ -47,4 +47,9 @@ public class festivalServiceIMP implements festivalService {
 		return dtos;
 	}
 
+	@Override
+	public int getMaxFno() throws Exception {
+		festivalDao dao = sqlSession.getMapper(festivalDao.class);
+		return dao.getMaxFno();
+	}
 }

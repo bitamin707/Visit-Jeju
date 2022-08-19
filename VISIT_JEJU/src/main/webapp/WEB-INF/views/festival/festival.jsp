@@ -44,7 +44,7 @@
 				<div class="event" id="eventList">
 					<c:forEach items="${list }" var="festivalDto">
 						<div class="event_area">
-							<a href="detail/${festivalDto.fname }">
+							<a href="detail/festivalDetail?fno=${festivalDto.fno }&fname=${festivalDto.fname}">
 								<div class="event_area_img">
 									<img src="${festivalDto.imglink }">
 								</div>

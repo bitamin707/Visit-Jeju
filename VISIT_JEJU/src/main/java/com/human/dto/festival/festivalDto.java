@@ -3,15 +3,14 @@ package com.human.dto.festival;
 import java.sql.Date;
 
 public class festivalDto {
-	private Integer fno;
-	private String fname;
+	public Integer fno;
+	public String fname;
 	private String fcontent;
 	private Date fstart_date;
 	private Date fend_date;
 	private String flocation;
 	private String fregion;
 	private String imglink;
-	
 	public Integer getFno() {
 		return fno;
 	}

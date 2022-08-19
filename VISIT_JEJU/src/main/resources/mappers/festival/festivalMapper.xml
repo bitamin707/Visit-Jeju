@@ -30,7 +30,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listAll"
 		resultType="com.human.dto.festival.festivalDto">
 		select * from festival order by fstart_date
-
 	</select>
-
+	
+	<select id="getMaxFno" resultType="int">
+		select max(fno) from festival 
+	</select>
 </mapper>

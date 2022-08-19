@@ -10,4 +10,6 @@ public interface festivalDao {
 	public void delete(Integer fno) throws Exception;
 	public void update(festivalDto dto) throws Exception;
 	public List<festivalDto> listAll() throws Exception;
+	
+	public int getMaxFno() throws Exception;
 }

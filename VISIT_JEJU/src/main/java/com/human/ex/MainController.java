@@ -1,6 +1,7 @@
 package com.human.ex;
 import java.security.Principal;
-import java.text.DateFormat; 
+import java.text.DateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,22 +70,8 @@ public class MainController {
 	public void list() throws Exception {
 		
 	}
-	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.POST)
-	public void listNormal() throws Exception {
-		
-	}
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
-	public void list(Model model, Principal principal) throws Exception {
-		model.addAttribute("list",service.listAll());
-		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
-		model.addAttribute("listFood",serviceFood.listAllFood());
-		model.addAttribute("listMerch",serviceMerch.listAllMerch());
-		model.addAttribute("listAccount",serviceAccount.listAllAccount());
-		String userid=principal.getName();
-		model.addAttribute("userid",userid);
-	}
-	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.GET)
-	public void listNormal(Model model, Principal principal) throws Exception {
+	public void listNormal(Model model, Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute("list",service.listAll());
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 		model.addAttribute("listFood",serviceFood.listAllFood());
@@ -93,7 +81,14 @@ public class MainController {
 			model.addAttribute("userid","비회원");
 		}else {
 			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
 			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
 		}
 	}
 	
