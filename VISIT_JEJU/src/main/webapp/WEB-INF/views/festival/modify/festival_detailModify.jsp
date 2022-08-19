@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>컨텐츠 추가 페이지</title>
+<title>컨텐츠 수정 페이지</title>
 <script type="text/javascript"
 	src="/ex/resources/smarteditor/js/service/HuskyEZCreator.js"
 	charset="utf-8"></script>
@@ -54,7 +54,7 @@ button {
 <body>
 	<div class="wrap">
 		<section>
-			<form action="festival_detailCreate" method="POST">
+			<form action="festival_detailModify" method="POST">
 			
 				<table>
 					<tr>
@@ -68,7 +68,7 @@ button {
 					</tr>
 					<tr>
 						<th>축제 제목</th>
-						<td><input type="text" name="fname" value="${festival_detailDto.fname }" ></td>
+						<td><input type="text" name="fname" value="${changeFname }" readonly></td>
 					</tr>
 					<tr>
 						<th>백그라운드이미지</th>
@@ -111,9 +111,8 @@ button {
 					</tr>
 					<tr>
 						<td colspan="2"><button type="button"
-								onclick="submitContents()" id="submitBtn">작성완료</button>
+								onclick="submitContents()" id="submitBtn">수정완료</button>
 							<button type="button" onclick="goList()">목록으로</button>
-							<button type="reset" style="float:right;">리셋</button></td>
 					</tr>
 				</table>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

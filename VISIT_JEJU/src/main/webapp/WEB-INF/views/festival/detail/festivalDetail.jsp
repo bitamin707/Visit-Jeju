@@ -71,11 +71,11 @@
 
                     <div class="detail_slideShow">
                         <ul class="slides">
-                            <li><img src="${festival_detailDto.fimg1 }"></li>
-                            <li><img src="${festival_detailDto.fimg2 }"></li>
-                            <li><img src="${festival_detailDto.fimg3 }"></li>
-                            <li><img src="${festival_detailDto.fimg4 }"></li>
-                            <li><img src="${festival_detailDto.fimg5 }"></li>
+                            <li><img class="slideImgs" src="${festival_detailDto.fimg1 }"></li>
+                            <li><img class="slideImgs" src="${festival_detailDto.fimg2 }"></li>
+                            <li><img class="slideImgs" src="${festival_detailDto.fimg3 }"></li>
+                            <li><img class="slideImgs" src="${festival_detailDto.fimg4 }"></li>
+                            <li><img class="slideImgs" src="${festival_detailDto.fimg5 }"></li>
                         </ul>
                         <p class="controller">
                             <span class="prev">&lang;</span>

@@ -23,7 +23,7 @@
 		</nav>
 		<div class="language-wrap">
 			<a href="/ex/main/loginPage" id="login">로그인</a>
-				<form:form action="${pageContext.request.contextPath}/main/logout" method="POST">
+				<form:form action="${pageContext.request.contextPath}/main/logout" method="POST" id="logoutForm">
 					<button id="logout" type="input" display="none" value="로그아웃"><h3>로그아웃</h3></button>
 				</form:form>
 		</div>
@@ -39,6 +39,7 @@
 	}else if(check == ""){
 		document.getElementById("login").href="/ex/main/loginPage";
 		document.getElementById("login").innerText = "로그인";
+		document.getElementById("logoutForm").style.display = "none";
 		document.getElementById("logout").style.display = "none";
 	}	
 	</script>
