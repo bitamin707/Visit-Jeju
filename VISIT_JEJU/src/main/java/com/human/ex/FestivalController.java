@@ -1,5 +1,6 @@
 package com.human.ex;
 
+import java.net.URLEncoder;
 import java.security.Principal;
 
 import javax.inject.Inject;
@@ -66,7 +67,8 @@ public class FestivalController {
 	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.POST)
 	public String modify(@RequestParam("fno")int fno, festivalDto dto) throws Exception {
 		service.update(dto);
-		return "redirect:/festival/modify/festival_detailModify?fno=" + fno + "&fname=" + dto.getFname();
+		String getName = URLEncoder.encode(dto.getFname(), "UTF-8");
+		return "redirect:/festival/modify/festival_detailModify?fno=" + fno + "&fname=" + getName;
 	}
 	
 	// 축제 컨텐츠 삭제
@@ -98,6 +100,7 @@ public class FestivalController {
 	public void detail_modify(@RequestParam("fno")int fno, @RequestParam("fname")String fname,Model model) throws Exception {
 		model.addAttribute("changeFname",fname);
 		model.addAttribute(detail_service.read(fno));
+		System.out.println("Detail : " + fname);
 	}
 	@RequestMapping(value = "/modify/festival_detailModify", method = RequestMethod.POST)
 	public String detail_modify(festival_detailDto dto) throws Exception {
