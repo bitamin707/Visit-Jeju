@@ -36,6 +36,5 @@ public class festival_detailServiceIMP implements festival_detailService {
 	public void update(festival_detailDto dto) throws Exception {
 		festival_detailDao dao = sqlSession.getMapper(festival_detailDao.class);
 		dao.update(dto);
-	}	
-
+	}
 }

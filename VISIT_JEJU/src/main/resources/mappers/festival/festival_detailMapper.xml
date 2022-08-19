@@ -7,17 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="create">
 		insert into festival_detail
-		values (#{fno}, #{fname}, #{faddress}, #{ftel}, #{fhomepage}, #{fcontent}, #{flike_count}, #{freview_count},
+		values (#{fno}, #{fname} ,#{faddress}, #{ftel}, #{fhomepage}, #{fcontent}, #{flike_count}, #{freview_count},
 		#{fbg}, #{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5})
+		where fno=#{fno}
 	</insert>
 
 	<select id="read" resultType="festival_detailDto">
 		select * from festival_detail where fno=#{fno}
 	</select>
-
-	<delete id="delete">
-		delete from festival_detail where fno=#{fno}
-	</delete>
 
 	<update id="update">
 		update festival_detail

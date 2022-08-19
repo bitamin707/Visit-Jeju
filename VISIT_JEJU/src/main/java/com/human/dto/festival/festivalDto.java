@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class festivalDto {
 	public Integer fno;
-	private String fname;
+	public String fname;
 	private String fcontent;
 	private Date fstart_date;
 	private Date fend_date;

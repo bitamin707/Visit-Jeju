@@ -38,8 +38,7 @@ public class FestivalController {
 	@RequestMapping(value = "/modify/festivalCreate", method = RequestMethod.POST)
 	public String create(festivalDto dto) throws Exception {
 		service.create(dto);
-		System.out.println("fno : " + dto.getFno());
-		return "redirect:/festival_detailCreate?fno=" + dto.getFno();
+		return "redirect:/festival/festival";
 	}
 	
 	// 축제 컨텐츠 수정 
@@ -48,10 +47,9 @@ public class FestivalController {
 		model.addAttribute(service.read(fno));
 	}
 	@RequestMapping(value = "/modify/festivalModify", method = RequestMethod.POST)
-	public String modify(festivalDto dto) throws Exception {
+	public String modify(@RequestParam("fno")int fno, festivalDto dto) throws Exception {
 		service.update(dto);
-		int fno = dto.getFno();
-		return "redirect:/modify/festival_detailCreate?fno=" + fno;
+		return "redirect:/festival/festival";
 	}
 	
 	// 축제 컨텐츠 삭제
@@ -64,9 +62,15 @@ public class FestivalController {
 	////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// 축제 세부 페이지
-	@RequestMapping(value = "/detail/*", method = RequestMethod.GET)
-	public void page1() {
+//	@RequestMapping(value = "/detail/*", method = RequestMethod.GET)
+//	public void page1() {
+//	}
+	@RequestMapping(value = "/detail/festivalDetail", method = RequestMethod.GET)
+	public void detail_page(@RequestParam("fno")int fno, Model model) throws Exception {
+		model.addAttribute(detail_service.read(fno));
+		System.out.println(model);
 	}
+	
 	
 	@RequestMapping(value="/modify/festival_detailCreate", method = RequestMethod.GET)
 	public void detail_create() throws Exception {
@@ -76,5 +80,4 @@ public class FestivalController {
 		detail_service.create(dto);
 		return "redirect:/festival/festival";
 	}
-
 }

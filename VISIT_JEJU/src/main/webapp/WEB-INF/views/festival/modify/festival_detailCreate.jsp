@@ -64,50 +64,50 @@ button {
 					</tr>
 					<tr>
 						<th>번호</th>
-						<td><input type="text" name="fno" value="${festival.fno }" readonly></td>
-					</tr>
-					<tr>
-						<th>백그라운드이미지</th>
-						<td><input type="text" name="fbg" placeholder="백그라운드이미지"></td>
+						<td><input type="text" name="fno" value="${festival_detailDto.fno }" readonly></td>
 					</tr>
 					<tr>
 						<th>축제 제목</th>
-						<td><input type="text" name="fname" placeholder="축제 제목"></td>
+						<td><input type="text" name="fname" value="${festival_detailDto.fname }" readonly></td>
+					</tr>
+					<tr>
+						<th>백그라운드이미지</th>
+						<td><input type="text" name="fbg" value="${festival_detailDto.fbg }" placeholder="백그라운드이미지"></td>
 					</tr>
 					<tr>
 						<th>주소</th>
-						<td><input type="text" name="faddress" placeholder="주소"></td>
+						<td><input type="text" name="faddress" value="${festival_detailDto.faddress }" placeholder="주소"></td>
 					</tr>
 					<tr>
 						<th>연락처</th>
-						<td><input type="text" name="ftel" placeholder="전화번호"></td>
+						<td><input type="text" name="ftel" value="${festival_detailDto.ftel }" placeholder="전화번호"></td>
 					</tr>
 					<tr>
 						<th>홈페이지</th>
-						<td><input type="text" name="fhomepage" placeholder="홈페이지 주소"></td>
+						<td><input type="text" name="fhomepage" value="${festival_detailDto.fhomepage }" placeholder="홈페이지 주소"></td>
 					<tr>
 						<td colspan="2"><textarea name="fcontent" id="ir1" rows="30"
-								cols="150" placeholder="축제 내용"></textarea></td>
+								cols="150" value="${festival_detailDto.fcontent }" placeholder="축제 내용"></textarea></td>
 					</tr>
 					<tr>
 						<th>이미지 1</th>
-						<td><input type="text" name="fimg1" placeholder="이미지1"></td>
+						<td><input type="text" name="fimg1" value="${festival_detailDto.fimg1 }" placeholder="이미지1"></td>
 					</tr>
 					<tr>
 						<th>이미지 2</th>
-						<td><input type="text" name="fimg2" placeholder="이미지2"></td>
+						<td><input type="text" name="fimg2" value="${festival_detailDto.fimg2 }" placeholder="이미지2"></td>
 					</tr>
 					<tr>
 						<th>이미지 3</th>
-						<td><input type="text" name="fimg3" placeholder="이미지3"></td>
+						<td><input type="text" name="fimg3" value="${festival_detailDto.fimg3 }" placeholder="이미지3"></td>
 					</tr>
 					<tr>
 						<th>이미지 4</th>
-						<td><input type="text" name="fimg4" placeholder="이미지4"></td>
+						<td><input type="text" name="fimg4" value="${festival_detailDto.fimg4 }" placeholder="이미지4"></td>
 					</tr>
 					<tr>
 						<th>이미지 5</th>
-						<td><input type="text" name="fimg5" placeholder="이미지5"></td>
+						<td><input type="text" name="fimg5" value="${festival_detailDto.fimg5 }" placeholder="이미지5"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="button"
@@ -116,7 +116,6 @@ button {
 							<button type="reset" style="float:right;">리셋</button></td>
 					</tr>
 				</table>
-				
 			</form>
 		</section>
 	</div>
