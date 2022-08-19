@@ -40,6 +40,10 @@
 		}
 		
 	}
+	
+	function goDetail() {
+		location.href="/ex/festival/modify/festival_detailModify?fno=${festivalDto.fno }";
+	}
 </script>
 
 <style>
@@ -83,6 +87,7 @@
 	<div class="wrap">
 		<section>
 			<form id="modifyForm" action="festivalModify" method="POST">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<table>
 					<tr>
 						<th colspan="2"><h2 style="text-align:center; font-size:30px;">컨텐츠 수정 페이지</h2> </th>
@@ -125,10 +130,12 @@
 						<td colspan="2"> 
 							<button type="button" onclick="submitBtn()">수정</button>
 							<button type="button" onclick="goList()">취소</button>
+							<button type="button" onclick="goDetail()">세부페이지 수정</button>
 							<button type="button" style="float:right; background-color: red;" onclick="deleteContent()">삭제</button>
 						</td>
 					</tr>
 				</table>
+				
 			</form>
 		</section>
 	</div>

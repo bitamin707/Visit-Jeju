@@ -43,7 +43,6 @@ public class TourController {
 	}
 	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
 	public void test(Model model, TourReviewsDto dto) throws Exception {
-		servic.insert.();
 	}
 }
 
