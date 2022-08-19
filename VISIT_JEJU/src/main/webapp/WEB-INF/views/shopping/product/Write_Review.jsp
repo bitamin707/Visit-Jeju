@@ -47,12 +47,7 @@
     </style>
 
     <script>
-
-    window.onload = function() {
-    	document.getElementById('product_pno').hide();
-    }
-    
-    
+   
         function productChange(e) {
         // 선택된 데이터 가져오기
         const value = e.value;
@@ -83,7 +78,8 @@
             }
         
         function back() {
-            location.href = '/ex/shopping/product/Product';
+            location.href = '/ex/shopping/product/Product?'
+            		+'pno=' + '${boardDtoShop1.pno}';
         }
         
         $.ajaxPrefilter(function (options) {
@@ -94,14 +90,14 @@
         	      options.headers[headerName] = token;
         	  }
         	});
-        	
         
     </script>
 </head>
 
 <body>
+	${boardDtoShop1.pno}
     <div id="tbl_box">
-    <form action="/ex/shopping/product/Write_Review" method="post">
+    <form action="/ex/shopping/product/Write_Review?pno=${boardDtoShop1.pno}" method="post">
 			<table border="1" width="1000px" id="customers">
 
 				<tr>

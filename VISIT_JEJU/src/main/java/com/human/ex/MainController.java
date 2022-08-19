@@ -1,4 +1,5 @@
 package com.human.ex;
+import java.security.Principal;
 import java.text.DateFormat; 
 import java.util.Date;
 import java.util.Locale;
@@ -10,9 +11,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.main.BoardDtoAuthority;
@@ -47,7 +50,7 @@ public class MainController {
 	private IBoardServiceAccount serviceAccount;
 	@Inject
 	private IBoardServiceAuthority serviceAuthority;
-	
+
 	/*로그인*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
 	public void loginGet() throws Exception {
@@ -58,6 +61,7 @@ public class MainController {
 	@RequestMapping(value = "/main/login/error", method = RequestMethod.GET)
 	public void error() throws Exception {
 	}
+
 	/*메인*/
 	
 	@RequestMapping(value = "/main/main", method = RequestMethod.POST)
@@ -69,20 +73,28 @@ public class MainController {
 		
 	}
 	@RequestMapping(value = "/main/main", method = RequestMethod.GET)
-	public void list(Model model) throws Exception {
+	public void list(Model model, Principal principal) throws Exception {
 		model.addAttribute("list",service.listAll());
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 		model.addAttribute("listFood",serviceFood.listAllFood());
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
 		model.addAttribute("listAccount",serviceAccount.listAllAccount());
+		String userid=principal.getName();
+		model.addAttribute("userid",userid);
 	}
 	@RequestMapping(value = "/main/mainNormal", method = RequestMethod.GET)
-	public void listNormal(Model model) throws Exception {
+	public void listNormal(Model model, Principal principal) throws Exception {
 		model.addAttribute("list",service.listAll());
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 		model.addAttribute("listFood",serviceFood.listAllFood());
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
 		model.addAttribute("listAccount",serviceAccount.listAllAccount());
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			model.addAttribute("userid",userid);
+		}
 	}
 	
 	/*
@@ -122,7 +134,6 @@ public class MainController {
 	public void foodBestModify(Model model) throws Exception {
 		model.addAttribute("listFoodBest",serviceFoodBest.listAllFoodBest());
 	}	
-	
 	
 	
 	

@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.human.dao.acco.IAccoReviewDao">
 
-<insert id="insert">
-insert into acco_review (ano, content)
-values (ano_counter.nextval,,#{content})
+<insert id="create">
+insert into acco_review (ano, content, acco_id)
+values (ano_counter.nextval,#{content}, #{acco_id})
 </insert>
 
 <select id="read" resultType="AccoReviewDto">
@@ -19,7 +19,7 @@ delete from acco_review where ano=#{ano}
 </delete>
 
 <update id="update">
-update acco_review set content=#{content}
+update acco_review set content=#{content} where ano=#{ano}
 </update>
 
 <select id="listAll" resultType="com.human.dto.acco.AccoReviewDto">

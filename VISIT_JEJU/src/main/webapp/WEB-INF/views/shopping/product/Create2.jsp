@@ -66,8 +66,11 @@ function readURL(input) {
 });
 
 
+
 var result = '${savedName}';
+parent.addFilePath(result);
 </script>
+
 </head>
 <body>
     <!-- ============== 헤더 =============== -->
@@ -100,12 +103,12 @@ var result = '${savedName}';
                 <div class="product_row">
                     <div class="row_box">
                     
-                        <form id='form1' action="Create2" method="post"
+                        <form id='form1' action="Create2_Result" method="post"
 						enctype="multipart/form-data" target="zeroFrame">
 						<input type="file" name="file" id="file" style="width: 210px;" required /> 
 							<input type="submit" value="파일업로드">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-					</form>
+						</form>
 						<input type="text" value="${savedName}">
 
                     </div>
@@ -148,7 +151,7 @@ var result = '${savedName}';
                         <p class="post_text">제품번호 (바꿀 수 없는 고유번호 입니다)</p>
 							<input type="text" value="<%=request.getParameter("pno") %>" name=pno class="post" required readonly><br>
                         <p class="post_text">이미지명을 입력하세요 (iframe 확인)</p>                         
-                        	<input type="text" class="post" name=product_img required>
+                        	<input type="text" class="post" name=product_img required value="${savedName}">
                         	<input type="submit" value=" 세부사항 전송" class="post_text" style="margin:1px 50px; font-size:19px; position:absolute;" required>
                         	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </div>
@@ -175,7 +178,7 @@ var result = '${savedName}';
                 <!-- ==== form end ===== -->
                 <!-- ======= 오른쪽 공간 ======= -->
     <!-- ============== 제품 상단 =============== -->
-    <iframe name="zeroFrame"></iframe>
+    <iframe name="zeroFrame" src="/ex/shopping/product/Create2_Result"></iframe>
             </div>
             <!-- ↑↑end id container -->
 

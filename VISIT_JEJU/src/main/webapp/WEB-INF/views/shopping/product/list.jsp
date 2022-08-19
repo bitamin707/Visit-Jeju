@@ -269,12 +269,11 @@ if(result=='success'){
 	
   $(document).ready(function(){
 	  $('#searchBtn').on("click",function(event){
-		  alert("what");
-		  alert("Product"+'${pageMaker.makePage(1)}'
+		  alert("list"+'${pageMaker.makePage(1)}'
 				  +'&searchType='+$("select option:selected").val()
 				  +"&keyword="+$('#keywordInput').val());
 		  
-		  self.location="Product"+'${pageMaker.makePage(1)}'
+		  self.location="list"+'${pageMaker.makePage(1)}'
 		  +'&searchType='+$("select option:selected").val()
 		  +"&keyword="+$('#keywordInput').val();
 		  
