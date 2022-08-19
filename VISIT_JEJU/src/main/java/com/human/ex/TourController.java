@@ -18,7 +18,7 @@ public class TourController {
 	@Inject
 	private tourService service;
 	@Inject
-	private TourReviewsService serviceReviews;
+	private TourReviewsService service2;
 	
 	@RequestMapping(value = "/tour/main1", method = RequestMethod.GET)
 	public void Main1(Model model, tourDto dto) throws Exception {
@@ -39,11 +39,8 @@ public class TourController {
 	
 	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
 	public void test(Model model) throws Exception {
-		model.addAttribute("list",serviceReviews.listAll());
 	}
-	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
-	public void test(Model model, TourReviewsDto dto) throws Exception {
-	}
+
 }
 
 	
