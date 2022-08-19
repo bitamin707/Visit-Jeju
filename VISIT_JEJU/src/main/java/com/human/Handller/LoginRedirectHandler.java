@@ -26,12 +26,11 @@ public class LoginRedirectHandler implements AuthenticationSuccessHandler {
 		});
 		
 		if(roleNames.contains("ROLE_ADMIN")) {
-			
 			response.sendRedirect("/ex/main/main");
 			return;
 		}
 		if(roleNames.contains("ROLE_MEMBER")) {
-			response.sendRedirect("/ex/main/mainNormal");
+			response.sendRedirect("/ex/main/main");
 			return;
 		}
 
