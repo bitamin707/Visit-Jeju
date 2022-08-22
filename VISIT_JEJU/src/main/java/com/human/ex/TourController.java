@@ -1,7 +1,10 @@
 package com.human.ex;
 
+import java.security.Principal;
+
 import javax.inject.Inject;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +24,24 @@ public class TourController {
 	private TourReviewsService service2;
 	
 	@RequestMapping(value = "/tour/main1", method = RequestMethod.GET)
-	public void Main1(Model model, tourDto dto) throws Exception {
+	public void Main1(Model model, tourDto dto,Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute("list",service.listAll());
+		
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
 	}
+	
 	@RequestMapping(value = "/tour/main2", method = RequestMethod.GET)
 	public void main2(Model mode1) {
 	}
@@ -39,7 +57,16 @@ public class TourController {
 	
 	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
 	public void test(Model model) throws Exception {
+		model.addAttribute("list",service2.listAll());
 	}
+	
+	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
+	public String test(TourReviewsDto Dto,Model model) throws Exception {
+		service2.insert(Dto);
+		return "redirect:/tour/test";
+	}
+	
+	
 
 }
 
