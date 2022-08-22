@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,11 +41,11 @@
 					<li><a href="#MonthLink" class="selectMonth" id="12m" onclick="inputMonth(12)">12월</a></li>
 				</ul>
 				<hr>
-				<button type="button"><a href="modify/festivalCreate">컨텐츠 추가</a></button>
+				<button type="button" class="modifyBtn"><a href="modify/festivalCreate">컨텐츠 추가</a></button>
 				<div class="event" id="eventList">
 					<c:forEach items="${list }" var="festivalDto">
 						<div class="event_area">
-							<a href="detail/${festivalDto.fname }">
+							<a href="detail/festivalDetail?fno=${festivalDto.fno }">
 								<div class="event_area_img">
 									<img src="${festivalDto.imglink }">
 								</div>
@@ -57,15 +58,25 @@
 										${festivalDto.fregion }</p>
 								</div>
 							</a>
-							<button type="button"><a href="modify/festivalModify?fno=${festivalDto.fno }">수정</a></button>
+							<button type="button" class="modifyBtn"><a href="modify/festivalModify?fno=${festivalDto.fno }">수정</a></button>
 						</div>
-						
 					</c:forEach>
 				</div>
 			</div>
 		</section>
 		<%@include file="../footer.jsp"%>
 	</div>
+	<script type="text/javascript">
+		var modifyBtn = document.getElementsByClassName("modifyBtn")
+		var check = "${Check}"
+		if (check == "관리자") {
+			for(let i = 0; i < modifyBtn.length; i++)
+				modifyBtn[i].style.display = "";
+		} else {
+			for(let i = 0; i < modifyBtn.length; i++)
+				modifyBtn[i].style.display = "none";
+		}
+	</script>
 </body>
 <script src="/ex/resources/js/festival/selectMonth.js"></script>
 </html>

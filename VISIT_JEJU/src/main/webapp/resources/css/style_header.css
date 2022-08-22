@@ -70,53 +70,17 @@
 
 /* 우측 박스 */
 .language-wrap{
-    z-index: 3;
+    float: right;
     width: 222px;
     height: 100px;
     display: -webkit-box;
     -webkit-box-align: center;
     opacity: 70%;
-}
-
-/* 우측 박스 (한국어)*/
-#search{
-    padding-left: 20px;
-    margin-left: 20px;
-}
-
-#search_Form {
-    position: absolute;
-    top: 95px;
-    left: 70%;
-    width: 270px;
-    height: 60px;
-    z-index: 10;
-    border: 1px solid #ccc;
-    background-color: hsla(0,0%,100%);
-}
-
-.input_field {
-    width: 250px;
-    height: 50px;
-    margin-left: 10px;
-    border-bottom: 1px solid black;
-}
-#search_name {
-    width: 200px;
-    height: 40px;
-    border: none;
-}
-
-#search_btn {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-image: url("https://korean.visitseoul.net/humanframe/theme/visitseoul/assets/images/2021/common/icn_search@2x.png");
-    background-position: 7px 7px;
-    background-size: 24px 24px;
-    background-repeat: no-repeat;
-    background-color: gray;
-    border: none;
     
+}
+
+#logout {
+	cursor: pointer;
+	margin-left: 10px;
 }
 /*================== 헤더 끝==================*/

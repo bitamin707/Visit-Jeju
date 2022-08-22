@@ -9,7 +9,7 @@
 <div id="header">
 	<div id="container">
 		<h1 class="logo">
-			<a href="/ex/main/mainNormal"><img id="img1"
+			<a href="/ex/main/main"><img id="img1"
 				src="/ex/resources/img/jeju.png"></a>
 		</h1>
 		<nav class="menu">
@@ -23,7 +23,7 @@
 		</nav>
 		<div class="language-wrap">
 			<a href="/ex/main/loginPage" id="login">로그인</a>
-				<form:form action="${pageContext.request.contextPath}/main/logout" method="POST">
+				<form:form action="${pageContext.request.contextPath}/main/logout" method="POST" id="logoutForm">
 					<button id="logout" type="input" display="none" value="로그아웃"><h3>로그아웃</h3></button>
 				</form:form>
 		</div>
@@ -31,16 +31,15 @@
 </div>
 
 	<script type="text/javascript">
-	var userid = "${userid}"
-	if(userid != "" && userid != "비회원"){
+	var check = "${Check}"
+	if(check == "관리자" || check == "회원"){
 		document.getElementById("login").href="";
 		document.getElementById("login").innerText = "${userid}" + "님 안녕하세요";
 		document.getElementById("logout").style.display = "";	
-	}else if(userid == "비회원" || userid == ""){
+	}else if(check == ""){
 		document.getElementById("login").href="/ex/main/loginPage";
 		document.getElementById("login").innerText = "로그인";
+		document.getElementById("logoutForm").style.display = "none";
 		document.getElementById("logout").style.display = "none";
-	}
-	
-	
+	}	
 	</script>

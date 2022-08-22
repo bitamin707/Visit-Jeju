@@ -21,7 +21,7 @@ public class AccoReviewServiceImpl implements IAccoReviewService {
 	}
 
 	@Override
-	public AccoReviewDto read(String ano) throws Exception {
+	public AccoReviewDto read(int ano) throws Exception {
 		// TODO Auto-generated method stub
 		IAccoReviewDao dao=sqlSession.getMapper(IAccoReviewDao.class);
 		
@@ -29,7 +29,7 @@ public class AccoReviewServiceImpl implements IAccoReviewService {
 	}
 
 	@Override
-	public void delete(String ano) throws Exception {
+	public void delete(int ano) throws Exception {
 		// TODO Auto-generated method stub
 		IAccoReviewDao dao=sqlSession.getMapper(IAccoReviewDao.class);
 		dao.delete(ano);

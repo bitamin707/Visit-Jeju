@@ -52,9 +52,19 @@ body {font-family: Arial, Helvetica, sans-serif;
       
       .container {
         width:400px;
+        margin:0 auto;
         border-radius: 5px;
-        background-color: #e6e6e6;
+        background: #f6f6f6;
         padding: 20px;
+      }
+      
+       .container2 {
+        width:400px;
+        margin:0 auto;
+        border-radius: 5px;
+        background: #f6f6f6;
+        padding: 20px;
+        margin-top:150px;
       }
 
       form{
@@ -63,6 +73,9 @@ body {font-family: Arial, Helvetica, sans-serif;
 </style>
 </head>
 <body>
+<div class='container2'>
+	<a href="/ex/main/main"><img style="width:100%" id="img1" src="/ex/resources/img/jeju.png"></a>
+</div>
 <div class='container'>
 <h2>데이터 수정</h2>
 <form id="modifyForm" method="post" action="/ex/main/accountModify">
@@ -75,8 +88,8 @@ body {font-family: Arial, Helvetica, sans-serif;
 	<input type="text" name=enabled style="width:100%" value='${boardDtoAccount.enabled }'><br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button id=save > 저장</button>
-	<button id=remove > 삭제</button>
-	<button id=cancle > 취소</button>
+	<button type=button id=remove > 삭제</button>
+	<button type=button id=cancle > 취소</button>
 </form>
 </div>
 

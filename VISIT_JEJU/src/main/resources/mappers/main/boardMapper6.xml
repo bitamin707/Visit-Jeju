@@ -8,6 +8,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id="createAuthority">
 insert into authorities values(#{username},'ROLE_MEMBER')
 </insert>
+
+<delete id="deleteAuthority">
+delete from authorities where username=#{username}
+</delete>
+
 </mapper>
 
 

@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page session="false"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -80,7 +81,7 @@
 					</div>
 				</ul>
 			</form>
-			<button>
+			<button class="modifyBtn">
 				<a href="/ex/acco/function/insert">숙박추가</a>
 			</button>
 
@@ -121,10 +122,10 @@
 								</p>
 								<p
 									style="position: relative; text-align: right; margin-right: 10px;">
-									<button type="button">
+									<button type="button" class="modifyBtn">
 										<a href='/ex/acco/function/delete?acco_id=${AccoDto.acco_id }'>삭제</a>
 									</button>
-									<button type="button">
+									<button type="button" class="modifyBtn">
 										<a
 											href="/ex/acco/function/accoModify?acco_id=${AccoDto.acco_id }">수정</a>
 									</button>
@@ -142,7 +143,17 @@
 		<%@include file="../footer.jsp"%>
 
 	</div>
-
+	<script type="text/javascript">
+		var modifyBtn = document.getElementsByClassName("modifyBtn")
+		var check = "${Check}"
+		if (check == "관리자") {
+			for(let i = 0; i < modifyBtn.length; i++)
+				modifyBtn[i].style.display = "";
+		} else {
+			for(let i = 0; i < modifyBtn.length; i++)
+				modifyBtn[i].style.display = "none";
+		}
+	</script>
 
 </body>
 </html>

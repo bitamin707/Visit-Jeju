@@ -49,6 +49,11 @@ window.onload=function(){
 	.addEventListener("click",function(){
 		location.href="/ex/main/accountList";
 	});
+	
+	document.getElementsByClassName("TestBT")[0]
+	.addEventListener("click",function(){
+		location.href="/ex/main/testPage";
+	});
 }
 
 let slideIndex = 2;
@@ -147,6 +152,9 @@ dots[slideIndex-1].className += " active";
         </button>
         <br><button class="accountBT">
             <h2>계정관리</h2>
+        </button>
+        <br><button class="TestBT">
+            <h2>구입테스트</h2>
         </button>
     </div>
     <div class="wrap2">
@@ -313,6 +321,16 @@ dots[slideIndex-1].className += " active";
         </div> 
     </div>
     <%@include file="../footer.jsp" %>
+    
+<script type="text/javascript">
+var check = "${Check}"
+	if(check == "관리자"){
+		document.getElementById("remocon").style.display = "block";	
+	}else {
+		document.getElementById("remocon").style.display = "none";	
+	}
+</script>
+
     
 </body>
 

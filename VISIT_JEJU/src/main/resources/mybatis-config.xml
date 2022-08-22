@@ -3,8 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
 	<typeAliases>
 		<package name="com.human.dto"/>
 	</typeAliases>
+	
+	<!-- 오라클에서 Long타입 가져오기 위한 핸들러 -->
+	<typeHandlers>
+        <typeHandler handler="com.human.Handller.CLOBHandler" javaType="String" jdbcType="LONGVARCHAR"/>
+    </typeHandlers>
 </configuration>
 
