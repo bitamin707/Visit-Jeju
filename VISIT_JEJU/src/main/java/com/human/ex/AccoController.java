@@ -1,7 +1,10 @@
 package com.human.ex;
 
+import java.security.Principal;
+
 import javax.inject.Inject;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,15 +29,43 @@ public class AccoController {
 	private IAccoService service2;
 	
 	@RequestMapping(value = "/jeju", method = RequestMethod.GET)
-	public void Main(AccoDto dto, Model model) throws Exception{
+	public void Main(AccoDto dto, Model model, Principal principal,Authentication authentication) throws Exception{
 		model.addAttribute("list",service2.listAll());
+		
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
 	}
 	
 	@RequestMapping(value = "/function/detail", method = RequestMethod.GET)
-	public void page1(@RequestParam("acco_id")int acco_id, Model model) throws Exception {
+	public void page1(@RequestParam("acco_id")int acco_id, Model model, Principal principal,Authentication authentication) throws Exception {
 		System.out.println("read");
 		model.addAttribute(service2.read(acco_id));
 		model.addAttribute("list",service1.listAll());
+		
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
 	}
 	
 	@RequestMapping(value = "/function/insert", method = RequestMethod.GET)
