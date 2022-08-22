@@ -6,9 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.human.dao.main.IBoardDaoAccount;
 import com.human.dao.main.IBoardDaoAuthority;
-import com.human.dto.main.BoardDtoAccount;
 import com.human.dto.main.BoardDtoAuthority;
 
 @Service
@@ -21,6 +19,12 @@ public class IBoardServiceImplAuthority implements IBoardServiceAuthority{
 	public void createAuthority(BoardDtoAuthority dto) throws Exception {
 		IBoardDaoAuthority dao=sqlSession.getMapper(IBoardDaoAuthority.class);
 		dao.createAuthority(dto);
+	}
+
+	@Override
+	public void deleteAuthority(String username) throws Exception {
+		IBoardDaoAuthority dao=sqlSession.getMapper(IBoardDaoAuthority.class);
+		dao.deleteAuthority(username);
 	}
 
 }

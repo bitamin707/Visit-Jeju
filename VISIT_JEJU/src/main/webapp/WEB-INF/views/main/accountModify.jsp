@@ -88,8 +88,8 @@ body {font-family: Arial, Helvetica, sans-serif;
 	<input type="text" name=enabled style="width:100%" value='${boardDtoAccount.enabled }'><br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button id=save > 저장</button>
-	<button id=remove > 삭제</button>
-	<button id=cancle > 취소</button>
+	<button type=button id=remove > 삭제</button>
+	<button type=button id=cancle > 취소</button>
 </form>
 </div>
 

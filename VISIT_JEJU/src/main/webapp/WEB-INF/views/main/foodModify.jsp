@@ -87,7 +87,7 @@ body {font-family: Arial, Helvetica, sans-serif;
 	<input type="text" name=imgLink style="width:100%" value='${boardDtoFood.imgLink }'><br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button id=modify > 저장</button>
-	<button id=main > 취소</button>
+	<button type=button id=main > 취소</button>
 </form>
 </div>
 
