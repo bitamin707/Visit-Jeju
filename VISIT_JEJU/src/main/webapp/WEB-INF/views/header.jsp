@@ -35,7 +35,7 @@
 	if(check == "관리자" || check == "회원"){
 		document.getElementById("login").href="";
 		document.getElementById("login").innerText = "${userid}" + "님 안녕하세요";
-		document.getElementById("logout").style.display = "block";	
+		document.getElementById("logout").style.display = "";	
 	}else if(check == ""){
 		document.getElementById("login").href="/ex/main/loginPage";
 		document.getElementById("login").innerText = "로그인";

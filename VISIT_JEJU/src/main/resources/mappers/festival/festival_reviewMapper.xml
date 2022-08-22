@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.dao.festival.festival_reviewDao">
+	<insert id="create">
+		insert into festival_review
+		(fno, rno, username, rating, rcontent)
+		values(#{fno}, (select max(rno) + 1 from festival_review),
+			#{username}, #{rating}, #{rcontent})
+	</insert>
+
+	<select id="read" resultType="festival_reviewDto">
+		select * from festival_review where fno=#{fno}
+	</select>
+
+	<delete id="delete">
+		delete from festival where fno=#{fno}
+	</delete>
+</mapper>

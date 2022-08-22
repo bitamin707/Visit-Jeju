@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -59,7 +60,16 @@ public class MainController {
 
 	/*로그인*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
-	public void loginGet() throws Exception {
+	public String loginGet(HttpServletRequest request) throws Exception {
+		// 요청 시점의 사용자 URI 정보를 Session의 Attribute에 담아서 전달(잘 지워줘야 함)
+		// 로그인이 틀려서 다시 하면 요청 시점의 URI가 로그인 페이지가 되므로 조건문 설정
+		String uri = request.getHeader("Referer");
+		if (!uri.contains("/main/loginPage")) {
+			request.getSession().setAttribute("prevPage",
+					request.getHeader("Referer"));
+		}
+
+		return "/main/loginPage";
 	}
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.POST)
 	public void loginPOST() throws Exception {
@@ -208,6 +218,7 @@ public class MainController {
 	@RequestMapping(value = "/main/accountRemove", method = RequestMethod.GET)
 	public String remove(@RequestParam("username")String username
 			,RedirectAttributes rttr) throws Exception {
+		System.out.println(username);
 		serviceAccount.deleteAccount(username);
 		serviceAuthority.deleteAuthority(username);
 		rttr.addFlashAttribute("msg","success");
