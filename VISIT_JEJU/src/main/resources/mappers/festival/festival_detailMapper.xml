@@ -17,10 +17,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from festival_detail where fno=#{fno}
 	</select>
 
+	<select id="getFno" resultType="festival_detailDto">
+		select fno from festival_detail where fno=#{fno}
+	</select>
+
 	<update id="update">
 		update festival_detail
 		set fname=#{fname}, fbg=#{fbg}, faddress=#{faddress}, ftel=#{ftel}, fhomepage=#{fhomepage},
 			fcontent=#{fcontent}, fimg1=#{fimg1}, fimg2=#{fimg2}, fimg3=#{fimg3}, fimg4=#{fimg4}, fimg5=#{fimg5}
+		where fno=#{fno}
+	</update>
+	
+	<update id="plusReviewCount">
+		update festival_detail
+		set freview_count = (select max(freview_count) + 1 from festival_detail where fno=#{fno})
 		where fno=#{fno}
 	</update>
 </mapper>

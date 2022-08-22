@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/festival/festival_detail.css">
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/festival/slideShow.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>${festival_detailDto.fname }</title>
 
 </head>
-
 
 <body>
     <%@include file="../../header.jsp"%>
@@ -86,20 +88,32 @@
                     <div id="review">
                         <h2>리뷰</h2>
                         <br>
+                        <input type="hidden" id="token" data-token-name="${_csrf.headerName}" placeholder="Password" value="${_csrf.token}">
+                        <input type="hidden" name="fno" value="${festival_detailDto.fno }" type="number">
+                        <input type="hidden" name="userid" value="${userid }">
                         <div class="review_box">
                             <div class="review_login">
                                 <div>
-                                    <input type="text" class="review_id" name="id" placeholder="아이디" maxlength="10">
+                                <select name="rating" >
+                                	<option value="1.0">1.0</option>
+                                	<option value="1.5">1.5</option>
+                                	<option value="2.0">2.0</option>
+                                	<option value="2.5">2.5</option>
+                                	<option value="3.0">3.0</option>
+                                	<option value="3.5">3.5</option>
+                                	<option value="4.0">4.0</option>
+                                	<option value="4.5">4.5</option>
+                                	<option value="5.0">5.0</option>
+                                </select>
                                 </div>
                                 <div>
-                                    <input type="password" class="review_pw" name="pw" placeholder="패스워드 (구현x)">
                                 </div>
                             </div>
                             <div class="review_cont">
-                               <textarea rows="3" cols="120" class="review_text" placeholder="리뷰을 입력해 주세요." maxlength="500"></textarea>
+                               <textarea rows="3" cols="120" class="review_text" name="rcontent" placeholder="리뷰을 입력해 주세요." maxlength="500"></textarea>
                             </div>
                             <div class="review_btn_box">
-                                <button type="button" class="review_btn" onclick="submit()">등록</button>
+                                <button type="button" class="review_btn">등록</button>
                             </div>
                         </div>
                         <br>
@@ -109,7 +123,6 @@
                     </div>
                 </div>
             </div>
-            <script src="/ex/resources/js/festival/review.js"></script>  
             <script src="/ex/resources/js/festival/slideShow.js"></script>
             <script src="/ex/resources/js/festival/like.js"></script>
         </section>
