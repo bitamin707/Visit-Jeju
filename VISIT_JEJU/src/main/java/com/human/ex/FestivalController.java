@@ -16,9 +16,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.festival.festivalDto;
 import com.human.dto.festival.festival_detailDto;
+import com.human.dto.festival.festival_reviewDto;
 import com.human.dto.main.BoardDtoAccount;
 import com.human.service.festival.festivalService;
 import com.human.service.festival.festival_detailService;
+import com.human.service.festival.festival_reviewService;
 
 @Controller
 @RequestMapping("/festival/*")
@@ -28,12 +30,15 @@ public class FestivalController {
 	private festivalService service;
 	@Inject
 	private festival_detailService detail_service;
+	@Inject
+	private festival_reviewService review_service;
 	
 	// 축제 메인 페이지
 	@RequestMapping(value = "/festival", method = RequestMethod.GET)
 	public void Main(Model model, festivalDto dto, Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute("list", service.listAll());
 		
+		// 로그인 처리
 		if(principal == null) {
 			model.addAttribute("userid","비회원");
 		}else {
@@ -81,11 +86,26 @@ public class FestivalController {
 	
 	// 축제 세부 페이지
 	@RequestMapping(value = "/detail/festivalDetail", method = RequestMethod.GET)
-	public void detail_page(@RequestParam("fno")int fno, Model model) throws Exception {
+	public void detail_page(@RequestParam("fno")int fno, Model model, Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute(detail_service.read(fno));
+		
+		// 로그인 처리
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
 	}
 	
-	
+	// 축제 세부 페이지 생성
 	@RequestMapping(value="/modify/festival_detailCreate", method = RequestMethod.GET)
 	public void detail_create(@RequestParam("fno")int fno, Model model) throws Exception {
 		model.addAttribute(service.read(fno));
@@ -96,6 +116,7 @@ public class FestivalController {
 		return "redirect:/festival/festival";
 	}
 	
+	// 축제 세부 페이지 수정
 	@RequestMapping(value = "/modify/festival_detailModify", method = RequestMethod.GET)
 	public void detail_modify(@RequestParam("fno")int fno, @RequestParam("fname")String fname,Model model) throws Exception {
 		model.addAttribute("changeFname",fname);
@@ -106,5 +127,20 @@ public class FestivalController {
 	public String detail_modify(festival_detailDto dto) throws Exception {
 		detail_service.update(dto);
 		return "redirect:/festival/festival";
+	}
+	
+	// 축제 세부 페이지 리뷰 생성
+	@RequestMapping(value="/detail/reviewCreate", method = RequestMethod.GET)
+	public void review_create() throws Exception {
+	}
+	@RequestMapping(value="/detail/reviewCreate", method = RequestMethod.POST)
+	public String review_create(@RequestParam("fno")int fno, @RequestParam("userid")String userid,Model model, festival_reviewDto dto) throws Exception {
+		System.out.println("fno : " + fno);
+		System.out.println("userid : " + userid);
+		System.out.println("dto : " + dto);
+		model.addAttribute("fno",fno);
+		model.addAttribute("userid", userid);
+		
+		return "/festival/detail/festivalDetail";
 	}
 }
