@@ -88,7 +88,7 @@ body {font-family: Arial, Helvetica, sans-serif;
 	<textarea name=content  rows="8" style="width:100%"	>${boardDtoMerch.content }</textarea><br>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button id=modify type="submit"> 저장</button>
-	<button id=main type="button"> 취소</button>
+	<button type=button id=main type="button"> 취소</button>
 	
 </form>
 </div>

@@ -7,4 +7,5 @@ import com.human.dto.main.BoardDtoAuthority;
 
 public interface IBoardServiceAuthority {
 	public void createAuthority(BoardDtoAuthority dto) throws Exception;
+	public void deleteAuthority(String username) throws Exception;
 }
