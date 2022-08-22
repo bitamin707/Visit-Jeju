@@ -27,12 +27,14 @@ import com.human.dto.main.BoardDtoBest;
 import com.human.dto.main.BoardDtoFood;
 import com.human.dto.main.BoardDtoFoodBest;
 import com.human.dto.main.BoardDtoMerch;
+import com.human.dto.main.BoardDtoTest;
 import com.human.service.main.IBoardServiceAccount;
 import com.human.service.main.IBoardServiceAuthority;
 import com.human.service.main.IBoardServiceBest;
 import com.human.service.main.IBoardServiceFood;
 import com.human.service.main.IBoardServiceFoodBest;
 import com.human.service.main.IBoardServiceMerch;
+import com.human.service.main.IBoardServiceTest;
 
 
 /**
@@ -53,6 +55,8 @@ public class MainController {
 	private IBoardServiceAccount serviceAccount;
 	@Inject
 	private IBoardServiceAuthority serviceAuthority;
+	@Inject
+	private IBoardServiceTest serviceTest;
 
 	/*로그인*/
 	@RequestMapping(value = "/main/loginPage", method = RequestMethod.GET)
@@ -87,6 +91,7 @@ public class MainController {
 		model.addAttribute("listFood",serviceFood.listAllFood());
 		model.addAttribute("listMerch",serviceMerch.listAllMerch());
 		model.addAttribute("listAccount",serviceAccount.listAllAccount());
+		model.addAttribute("listTest",serviceTest.listAllTest());
 		if(principal == null) {
 			model.addAttribute("userid","비회원");
 		}else {
@@ -102,9 +107,7 @@ public class MainController {
 		}
 	}
 	
-	/*
-	 * Best 테이블기능
-	 */
+	/* Best 테이블기능 */
 	
 	@RequestMapping(value = "/main/bestModify", method = RequestMethod.POST)
 	public String modify(BoardDtoBest boardDtoBest,Model model
@@ -125,9 +128,7 @@ public class MainController {
 	
 	
 	
-	/*
-	 * FoodBest 테이블기능
-	 */
+	/* FoodBest 테이블기능 */
 	@RequestMapping(value = "/main/foodBestModify", method = RequestMethod.POST)
 	public String foodBestModify(BoardDtoFoodBest boardDtoFoodBest,Model model
 			,RedirectAttributes rttr) throws Exception {
@@ -145,9 +146,7 @@ public class MainController {
 	
 	
 	
-	/*
-	 * Food 테이블기능
-	 */
+	/* Food 테이블기능 */
 	@RequestMapping(value = "/main/foodModify", method = RequestMethod.POST)
 	public String modifyFood(BoardDtoFood boardDtoFood,Model model
 			,RedirectAttributes rttr) throws Exception {
@@ -170,9 +169,7 @@ public class MainController {
 	
 	
 	
-	/*
-	 * Merch 테이블기능
-	 */
+	/* Merch 테이블기능 */
 	@RequestMapping(value = "/main/merchModify", method = RequestMethod.POST)
 	public String modifyMerch(BoardDtoMerch boardDtoMerch,Model model
 			,RedirectAttributes rttr) throws Exception {
@@ -192,9 +189,7 @@ public class MainController {
 
 	
 	
-	/*
-	 * signup 테이블 기능 
-	 */
+	/* signup 테이블 기능 */
 	@RequestMapping(value = "/main/sighup", method = RequestMethod.GET)
 	public void sighup(Model model) throws Exception {
 	}
@@ -225,7 +220,54 @@ public class MainController {
 			,RedirectAttributes rttr) throws Exception {
 		System.out.println(username);
 		serviceAccount.deleteAccount(username);
+		serviceAuthority.deleteAuthority(username);
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/accountList";
+	}
+	
+	
+	/* 테스트용 */
+	@RequestMapping(value = "/main/testPage", method = RequestMethod.GET)
+	public void listTest(Model model) throws Exception {
+		model.addAttribute("listTest",serviceTest.listAllTest());
+	}
+	@RequestMapping(value = "/main/testPage2", method = RequestMethod.GET)
+	public void updateTitle(Model model) throws Exception {	
+	}	
+	@RequestMapping(value = "/main/testPage2", method = RequestMethod.POST)
+	public String updateTest(Model model,BoardDtoTest boardDtoTest) throws Exception {
+		serviceTest.createTest(boardDtoTest);
+		return "redirect:/main/testPage3";
+	}
+	@RequestMapping(value = "/main/testPage3", method = RequestMethod.GET)
+	public void PerchaseTitle(Model model) throws Exception {	
+	}	
+	@RequestMapping(value = "/main/testPage3", method = RequestMethod.POST)
+	public String PerchaseTest(BoardDtoTest boardDtoTest,Model model
+			,RedirectAttributes rttr,Principal principal,Authentication authentication
+			,@RequestParam("gender")String gender) throws Exception {
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
+		System.out.println(boardDtoTest);
+		model.addAttribute(serviceTest.springTest(boardDtoTest));
+		model.addAttribute(serviceTest.summerTest(boardDtoTest));
+		model.addAttribute(serviceTest.autumnTest(boardDtoTest));
+		model.addAttribute(serviceTest.winterTest(boardDtoTest));
+		model.addAttribute(serviceTest.maleTest(boardDtoTest));
+		model.addAttribute(serviceTest.femaleTest(boardDtoTest));
+		System.out.println(serviceTest.springTest(boardDtoTest));
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/main/main";
 	}
 }

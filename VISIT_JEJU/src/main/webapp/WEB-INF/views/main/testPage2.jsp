@@ -10,10 +10,12 @@
 <script>
 window.onload=function(){
 
-	document.getElementById('main').addEventListener("click",function(){
-		location.href="/ex/main/merchList";
+	document.getElementById('cancle').addEventListener("click",function(){
+		location.href="/ex/main/testPage";
 	})
-	
+	document.getElementById('save').addEventListener("click",function(){
+		document.getElementById('modifyForm').submit();
+	})
 }
 </script>
 <style>      
@@ -67,29 +69,32 @@ body {font-family: Arial, Helvetica, sans-serif;
       }
 </style>
 </head>
-
 <body>
 <div class='container2'>
 	<a href="/ex/main/main"><img style="width:100%" id="img1" src="/ex/resources/img/jeju.png"></a>
 </div>
 <div class='container'>
 <h2>데이터 수정</h2>
-<form id="ModifyForm" method="post" action="/ex/main/merchModify">
+<form id="modifyForm" method="post" action="/ex/main/testPage2">
 
-	<input type="hidden" name=bno style="width:10px" value='${boardDtoMerch.bno }' readonly="readonly"> <br>
-	
-	<label for="fname">Title</label>
-	<input type="text" name=name style="width:100%" value='${boardDtoMerch.name }' ><br>
-	
-	<label for="fname">ImgLink</label>
-	<input type="text" name=imgLink style="width:100%" value='${boardDtoMerch.imgLink }'><br>
-	
-	<input type="hidden" name=price style="width:100%" value='${boardDtoMerch.price }'><br>
-	<textarea name=content  rows="8" style="width:100%"	>${boardDtoMerch.content }</textarea><br>
+	<label for="fname">상품명</label>
+	<input type="text" name=title style="width:100%"> <br>
+	<label for="fname">Spring</label>
+	<input type="text" name=spring style="width:100%"><br>
+	<label for="fname">Summer</label>
+	<input type="text" name=summer style="width:100%"><br>
+	<label for="fname">Autumn</label>
+	<input type="text" name=autumn style="width:100%"><br>
+	<label for="fname">Winter</label>
+	<input type="text" name=winter style="width:100%"><br>
+	<label for="fname">남</label>
+	<input type="text" name=male style="width:100%"><br>
+	<label for="fname">여</label>
+	<input type="text" name=female style="width:100%"><br>
+    
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<button id=modify type="submit"> 저장</button>
-	<button type=button id=main type="button"> 취소</button>
-	
+	<button typr=submit id=save > 구입</button>
+	<button type=button id=cancle > 취소</button>
 </form>
 </div>
 
