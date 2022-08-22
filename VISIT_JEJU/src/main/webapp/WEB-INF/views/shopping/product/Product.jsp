@@ -131,7 +131,7 @@
 
                     <div id="product_buy">
                         <div id="doBuy">품절된 상품입니다.</div>
-                        <input type="text" value="${boardDtoShop1.pno }" name="pno">
+                        <input type="hidden" value="${boardDtoShop1.pno }" name="pno">
                         <div id="doFav" onclick="document.getElementById('frm').submit();">장바구니♡</div>
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </div>
