@@ -115,22 +115,27 @@
 
                     <div id="product_stock">
                         수량
+                    <form id="frm" action="/ex/shopping/main/MakeBasket">
+                    
                         <hr style="margin: 15px auto">
                         <div class="option_btn">
                             <a href="javascript:minus_qty('a')">-</a>                        
                             <a href="javascript:plus_qty('b')">+</a>
-                            <input type="text" id="stock" value="1" readonly="readonly">
+                            <input type="text" id="stock" value="1" readonly="readonly" name="stock">
                         </div>
                         <div class="option_btn_price">
-                            <input type="text" id="stock_price" value="" readonly="readonly">
+                            <input type="text" id="stock_price" value="1" readonly="readonly" name="product_total_won">
                             <span>EUR</span>
                         </div>
                     </div>
 
                     <div id="product_buy">
                         <div id="doBuy">품절된 상품입니다.</div>
-                        <a href="/ex/shopping/main/ShoppingBasket?pno=${boardDtoShop1.pno }"><div id="doFav">장바구니♡</div></a>
+                        <input type="hidden" value="${boardDtoShop1.pno }" name="pno">
+                        <div id="doFav" onclick="document.getElementById('frm').submit();">장바구니♡</div>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </div>
+                    </form>
                     
                 </div>
                 <!-- ======= 오른쪽 공간 ======= -->

@@ -113,128 +113,26 @@
 				<!-- ↓↓start class Liquor box -->
 				<div class="product_box">
 					<div id="wine">
-
-						<span class="tag_vintage">
-							<div class="product">
-								<a href="../product/product"> 
+					
+						<c:forEach items="${list }" var="boardDto">
+						<c:if test="${boardDto.product_category eq 'champain'}">
+							<span class="${boardDto.product_tag }">
+								<div class="product">
+									<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
 								<div class="coverIt">제품 상세보기</div> 
 								<img class="product_img"
-									src="/ex/resources/img/shopping/술1.jpg">
-									<div class="product_name">Champagne Dom Perignon, Vintage
-										2010</div>
-								</a>
-								<div class="product_price">
-									24,851,640원 <span class="won">(186,00EUR)</span>
+										src="/ex/resources/img/shopping/${boardDto.product_img }">
+										<div class="product_name">${boardDto.product_name }</div>
+									</a>
+									<div class="product_price">
+										<fmt:formatNumber value="${boardDto.product_price }" pattern="#,###"/>원 
+										<span class="won">(<fmt:formatNumber value="${boardDto.product_won }" pattern=""/>EUR)</span>
+									</div>
 								</div>
-								<!-- Champagne Dom Perignon, Vintage 2010 186,00eur -->
-								<!-- 빈티지, 초고가 -->
-							</div>
-						</span> <span class="tag_priceNess">
-							<div class="product">
-								<a href="product2.html"> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-										src="/ex/resources/img/shopping/술2.jpg">
-									<div class="product_name">Armand de Brignac CHAMPAGNE
-										BRUT GOLD</div>
-								</a>
-								<div class="product_price">
-									53,253,330원 <span class="won">(398.57EUR)</span>
-								</div>
-								<!-- Armand de Brignac CHAMPAGNE BRUT GOLD eur398.57 -->
-								<!-- 초고가 -->
-							</div>
-						</span> <span class="tag_priceNess">
-							<div class="product">
-								<a href="product3.html"> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-									src="/ex/resources/img/shopping/술3.jpg">
-									<div class="product_name">Roseblood d'Estoublon 2019
-										Château Magnum</div>
-								</a>
-								<div class="product_price">
-									1,650,000원 <span class="won">(12,35EUR)</span>
-								</div>
-								<!-- Roseblood d'Estoublon 2019 eur 12,35-->
-								<!-- 가성비    -->
-							</div>
-						</span> <span class="tag_priceLess">
-							<div class="product">
-								<a href="product4.html"> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-									src="/ex/resources/img/shopping/술8.jpg">
-									<div class="product_name">Egly-Ouriet Brut Tradition
-										Champagne</div>
-								</a>
-								<div class="product_price">
-									15,385,300원 <span class="won">(115,13EUR)</span>
-								</div>
-								<!-- Egly-Ouriet Brut Tradition Champagne Grand Cru 115,13eur -->
-								<!-- 초고가 -->
-							</div>
-						</span> <span class="tag_priceLess">
-							<div class="product">
-								<a href=""> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-									src="/ex/resources/img/shopping/술5.jpg">
-									<div class="product_name">CREMANT INDIGENE Domaine
-										Buronfosse</div>
-								</a>
-								<div class="product_price">
-									4,409,160원 <span class="won">(33,00EUR)</span>
-								</div>
-								<!-- CREMANT INDIGENE Domaine Buronfosse eur 33,00 -->
-								<!-- 가성비  -->
-							</div>
-						</span> <span class="tag_priceLess">
-							<div class="product">
-								<a href=""> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-									src="/ex/resources/img/shopping/술6.jpg">
-									<div class="product_name">Champagne Veuve Clicquot brut
-										Carte Jaune eur</div>
-								</a>
-								<div class="product_price">
-									7,092,000원 <span class="won">(53,08EUR)</span>
-								</div>
-								<!-- Champagne Veuve Clicquot brut Carte Jaune eur 53,08 -->
-								<!-- 가성비  -->
-							</div>
-						</span> <span class="tag_vintage">
-							<div class="product">
-								<a href=""> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-									src="/ex/resources/img/shopping/술7.jpg">
-									<div class="product_name">Champagne GOSSET Brut Grande
-										Reserve</div>
-								</a>
-								<div class="product_price">
-									7,015,910원 <span class="won">(52,51EUR)</span>
-								</div>
-								<!-- Champagne GOSSET Brut Grande Reserve eur 52,51 -->
-								<!-- 빈티지 -->
-							</div>
-						</span> <span class="tag_soso">
-							<div class="product">
-								<a href=""> 
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-									src="/ex/resources/img/shopping/술4.jpg">
-									<div class="product_name">Champagne Meot & Chandon
-										Imperial Brut</div>
-								</a>
-								<div class="product_price">
-									6,413,320원 <span class="won">(48,00EUR)</span>
-								</div>
-								<!-- Champagne Meot & Chandon Imperial Brut eur 48,00-->
-								<!-- 무난해요~ -->
-							</div>
-						</span>
+							</span>
+						</c:if>								
+						</c:forEach>
+
 					</div>
 				</div>
 				<!-- ↑↑end Liquor box -->
@@ -262,19 +160,28 @@
 											<div class="product_name">${boardDto.product_name }</div>
 										</a>
 										<div class="product_price">
-											${boardDto.product_price }원 <span class="won">(${boardDto.product_won }EUR)</span>
+											<fmt:formatNumber value="${boardDto.product_price }" pattern="#,###"/>원 
+											<span class="won">(<fmt:formatNumber value="${boardDto.product_won }" pattern=""/>EUR)</span>
 										</div>
-										<!-- 버버리 토트백 1,634,040 https://www.trenbe.com/product/Medium+Soft+Canvas+Belt+Tote+Bag+Blue+80302891+25488552-->
 									</div>
 								</span>
-							</c:if>								
+							</c:if>		
+							<!-- 72047
+								Hermes canvas and leather shoulder bag
+								376,698
+								280EUR
+								가방, 가성비
+								가방6.jpg -->						
 							</c:forEach>
+							
 						</div>
 						<!-- ↑↑end class toggle_box1 -->
+						
 					</div>
 				</div>
 				<!-- ↑↑end class Luxury box -->
 				<!-- ============== 명품 제품 =============== -->
+				
 			</div>
 			<!-- ↑↑end class container -->
 			<!-- =============== 하단 ============== -->

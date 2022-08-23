@@ -12,6 +12,9 @@
 
 
 </head>
+<script type="text/javascript"
+	src="/ex/resources/smarteditor/js/service/HuskyEZCreator.js"
+	charset="utf-8"></script>
 <body>
 
 
@@ -67,7 +70,7 @@
 			<option value="#수영장">수영장</option>
 			<option value="#관광호텔">관광호텔</option>
 			<option value="#독채">독채</option>
-			<option value="#휴양펜션">휴양펜션</option>S
+			<option value="#휴양펜션">휴양펜션</option>
 			<option value="#게스트하우스">게스트하우스</option>
 			<option value="#가족호텔">가족호텔</option>
 			<option value="#와이파이존">와이파이존</option>
@@ -75,8 +78,8 @@
 		</select><br>
 		<br>상세주소: <input type=text name=acco_detail_address value="${accoDto.acco_detail_address }"><br>
 		내용 <br>
-		<input type=text name=acco_detail_content style="  width:200px; height:100px; font-size:20px;" value="${accoDto.acco_detail_content }"><br>
-		
+		<textarea name="acco_detail_content" id="acco_content" rows="30"
+			cols="150" placeholder="숙소 내용" value="${accoDto.acco_detail_content }"></textarea>
 		<br>
 		사진 1 : <input type=text name=acco_detail_photo1 value="${accoDto.acco_detail_photo1 }"><br>
 		사진 2 : <input type=text name=acco_detail_photo2 value="${accoDto.acco_detail_photo2 }"><br>
@@ -84,9 +87,34 @@
 		사진 4 : <input type=text name=acco_detail_photo4 value="${accoDto.acco_detail_photo4 }"><br>
 		숙소 전화번호 : <input type=text name=acco_phonenum value="${accoDto.acco_phonenum }"><br>
 		메인사진 : <input type=text name=acco_photo value="${accoDto.acco_photo }">
-		 <input type="submit" value=전송>
+		<button type="button" onclick="submitContents()" id="submitBtn">작성완료</button>
+		<button type="button" onclick="goList()">목록으로</button>
+		<button type="reset" style="float: right;">리셋</button>
 		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</form>
 
 </body>
+<script>
+	var oEditors = [];
+	nhn.husky.EZCreator.createInIFrame({
+		oAppRef : oEditors,
+		elPlaceHolder : "acco_content",
+		sSkinURI : "/ex/resources/smarteditor/SmartEditor2Skin.html",
+		fCreator : "createSEditor2"
+	});
+
+	// ‘저장’ 버튼을 누르는 등 저장을 위한 액션을 했을 때 submitContents가 호출된다고 가정한다.
+	function submitContents(elClickedObj) {
+		// 에디터의 내용이 textarea에 적용된다.
+		oEditors.getById["acco_content"].exec("UPDATE_CONTENTS_FIELD", []);
+		var submitBtn = document.getElementById("submitBtn");
+		var value = document.getElementById("acco_content").value;
+		console.log(value);
+		submitBtn.form.submit();
+	}
+
+	function goList() {
+		location.href = "/ex/acco/jeju";
+	}
+</script>
 </html>

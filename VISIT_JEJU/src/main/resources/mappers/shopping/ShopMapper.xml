@@ -14,8 +14,8 @@ insert into product_add (product_icon, product_info, product_max_qty, pno, produ
 values (#{product_icon }, #{product_info }, #{product_max_qty }, #{pno }, #{product_img })
 </insert>
 <insert id="create_basket">
-insert into shopping_basket (pno, stock) 
-values (#{pno }, #{stock } )
+insert into shopping_basket(stock, product_total_won, pno)
+values (#{stock }, #{product_total_won }, #{pno })
 </insert>
 
 
@@ -32,6 +32,9 @@ delete from product where pno=#{pno}
 </delete>
 <delete id="delete_add">
 delete from product_add where pno=#{pno}
+</delete>
+<delete id="delete_basket">
+delete from shopping_basket where pno=#{pno}
 </delete>
 
 
@@ -64,8 +67,9 @@ select product_name, pno from product
 </select>
 
 <select id="basket" resultType="BoardDtoShop1">
-select p1.product_name, p1.product_won,
-p2.product_img, p3.stock from product p1, product_add p2, shopping_basket p3
+select p1.pno ,p1.product_name, p1.product_won,
+p2.product_img, p3.stock, p3.product_total_won
+from product p1, product_add p2, shopping_basket p3
 where p1.pno = p3.pno and p2.pno = p3.pno
 </select>
 

@@ -13,8 +13,8 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-.target/
-MANIFEST
+*/target/*
+MANIFEST.MF
 
 # ignore properties file
 config.properties

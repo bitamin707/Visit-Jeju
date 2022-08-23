@@ -87,15 +87,15 @@
         </tr>
         <tr>
             <th>제품 이름</th>
-            <td><input type="text" name=product_name value="${boardDtoShop1.product_name }"></td>
+            <td><input type="text" name=product_name value="${boardDtoShop1.product_name }" maxlength="38"></td>
         </tr>
         <tr>
             <th>제품 가격</th>
-            <td><input type="text" name=product_price value="${boardDtoShop1.product_price }"></td>
+            <td><input type="text" name=product_price value="${boardDtoShop1.product_price }" maxlength="15"></td>
         </tr>
         <tr>
             <th>제품 원가</th>
-            <td><input type="text" name=product_won value="${boardDtoShop1.product_won }"></td>
+            <td><input type="text" name=product_won value="${boardDtoShop1.product_won }" maxlength="10"></td>
         </tr>
         <tr>
             <th>제품 카테고리</th>
