@@ -68,13 +68,24 @@
                 <!-- ======= 왼쪽 공간 ======= -->
                 <!-- 607x569 -->
                 <div class="product_col" href="javascript:test()">
-                    <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" style="width:100%; height:100%" onclick="test()">
+                    <div class="mySlides" id="mainSlide">
+                        <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" style="width: 100%">
+                        <div class="text">1 / 3</div>
+                    </div>
+            
+                    <div class="mySlides">
+                        <img src="/ex/resources/img/shopping/이미지선택.gif" style="width: 100%">
+                        <div class="text">2 / 3</div>
+                    </div>
+            
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
                 <!-- 600x120 -->
                 <div class="product_row">
                     <div class="row_box">
-                        <img src="/ex/resources/img/shopping/술1.jpg" style="width:70px; height:70px">
-                        <img src="/ex/resources/img/shopping/이미지선택.png" style="width:70px; height:70px">
+                            <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" class="dot" onclick="currentSlide(1)" style="width:70px; height:70px">
+                            <img src="/ex/resources/img/shopping/이미지선택.gif" class="dot" onclick="currentSlide(2)" style="width:70px; height:70px">
                     </div>
                 </div>
                 
@@ -90,8 +101,10 @@
                     </div>
 
                     <div id="product_price">
-                        <span id="price"><span>${boardDtoShop1.product_price }원</span></span>
-						<span id="share_2">EUR</span>
+                        <span id="price">
+                        <span>${boardDtoShop1.product_price }원</span>
+                        </span>
+						<span id="share_2"> EUR</span>
                         <span id="share">${boardDtoShop1.product_won } </span>
                     </div>    
 
@@ -111,6 +124,7 @@
                         <p>최소 구매수량 1</p>
                         <p>최대 구매수량 ${boardDtoShop1.product_max_qty }</p>
                         <p>1인당 최대 구매수량 ${boardDtoShop1.product_max_qty }</p>
+                        <input type=hidden id="product_max_qty" value="${boardDtoShop1.product_max_qty }">
                     </div>
 
                     <div id="product_stock">
@@ -183,7 +197,7 @@
 			<button id="writeBtn" style="float: right;" >글쓰기</button>
 		</div>
 
-		<table class='customers' width=100% border="1">
+		<table class=customers width=100% border="1">
 			<tr>
 				<th style="width: 20%">제품</th>
 				<th style="width: 50%">구매자들의 후기 보기~</th>

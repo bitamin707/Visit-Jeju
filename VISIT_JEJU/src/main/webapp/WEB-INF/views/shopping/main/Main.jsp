@@ -22,53 +22,92 @@
 				<br>관리자 리모콘
 			</h2>
 		</div>
-		<br> <button>
-				<a href="Remocon_bag"><h2>제품 수정</h2></a>
-			</button> <br> 		
-			<button class="Remocon_bag">
-				<a href=""><h2>리뷰 수정</h2></a>
-			</button> 
-			<button>
-				<a href=""><h2>상품</h2></a>
-			</button>
+		<br>
+		<button>
+			<a href="Remocon_bag"><h2>제품 수정</h2></a>
+		</button>
+		<br>
+		<button class="Remocon_bag">
+			<a href=""><h2>리뷰 수정</h2></a>
+		</button>
+		<button>
+			<a href=""><h2>상품</h2></a>
+		</button>
 	</div>
-	
+
+	<div class="intro_bg">
+		<div class="slideshow-container">
+
+			<div class="mySlides" id="mainSlide">
+				<img src="/ex/resources/img/shopping/bg1.jpg" style="width: 100%">
+				<div class="imgtext_box">	
+					<p class="imgtext">Jeju Duty Free 1F</p>
+					<p class="imgtext2">Accessories</p>
+				</div>
+			</div>
+
+			<div class="mySlides">
+				<img src="/ex/resources/img/shopping/bg2.jpg" style="width: 100%">
+				<div class="imgtext_box">	
+					<p class="imgtext">Jeju Duty Free 1F</p>
+					<p class="imgtext2">-Brand Bags</p>
+				</div>
+			</div>
+
+			<div class="mySlides">
+				<img src="/ex/resources/img/shopping/bg3.jpg" style="width: 100%">
+				<div class="imgtext_box">	
+					<p class="imgtext">Jeju Duty Free 2F</p>
+					<p class="imgtext2">-Men's shop</p>
+				</div>
+			</div>
+			
+			<div class="mySlides">
+				<img src="/ex/resources/img/shopping/bg4.jpg" style="width: 100%">
+				<div class="imgtext_box">	
+					<p class="imgtext">Jeju Duty Free 2F</p>
+					<p class="imgtext2">-Women's shop</p>
+				</div>
+			</div>
+
+			<div id="dot_box">
+				<span class="dot" onclick="currentSlide(1)" /> 
+				<span class="dot" onclick="currentSlide(2)" />
+				<span class="dot" onclick="currentSlide(3)" />
+				<span class="dot" onclick="currentSlide(4)" />
+			</div>
+		</div>
+		<br>
+
+		<script>
+		let slideIndex = 0;
+		showSlides();
+		
+		function showSlides() {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  let dots = document.getElementsByClassName("dot");
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";  
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {slideIndex = 1}    
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		  setTimeout(showSlides, 4000); // Change image every 2 seconds
+		}
+		</script>
+
+	</div>
+	<!-- ============== 이미지 =============== -->
+
 	<!-- ↓↓start class wrap -->
 	<div class="wrap">
-	<a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
+		<a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
 		<section style="margin-bottom: 100px;">
-			<div class="intro_bg">
-				<div class="slideshow-container">
-
-					<div class="mySlides" id="mainSlide">
-						<img src="/ex/resources/img/shopping/bg1.jpg" style="width: 100%">
-						<div class="text">1 / 3</div>
-					</div>
-
-					<div class="mySlides">
-						<img src="/ex/resources/img/shopping/bg2.jpg" style="width: 100%">
-						<div class="text">2 / 3</div>
-					</div>
-
-					<div class="mySlides">
-						<img src="/ex/resources/img/shopping/bg3.jpg" style="width: 100%">
-						<div class="text">3 / 3</div>
-					</div>
-
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a
-						class="next" onclick="plusSlides(1)">&#10095;</a>
-
-					<div id="dot_box">
-						<span class="dot" onclick="currentSlide(1)"></span> <span
-							class="dot" onclick="currentSlide(2)"></span> <span class="dot"
-							onclick="currentSlide(3)"></span>
-					</div>
-				</div>
-				<br>
-
-			</div>
-			<!-- ============== 이미지 =============== -->
-
 			<!-- ============= 태그 ================ -->
 			<ul class="month">
 				<p>샴페인 태그:</p>
@@ -113,24 +152,26 @@
 				<!-- ↓↓start class Liquor box -->
 				<div class="product_box">
 					<div id="wine">
-					
+
 						<c:forEach items="${list }" var="boardDto">
-						<c:if test="${boardDto.product_category eq 'champain'}">
-							<span class="${boardDto.product_tag }">
-								<div class="product">
-									<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
-								<div class="coverIt">제품 상세보기</div> 
-								<img class="product_img"
-										src="/ex/resources/img/shopping/${boardDto.product_img }">
-										<div class="product_name">${boardDto.product_name }</div>
-									</a>
-									<div class="product_price">
-										<fmt:formatNumber value="${boardDto.product_price }" pattern="#,###"/>원 
-										<span class="won">(<fmt:formatNumber value="${boardDto.product_won }" pattern=""/>EUR)</span>
+							<c:if test="${boardDto.product_category eq 'champain'}">
+								<span class="${boardDto.product_tag }">
+									<div class="product">
+										<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
+											<div class="coverIt">제품 상세보기</div> <img class="product_img"
+											src="/ex/resources/img/shopping/${boardDto.product_img }">
+											<div class="product_name">${boardDto.product_name }</div>
+										</a>
+										<div class="product_price">
+											<fmt:formatNumber value="${boardDto.product_price }"
+												pattern="#,###" />
+											원 <span class="won">(<fmt:formatNumber
+													value="${boardDto.product_won }" pattern="" />EUR)
+											</span>
+										</div>
 									</div>
-								</div>
-							</span>
-						</c:if>								
+								</span>
+							</c:if>
 						</c:forEach>
 
 					</div>
@@ -148,40 +189,42 @@
 					<div id="wine">
 						<!-- ↓↓start id toggle_box1 -->
 						<div id="toggle_box1">
-							
+
 							<c:forEach items="${list }" var="boardDto">
-							<c:if test="${boardDto.product_category eq 'bag'}">
-								<span class="${boardDto.product_tag }">
-									<div class="product">
-										<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
-									<div class="coverIt">제품 상세보기</div> 
-									<img class="product_img"
-											src="/ex/resources/img/shopping/${boardDto.product_img }">
-											<div class="product_name">${boardDto.product_name }</div>
-										</a>
-										<div class="product_price">
-											<fmt:formatNumber value="${boardDto.product_price }" pattern="#,###"/>원 
-											<span class="won">(<fmt:formatNumber value="${boardDto.product_won }" pattern=""/>EUR)</span>
+								<c:if test="${boardDto.product_category eq 'bag'}">
+									<span class="${boardDto.product_tag }">
+										<div class="product">
+											<a href='/ex/shopping/product/Product?pno=${boardDto.pno }'>
+												<div class="coverIt">제품 상세보기</div> <img class="product_img"
+												src="/ex/resources/img/shopping/${boardDto.product_img }">
+												<div class="product_name">${boardDto.product_name }</div>
+											</a>
+											<div class="product_price">
+												<fmt:formatNumber value="${boardDto.product_price }"
+													pattern="#,###" />
+												원 <span class="won">(<fmt:formatNumber
+														value="${boardDto.product_won }" pattern="" />EUR)
+												</span>
+											</div>
 										</div>
-									</div>
-								</span>
-							</c:if>		
-							<!-- 72047
+									</span>
+								</c:if>
+								<!-- 72047
 								Hermes canvas and leather shoulder bag
 								376,698
 								280EUR
 								가방, 가성비
-								가방6.jpg -->						
+								가방6.jpg -->
 							</c:forEach>
-							
+
 						</div>
 						<!-- ↑↑end class toggle_box1 -->
-						
+
 					</div>
 				</div>
 				<!-- ↑↑end class Luxury box -->
 				<!-- ============== 명품 제품 =============== -->
-				
+
 			</div>
 			<!-- ↑↑end class container -->
 			<!-- =============== 하단 ============== -->
