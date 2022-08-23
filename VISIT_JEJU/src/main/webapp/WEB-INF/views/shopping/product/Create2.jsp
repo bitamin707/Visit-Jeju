@@ -142,7 +142,7 @@ parent.addFilePath(result);
                     <div id="product_info1">
                         <p class="post_text">제품을 소개하는 세부내용. (100글자 미만 작성)</p>
                         <!-- <p><input type="text" class="post" name="product_info" maxlength="500"></p> -->
-                        <p><textarea cols="50" rows="4.1" class="post" name="product_info" maxlength="100" required></textarea></p>
+                        <p><textarea cols="50" rows="4.1" class="post" name="product_info" maxlength="105" required></textarea></p>
                     </div>
 
                     <div id="product_info2">

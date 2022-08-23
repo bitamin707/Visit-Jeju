@@ -69,8 +69,8 @@ if(result=='success'){
 	<tr>
 		<td>${boardDtoBest.pno }</td>
 		<td><a href='/ex/shopping/product/ShowContent?pno=${boardDtoBest.pno}'>${boardDtoBest.product_name }</a></td>
-		<td>${boardDtoBest.product_price }</td>
-		<td>${boardDtoBest.product_won }</td>
+		<td><fmt:formatNumber value="${boardDtoBest.product_price }" pattern="#,###"/>원</td>
+		<td><fmt:formatNumber value="${boardDtoBest.product_won }" pattern=""/>EUR</td>
 		<td>${boardDtoBest.product_category }</td>
 		<td>${boardDtoBest.product_tag }</td>
 		<td><a href='/ex/shopping/product/Delete?pno=${boardDtoBest.pno}'>X</a></td>
