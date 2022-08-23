@@ -57,8 +57,8 @@ public class ShoppingController {
 	
 	@RequestMapping(value = "/product/Product", method = RequestMethod.GET)
 	public void Product(@RequestParam("pno") int pno 
-			,Model model
-			, PageMaker pm) 
+			,Model model, PageMaker pm
+			, Principal principal, Authentication authentication) 
 					throws Exception {
 		
 		System.out.println(pno);
@@ -68,6 +68,21 @@ public class ShoppingController {
 		System.out.println(pm);
 		model.addAttribute("list",bm.listSearchCriteria(pm));
 		pm.setTotalCount(bm.listSearchCount(pm));
+		
+        if(principal == null) {
+				model.addAttribute("userid","비회원");
+			}else {
+				String userid=principal.getName();
+				String authentic = String.valueOf(authentication.getAuthorities());
+				model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+			}
+		
 	}
 	
 	@RequestMapping(value = "product/list", method = RequestMethod.GET)

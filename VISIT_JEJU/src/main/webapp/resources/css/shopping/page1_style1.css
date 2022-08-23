@@ -214,20 +214,16 @@ a {
     height:55px;
 }
 #tab_1{
+	background-color: rgb(242, 161, 10);
     position:absolute;
     left:0px;
 }
 #tab_2 {
+	background-color: #8f8f8f;
     position:absolute;
     right:0px;
 }
 
-#tab_1 {
-    background-color: #ffa500;
-}
-#tab_2 {
-    background-color:#87ceeb;
-}
 
 /* ============== ÆùÆ® ============== */
 .tab li a {
@@ -243,8 +239,8 @@ a {
 }
 
 .tab li a strong {
-    background-color: rgb(247, 255, 255);
-    color: orange;
+    background-color: white;
+    color: rgb(242, 161, 10);
     display: inline-block;
     font-size: 25px;
     line-height: 38px;

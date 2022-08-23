@@ -65,13 +65,13 @@
                 function() {
                     // do this on hover
                     $(this).animate({
-                        backgroundColor: '#ffa500',
+                        backgroundColor: 'rgb(242, 161, 10)',
                     }, 'fast');
                     $("#tab_1").animate({
-                        backgroundColor: '#87ceeb'
+                        backgroundColor: '#8f8f8f'
                     }, 'fast');
                     $("strong").animate({
-                        color: '#87ceeb'
+                        color: '#8f8f8f'
                     }, 'fast');
                     $(this).animate({
                         height: '80px'
@@ -80,13 +80,13 @@
                 function() {
                     // do this on hover out
                     $("#tab_1").animate({
-                        backgroundColor: '#ffa500'
+                        backgroundColor: 'rgb(242, 161, 10)'
                     }, 'fast');
                     $(this).animate({
-                        backgroundColor: '#87ceeb'
+                        backgroundColor: '#8f8f8f'
                     }, 'fast');
                     $("#strong_1").animate({
-                        color: '#ffa500'
+                        color: 'rgb(242, 161, 10)'
                     }, 'fast');
                     $(this).animate({
                         height: '55px'
@@ -122,6 +122,11 @@
         })
     	// ================== 로그인 체크 =====================
     	
-
+    	var check = "${Check}"
+		if (check == "관리자") {
+				document.getElementsByClassName("remocon").style.display = "";
+		} else {
+				document.getElementsByClassName("remocon").style.display = "none";
+		}
     </script>
 </head>

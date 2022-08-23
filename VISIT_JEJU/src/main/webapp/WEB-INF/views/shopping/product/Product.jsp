@@ -2,6 +2,7 @@
 	language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +43,19 @@
   	  })
   	    		  
     });
+    
+    
+   	window.onload = function() {
+		var remove_btn = document.getElementsByClassName("remove_btn")
+		var check = "${Check}"
+		if (check == "관리자") {
+			for(let i = 0; i < remove_btn.length; i++)
+				remove_btn[i].style.display = "";
+		} else {
+			for(let i = 0; i < remove_btn.length; i++)
+				remove_btn[i].style.display = "none";
+		}
+   	}
     </script>
 </head>
 <body>
@@ -69,13 +83,11 @@
                 <!-- 607x569 -->
                 <div class="product_col" href="javascript:test()">
                     <div class="mySlides" id="mainSlide">
-                        <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" style="width: 100%">
-                        <div class="text">1 / 3</div>
+                        <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" style="width:100%; height:100%;">
                     </div>
             
                     <div class="mySlides">
                         <img src="/ex/resources/img/shopping/이미지선택.gif" style="width: 100%">
-                        <div class="text">2 / 3</div>
                     </div>
             
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
@@ -214,7 +226,7 @@
 							${dto.recommand2 }</p>
 					</td>
 					<td>${dto.userid }
-						<button id="remove_btn" onclick="removeIt(${dto.bno }, ${boardDtoShop1.pno })">삭제</button>
+						<button class="remove_btn" onclick="removeIt(${dto.bno }, ${boardDtoShop1.pno })">삭제</button>
 					</td>
 				</tr>
 			</c:forEach>

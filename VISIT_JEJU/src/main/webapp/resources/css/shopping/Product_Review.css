@@ -194,10 +194,10 @@ td {
 	position: relative;
 }
 
-#remove_btn {
+.remove_btn {
 	position: absolute;
-	bottom: 0px;
-	right: 0px;
+	bottom: 1px;
+	right: 1px;
 }
 
 .customers tr:nth-child(even) {
