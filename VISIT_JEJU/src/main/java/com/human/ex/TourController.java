@@ -52,18 +52,14 @@ public class TourController {
 	public void data1(Model model) {
 	}
 	@RequestMapping(value = "/tour/data2", method = RequestMethod.GET)
-	public void data2(Model model) {
-	}
-	
-	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
-	public void test(Model model) throws Exception {
+	public void data2(Model model) throws Exception {
 		model.addAttribute("list",service2.listAll());
 	}
 	
-	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
-	public String test(TourReviewsDto Dto,Model model) throws Exception {
+	@RequestMapping(value = "/tour/data2", method = RequestMethod.POST)
+	public String data2(TourReviewsDto Dto,Model model) throws Exception {
 		service2.insert(Dto);
-		return "redirect:/tour/test";
+		return "redirect:/tour/data2";
 	}
 	
 	
