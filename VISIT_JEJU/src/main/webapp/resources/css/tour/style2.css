@@ -198,6 +198,8 @@ img {
 
 .tour_main {
   width:1190px;
+  position: relative;
+  
 }
 .tour_list {
   width:1190px;
@@ -209,9 +211,10 @@ img {
 .tour_exp {
   font-family: 'NanumSquareRound';
   width:660px;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
   line-height: 30px;
   margin-top:26px;
+  display: inline-block;
 }
 
 .tour_expl h1{
@@ -243,9 +246,12 @@ img {
 .tour_drc{
   width:530px;
   font-family: 'NanumSquareRound';
-  margin-top: -37%;
-  margin-left: 58%;
+  display: inline-block;
+  position: absolute;
+  top: 210px;
+  right: -40px;
 }
+
 
 .tour_drc h2{
   font-size: 30px;
@@ -258,13 +264,14 @@ img {
 .tour_rvw{
   width:660px;
   font-family: 'NanumSquareRound';
-  margin-bottom: 20px;
-  margin-top:26px;
+  margin-bottom: 5%;
+  margin-top: 5px;
+  display: inline-block;
 }
 
 .tour_rvw h2{
   font-size: 30px;
-  margin-top: 110px;
+  margin-top: 80px;
 }
 
 
@@ -272,8 +279,11 @@ img {
 .tour_tags{
   width:530px;
   font-family: 'NanumSquareRound';
-  margin-top: -4%;
-  margin-left: 58%;
+  top: 600px;
+  right: -40px;
+  position: absolute;
+  display: inline-block;
+  
 }
 
 .tour_tags h2{
@@ -301,17 +311,6 @@ img {
 }
 
 
-.tour_pplr{
-  width:530px;
-  font-family: 'NanumSquareRound';
-  margin-left: 58%;
-  margin-top: 7%;
-}
-
-.tour_pplr h2{
-  font-size: 30px;
-}
-
 
 
 
@@ -320,6 +319,7 @@ img {
 
 .rvw{
 	width:660px;
+	margin-top: 4%;
 	
 }
 
@@ -375,6 +375,8 @@ img {
 	font-size: 14px;
 	margin-bottom: 1%;	
 }
+
+
 
 
 
