@@ -22,23 +22,26 @@ public class festival_reviewServiceIMP implements festival_reviewService {
 	}
 
 	@Override
-	public festival_reviewDto read(Integer fno) throws Exception {
+	public festival_reviewDto read(String userid) throws Exception {
 		return null;
 	}
 
 	@Override
-	public void delete(Integer fno) throws Exception {
-
+	public void delete(festival_reviewDto dto) throws Exception {
+		festival_reviewDao dao = sqlSession.getMapper(festival_reviewDao.class);
+		dao.delete(dto);
 	}
 
 	@Override
 	public void update(festival_reviewDto dto) throws Exception {
-
+		festival_reviewDao dao = sqlSession.getMapper(festival_reviewDao.class);
+		dao.update(dto);
 	}
 
 	@Override
-	public List<festival_reviewDto> listAll() throws Exception {
-		return null;
+	public List<festival_reviewDto> listAll(int fno) throws Exception {
+		festival_reviewDao dao = sqlSession.getMapper(festival_reviewDao.class);
+		List<festival_reviewDto> dtos = dao.listAll(fno);
+		return dtos;
 	}
-
 }

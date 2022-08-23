@@ -28,9 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where fno=#{fno}
 	</update>
 	
-	<update id="plusReviewCount">
+	<update id="countReview">
 		update festival_detail
-		set freview_count = (select max(freview_count) + 1 from festival_detail where fno=#{fno})
+		set freview_count = (select count(fno) from festival_review where fno=#{fno})
 		where fno=#{fno}
 	</update>
 </mapper>

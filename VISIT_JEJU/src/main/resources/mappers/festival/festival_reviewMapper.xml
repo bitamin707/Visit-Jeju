@@ -6,16 +6,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.human.dao.festival.festival_reviewDao">
 	<insert id="create">
 		insert into festival_review
-		(fno, rno, username, rating, rcontent)
-		values(#{fno}, (select max(rno) + 1 from festival_review),
-			#{username}, #{rating}, #{rcontent})
+		(fno, username, rno, rating, rcontent)
+		values(#{fno}, #{username}, rno_seq.nextval, #{rating}, #{rcontent})
 	</insert>
 
 	<select id="read" resultType="festival_reviewDto">
-		select * from festival_review where fno=#{fno}
+		select * from festival_review where fno=#{fno} and username=#{username}
 	</select>
 
 	<delete id="delete">
-		delete from festival where fno=#{fno}
+		delete from festival_review where fno=#{fno} and username=#{username}
 	</delete>
+	
+	<update id="update">
+		update festival_review
+		set rating=#{rating}, rcontent=#{rcontent}
+		where fno=#{fno} and username=#{username}
+	</update>
+
+	<select id="listAll"
+		resultType="com.human.dto.festival.festival_reviewDto">
+		select * from festival_review
+		where fno=#{fno} 
+	</select>
 </mapper>

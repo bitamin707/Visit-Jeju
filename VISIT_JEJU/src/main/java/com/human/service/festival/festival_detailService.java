@@ -10,4 +10,5 @@ public interface festival_detailService {
 	
 	public festival_detailDto getFno(int fno) throws Exception;
 	public void plusReviewCount(festival_detailDto dto) throws Exception;
+	public void countReview(festival_detailDto dto) throws Exception;
 }

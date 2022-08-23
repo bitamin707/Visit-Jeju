@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +16,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.human.dto.festival.festivalDto;
 import com.human.dto.festival.festival_detailDto;
 import com.human.dto.festival.festival_reviewDto;
-import com.human.dto.main.BoardDtoAccount;
 import com.human.service.festival.festivalService;
 import com.human.service.festival.festival_detailService;
 import com.human.service.festival.festival_reviewService;
@@ -88,6 +86,8 @@ public class FestivalController {
 	@RequestMapping(value = "/detail/festivalDetail", method = RequestMethod.GET)
 	public void detail_page(@RequestParam("fno")int fno, Model model, Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute(detail_service.read(fno));
+		model.addAttribute("reviews", review_service.listAll(fno));
+		model.addAttribute("fno", fno);
 		
 		// 로그인 처리
 		if(principal == null) {
@@ -130,17 +130,40 @@ public class FestivalController {
 	}
 	
 	// 축제 세부 페이지 리뷰 생성
-	@RequestMapping(value="/detail/reviewCreate", method = RequestMethod.GET)
-	public void review_create() throws Exception {
-	}
-	@RequestMapping(value="/detail/reviewCreate", method = RequestMethod.POST)
-	public String review_create(@RequestParam("fno")int fno, @RequestParam("userid")String userid,Model model, festival_reviewDto dto) throws Exception {
-		System.out.println("fno : " + fno);
-		System.out.println("userid : " + userid);
-		System.out.println("dto : " + dto);
-		model.addAttribute("fno",fno);
-		model.addAttribute("userid", userid);
+	@RequestMapping(value="/modify/festival_reviewCreate", method = RequestMethod.POST)
+	public String review_create(@RequestParam("fno")int fno, festival_reviewDto dto, festival_detailDto detaildto, Model model, Principal principal,Authentication authentication) throws Exception {
+		model.addAttribute(fno);
+
+		String userid=principal.getName();
+		model.addAttribute("userid",userid);
 		
-		return "/festival/detail/festivalDetail";
+		review_service.create(dto);
+		detail_service.countReview(detaildto);
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno;
+	}
+	
+	// 축제 세부 페이지 리뷰 수정
+	@RequestMapping(value="/modify/festival_reviewModify", method = RequestMethod.POST)
+	public String review_modify(@RequestParam("fno")int fno, festival_reviewDto dto, Model model, Principal principal,Authentication authentication) throws Exception {
+		model.addAttribute(fno);
+
+		String userid=principal.getName();
+		model.addAttribute("userid",userid);
+		
+		review_service.update(dto);
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno;
+	}
+	
+	// 축제 세부 페이지 리뷰 삭제
+	@RequestMapping(value="/modify/festival_reviewDelete", method = RequestMethod.POST)
+	public String review_delete(@RequestParam("fno")int fno, festival_reviewDto dto, festival_detailDto detaildto, Model model, Principal principal,Authentication authentication) throws Exception {
+		model.addAttribute(fno);
+
+		String userid=principal.getName();
+		model.addAttribute("userid",userid);
+		
+		review_service.delete(dto);
+		detail_service.countReview(detaildto);
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno;
 	}
 }
