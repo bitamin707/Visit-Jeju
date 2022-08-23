@@ -10,9 +10,7 @@
     background-color:hwb(39 87% 0%);
     border-color:hsl(39, 100%, 54%);
     z-index: 3;
-
-    text-align: center;
-    
+    text-align: center;  
 }
 .remocon button{ 
     width:100%;

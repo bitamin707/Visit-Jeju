@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/shopping/remocon.css?after">
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/style_footer.css?after">
     
-    <script type="text/javascript" src="/ex/resources/js/shopping/SlideShow.js"/></script>
+
     <title>쇼핑몰</title>
 
     <script> 
@@ -120,6 +120,8 @@
 
             // ================= 더보기 ================== //
         })
-    // ================== jQuery =====================
+    	// ================== 로그인 체크 =====================
+    	
+
     </script>
 </head>

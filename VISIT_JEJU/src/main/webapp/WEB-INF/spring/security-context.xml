@@ -15,7 +15,6 @@
 	        policy="SAMEORIGIN" />
 	    </headers>
 	    
-		<intercept-url pattern="/shopping/product/**" access="permitAll" />
 		<intercept-url pattern="/resources/**" access="permitAll" /> 
 		<form-login login-page="/main/loginPage"
 					authentication-success-handler-ref="loginSuccess"

@@ -1,8 +1,11 @@
 package com.human.ex;
 
+import java.security.Principal;
+
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,8 +36,22 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
-	public void Main(Model model, BoardDtoShop1 dto) throws Exception {
-		model.addAttribute("list",service.listInsert());		
+	public void Main(Model model, BoardDtoShop1 dto, Principal principal, Authentication authentication) throws Exception {
+		model.addAttribute("list",service.listInsert());	
+		
+        if(principal == null) {
+				model.addAttribute("userid","비회원");
+			}else {
+				String userid=principal.getName();
+				String authentic = String.valueOf(authentication.getAuthorities());
+				model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+			}
 	}	
 	
 	
