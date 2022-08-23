@@ -49,4 +49,10 @@ public class festival_detailServiceIMP implements festival_detailService {
 		festival_detailDao dao = sqlSession.getMapper(festival_detailDao.class);
 		dao.plusReviewCount(dto);
 	}
+
+	@Override
+	public void countReview(festival_detailDto dto) throws Exception {
+		festival_detailDao dao = sqlSession.getMapper(festival_detailDao.class);
+		dao.countReview(dto);
+	}
 }
