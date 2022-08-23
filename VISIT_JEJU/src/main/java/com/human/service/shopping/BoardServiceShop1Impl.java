@@ -46,6 +46,11 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
 		dao.delete_add(pno);
 	}
+	@Override
+	public void delete_basket(String pno) throws Exception {
+		IBoardDaoShop1 dao=sqlSession.getMapper(IBoardDaoShop1.class);
+		dao.delete_basket(pno);		
+	}
 
 	
 	@Override
@@ -106,7 +111,6 @@ public class BoardServiceShop1Impl implements IBoardServiceShop1 {
 		List<BoardDtoShop1> dtos=dao.showProduct();
 		return dtos;
 	}
-
 	
 
 }

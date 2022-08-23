@@ -1,13 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
 
     <style>
@@ -55,20 +56,26 @@
             font-size: 24px;
         }
 
-        th {
-            height:50px;        
+        #tbl td {
+            border:0.5px solid rgb(140, 140, 140);
+            text-align: center;
+            vertical-align: middle;       
         }
-        #tbl th, td {
+        #tbl th {
+        	height:50px;
             border:0.5px solid rgb(140, 140, 140);
             text-align: center;
             vertical-align: middle;
         }
-
+		
+		#tbl tr {
+			background-color: #fbfbfb;
+		}
         td:nth-child(1){
             width:10%;
             height:100px;
         }
-        td:nth-child(2){
+        #tbl td:nth-child(2){
             width:15%;
             border-right:1px solid white;
         }
@@ -109,6 +116,13 @@
         	height:110px;
         	float:right;
         }
+        
+        .finalTotalPrice {
+        	font-size:20px;
+        	font-weight:740px;
+        	margin-left: 740px;
+        	margin-top:40px;        
+        }
 
     </style>
     
@@ -116,17 +130,27 @@
     function test() {
         document.getElementById('fcs').scrollIntoView();
     }
+    
+    var result='${nice}';
+    if(result=='success'){
+    	alert('해당 제품을 장바구니에서 제거했습니다.');
+    }
+    
+	
+    $(document).ready(function(){
+    let finalTotalPrice = 0;
 
-    window.onload = function(){
-        var a = document.getElementById('product_price').innerText;
-        var b = document.getElementById('product_stock').innerText;
-        var c = a * b;
-        document.getElementById('basket_price').innerText = c;
+    $(".cart_info_td").each(function(index, element){
+        finalTotalPrice += parseInt($(element).find(".totalPrice_input").val());
+        
+    });
 
-    }   
+    $(".finalTotalPrice_span").text(finalTotalPrice);
+    
+    })
+    
+	</script>
 
-</script>
-    </script>
 </head>
 
 <body>
@@ -154,24 +178,22 @@
             </tr>    
             <tr>	
             <c:forEach items="${list }" var="boardDto">
-                <td><a>X</a></td>
+                <td><a href="/ex/shopping/main/DeleteBasket?pno=${boardDto.pno }"> X </a></td>
                 <td>
                 	<img id="basket_img" src="/ex/resources/img/shopping/${boardDto.product_img }">
-                </td>
-                
-                <%! 
-                	int a;
-                	int b;
-                	int c;
-                %>                
+                </td>              
                 <td>${boardDto.product_name }</td>
-                <td id="a<%out.println(a++);%>">${boardDto.product_won }</td>
-                <td id="b<%out.println(b++);%>">${boardDto.stock }</td>
-                <td id="c<%out.println(c++);%>">d</td>               
+                <td ><fmt:formatNumber value="${boardDto.product_won }" pattern="#,###"/> eur</td>
+                <td >${boardDto.stock }</td>
+                <td><fmt:formatNumber value="${boardDto.product_total_won }" pattern="#,###"/> eur</td>
+                
+                <td class="cart_info_td">
+                	<input type=hidden class="totalPrice_input" value="${boardDto.product_total_won }">
+                </td>                
             </tr>
             </c:forEach>
         </table>
-        <div style="margin-left: 780px; margin-top:40px;" id="basket_total_price">총 금액:d </div>
+        <div class="finalTotalPrice">총 금액: <span class=finalTotalPrice_span></span> EUR</div>
     </div>
     <br>
     <ul style="padding-left:50px;">

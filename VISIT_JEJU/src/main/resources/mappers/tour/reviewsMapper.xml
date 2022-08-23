@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.human.dao.tour.TourReviewsDao">
 	
 	<insert id="insert">insert into tour_reviews (t_num,t_writer,t_regdate,t_content,rating)
-	values (seq_treviews.nextval,#{t_writer},#{t_regdate},#{t_content},#{rating})
+	values (seq_treviews.nextval,#{t_writer,jdbcType=VARCHAR},#{t_regdate,jdbcType=DATE},#{t_content,jdbcType=VARCHAR},#{rating})
 	</insert>
 	
 	<update id="update">update tour set t_writer=#{t_writer}, t_content=#{t_content}, rating=#{rating}
@@ -19,5 +19,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listAll" resultType="com.human.dto.tour.TourReviewsDto">
 	select * from tour_reviews
 	</select>
+
 
 </mapper>
