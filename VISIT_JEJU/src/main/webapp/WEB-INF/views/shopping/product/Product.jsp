@@ -102,7 +102,7 @@
 
                     <div id="product_price">
                         <span id="price">
-                        <span>${boardDtoShop1.product_price }원</span>
+                        <span style="font-size:22px;">${boardDtoShop1.product_price }원</span>
                         </span>
 						<span id="share_2"> EUR</span>
                         <span id="share">${boardDtoShop1.product_won } </span>
@@ -146,7 +146,7 @@
                     <div id="product_buy">
                         <div id="doBuy">품절된 상품입니다.</div>
                         <input type="hidden" value="${boardDtoShop1.pno }" name="pno">
-                        <div id="doFav" onclick="document.getElementById('frm').submit();">장바구니♡</div>
+                        <div id="doFav" onclick="document.getElementById('frm').submit();">장바구니</div>
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </div>
                     </form>

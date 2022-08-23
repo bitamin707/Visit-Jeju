@@ -416,14 +416,14 @@
     height:100%;
     padding-top:10px;
     text-align: center;
-    font-size: 15px;
-    color:rgb(255, 135, 149);
+    font-size: 17px;
+    color:rgb(255, 25, 52);
     border-radius: 5px;
     border:1px solid rgb(140, 140, 140);
 }
 #doFav:hover {
-    color:rgb(255, 25, 52);
-    border:1px solid rgb(255, 25, 52);
+    color:rgb(255, 135, 149);
+    border:1px solid rgb(255, 135, 149);
 }
 
 hr {

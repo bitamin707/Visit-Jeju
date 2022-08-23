@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
 <%@include file="Header.jsp"%>
@@ -80,6 +80,20 @@
 		<br>
 
 		<script>
+        window.onload=function(){
+            var remocon = document.getElementsByClassName("remocon");
+    		var check = "${Check}"
+    		
+    			if (check == "관리자") {
+    				for(let i = 0; i < remocon.length; i++)
+    					remocon[i].style.display = "";
+    			} else {
+    				for(let i = 0; i < remocon.length; i++)
+    					remocon[i].style.display = "none";
+    			}
+        }
+		
+		
 		let slideIndex = 0;
 		showSlides();
 		

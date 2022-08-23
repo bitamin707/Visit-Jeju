@@ -129,12 +129,12 @@ var result = '${savedName}';
                 <div class="product_row">
                     <div class="row_box">
                     
-                        <form id='form1' action="Create2" method="post"
-						enctype="multipart/form-data" target="zeroFrame">
-						<input type="file" name="file" id="file" style="width: 210px;" required /> 
-							<input type="submit" value="파일업로드">
-							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-					</form>
+                        <form id='form1' action="Create2_Result" method="post"
+							enctype="multipart/form-data" target="zeroFrame">
+								<input type="file" name="file" id="file" style="width: 210px;" required /> 
+								<input type="submit" value="파일업로드">
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+						</form>
 						<input type="text" value="${savedName}">
 
                     </div>
@@ -145,22 +145,22 @@ var result = '${savedName}';
                 <!-- ======= 오른쪽 공간 ======= -->
              <div class="product_col" id="product_col">
              
-           	<form action=Modify_add method=POST>
-			<h5 class="post_text">제품 고유번호</h5>
-			<input type=text class="post" value="${boardDtoShop1.pno }" readonly name=pno id="thisvalue" required>
-    		
-    		<h5 class="post_text">제품 아이콘</h5>
-			<input type=text class="post" value="${boardDtoShop1.product_icon}" name=product_icon required>
-			
-			<h5 class="post_text">최대 구매수량</h5>
-			<input type=text class="post" value="${boardDtoShop1.product_max_qty }" name=product_max_qty required>
-			
-			<h5 class="post_text">제품 정보</h5>
-			<p><textarea cols="53" rows="4.5" class="post_area" name="product_info" maxlength="100" required>${boardDtoShop1.product_info}</textarea></p>
-			
-			<h5 class="post_text">제품 이미지</h5>
-			<input type=text class="post" value="${boardDtoShop1.product_img }" name=product_img required>
-    		
+           	<form action=Modify_add method=POST>        	
+				<h5 class="post_text">제품 고유번호</h5>
+				<input type=text class="post" value="${boardDtoShop1.pno }" readonly name=pno id="thisvalue" required>
+	    		
+	    		<h5 class="post_text">제품 아이콘</h5>
+				<input type=text class="post" value="${boardDtoShop1.product_icon}" name=product_icon required>
+				
+				<h5 class="post_text">최대 구매수량</h5>
+				<input type=text class="post" value="${boardDtoShop1.product_max_qty }" name=product_max_qty required>
+				
+				<h5 class="post_text">제품 정보</h5>
+				<p><textarea cols="53" rows="4.5" class="post_area" name="product_info" maxlength="100" required>${boardDtoShop1.product_info}</textarea></p>
+				
+				<h5 class="post_text">제품 이미지</h5>
+				<input type=text class="post" value="${boardDtoShop1.product_img }" name=product_img required>
+	    		
     		<input type=submit value=수정완료 class="post_button">
     		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     		<input type=button value=뒤로가기 onclick="goBack()" class="post_button">
