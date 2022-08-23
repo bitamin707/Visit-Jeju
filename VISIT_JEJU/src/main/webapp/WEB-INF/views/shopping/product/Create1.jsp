@@ -75,15 +75,15 @@
         </tr>
         <tr>
             <th>제품 이름</th>
-            <td><input type="text" name=product_name required></td>
+            <td><input type="text" name=product_name maxlength="38" required></td>
         </tr>
         <tr>
             <th>제품 가격</th>
-            <td><input type="text" name=product_price required></td>
+            <td><input type="text" name=product_price maxlength="15" required></td>
         </tr>
         <tr>
             <th>제품 원가</th>
-            <td><input type="text" name=product_won required></td>
+            <td><input type="text" name=product_won maxlength="10" required></td>
         </tr>
         <tr>
             <th>제품 카테고리</th>
