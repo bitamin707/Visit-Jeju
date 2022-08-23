@@ -259,14 +259,9 @@ public class MainController {
 				model.addAttribute("Check","회원");
 			}
 		}
-		System.out.println(boardDtoTest);
-		model.addAttribute(serviceTest.springTest(boardDtoTest));
-		model.addAttribute(serviceTest.summerTest(boardDtoTest));
-		model.addAttribute(serviceTest.autumnTest(boardDtoTest));
-		model.addAttribute(serviceTest.winterTest(boardDtoTest));
-		model.addAttribute(serviceTest.maleTest(boardDtoTest));
-		model.addAttribute(serviceTest.femaleTest(boardDtoTest));
 		System.out.println(serviceTest.springTest(boardDtoTest));
+		System.out.println(boardDtoTest);
+		model.addAttribute("listTest",serviceTest.listAllTest());
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/main";
 	}
