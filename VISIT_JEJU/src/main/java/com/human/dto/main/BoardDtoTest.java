@@ -52,7 +52,6 @@ public class BoardDtoTest {
 	}
 	@Override
 	public String toString() {
-		return "BoardDtoTest [title=" + title + ", spring=" + spring + ", summer=" + summer + ", autumn=" + autumn
-				+ ", winter=" + winter + ", male=" + male + ", female=" + female + "]";
+		return title +"+"+ spring +"+"+  summer +"+"+  autumn +"+"+  winter +"+"+  male +"+"+  female;
 	}
 }

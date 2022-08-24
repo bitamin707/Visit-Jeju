@@ -228,7 +228,7 @@ public class MainController {
 	
 	/* 테스트용 */
 	@RequestMapping(value = "/main/testPage", method = RequestMethod.GET)
-	public void listTest(Model model) throws Exception {
+	public void ListTest1(Model model) throws Exception {
 		model.addAttribute("listTest",serviceTest.listAllTest());
 	}
 	@RequestMapping(value = "/main/testPage2", method = RequestMethod.GET)
@@ -240,34 +240,39 @@ public class MainController {
 		return "redirect:/main/testPage3";
 	}
 	@RequestMapping(value = "/main/testPage3", method = RequestMethod.GET)
-	public void PerchaseTitle(Model model) throws Exception {	
-	}	
-	@RequestMapping(value = "/main/testPage3", method = RequestMethod.POST)
-	public String PerchaseTest(BoardDtoTest boardDtoTest,Model model
-			,RedirectAttributes rttr,Principal principal,Authentication authentication
-			,@RequestParam("gender")String gender) throws Exception {
-		if(principal == null) {
-			model.addAttribute("userid","비회원");
-		}else {
-			String userid=principal.getName();
-			String authentic = String.valueOf(authentication.getAuthorities());
-			model.addAttribute("userid",userid);
-			
-			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
-				model.addAttribute("Check","관리자");
-			}else if(authentic.contains("[ROLE_MEMBER]")){
-				model.addAttribute("Check","회원");
-			}
-		}
-		System.out.println(boardDtoTest);
-		model.addAttribute(serviceTest.springTest(boardDtoTest));
-		model.addAttribute(serviceTest.summerTest(boardDtoTest));
-		model.addAttribute(serviceTest.autumnTest(boardDtoTest));
-		model.addAttribute(serviceTest.winterTest(boardDtoTest));
-		model.addAttribute(serviceTest.maleTest(boardDtoTest));
-		model.addAttribute(serviceTest.femaleTest(boardDtoTest));
-		System.out.println(serviceTest.springTest(boardDtoTest));
-		rttr.addFlashAttribute("msg","success");
-		return "redirect:/main/main";
+	public void perchaseTest1(Model model) throws Exception {
+		model.addAttribute("listTest",serviceTest.listAllTest());
 	}
+	@RequestMapping(value = "/main/testPage3", method = RequestMethod.POST)
+	public void perchaseTest2(Model model) throws Exception {
+	}
+	
+	
+	
+//	@RequestMapping(value = "/main/testPage3", method = RequestMethod.GET)
+//	public void PerchaseTitle(Model model,@RequestParam("title")String title) throws Exception {	
+//		model.addAttribute("title1",serviceTest.readTest(title));
+//	}	
+		
+//	@RequestMapping(value = "/main/testPage3", method = RequestMethod.POST)
+//	public String PerchaseTest(BoardDtoTest boardDtoTest,Model model
+//			,RedirectAttributes rttr,Principal principal,Authentication authentication
+//			,@RequestParam("gender")String gender) throws Exception {
+//		if(principal == null) {
+//			model.addAttribute("userid","비회원");
+//		}else {
+//			String userid=principal.getName();
+//			String authentic = String.valueOf(authentication.getAuthorities());
+//			model.addAttribute("userid",userid);
+//			
+//			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+//				model.addAttribute("Check","관리자");
+//			}else if(authentic.contains("[ROLE_MEMBER]")){
+//				model.addAttribute("Check","회원");
+//			}
+//		}
+//		
+//		rttr.addFlashAttribute("msg","success");
+//		return "redirect:/main/main";
+//	}
 }
