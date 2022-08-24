@@ -2,6 +2,7 @@ package com.human.ex;
 
 import java.security.Principal;
 
+
 import javax.inject.Inject;
 
 import org.springframework.security.core.Authentication;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.tour.TourReviewsDto;
 import com.human.dto.tour.tourDto;
@@ -17,6 +20,7 @@ import com.human.service.tour.tourService;
 
 @Controller
 public class TourController {
+
 	
 	@Inject
 	private tourService service;
@@ -51,11 +55,13 @@ public class TourController {
 	@RequestMapping(value = "/tour/data1", method = RequestMethod.GET)
 	public void data1(Model model) {
 	}
+	
+	
+
 	@RequestMapping(value = "/tour/data2", method = RequestMethod.GET)
 	public void data2(Model model) throws Exception {
 		model.addAttribute("list",service2.listAll());
 	}
-	
 	@RequestMapping(value = "/tour/data2", method = RequestMethod.POST)
 	public String data2(TourReviewsDto Dto,Model model) throws Exception {
 		service2.insert(Dto);
@@ -63,7 +69,26 @@ public class TourController {
 	}
 	
 	
-
+	/* 테스트 */
+	
+	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
+	public void test(Model model) throws Exception {
+		model.addAttribute("list",service2.listAll());
+	}
+	
+	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
+	public String test(TourReviewsDto Dto,Model model) throws Exception {
+		service2.insert(Dto);
+		return "redirect:/tour/test";
+	}
+	
+	@RequestMapping(value = "/tour/delete", method = RequestMethod.GET)
+	public String delete(@RequestParam("t_num")int t_num) throws Exception{
+		service2.delete(t_num);
+		return "redirect:/tour/test";
+	}
+	
+	
 }
 
 	

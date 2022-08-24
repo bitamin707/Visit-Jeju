@@ -9,11 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	values (seq_treviews.nextval,#{t_writer,jdbcType=VARCHAR},#{t_regdate,jdbcType=DATE},#{t_content,jdbcType=VARCHAR},#{rating})
 	</insert>
 	
-	<update id="update">update tour set t_writer=#{t_writer}, t_content=#{t_content}, rating=#{rating}
+	<update id="update">update tour_reviews set t_writer=#{t_writer}, t_content=#{t_content}, rating=#{rating}
 	where t_num=#{t_num} 
 	</update>
 	
-	<delete id="delete"> delete from tour where t_num=#{t_num} 
+	<delete id="delete"> delete from tour_reviews where t_num=#{t_num} 
 	</delete>
 	
 	<select id="listAll" resultType="com.human.dto.tour.TourReviewsDto">

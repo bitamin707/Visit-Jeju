@@ -11,6 +11,7 @@ public class TourReviewsDto {
 	private int rating;
 	
 	
+	
 	public int getT_num() {
 		return t_num;
 	}
