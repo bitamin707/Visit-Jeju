@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/ex/resources/smarteditor/js/service/HuskyEZCreator.js"
+	charset="utf-8"></script>
     <title>Document</title>
     <style>
         #tbl_box {
@@ -91,11 +93,12 @@
         	  }
         	});
         
+        
     </script>
 </head>
 
 <body>
-	${boardDtoShop1.pno}
+	<input type=hidden value="${boardDtoShop1.pno}">
     <div id="tbl_box">
     <form action="/ex/shopping/product/Write_Review?pno=${boardDtoShop1.pno}" method="post">
 			<table border="1" width="1000px" id="customers">
@@ -107,10 +110,15 @@
 
 				<tr>
 					<th>후기 작성</th>
-					<td><p><textarea cols="50" rows="4.1" class="post" name="review" maxlength="100" required></textarea></p></td>
+					<td>
+					<textarea name="review" id="shopping_content" rows="10"
+			cols="1" placeholder="숙소 내용"></textarea>
+					</td>
 				</tr>
 				
-		<tr>
+				
+				
+		<tr>	
         <th>제품 이름</th>
             <td>
 				<input type="text" id="productInput" name=what_product readonly required>
@@ -134,6 +142,7 @@
                         <option value="재질이 좋아요!">재질이 좋아요</option>
                         <option value="디자인이<br>멋져요!">디자인이 멋져요</option>
                         <option value="크기가<br>적당해요!">크기가 적당해요</option>
+                        <option value="고급스러워요!">고급스러워요</option>
                 </select>
                 
                 <input type="text" id="recommandInput2" name=recommand2 readonly required>
@@ -149,12 +158,30 @@
 			</table>
 			
 		<div id="btn_box"> 
-			<input type="button" value="돌아가기" id="main" onclick="back()">
-			
-        	<input type="submit" value="추가하기" />
+			<input type="button" value="돌아가기" id="main" onclick="back()">			
+			<button type="button" onclick="submitContents()" id="submitBtn">작성완료</button>
         	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     	</div>
     </form>
 </div>
 </body>
+	<script>
+    	var oEditors = [];
+    	nhn.husky.EZCreator.createInIFrame({
+    		oAppRef : oEditors,
+    		elPlaceHolder : "shopping_content",
+    		sSkinURI : "/ex/resources/smarteditor/SmartEditor2Skin.html",
+    		fCreator : "createSEditor2"
+    	});
+
+    	// ‘저장’ 버튼을 누르는 등 저장을 위한 액션을 했을 때 submitContents가 호출된다고 가정한다.
+    	function submitContents(elClickedObj) {
+    		// 에디터의 내용이 textarea에 적용된다.
+    		oEditors.getById["shopping_content"].exec("UPDATE_CONTENTS_FIELD", []);
+    		var submitBtn = document.getElementById("submitBtn");
+    		var value = document.getElementById("shopping_content").value;
+    		console.log(value);
+    		submitBtn.form.submit();
+    	}
+    </script>
 </html>
