@@ -14,6 +14,11 @@
 
 <title>숙박메인</title>
 </head>
+<script>
+function tagclick(){
+	document.getElemetByClassName("tag")
+}
+</script>
 <body>
 	<!-- ============== 헤더 =============== -->
 	<%@include file="../header.jsp"%>
@@ -113,8 +118,10 @@
 								</p>
 								<p class="region">${AccoDto.acco_address1 }&gt;
 									${AccoDto.acco_address2 }</p>
-								<p class="tag">${AccoDto.acco_tag1 } ${AccoDto.acco_tag2 } ${AccoDto.acco_tag3 } ${AccoDto.acco_tag4 }</p>
-
+								<span class="tag">${AccoDto.acco_tag1 }</span>
+								 <span class="tag">${AccoDto.acco_tag2 } </span><br>
+								<span class="tag">${AccoDto.acco_tag3 }</span>
+								<span class="tag">${AccoDto.acco_tag4 }</span>
 								<p class="like">
 									<br> <br> <br> <br> <span>좋아요</span> <span
 										class="count">${AccoDto.acco_like} </span> <span>리뷰</span> <span
