@@ -6,7 +6,7 @@
 
    
     </div> 
-    <!-- ↑↑end class wrap -->
+    <!-- ↑↑end class wrap  -->
             <footer id="footer">
             <div class="footer_wrap">
                 <div class="footer_title">
