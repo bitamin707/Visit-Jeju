@@ -74,10 +74,12 @@
     float: left;
 }
 
-#event_area_img > img {
-    width: 270px;
-    height: 200px;
+.event_img > img {
+    object-fit: fill;
+    width: 570px;
+    height: 400px;
     padding: 30px 30px 20px 10px;
+
 }
 
 .event_area_text {

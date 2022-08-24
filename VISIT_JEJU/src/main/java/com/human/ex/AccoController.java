@@ -32,19 +32,7 @@ public class AccoController {
 	public void Main(AccoDto dto, Model model, Principal principal,Authentication authentication) throws Exception{
 		model.addAttribute("list",service2.listAll());
 		
-		if(principal == null) {
-			model.addAttribute("userid","비회원");
-		}else {
-			String userid=principal.getName();
-			String authentic = String.valueOf(authentication.getAuthorities());
-			model.addAttribute("userid",userid);
-			
-			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
-				model.addAttribute("Check","관리자");
-			}else if(authentic.contains("[ROLE_MEMBER]")){
-				model.addAttribute("Check","회원");
-			}
-		}
+		
 	}
 	
 	@RequestMapping(value = "/function/detail", method = RequestMethod.GET)
