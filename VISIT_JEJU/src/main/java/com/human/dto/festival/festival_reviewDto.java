@@ -6,7 +6,7 @@ public class festival_reviewDto {
 	private int fno;
 	private String username;
 	private int rno;
-	private double rating;
+	private int rating;
 	private String rcontent;
 	private Date rdate;
 	
@@ -28,10 +28,10 @@ public class festival_reviewDto {
 	public void setRno(int rno) {
 		this.rno = rno;
 	}
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 	public String getRcontent() {

@@ -27,6 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listAll"
 		resultType="com.human.dto.festival.festival_reviewDto">
 		select * from festival_review
-		where fno=#{fno} 
+		where fno=#{fno}
+		order by rdate desc
 	</select>
 </mapper>
