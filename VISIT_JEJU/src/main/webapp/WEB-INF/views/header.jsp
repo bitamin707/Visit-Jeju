@@ -22,10 +22,18 @@
 			</ul>
 		</nav>
 		<div class="language-wrap">
+		
 			<a href="/ex/main/loginPage" id="login">로그인</a>
 				<form:form action="${pageContext.request.contextPath}/main/logout" method="POST" id="logoutForm">
 					<button id="logout" type="input" display="none" value="로그아웃"><h3>로그아웃</h3></button>
 				</form:form>
+				
+			<a href="/ex/shopping/main/ShoppingBasket" id="Basket" 
+				style="display: none; margin-left: 10px; padding: 1px;">
+				<img src="/ex/resources/img/shopping/basket.JPG">
+				장바구니
+			</a>
+			
 		</div>
 	</div>
 </div>
@@ -36,10 +44,19 @@
 		document.getElementById("login").href="";
 		document.getElementById("login").innerText = "${userid}" + "님 안녕하세요";
 		document.getElementById("logout").style.display = "";	
-	}else if(check == ""){
+	
+	} else if (check == "showBasket") {
+		document.getElementById("login").href="";
+		document.getElementById("login").innerText = "${userid}" + "님 안녕하세요";
+		document.getElementById("logout").style.display = "";	
+		document.getElementById("Basket").style.display = "";
+		
+	} else if(check == ""){
 		document.getElementById("login").href="/ex/main/loginPage";
 		document.getElementById("login").innerText = "로그인";
 		document.getElementById("logoutForm").style.display = "none";
 		document.getElementById("logout").style.display = "none";
-	}	
+		
+	}
+	
 	</script>

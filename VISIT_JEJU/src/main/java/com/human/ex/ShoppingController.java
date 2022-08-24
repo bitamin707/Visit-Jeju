@@ -36,8 +36,12 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
-	public void Main(Model model, BoardDtoShop1 dto, Principal principal, Authentication authentication) throws Exception {
-		model.addAttribute("list",service.listInsert());	
+	public void Main(Model model, BoardDtoShop1 dto
+					, Principal principal, Authentication authentication
+					) throws Exception {
+		
+		model.addAttribute("list",service.listInsert());
+
 		
         if(principal == null) {
 				model.addAttribute("userid","비회원");
@@ -47,11 +51,12 @@ public class ShoppingController {
 				model.addAttribute("userid",userid);
 			
 			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
-				model.addAttribute("Check","관리자");
+				model.addAttribute("Check","showBasket");
 			}else if(authentic.contains("[ROLE_MEMBER]")){
 				model.addAttribute("Check","회원");
 			}
 			}
+        
 	}	
 	
 	
@@ -66,8 +71,10 @@ public class ShoppingController {
 		model.addAttribute(service.listPlus(pno));
 		
 		System.out.println(pm);
+		System.out.println(bm.listSearchCriteria(pm));
 		model.addAttribute("list",bm.listSearchCriteria(pm));
 		pm.setTotalCount(bm.listSearchCount(pm));
+		
 		
         if(principal == null) {
 				model.addAttribute("userid","비회원");
@@ -77,7 +84,7 @@ public class ShoppingController {
 				model.addAttribute("userid",userid);
 			
 			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
-				model.addAttribute("Check","관리자");
+				model.addAttribute("Check","showBasket");
 			}else if(authentic.contains("[ROLE_MEMBER]")){
 				model.addAttribute("Check","회원");
 			}
@@ -172,7 +179,6 @@ public class ShoppingController {
 	public String Modify_post(BoardDtoShop1 dto, RedirectAttributes rttr) throws Exception {
 		System.out.println("Modify");
 		System.out.println(dto);
-		rttr.addFlashAttribute("keeping","success");
 		service.update(dto);
 		return "redirect:/shopping/main/Remocon_bag";
 	}

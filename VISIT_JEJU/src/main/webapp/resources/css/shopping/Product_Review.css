@@ -72,6 +72,18 @@ body {
 	margin-top: 10px;
 }
 
+#writeBtn {
+	background-color: #fafafa;
+    border: 1.5px solid #cc880a;
+    border-radius: 5px;
+    color: #c28616;
+    font-weight: 700;
+    padding: 3px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
 /* Style the top navigation bar */
 .navbar {
 	overflow: hidden;
@@ -171,21 +183,25 @@ body {
 
 td:nth-child(1) {
 	text-align: left;
-	font-weight: 720;
 	vertical-align: middle;
-	height: 200px;
+	height: 150px;
+	line-height: 23px;
+    font-size: 16px;
 }
 
 td:nth-child(2) {
 	text-align: left;
 	vertical-align: top;
+	line-height: 23px;
+    font-size: 16px;
 }
 
 td:nth-child(3) p {
-	border: 1px solid #dd9309;
 	border-radius: 15px;
 	padding: 5px;
 	margin: 3px auto;
+    line-height: 23px;
+    font-size: 16px;
 }
 
 td {
@@ -200,12 +216,12 @@ td {
 	right: 1px;
 }
 
-.customers tr:nth-child(even) {
-	background-color: #f2f2f2;
+.customers tr {
+	background-color: rgba(23,23,23,0.03);
 }
 
 .customers tr:hover {
-	background-color: #ddd;
+	background-color: #f2f2f2;
 }
 
 .customers th {
@@ -215,6 +231,14 @@ td {
 	background-color: #dd9309;
 	color: white;
 }
+
+.userName {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+    color:#dd9309;	
+}
+
 
 /*pagination*/
 .pagination {

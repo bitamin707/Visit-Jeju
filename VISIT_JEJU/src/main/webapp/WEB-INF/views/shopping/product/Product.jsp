@@ -1,8 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,13 +49,19 @@
    	window.onload = function() {
 		var remove_btn = document.getElementsByClassName("remove_btn")
 		var check = "${Check}"
-		if (check == "관리자") {
+		if (check == "showBasket") {
 			for(let i = 0; i < remove_btn.length; i++)
 				remove_btn[i].style.display = "";
 		} else {
 			for(let i = 0; i < remove_btn.length; i++)
 				remove_btn[i].style.display = "none";
 		}
+		
+			price = document.getElementById("share").innerHTML;
+			document.getElementById("stock_price").value = price;
+			
+			product_max_qty = document.getElementById("product_max_qty").value;
+			max_qty = product_max_qty;
    	}
     </script>
 </head>
@@ -64,7 +71,6 @@
     <!-- ============== 헤더 =============== -->
         <!-- ↓↓start class wrap -->
         <div class="wrap"> 
-        <a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
             <div class="info_header">
                 <h6 class="page_font">Premium Liquor.</h6>
             </div>
@@ -205,8 +211,15 @@
 					<c:out value="${pageMaker.searchType eq 'w'?'selected':'' }"/>>유저아이디</option>
 			</select> <input type="text" name="keyword" id="keywordInput"
 				value="${pageMaker.keyword}">
-			<button id="searchBtn">검색하기</button>
-			<button id="writeBtn" style="float: right;" >글쓰기</button>
+				
+			<button id="searchBtn">검색하기</button>		
+				
+			<c:if test="${Check eq 'showBasket'}">
+				<button id="writeBtn" style="float: right;" >
+				글쓰기
+				</button>
+			</c:if>
+			
 		</div>
 
 		<table class=customers width=100% border="1">
@@ -225,7 +238,10 @@
 						<p>${dto.recommand } <br><br>
 							${dto.recommand2 }</p>
 					</td>
-					<td>${dto.userid }
+					<td>
+					<p class="userName">${dto.userid } </p>
+					<br>
+					<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${dto.regdate }" />
 						<button class="remove_btn" onclick="removeIt(${dto.bno }, ${boardDtoShop1.pno })">삭제</button>
 					</td>
 				</tr>

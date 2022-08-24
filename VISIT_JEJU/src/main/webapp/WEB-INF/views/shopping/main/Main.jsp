@@ -30,9 +30,6 @@
 		<button class="Remocon_bag">
 			<a href=""><h2>리뷰 수정</h2></a>
 		</button>
-		<button>
-			<a href=""><h2>상품</h2></a>
-		</button>
 	</div>
 
 	<div class="intro_bg">
@@ -84,7 +81,7 @@
             var remocon = document.getElementsByClassName("remocon");
     		var check = "${Check}"
     		
-    			if (check == "관리자") {
+    			if (check == "showBasket") {
     				for(let i = 0; i < remocon.length; i++)
     					remocon[i].style.display = "";
     			} else {
@@ -117,10 +114,9 @@
 
 	</div>
 	<!-- ============== 이미지 =============== -->
-
+	
 	<!-- ↓↓start class wrap -->
 	<div class="wrap">
-		<a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
 		<section style="margin-bottom: 100px;">
 			<!-- ============= 태그 ================ -->
 			<ul class="month">

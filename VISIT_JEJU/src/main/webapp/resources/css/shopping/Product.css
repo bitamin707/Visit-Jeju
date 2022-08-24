@@ -420,6 +420,7 @@
     color:rgb(255, 25, 52);
     border-radius: 5px;
     border:1px solid rgb(140, 140, 140);
+    cursor:pointed;
 }
 #doFav:hover {
     color:rgb(255, 25, 52);
@@ -462,7 +463,6 @@ hr {
     border-radius: 10px;
 	background-color: rgba(23,23,23,0.03);
     color: black;
-    border: 1px solid rgb(140, 140, 140);
     cursor: pointer;    
 }
 
