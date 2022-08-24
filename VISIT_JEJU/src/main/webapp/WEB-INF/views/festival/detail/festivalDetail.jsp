@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -15,12 +15,6 @@
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/festival/slideShow.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>${festival_detailDto.fname }</title>
-	<script>
-	var check_result='${msg}';
-	if(check_result=='overlap'){
-		alert('이미 등록된 리뷰가 존재 합니다.');
-	}
-	</script>
 </head>
 
 <body>
@@ -96,23 +90,7 @@
                         <%@include file="festival_reviewCRUD.jsp"%>
 						<br>
                         <hr>
-                        <div class="review_div">
-							<table class="review_table">
-								<c:forEach items="${reviews }" var="festival_reviewDto">
-									<tr>
-										<td class="reviewer">${festival_reviewDto.username }</td>
-										<td class="rating">${festival_reviewDto.rating }</td>
-										<td class="review_date">${festival_reviewDto.rdate }</td>
-									</tr>
-									<tr>
-										<td class="review_content">${festival_reviewDto.rcontent }</td>
-									</tr>
-									<tr>
-										<td class="review_underline"></td>
-									</tr>
-								</c:forEach>
-							</table>
-						</div>
+                        <%@include file="festival_reviewContent.jsp"%>
                     </div>
                 </div>
             </div>

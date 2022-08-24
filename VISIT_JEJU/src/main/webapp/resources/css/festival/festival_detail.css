@@ -176,7 +176,9 @@ section {
     width: 200px;
     margin-right: 10px;
 }
-
+.review_cont {
+	width: 900px;
+}
 .review_cont > textarea {
     padding-left: 10px;
     padding-top: 5px;
@@ -184,8 +186,7 @@ section {
 }
 
 .review_btn_box {
-    margin-left: 10px;
-    width: 110px;
+    width: 120px;
     float:left;
 }
 
@@ -195,7 +196,10 @@ section {
     border-radius: 10%;
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
-
+.modify_btn, .delete_btn {
+	cursor: pointer;
+	margin-right: 5px;
+}
 #review > hr {
     width: 1250px;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -213,14 +217,73 @@ section {
 	padding-left: 5px;
 	width: 150px;
 	font-weight: bold;
-	border-right: 1px solid rgba(0, 0, 0, 0.5);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 .rating {
 	padding-left: 5px;
 	width: 100px;
 }
+.review_content {
+	padding: 5px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 .review_date {
 	width: 200px;
 	text-align: right;
 	float:right;
+	margin-right: 10px;
+}
+
+<!-- 별점 -->
+.starDiv{
+	
+}
+.starFieldset{
+	width: 180px;
+    display: inline-block;
+    direction: rtl;
+    border:0;
+}
+.starFieldset legend{
+    text-align: right;
+}
+.starFieldset input[type=radio]{
+    display: none;
+}
+.starFieldset label{
+    font-size: 2em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+.starFieldset label:hover{
+	cursor: pointer;
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+.starFieldset label:hover ~ label{
+	cursor: pointer;
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+.starFieldset input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.showStarFieldset{
+	width: 100px;
+    display: inline-block;
+    direction: rtl;
+    border:0;
+}
+.showStarFieldset legend{
+    text-align: right;
+}
+.showStarFieldset input[type=checkbox]{
+	display: none;
+}
+.showStarFieldset label{
+    font-size: 1em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
+}
+.showStarFieldset input[type=checkbox]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
