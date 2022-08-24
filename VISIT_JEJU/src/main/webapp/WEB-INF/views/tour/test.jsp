@@ -13,16 +13,19 @@
 <meta charset="UTF-8">
 <title>test</title>
 
-<style>
-
-
-
-</style>
+<script>
+window.onload=function(){
+	document.getElementById('delelte').addEventListener("click",function(){
+		location.href="/ex/tour/delete?t_num=${TourReviewsDto.t_num}";
+	})
+}
+</script>
 
 </head>
 <body>
-
-
+	
+	
+	
 	<div class="rvw">
 		<form action="/ex/tour/test" method="post">
 			<div class="rvw_input">
@@ -40,8 +43,7 @@
         </form>
          
          
-        
-        
+       
         	<div class="rvw_line">
 	          <hr width="660px;" >
 	        </div>
@@ -61,6 +63,16 @@
 		</c:forEach>
 	
 	</div>
+	
+	
+	<button id=delete>삭제</button>
+
+
+
+
+
+
+
 	
 	
 </body>
