@@ -9,15 +9,3 @@ function checkStar() {
 }
 
 checkStar();
-
-function review_admin_delete() {
-	const fno = document.getElementById("fno").value;
-	const username = document.getElementsByClassName("rno");
-	console.log(fno);
-	console.log(username.value);
-//	if (confirm("삭제하시겠습니까??") == true) {
-//		location.href="/ex/festival/modify/festival_admin_reviewDelete?fno="+fno+"&username="+username.value;
-//	} else { //취소
-//		return false;
-//	}
-}

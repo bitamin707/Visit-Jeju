@@ -41,7 +41,7 @@
 					<li><a href="#MonthLink" class="selectMonth" id="12m" onclick="inputMonth(12)">12월</a></li>
 				</ul>
 				<hr>
-				<button type="button" class="modifyBtn"><a href="modify/festivalCreate">컨텐츠 추가</a></button>
+				<button type="button" class="modifyBtn"><a href="modify/festivalCreate">축제 추가</a></button>
 				<div class="event" id="eventList">
 					<c:forEach items="${list }" var="festivalDto">
 						<div class="event_area">
