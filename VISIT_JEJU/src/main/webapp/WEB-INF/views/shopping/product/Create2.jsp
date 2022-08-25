@@ -78,7 +78,6 @@ parent.addFilePath(result);
     <!-- ============== 헤더 =============== -->
         <!-- ↓↓start class wrap -->
         <div class="wrap"> 
-            <div id="link_side"></div>
             <div class="info_header">
                 <h6 class="page_font">Premium Liquor.</h6>
             </div>

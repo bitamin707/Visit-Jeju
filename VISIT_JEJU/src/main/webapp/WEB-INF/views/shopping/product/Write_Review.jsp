@@ -133,7 +133,7 @@
 </head>
 
 <body>
-	<input type=hidden value="${boardDtoShop1.pno}">
+	<input type=hidden name=pno value="${boardDtoShop1.pno}">
     <div id="tbl_box">
     <form action="/ex/shopping/product/Write_Review?pno=${boardDtoShop1.pno}" method="post">
 			<table border="1" width="1000px" id="customers">

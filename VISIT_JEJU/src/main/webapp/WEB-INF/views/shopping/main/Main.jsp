@@ -120,7 +120,7 @@
 		<section style="margin-bottom: 100px;">
 			<!-- ============= 태그 ================ -->
 			<ul class="month">
-				<p>샴페인 태그:</p>
+				<p>상품 태그:</p>
 				<p>
 					빈티지<input type="checkbox" name="tag" value="vintage">
 				</p>

@@ -149,16 +149,6 @@
     margin: 0 auto;
 }
 
-#link_side{
-    margin-left: -102px;
-    margin-top: 200px;
-    height: 140px;
-    width: 100px;
-    text-align: center;
-    position:fixed;
-    background-color: grey;
-}
-
 .info_header {
     position: relative;
     margin-top:110px;
