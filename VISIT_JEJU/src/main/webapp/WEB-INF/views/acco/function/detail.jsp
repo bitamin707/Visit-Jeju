@@ -75,16 +75,17 @@
 					</div>
 				</div>
 				<div class="event_area_text">
-					<h2>리뷰</h2>
+					<h2>리뷰</h2><br>
 					<table border="1" width='100%' id='review'
 						style="text-align: center;">
 						<tr>
 							<th>ANO</th>
 							<th>리뷰내용</th>
 							<th>수정 , 삭제</th>
+						
 						</tr>
 
-						<c:forEach items="${list }" var="AccoReviewDto">
+						<c:forEach items="${list1 }" var="AccoReviewDto">
 							<tr>
 								<td>${AccoReviewDto.ano }</td>
 								<td>${AccoReviewDto.content }</td>
@@ -92,8 +93,7 @@
 										<a href='/ex/acco/function/review/delete?ano=${AccoReviewDto.ano }&acco_id=${accoDto.acco_id }'>삭제</a>
 									</button>
 									<button type="button">
-										<a
-											href="/ex/acco/function/review/modify?ano=${AccoReviewDto.ano }&acco_id=${accoDto.acco_id }">수정</a>
+										<a href="/ex/acco/function/review/modify?ano=${AccoReviewDto.ano }&acco_id=${accoDto.acco_id }">수정</a>
 									</button></td>
 							</tr>
 						</c:forEach>
