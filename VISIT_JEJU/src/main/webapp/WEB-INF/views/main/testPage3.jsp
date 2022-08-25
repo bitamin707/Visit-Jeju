@@ -6,12 +6,46 @@
 <html>
 <head>
 <meta charset="UTF-8">
+    <link rel="stylesheet" href="/ex/resources/css/main/mainStyle.css">
 <title>Insert title here</title>
 
 <script type="text/javascript">
 </script>
 </head>
 <body>
+<div style=" width:1300px; height:200px;"></div>
+<div style=" width:1300px; height:500px; margin: 0 auto;">
+	<div class="mainContainer">
+    	<img src="/ex/resources/img/main/best.png" class="bestLogo">
+    </div>
+    <div class="mainContainerin1">
+    	<a href="#">
+    		<div style="width:512px;" class="mainContainerin1_1">
+    			<img id="testPost1" src="">
+    		</div>
+    		<div class="mainContainerin1_2">
+    			<h2><br></h2>
+    		</div>
+    	</a>   
+    </div>
+    
+    <div class="mainContainerin2">
+    	<div class="gallerylist1">
+    		<a href="#" class="in2_a1">
+    			<div class="screen">
+    				<img id="testPost2" src="">
+    			</div>
+   			</a>
+   		</div>
+    	<div class="gallerylist2">
+    		<a href="#" class="in2_a1">
+                <div class="screen">
+                    <img id="testPost3" src="">
+                </div>
+            </a>
+        </div>
+   </div>
+</div>     
 <script type="text/javascript">
 	var i1 = i2 = i3 = 0;
 	var springSum1 = summerSum1 = autumnSum1 = winterSum1 = maleSum1 = femaleSum1 = 0;
@@ -94,9 +128,9 @@
 	var date = 1;
 	var sex = 1;
 	
-	var recommend1 = 50;
-	var recommend2 = 75;
-	var recommend3 = 200;
+	var recommend1 = 100;
+	var recommend2 = 100;
+	var recommend3 = 100;
 	var test1Score = test2Score = test3Score = 0;
 	test1Score = test1Score + recommend1;
 	test2Score = test2Score + recommend2;
@@ -180,39 +214,60 @@
 	merch.push(test2Score); merch.push(test1Score); merch.push(test3Score);
 	merch.sort();
 	
-	var a;
-	var b;
-	var c;
+	var a,apic;
+	var b,bpic;
+	var c,cpic;
 	
 	if(merch[2] == test1Score){
 		a = "상품1";
+		apic = "/ex/resources/img/main/돈가스.jpg";
 		if(merch[1] == test2Score){
 			b = "상품2";
+			bpic = "/ex/resources/img/main/삼겹살.jpg";
 			c = "상품3";
+			cpic = "/ex/resources/img/main/연어회.jpg";
 		}else if(merch[1] == test3Score){
 			c = "상품2";
+			cpic = "/ex/resources/img/main/삼겹살.jpg";
 			b = "상품3";
+			bpic = "/ex/resources/img/main/연어회.jpg";
 		}
 	}else if(merch[2] == test2Score){
 		a = "상품2";
+		apic = "/ex/resources/img/main/삼겹살.jpg";
 		if(merch[1] == test1Score){
 			b = "상품1";
+			bpic = "/ex/resources/img/main/돈가스.jpg";
 			c = "상품3";
+			cpic = "/ex/resources/img/main/연어회.jpg";
 		}else if(merch[1] == test3Score){
 			c = "상품1";
+			cpic = "/ex/resources/img/main/돈가스.jpg";
 			b = "상품3";
+			bpic = "/ex/resources/img/main/연어회.jpg";
 		}
 	}else if(merch[2] == test3Score){
 		a = "상품3";
+		apic ="/ex/resources/img/main/연어회.jpg";
 		if(merch[1] == test1Score){
 			b = "상품1";
+			bpic = "/ex/resources/img/main/돈가스.jpg";
 			c = "상품2";
+			cpic = "/ex/resources/img/main/삼겹살.jpg";
 		}else if(merch[1] == test2Score){
 			c = "상품1";
+			cpic = "/ex/resources/img/main/돈가스.jpg";
 			b = "상품2";
+			bpic = "/ex/resources/img/main/삼겹살.jpg";
 		}
 	}
-		
+	var bestPost = a;
+	var anotherPost1 = b;
+	var anotherPost2 = c;
+	
+	document.getElementById("testPost1").src=apic;
+	document.getElementById("testPost2").src=bpic;
+	document.getElementById("testPost3").src=cpic;
 	alert("현재 계절은 '봄', 성별은 '남성'이며 \n상품1의 평점은 "+recommend1+" 점\n"+
 			"상품2의 평점은 "+recommend2+" 점\n"+"상품3의 평점은 "+recommend3+" 점입니다\n" + 
 			"추천하는 상품은 "+a+"입니다");
