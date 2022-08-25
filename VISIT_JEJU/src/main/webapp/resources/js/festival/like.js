@@ -14,3 +14,7 @@ function ClickLike() {
         state = 0;
     }
 }
+
+function requireLogin() {
+	alert("로그인이 필요합니다.");
+}

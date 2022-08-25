@@ -50,7 +50,13 @@
                         </div>
                     </div>
                     <div class="info_btn">
-                        <button type="button" class="like_btn" onclick="ClickLike()">
+                        <button type="button" class="like_btn" 
+	                        <c:if test="${userid eq '비회원' }">
+	                        onclick="requireLogin()"
+	                        </c:if>
+	                        <c:if test="${userid ne '비회원' }">
+	                        onclick="ClickLike()"
+	                        </c:if>>
                             <div id="icon_like"></div>
                             <div id="icon_like_click"></div>
                             <p>좋아요</p>
