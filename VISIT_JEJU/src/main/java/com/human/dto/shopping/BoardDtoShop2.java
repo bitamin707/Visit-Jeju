@@ -11,6 +11,7 @@ public class BoardDtoShop2 {
 	private String recommand2;
 	private String userid;
 	private Date regdate;
+	private int rating;
 	public int getBno() {
 		return bno;
 	}
@@ -53,13 +54,18 @@ public class BoardDtoShop2 {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
 	@Override
 	public String toString() {
 		return "BoardDtoShop2 [bno=" + bno + ", what_product=" + what_product + ", review=" + review + ", recommand="
-				+ recommand + ", recommand2=" + recommand2 + ", userid=" + userid + ", regdate=" + regdate + "]";
+				+ recommand + ", recommand2=" + recommand2 + ", userid=" + userid + ", regdate=" + regdate + ", rating="
+				+ rating + "]";
 	}
 	
-	
-
 	
 }

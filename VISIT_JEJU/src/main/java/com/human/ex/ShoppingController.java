@@ -227,11 +227,14 @@ public class ShoppingController {
 			, RedirectAttributes rttr
 			,@RequestParam(defaultValue = "pno", required = false) int pno
 			) throws Exception {
+		
+		
 		bm.create(dto);
 		System.out.println("Write_Review");
 		System.out.println(dto);
 		rttr.addFlashAttribute("write","success");
 		return "redirect:/shopping/product/Product?pno="+pno;
+		
 	}
 	
 	

@@ -47,8 +47,28 @@
     
     
    	window.onload = function() {
+        let rate = "rate";
+        let thisRate;
+        let thisRateLength;
+
+        thisRateLength = document.getElementsByClassName('thisRate');
+
+        for (let j = 0; j < thisRateLength.length; j++) {
+            thisRate = parseInt(document.getElementsByClassName('thisRate')[j].value);
+
+
+            for (let i=1; i<thisRate+1; i++) {
+            rate += i;
+            document.getElementsByClassName(rate)[j].style.color = "#dd9309";
+            rate = "rate";
+        }
+
+        }
+        
+        
 		var remove_btn = document.getElementsByClassName("remove_btn")
 		var check = "${Check}"
+		
 		if (check == "showBasket") {
 			for(let i = 0; i < remove_btn.length; i++)
 				remove_btn[i].style.display = "";
@@ -56,6 +76,7 @@
 			for(let i = 0; i < remove_btn.length; i++)
 				remove_btn[i].style.display = "none";
 		}
+		
 		
 			price = document.getElementById("share").innerHTML;
 			document.getElementById("stock_price").value = price;
@@ -196,8 +217,11 @@
 			<span class="review_board_menu2"> Event</span> <span
 				class="review_event">스타일후기 작성 시 2,000원의 적립금을 드립니다.</span>
 		</h5>
+		
+		
+		<div class="review_button">		
 
-		<div class="review_button">
+		
 			<select name="searchType">
 				<option value="n"
 					<c:out value="${pageMaker.searchType==null?'selected':'' }"/>>전체</option>
@@ -209,17 +233,21 @@
 					<c:out value="${pageMaker.searchType eq 'c'?'selected':'' }"/>>추천</option>
 				<option value="w"
 					<c:out value="${pageMaker.searchType eq 'w'?'selected':'' }"/>>유저아이디</option>
-			</select> <input type="text" name="keyword" id="keywordInput"
+			</select> 
+							
+			<input type="text" name="keyword" id="keywordInput"
 				value="${pageMaker.keyword}">
 				
-			<button id="searchBtn">검색하기</button>		
+				
+			<button id="searchBtn">검색하기</button>
 				
 			<c:if test="${Check eq 'showBasket'}">
 				<button id="writeBtn" style="float: right;" >
 				글쓰기
 				</button>
 			</c:if>
-			
+				
+					
 		</div>
 
 		<table class=customers width=100% border="1">
@@ -232,7 +260,17 @@
 
 			<c:forEach items="${list}" var="dto">
 				<tr>
-					<td>${dto.what_product }</td>
+					<td>${dto.what_product } 
+						<br>
+						<br>
+						<input type="hidden" class="thisRate" value="${dto.rating }">
+					    <fieldset class="starFieldset">
+					            <label class="rate5">★</label>
+					            <label class="rate4">★</label> 
+					            <label class="rate3">★</label> 
+					            <label class="rate2">★</label> 
+					            <label class="rate1">★</label> 
+					    </fieldset></td>
 					<td>${dto.review }</td>
 					<td>
 						<p>${dto.recommand } <br><br>
