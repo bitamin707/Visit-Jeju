@@ -223,6 +223,12 @@
           <li>블ㄹ라블라</li>
         </ul>
       </div>
+      
+      
+      <div class="tour_word">
+      	<h2>WORD</h2>
+      	<img src="/ex/resources/img/tour/wordclud.png" style="width:80%">
+      </div>
    
 
 
