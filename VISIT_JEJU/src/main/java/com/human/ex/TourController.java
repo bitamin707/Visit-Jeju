@@ -76,19 +76,16 @@ public class TourController {
 		model.addAttribute("list",service2.listAll());
 	}
 	
-	@RequestMapping(value = "/tour/test", method = RequestMethod.POST)
-	public String test(TourReviewsDto Dto,Model model) throws Exception {
-		service2.insert(Dto);
-		return "redirect:/tour/test";
+	
+	@RequestMapping(value = "/tour/mainCreate", method = RequestMethod.GET)
+	public void create_get(Model mode1) throws Exception{
 	}
 	
-	@RequestMapping(value = "/tour/delete", method = RequestMethod.GET)
-	public String delete(@RequestParam("t_num")int t_num) throws Exception{
-		service2.delete(t_num);
-		return "redirect:/tour/test";
+	@RequestMapping(value = "/tour/mainCreate", method = RequestMethod.POST)
+	public String create_post(tourDto Dto,Model model) throws Exception {
+		service.create(Dto);
+		return "redirect:/tour/data1";
 	}
-	
-	
 }
 
 	

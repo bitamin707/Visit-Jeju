@@ -79,7 +79,7 @@
               <p>${tourDto.tinfo }</p>
               <button>
                 <a href="data2">
-                  자세히보기
+                  	자세히보기
                 </a>
               </button>
             </span>
