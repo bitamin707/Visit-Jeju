@@ -18,7 +18,6 @@
 		<div class="review_box">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<input type="hidden" name="fno" value="${festival_detailDto.fno }" type="number" id="fno">
-		<input type="hidden" name="username" value="${festival_reviewDto.username }" class="username">
 		<input type="hidden" class="starValue" value="${festival_reviewDto.rating }">
 			<table class="review_table">
 				<tr>
@@ -48,7 +47,7 @@
 				</tr>
 				<tr>
 					<td colspan="3" class="review_content">${festival_reviewDto.rcontent }
-					<button type="submit" class="delete_btn" onclick="review_delete()">삭제</button>
+					<button type="button" class="delete_btn"><a href="/ex/festival/modify/festival_admin_reviewDelete?fno=${festival_detailDto.fno }&username=${festival_reviewDto.username }">삭제</a></button>
 					</td>
 				</tr>
 			</table>
@@ -93,9 +92,9 @@
 				</tr>
 			</table>
 		</div>
+		
 	</c:forEach>
 	</c:if>
 	<script type="text/javascript" src="/ex/resources/js/festival/review.js"></script>
-	
 </body>
 </html>

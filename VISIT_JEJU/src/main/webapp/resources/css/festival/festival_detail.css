@@ -195,9 +195,9 @@ section {
     height: 50px;
     border-radius: 10%;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 .modify_btn, .delete_btn {
-	cursor: pointer;
 	margin-right: 5px;
 }
 #review > hr {

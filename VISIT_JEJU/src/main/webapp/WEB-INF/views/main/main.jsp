@@ -134,7 +134,7 @@ window.onload=function(){
         </div>
         <div class="mainRecommend">
             <div class="recommend1">
-                <a href="../festival/detail/휴애리 봄 수국축제.html">
+                <a href="/ex/festival/detail/festivalDetail?fno=21">
                     <div class="recommend1_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202105/17/5ffe6841-1401-4282-9d40-2cf9d5447f2a.jpg">
                     </div>
@@ -144,7 +144,7 @@ window.onload=function(){
                 </a>
             </div>
             <div class="recommend2">
-                <a href="../festival/detail/마노르블랑 수국축제.html">
+                <a href="ex/festival/detail/festivalDetail?fno=3">
                     <div class="recommend2_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202204/18/e86e6d5d-de1c-4436-95ab-7d2732cedcc4.jpg">
                     </div>
@@ -154,7 +154,7 @@ window.onload=function(){
                 </a>
             </div>
             <div class="recommend3">
-                <a href="../festival/detail/제주국제관악제제.html">
+                <a href="/ex/festival/detail/festivalDetail?fno=8">
                     <div class="recommend3_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202205/26/fecde995-8c79-4ed3-88b2-e8eb9b9517ab.jpg">
                     </div>
@@ -164,7 +164,7 @@ window.onload=function(){
                 </a>
             </div>
             <div class="recommend4">
-                <a href="../festival/detail/제주 문화유산 체험프로그램.html">
+                <a href="/ex/festival/detail/festivalDetail?fno=2">
                     <div class="recommend4_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202205/03/c63c24f5-c17c-4909-b960-c3f5d9d2dc64.jpg">
                     </div>
@@ -180,7 +180,7 @@ window.onload=function(){
         </div>
                 <!-- ============== 하단 =============== -->
                 <div class="mainContainerin1">
-                    <a href="#">
+                    <a href="/ex/food/Detail">
                         <div class="mainContainerin1_1">
                             <img src="${listFoodBest[0].imgLink}">
                         </div>
@@ -215,7 +215,7 @@ window.onload=function(){
                         </a>
                     </div>
                     <div class="gallerylist3">
-                        <a href="#" class="in2_a1">
+                        <a href="/ex/food/Detail5" class="in2_a1">
                             <div class="screen">
                                 <div class="top">${listFood[2].name}</div>
                                 <div class="bottom"></div>
@@ -224,7 +224,7 @@ window.onload=function(){
                         </a>
                     </div>
                     <div class="gallerylist4">
-                        <a href="#" class="in2_a1">
+                        <a href="/ex/food/Detail3" class="in2_a1">
                             <div class="screen">
                                 <div class="top">${listFood[3].name}</div>
                                 <div class="bottom"></div>

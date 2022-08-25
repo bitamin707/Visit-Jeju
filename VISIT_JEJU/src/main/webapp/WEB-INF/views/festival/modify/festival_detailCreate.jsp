@@ -59,7 +59,7 @@ button {
 				<table>
 					<tr>
 						<th colspan="2"><h2
-								style="text-align: center; font-size: 30px;">컨텐츠 세부 페이지 추가</h2>
+								style="text-align: center; font-size: 30px;">축제 세부 페이지 추가</h2>
 						</th>
 					</tr>
 					<tr>

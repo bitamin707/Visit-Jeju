@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<update id="countReview">
 		update festival_detail
-		set freview_count = (select count(fno) from festival_review where fno=#{fno})
+		set freview_count=round((select avg(rating) from festival_review where fno=#{fno}),2)
 		where fno=#{fno}
 	</update>
 </mapper>
