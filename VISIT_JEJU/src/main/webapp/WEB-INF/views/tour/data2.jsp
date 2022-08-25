@@ -227,7 +227,7 @@
       
       <div class="tour_word">
       	<h2>WORD</h2>
-      	<img src="/ex/resources/img/tour/wordclud.png" style="width:80%">
+      	<img src="/ex/resources/img/tour/wordcloud.png" style="width:80%">
       </div>
    
 
