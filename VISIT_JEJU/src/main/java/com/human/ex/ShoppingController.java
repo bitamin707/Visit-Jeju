@@ -227,19 +227,40 @@ public class ShoppingController {
 			, RedirectAttributes rttr
 			,@RequestParam(defaultValue = "pno", required = false) int pno
 			) throws Exception {
+		
+		
 		bm.create(dto);
 		System.out.println("Write_Review");
 		System.out.println(dto);
 		rttr.addFlashAttribute("write","success");
 		return "redirect:/shopping/product/Product?pno="+pno;
+		
 	}
 	
 	
 	
 	@RequestMapping(value = "/main/ShoppingBasket", method = RequestMethod.GET)
-	public void ShoppingBasket(Model model, BoardDtoShop1 dto) throws Exception {
+	public void ShoppingBasket(Model model, BoardDtoShop1 dto
+								, Principal principal, Authentication authentication
+								) throws Exception {
+	
 		System.out.println(service.basket());
 		model.addAttribute("list",service.basket());
+		
+		
+        if(principal == null) {
+				model.addAttribute("userid","비회원");
+			}else {
+				String userid=principal.getName();
+				String authentic = String.valueOf(authentication.getAuthorities());
+				model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","showBasket");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+			}
 	}
 	
 	@RequestMapping(value = "/main/MakeBasket", method = RequestMethod.GET)

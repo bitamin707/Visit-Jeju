@@ -62,7 +62,7 @@ body {
 
 #newBtn, #searchBtn {
 	background-color: #fafafa;
-	border: 1.5px solid #cc880a;
+	border: 1.5px solid #c28616;
 	border-radius: 5px;
 	color: #c28616;
 	font-weight: 700;
@@ -74,7 +74,7 @@ body {
 
 #writeBtn {
 	background-color: #fafafa;
-    border: 1.5px solid #cc880a;
+    border: 1.5px solid #c28616;
     border-radius: 5px;
     color: #c28616;
     font-weight: 700;
@@ -236,8 +236,27 @@ td {
     font-size: 18px;
     font-weight: 700;
     line-height: 23px;
-    color:#dd9309;	
+    color:#d08a09;	
 }
+
+
+/* review_star*/
+    .starDiv{
+    }
+    .starFieldset{
+        width: 140px;
+        display: inline-block;
+        direction: rtl;
+        border:0;
+        padding: -50px;
+    }
+    .starFieldset label{
+        font-size: 22px;
+        color: transparent;
+        color: rgb(110, 110, 110);
+        cursor:pointer;
+        margin:0px;
+    }
 
 
 /*pagination*/
@@ -270,3 +289,4 @@ td {
 .pagination a:hover:not (.active ) {
 	background-color: #ddd;
 }
+

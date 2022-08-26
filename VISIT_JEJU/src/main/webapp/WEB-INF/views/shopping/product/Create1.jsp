@@ -70,23 +70,23 @@
     <form action="/ex/shopping/product/Create1" method="post">
     <table border="1" width="1000px" id="customers">
         <tr>
-            <th>제품 고유번호 (6자리)</th>
+            <th>상품 고유번호 (6자리)</th>
             <td><input type="text" name=pno required maxlength="6"></td>
         </tr>
         <tr>
-            <th>제품 이름</th>
+            <th>상품 이름</th>
             <td><input type="text" name=product_name maxlength="38" required></td>
         </tr>
         <tr>
-            <th>제품 가격</th>
+            <th>상품 가격</th>
             <td><input type="text" name=product_price maxlength="15" required></td>
         </tr>
         <tr>
-            <th>제품 원가</th>
+            <th>상품 원가</th>
             <td><input type="text" name=product_won maxlength="10" required></td>
         </tr>
         <tr>
-            <th>제품 카테고리</th>
+            <th>상품 카테고리</th>
             <td>
                 <input type="text" id="categoryinput" name=product_category readonly required>
                     <select onchange="categoryInput(this)">
@@ -99,7 +99,7 @@
         </tr>
         
         <tr>
-            <th>제품 태그</th>
+            <th>상품 태그</th>
             <td>
                 <input type="text" id="taginput" name=product_tag readonly required>
                     <select onchange="tagInput(this)">
