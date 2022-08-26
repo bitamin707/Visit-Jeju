@@ -82,9 +82,8 @@ public class TourController {
 	}
 	
 	@RequestMapping(value = "/tour/mainCreate", method = RequestMethod.POST)
-	public String create_post(tourDto Dto,Model model) throws Exception {
-		service.create(Dto);
-		return "redirect:/tour/data1";
+	public void create_post() throws Exception {
+		System.out.println(44);
 	}
 }
 

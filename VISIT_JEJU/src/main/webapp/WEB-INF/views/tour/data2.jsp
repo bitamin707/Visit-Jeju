@@ -178,7 +178,7 @@
 					</div>
 					<div class="rvw_inesrt">
 					 	<input type="hidden" name=t_writer value="닉네임"/>
-						<input type="text" name=t_content placeholder="후기를 작성해주세요."/>
+						<input type="text" name=t_content placeholder="후기를 작성해주세요." autocomplete='off'/>
 					</div>
 				</div>
 				
@@ -198,7 +198,7 @@
 			<div class="rvw_list">
 				<div class="rvw_info">
 					<h3>${TourReviewsDto.t_writer }</h3>
-					<p><fmt:formatDate pattern="yy.MM.dd" value="${TourReviewsDto.t_regdate }"/></p>
+					<p><fmt:formatDate pattern="yyyy-MM-dd" value="${TourReviewsDto.t_regdate }" /></p>
 				</div>
 				<div class="rvw_content">
 					<p>${TourReviewsDto.t_content }</p>
@@ -227,7 +227,7 @@
       
       <div class="tour_word">
       	<h2>WORD</h2>
-      	<img src="/ex/resources/img/tour/wordcloud.PNG" style="width:80%">
+      	<img src="/ex/resources/img/tour/wordcloud.PNG">
       </div>
    
 

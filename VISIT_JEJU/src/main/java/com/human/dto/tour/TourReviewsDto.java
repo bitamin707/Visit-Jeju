@@ -9,9 +9,6 @@ public class TourReviewsDto {
 	private Date t_regdate;
 	private String t_content;
 	private int rating;
-	
-	
-	
 	public int getT_num() {
 		return t_num;
 	}
@@ -42,7 +39,6 @@ public class TourReviewsDto {
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
-	
 	@Override
 	public String toString() {
 		return "TourReviewsDto [t_num=" + t_num + ", t_writer=" + t_writer + ", t_regdate=" + t_regdate + ", t_content="
