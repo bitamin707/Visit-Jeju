@@ -45,6 +45,41 @@
 			font-size: 19px;
 			background-color: beige;
 		}
+		
+		
+		<!-- 별점 리뷰 -->
+    .starDiv{
+    }
+    .starFieldset{
+        width: 140px;
+        display: inline-block;
+        direction: rtl;
+        border:0;
+    }
+    .starFieldset legend{
+        text-align: right;
+    }
+    .starFieldset input[type=radio]{
+        display: none;
+    }
+    .starFieldset label{
+        font-size: 22px;
+        color: transparent;
+        color:rgb(110, 110, 110);
+        cursor:pointer;
+    }
+    .starFieldset label:{
+        cursor: pointer;
+        color: #dd9309; !important
+    }
+    .starFieldset label: ~ label{
+        cursor: pointer;
+        color: #dd9309; !important
+    }
+    .starFieldset input[type=radio]:checked ~ label{
+        color: #dd9309; 
+    }
+
         
     </style>
 
@@ -98,7 +133,7 @@
 </head>
 
 <body>
-	<input type=hidden value="${boardDtoShop1.pno}">
+	<input type=hidden name=pno value="${boardDtoShop1.pno}">
     <div id="tbl_box">
     <form action="/ex/shopping/product/Write_Review?pno=${boardDtoShop1.pno}" method="post">
 			<table border="1" width="1000px" id="customers">
@@ -143,6 +178,9 @@
                         <option value="디자인이<br>멋져요!">디자인이 멋져요</option>
                         <option value="크기가<br>적당해요!">크기가 적당해요</option>
                         <option value="고급스러워요!">고급스러워요</option>
+                        <option value="무난해요!">무난해요</option>
+                        <option value="아쉬워요..">아쉬워요</option>
+                        <option value="별로에요..">별로에요</option>
                 </select>
                 
                 <input type="text" id="recommandInput2" name=recommand2 readonly required>
@@ -152,8 +190,29 @@
                         <option value="재질이 좋아요!">재질이 좋아요</option>
                         <option value="디자인이<br>멋져요!">디자인이 멋져요</option>
                         <option value="크기가<br> 적당해요!">크기가 적당해요</option>
+                        <option value="고급스러워요!">고급스러워요</option>
+                        <option value="무난해요!">무난해요</option>
+                        <option value="아쉬워요..">아쉬워요</option>
+                        <option value="별로에요..">별로에요</option>
                 </select>
             </td>
+        </tr>
+        <tr>
+        <th>별점을 남겨주세요!</th>
+        <td>			
+        	<fieldset class="starFieldset">
+				<input type="radio" name="rating" value="5" id="rate1">
+					<label for="rate1">★</label> 
+				<input type="radio" name="rating" value="4" id="rate2">
+					<label for="rate2">★</label> 
+				<input type="radio" name="rating" value="3" id="rate3" checked>
+					<label for="rate3">★</label> 
+				<input type="radio" name="rating" value="2" id="rate4">
+					<label for="rate4">★</label> 
+				<input type="radio" name="rating" value="1" id="rate5">
+					<label for="rate5">★</label>
+			</fieldset>
+		</td>
         </tr>
 			</table>
 			

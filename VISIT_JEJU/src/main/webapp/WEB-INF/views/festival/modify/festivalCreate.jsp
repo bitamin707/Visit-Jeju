@@ -79,7 +79,7 @@
 				<table>
 					<input type="hidden" name="fno" value="${festivalDto.fno }" >
 					<tr>
-						<th colspan="2"><h2 style="text-align:center; font-size:30px;">컨텐츠 추가 페이지</h2> </th>
+						<th colspan="2"><h2 style="text-align:center; font-size:30px;">축제 추가 페이지</h2> </th>
 					</tr>
 					<tr>
 						<th>제목</th>

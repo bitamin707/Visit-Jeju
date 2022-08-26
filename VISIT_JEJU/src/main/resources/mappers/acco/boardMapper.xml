@@ -23,10 +23,12 @@ update acco_review set content=#{content} where ano=#{ano}
 </update>
 
 <select id="listAll" resultType="com.human.dto.acco.AccoReviewDto">
-select * from acco_review where acco_id=#{acco_id} and acco_id=#{AccoDto.acco_id }
-
+select * from acco_review
 </select>
 
+<select id="readid" resultType="AccoReviewDto">
+select * from acco_review where acco_id=#{acco_id}
+</select>
 
 
 </mapper>

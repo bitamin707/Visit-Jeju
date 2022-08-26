@@ -49,4 +49,12 @@ public class AccoReviewServiceImpl implements IAccoReviewService {
 		return dao.listAll();
 	}
 
+	@Override
+	public List<AccoReviewDto> readid(int acco_id) throws Exception {
+		// TODO Auto-generated method stub
+		IAccoReviewDao dao=sqlSession.getMapper(IAccoReviewDao.class);
+		return dao.readid(acco_id);
+	}
+	
+
 }

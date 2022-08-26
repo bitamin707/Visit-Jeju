@@ -39,7 +39,7 @@ tr:nth-child(even){background-color: #f2f2f2;}
 
 var result='${nice}';
 if(result=='success'){
-	alert('제품이 추가되었습니다.');
+	alert('상품이 추가되었습니다.');
 }
 
 	window.onload = function() {
@@ -58,10 +58,10 @@ if(result=='success'){
 <body>
 <table border="1" width="90%" id="customers">
 	<tr>
-	<th>제품 번호</th>
-	<th>제품 이름</th>
-	<th>제품 가격</th>
-	<th>제품 원가</th>
+	<th>상품 번호</th>
+	<th>상품 이름</th>
+	<th>상품 가격</th>
+	<th>상품 원가</th>
 	<th>카테고리</th>
 	<th>태그기능</th>
 	</tr>
@@ -80,7 +80,7 @@ if(result=='success'){
 
 <div id="btn_box"> 
 <button id="main"> 메인으로 </button>
-<button id="create"> 제품 추가</button>
+<button id="create"> 상품 추가</button>
 </div>
 
 

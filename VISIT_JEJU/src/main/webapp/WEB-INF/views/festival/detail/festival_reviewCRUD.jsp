@@ -22,8 +22,8 @@
 		<c:if test="${check eq 'true' }">
 			<form action="/ex/festival/modify/festival_reviewModify" id="review_form" name="form" method="POST">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
-				<input type="hidden" name="fno" value="${festival_detailDto.fno }" type="number"> 
-				<input type="hidden" name="username" value="${userid }">
+				<input type="hidden" name="fno" value="${festival_detailDto.fno }" type="number" id="fno"> 
+				<input type="hidden" name="username" value="${userid }" id="username">
 
 				<div class="review_box">
 					<div class="review_login">
@@ -95,8 +95,7 @@
 		function review_modify() {
 		const form = document.form;
 		const rcontent = document.getElementsByClassName("review_text")[0];
-		console.log(rcontent.value);
-			if(rcontent.value == null)
+			if(rcontent.value == null || rcontent.value == "")
 				alert("리뷰를 입력해 주세요.")
 			else {
 				if (confirm("수정하시겠습니까??") == true) {

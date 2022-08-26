@@ -36,7 +36,6 @@ where acco_id=#{acco_id}
 
 <select id="listAll" resultType="com.human.dto.acco.AccoDto">
 select * from acco
-
 </select>
 
 

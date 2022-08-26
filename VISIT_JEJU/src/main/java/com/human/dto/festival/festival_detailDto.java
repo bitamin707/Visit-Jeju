@@ -8,7 +8,7 @@ public class festival_detailDto {
 	private String fhomepage;
 	private String fcontent;
 	private int flike_count;
-	private int freview_count;
+	private float freview_count;
 	private String fbg;
 	private String fimg1;
 	private String fimg2;
@@ -57,10 +57,10 @@ public class festival_detailDto {
 	public void setFlike_count(int flike_count) {
 		this.flike_count = flike_count;
 	}
-	public int getFreview_count() {
+	public float getFreview_count() {
 		return freview_count;
 	}
-	public void setFreview_count(int freview_count) {
+	public void setFreview_count(float freview_count) {
 		this.freview_count = freview_count;
 	}
 	public String getFbg() {
