@@ -14,4 +14,5 @@ public interface IAccoReviewService {
 	public void delete(int ano) throws Exception;
 	public void update(AccoReviewDto dto) throws Exception;
 	public List<AccoReviewDto> listAll() throws Exception;
+	public List<AccoReviewDto> readid(int acco_id) throws Exception;
 }

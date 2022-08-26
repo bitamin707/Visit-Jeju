@@ -82,7 +82,7 @@
 		사진 1 : <input type=text name=acco_detail_photo1><br>
 		사진 2 : <input type=text name=acco_detail_photo2><br> 
 		사진 3 : <input type=text name=acco_detail_photo3><br> 
-		사진 4 : <inputtype=text name=acco_detail_photo4><br> 
+		사진 4 : <input type=text name=acco_detail_photo4><br> 
 			숙소 전화번호 : <input type=text name=acco_phonenum><br> 
 			메인사진 : <input type=text name=acco_photo>
 		<button type="button" onclick="submitContents()" id="submitBtn">작성완료</button>

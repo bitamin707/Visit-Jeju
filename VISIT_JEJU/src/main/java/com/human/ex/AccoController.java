@@ -31,15 +31,26 @@ public class AccoController {
 	@RequestMapping(value = "/jeju", method = RequestMethod.GET)
 	public void Main(AccoDto dto, Model model, Principal principal,Authentication authentication) throws Exception{
 		model.addAttribute("list",service2.listAll());
-		
-		
+		if(principal == null) {
+			model.addAttribute("userid","비회원");
+		}else {
+			String userid=principal.getName();
+			String authentic = String.valueOf(authentication.getAuthorities());
+			model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","관리자");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+		}
 	}
 	
 	@RequestMapping(value = "/function/detail", method = RequestMethod.GET)
 	public void page1(@RequestParam("acco_id")int acco_id, Model model, Principal principal,Authentication authentication) throws Exception {
 		System.out.println("read");
 		model.addAttribute(service2.read(acco_id));
-		model.addAttribute("list",service1.listAll());
+		model.addAttribute("list1",service1.readid(acco_id));
 		
 		if(principal == null) {
 			model.addAttribute("userid","비회원");
