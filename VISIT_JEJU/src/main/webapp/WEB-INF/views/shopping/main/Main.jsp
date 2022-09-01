@@ -28,7 +28,7 @@
 		</button>
 		<br>
 		<button class="Remocon_bag">
-			<a href=""><h2>리뷰 수정</h2></a>
+			<a href="Rating"><h2>판매량 측정</h2></a>
 		</button>
 	</div>
 
