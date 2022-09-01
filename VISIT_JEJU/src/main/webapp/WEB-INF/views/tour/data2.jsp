@@ -168,7 +168,7 @@
       </div>
 
       <div class="tour_rvw">
-        <h2>RREVIEW</h2>
+        <h2>COMMENT</h2>
         
         <div class="rvw">
 			<form action="/ex/tour/data2" method="POST">
@@ -181,6 +181,7 @@
 						<input type="text" name=t_content placeholder="후기를 작성해주세요." autocomplete='off'/>
 					</div>
 				</div>
+					
 				
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				
@@ -189,9 +190,9 @@
 	         
 	        
 	        
-	        	<div class="rvw_line">
-		          <hr width="660px;" >
-		        </div>
+	       <div class="rvw_line">
+		     <hr width="660px;" >
+		   </div>
 	        
 	   		<c:forEach items="${list }" var="TourReviewsDto">
 	   		
@@ -207,6 +208,7 @@
 			
 			</c:forEach>
 		
+      	</div>
       </div>
 
 
@@ -229,6 +231,22 @@
       	<h2>WORD</h2>
       	<img src="/ex/resources/img/tour/wordcloud.PNG">
       </div>
+      
+      <div class="tour_word">
+      	<h2>WORD</h2>
+      	<img src="/ex/resources/img/tour/wordcloud.PNG">
+      </div>
+      
+      
+      
+      <div class="tour_comt">
+      	<h2>REVIEW</h2>
+      	<button>
+      		<a href="board/listAll">Click</a>
+      	</button>
+      </div>
+      
+      
    
 
 
@@ -309,7 +327,7 @@
 	    <div class="footer_wrap">
 	        <div class="footer_title">
 	            <div class="footer_box">
-	                <img src="/ex/resources/img/jeju.png" style="margin-top: 30px;" >
+	                <img src="/ex/resources/img/jeju.png" style="margin-top: 30px; display: inline-block;" >
 	            </div>
 	        </div>
 	        <div id="v-line"></div>
