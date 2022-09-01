@@ -68,7 +68,7 @@
 		model.compile(compileParam);
 
 		// 3. 데이터로 모델을 학습시킵니다. 
-		//var fitParam = {epochs: 1500}	
+		//var fitParam = {epochs: 1500}	 
 		var fitParam = {
 			epochs : 2000,
 			callbacks : {
