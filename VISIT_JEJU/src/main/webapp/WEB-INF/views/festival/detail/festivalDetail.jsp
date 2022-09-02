@@ -49,6 +49,7 @@
                             <p><a href="${festival_detailDto.fhomepage }" target="_blank">${festival_detailDto.fhomepage }</a></p>
                         </div>
                     </div>
+                    
                     <div class="info_btn">
                         <button type="button" class="like_btn" 
 	                        <c:if test="${userid eq '비회원' }">
@@ -71,25 +72,35 @@
                         </button>
                     </div>
                 </div>
+                
                 <div class="detail">
                     <div class="detail_cont">
                         ${festival_detailDto.fcontent }
                     </div>
-
-                    <div class="detail_slideShow">
-                        <ul class="slides">
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg1 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg2 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg3 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg4 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg5 }"></li>
-                        </ul>
-                        <p class="controller">
-                            <span class="prev">&lang;</span>
-                            <span class="next">&rang;</span>
-                        </p>
-                    </div>
+                    <c:if test="${festival_detailDto.fwordCloud != null || festival_detailDto.fimg1 != null}">
+						<div class="imgContent">
+		                    <div class="detail_slideShow">
+		                        <ul class="slides">
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg1 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg2 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg3 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg4 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg5 }"></li>
+		                        </ul>
+		                        <p class="controller">
+		                            <span class="prev">&lang;</span>
+		                            <span class="next">&rang;</span>
+		                        </p>
+		                    </div>
+		                    
+		                    <div class="WordCloudImg">
+		                    	<img src="/ex/resources/img/festival/${festival_detailDto.fwordCloud }" style="width: 500px; height: 500px;" onerror="this.style.display='none';">
+		                    </div>
+	                    </div>
+                    </c:if>
+                    
                     <hr style="margin: 100px 0 30px">
+                    
                     <div id="review">
                         <h2>리뷰</h2>
                         <br>

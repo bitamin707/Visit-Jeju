@@ -157,6 +157,18 @@ section {
     color: rgb(184, 49, 47);
     font-weight: bold;
 }
+.imgContent {
+	width: 1280px;
+	height: 600px;
+	display: flex;
+}
+
+.WordCloudImg {
+	width: 500px;
+	height: 500px;
+	margin-top: 50px;
+	margin-left: 60px;
+}
 
 #review {
     width: 1280px;

@@ -15,6 +15,8 @@ public class festival_detailDto {
 	private String fimg3;
 	private String fimg4;
 	private String fimg5;
+	private String fwordCloud;
+	
 	public Integer getFno() {
 		return fno;
 	}
@@ -99,13 +101,18 @@ public class festival_detailDto {
 	public void setFimg5(String fimg5) {
 		this.fimg5 = fimg5;
 	}
+	public String getFwordCloud() {
+		return fwordCloud;
+	}
+	public void setFwordCloud(String fwordCloud) {
+		this.fwordCloud = fwordCloud;
+	}
+	
 	@Override
 	public String toString() {
 		return "festival_detailDto [fno=" + fno + ", fname=" + fname + ", faddress=" + faddress + ", ftel=" + ftel
 				+ ", fhomepage=" + fhomepage + ", fcontent=" + fcontent + ", flike_count=" + flike_count
 				+ ", freview_count=" + freview_count + ", fbg=" + fbg + ", fimg1=" + fimg1 + ", fimg2=" + fimg2
-				+ ", fimg3=" + fimg3 + ", fimg4=" + fimg4 + ", fimg5=" + fimg5 + "]";
+				+ ", fimg3=" + fimg3 + ", fimg4=" + fimg4 + ", fimg5=" + fimg5 + ", fwordCloud=" + fwordCloud + "]";
 	}
-
-	
 }

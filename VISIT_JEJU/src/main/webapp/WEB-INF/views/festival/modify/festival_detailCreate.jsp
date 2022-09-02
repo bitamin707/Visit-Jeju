@@ -110,6 +110,10 @@ button {
 						<td><input type="text" name="fimg5" value="${festival_detailDto.fimg5 }" placeholder="이미지5"></td>
 					</tr>
 					<tr>
+						<th>워드클라우드 이미지</th>
+						<td><input type="text" name="fimg5" value="${festival_detailDto.fwordCloud }" placeholder="워드클라우드 이미지"></td>
+					</tr>
+					<tr>
 						<td colspan="2"><button type="button"
 								onclick="submitContents()" id="submitBtn">작성완료</button>
 							<button type="button" onclick="goList()">목록으로</button>
