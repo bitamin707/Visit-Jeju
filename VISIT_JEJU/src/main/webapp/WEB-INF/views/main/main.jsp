@@ -54,6 +54,10 @@ window.onload=function(){
 	.addEventListener("click",function(){
 		location.href="/ex/main/testPage";
 	});
+	document.getElementsByClassName("MerchDataBT")[0]
+	.addEventListener("click",function(){
+		location.href="/ex/main/merchRecommend";
+	});
 }
 
 
@@ -125,6 +129,9 @@ window.onload=function(){
         </button>
         <br><button class="TestBT">
             <h2>구입테스트</h2>
+        </button>
+        <br><button class="MerchDataBT">
+            <h2>상품 추천</h2>
         </button>
     </div>
     <div class="wrap2">

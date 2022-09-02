@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="/ex/resources/css/main/mainStyle.css">
 <title>Insert title here</title>
 
-<script type="text/javascript">
-</script>
 </head>
 <body>
+
 <div style=" width:1300px; height:200px;"></div>
 <div style=" width:1300px; height:500px; margin: 0 auto;">
 	<div class="mainContainer">
@@ -46,6 +45,7 @@
         </div>
    </div>
 </div>     
+
 <script type="text/javascript">
 	var i1 = i2 = i3 = 0;
 	var springSum1 = summerSum1 = autumnSum1 = winterSum1 = maleSum1 = femaleSum1 = 0;
@@ -57,7 +57,6 @@
 	listTest = listTest.replace("[","");
 	listTest = listTest.replace("]","");
 	allList = listTest.split(',');
-	
 	
 	for(var j=0; j<allList.length; j++){
 		oneList[j] = allList[j].split('+')

@@ -12,6 +12,7 @@
 			location.href="/ex/main/sighup";
 		})
 	}
+    
 </script>
 </head>
     <style>
