@@ -1,6 +1,6 @@
 package com.human.ex;
 
-import java.awt.image.BufferedImage; 
+import java.awt.image.BufferedImage;  
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.inject.Inject;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,7 +30,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.dto.shopping.BoardDtoShop1;
+import com.human.service.shopping.IBoardServiceRate;
 import com.human.service.shopping.IBoardServiceShop1;
+import com.human.service.shopping.IBoardServiceShop2;
 
 @Controller
 public class ShoppingUploadController {
@@ -39,6 +42,9 @@ public class ShoppingUploadController {
 	
 	@Inject
 	public IBoardServiceShop1 service;
+	
+	@Autowired
+	private IBoardServiceRate bm;
 	
 	
 	@RequestMapping(value = "/shopping/product/Create2", method = RequestMethod.GET)
@@ -89,5 +95,12 @@ public class ShoppingUploadController {
 		System.out.println("check4");
 		return savedName;
 	}
+	
+	
+	@RequestMapping(value = "/shopping/main/Rating", method = RequestMethod.GET)
+	public void rate(Model model) throws Exception {
+		model.addAttribute("list",bm.listAll());
+	}
+	
 
 }
