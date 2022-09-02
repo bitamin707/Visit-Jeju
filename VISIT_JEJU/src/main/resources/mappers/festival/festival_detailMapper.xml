@@ -7,10 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="create">
 		insert into festival_detail
-		(fno, fname, fbg, faddress, ftel, fhomepage, fcontent, fimg1, fimg2, fimg3, fimg4, fimg5)
+		(fno, fname, fbg, faddress, ftel, fhomepage, fcontent, fimg1, fimg2, fimg3, fimg4, fimg5, fwordCloud)
 		values (
 			#{fno}, #{fname}, #{fbg}, #{faddress}, #{ftel}, #{fhomepage}, #{fcontent}, 
-			#{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5})
+			#{fimg1}, #{fimg2}, #{fimg3}, #{fimg4}, #{fimg5}, #{fwordCloud})
 	</insert>
 
 	<select id="read" resultType="festival_detailDto">
@@ -24,7 +24,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="update">
 		update festival_detail
 		set fname=#{fname}, fbg=#{fbg}, faddress=#{faddress}, ftel=#{ftel}, fhomepage=#{fhomepage},
-			fcontent=#{fcontent}, fimg1=#{fimg1}, fimg2=#{fimg2}, fimg3=#{fimg3}, fimg4=#{fimg4}, fimg5=#{fimg5}
+			fcontent=#{fcontent}, fimg1=#{fimg1}, fimg2=#{fimg2}, fimg3=#{fimg3}, fimg4=#{fimg4}, fimg5=#{fimg5}, fwordCloud=#{fwordCloud}
 		where fno=#{fno}
 	</update>
 	
