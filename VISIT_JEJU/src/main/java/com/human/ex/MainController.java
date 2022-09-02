@@ -27,6 +27,7 @@ import com.human.dto.main.BoardDtoBest;
 import com.human.dto.main.BoardDtoFood;
 import com.human.dto.main.BoardDtoFoodBest;
 import com.human.dto.main.BoardDtoMerch;
+import com.human.dto.main.BoardDtoMerchLogData;
 import com.human.dto.main.BoardDtoTest;
 import com.human.service.main.IBoardServiceAccount;
 import com.human.service.main.IBoardServiceAuthority;
@@ -34,6 +35,7 @@ import com.human.service.main.IBoardServiceBest;
 import com.human.service.main.IBoardServiceFood;
 import com.human.service.main.IBoardServiceFoodBest;
 import com.human.service.main.IBoardServiceMerch;
+import com.human.service.main.IBoardServiceMerchLogData;
 import com.human.service.main.IBoardServiceTest;
 
 
@@ -55,6 +57,8 @@ public class MainController {
 	private IBoardServiceAccount serviceAccount;
 	@Inject
 	private IBoardServiceAuthority serviceAuthority;
+	@Inject
+	private IBoardServiceMerchLogData serviceMerchLogData;
 	@Inject
 	private IBoardServiceTest serviceTest;
 
@@ -79,7 +83,6 @@ public class MainController {
 	}
 
 	/*메인*/
-	
 	@RequestMapping(value = "/main/main", method = RequestMethod.POST)
 	public void list() throws Exception {
 		
@@ -224,6 +227,30 @@ public class MainController {
 		rttr.addFlashAttribute("msg","success");
 		return "redirect:/main/accountList";
 	}
+	/* 추천알고리즘 */
+	@RequestMapping(value = "/main/merchRecommend", method = RequestMethod.GET)
+	public void ListMerchLogDataGet(Model model) throws Exception {
+		model.addAttribute("listMerchLogData",serviceMerchLogData.listAllMerchLogData());
+	}
+	@RequestMapping(value = "/main/merchAI", method = RequestMethod.GET)
+	public void ListMerchGet(Model model) throws Exception {
+		model.addAttribute("listMerchLogData",serviceMerchLogData.listAllMerchLogData());
+	}
+
+	@RequestMapping(value = "/main/merchAI", method = RequestMethod.POST)
+	public void ListMerchPost(Model model) throws Exception {
+	}
+	
+	@RequestMapping(value = "/main/merchAdd", method = RequestMethod.GET)
+	public void ListMerchAddGet(Model model) throws Exception {
+		model.addAttribute("listMerchLogData",serviceMerchLogData.listAllMerchLogData());
+	}
+
+	@RequestMapping(value = "/main/merchAdd", method = RequestMethod.POST)
+	public void ListMerchAddPost(Model model, BoardDtoMerchLogData boardDtoMerchLogData ) throws Exception {
+		serviceMerchLogData.createMerchLogData(boardDtoMerchLogData);
+	}
+	
 	
 	
 	/* 테스트용 */
@@ -247,32 +274,5 @@ public class MainController {
 	public void perchaseTest2(Model model) throws Exception {
 	}
 	
-	
-	
-//	@RequestMapping(value = "/main/testPage3", method = RequestMethod.GET)
-//	public void PerchaseTitle(Model model,@RequestParam("title")String title) throws Exception {	
-//		model.addAttribute("title1",serviceTest.readTest(title));
-//	}	
-		
-//	@RequestMapping(value = "/main/testPage3", method = RequestMethod.POST)
-//	public String PerchaseTest(BoardDtoTest boardDtoTest,Model model
-//			,RedirectAttributes rttr,Principal principal,Authentication authentication
-//			,@RequestParam("gender")String gender) throws Exception {
-//		if(principal == null) {
-//			model.addAttribute("userid","비회원");
-//		}else {
-//			String userid=principal.getName();
-//			String authentic = String.valueOf(authentication.getAuthorities());
-//			model.addAttribute("userid",userid);
-//			
-//			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
-//				model.addAttribute("Check","관리자");
-//			}else if(authentic.contains("[ROLE_MEMBER]")){
-//				model.addAttribute("Check","회원");
-//			}
-//		}
-//		
-//		rttr.addFlashAttribute("msg","success");
-//		return "redirect:/main/main";
-//	}
+
 }
