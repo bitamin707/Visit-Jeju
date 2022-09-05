@@ -19,6 +19,7 @@ public class AccoDto {
 	private String acco_detail_photo4;
 	private String acco_phonenum;
 	private String acco_photo;
+	
 	public int getAcco_id() {
 		return acco_id;
 	}

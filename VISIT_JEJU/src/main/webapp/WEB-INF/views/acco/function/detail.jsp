@@ -103,7 +103,13 @@
 						<a
 							href="/ex/acco/function/review/insert?acco_id=${accoDto.acco_id }">리뷰쓰기</a>
 					</button>
-
+					<br><br><br><br><br>
+					<div style="float: right">
+					<h3><strong>워드클라우드</strong></h3>
+					<img src="/ex/resources/img/acco/word.jpg"
+					style="width: 300px; height: 200px;">
+					</div>
+					
 				</div>
 			</div>
 		</div>

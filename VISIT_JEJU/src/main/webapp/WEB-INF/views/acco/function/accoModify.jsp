@@ -24,11 +24,11 @@
 		숙소 이름:<input type=text name=acco_name value="${accoDto.acco_name }">
 		<br> 숙소 주소:<select id="select1" name="acco_address1">
 			<option value="제주시">제주시</option>
-			<option value="서귀포시" selected="selected">서귀포시</option>
+			<option value="서귀포시" selected>서귀포시</option>
 		</select> <br> 숙소 상세주소:<select id="select2" name="acco_address2">
-			<option value="제주시내" selected="selected">제주시내</option>
+			<option value="제주시내" selected>제주시내</option>
 			<option value="애월">애월</option>
-			<option value="한림">한림</option>
+			<option value="한림" >한림</option>
 			<option value="한경">한경</option>
 			<option value="조천">조천</option>
 			<option value="구좌">구좌</option>
