@@ -341,6 +341,7 @@ img {
 	padding:10px;
 	width:660px;
 	height:130px;
+	border-color: rgb(128,128,128);
 }
 
 .rvw_line {
@@ -374,6 +375,22 @@ img {
 .rvw_content {
 	font-size: 14px;
 	margin-bottom: 1%;	
+}
+
+
+
+
+.tour_word {
+  width:530px;
+  font-family: 'NanumSquareRound';
+  top: 860px;
+  right: -40px;
+  position: absolute;
+  display: inline-block;
+}
+
+.tour_word h2{
+  font-size: 30px;
 }
 
 

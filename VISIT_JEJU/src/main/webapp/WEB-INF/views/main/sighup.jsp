@@ -84,6 +84,15 @@ body {font-family: Arial, Helvetica, sans-serif;
 	<label for="fname">패스워드</label>
 	<input type="text" name=password style="width:100%"> <br>
 	
+	<label for="fname">성별</label><br><br>
+	<input type="radio" name=gender value="남자" checked="checked">남자
+	<input type="radio" name=gender value="여자">여자 
+	
+	<br><br><br>
+	
+	<label for="fname">나이</label>
+	<input type="text" name=age style="width:100%"> <br>
+	
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<button id="save">저장</button>
 	<button type="button" id="cancle">취소</button>

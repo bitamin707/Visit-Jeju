@@ -139,19 +139,20 @@ public class FestivalController {
 		
 		review_service.create(dto);
 		detail_service.countReview(detaildto);
-		return "redirect:/festival/detail/festivalDetail?fno=" + fno;
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno + "#review";
 	}
 	
 	// 축제 세부 페이지 리뷰 수정
 	@RequestMapping(value="/modify/festival_reviewModify", method = RequestMethod.POST)
-	public String review_modify(@RequestParam("fno")int fno, festival_reviewDto dto, Model model, Principal principal,Authentication authentication) throws Exception {
+	public String review_modify(@RequestParam("fno")int fno, festival_reviewDto dto, festival_detailDto detaildto, Model model, Principal principal,Authentication authentication) throws Exception {
 		model.addAttribute(fno);
 
 		String userid=principal.getName();
 		model.addAttribute("userid",userid);
 		
 		review_service.update(dto);
-		return "redirect:/festival/detail/festivalDetail?fno=" + fno;
+		detail_service.countReview(detaildto);
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno + "#review";
 	}
 	
 	// 축제 세부 페이지 리뷰 삭제
@@ -164,6 +165,15 @@ public class FestivalController {
 		
 		review_service.delete(dto);
 		detail_service.countReview(detaildto);
-		return "redirect:/festival/detail/festivalDetail?fno=" + fno;
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno + "#review";
+	}
+	@RequestMapping(value="/modify/festival_admin_reviewDelete", method = RequestMethod.GET)
+	public String review_delete(@RequestParam("fno")int fno, @RequestParam("username")String username, festival_reviewDto dto, festival_detailDto detaildto, Model model) throws Exception {
+		model.addAttribute(fno);
+		model.addAttribute(username);
+		
+		review_service.delete(dto);
+		detail_service.countReview(detaildto);
+		return "redirect:/festival/detail/festivalDetail?fno=" + fno + "#review";
 	}
 }

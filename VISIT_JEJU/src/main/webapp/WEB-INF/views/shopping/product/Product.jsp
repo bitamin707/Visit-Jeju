@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +44,46 @@
   	  })
   	    		  
     });
+    
+    
+   	window.onload = function() {
+        let rate = "rate";
+        let thisRate;
+        let thisRateLength;
+
+        thisRateLength = document.getElementsByClassName('thisRate');
+
+        for (let j = 0; j < thisRateLength.length; j++) {
+            thisRate = parseInt(document.getElementsByClassName('thisRate')[j].value);
+
+
+            for (let i=1; i<thisRate+1; i++) {
+            rate += i;
+            document.getElementsByClassName(rate)[j].style.color = "#dd9309";
+            rate = "rate";
+        }
+
+        }
+        
+        
+		var remove_btn = document.getElementsByClassName("remove_btn")
+		var check = "${Check}"
+		
+		if (check == "showBasket") {
+			for(let i = 0; i < remove_btn.length; i++)
+				remove_btn[i].style.display = "";
+		} else {
+			for(let i = 0; i < remove_btn.length; i++)
+				remove_btn[i].style.display = "none";
+		}
+		
+		
+			price = document.getElementById("share").innerHTML;
+			document.getElementById("stock_price").value = price;
+			
+			product_max_qty = document.getElementById("product_max_qty").value;
+			max_qty = product_max_qty;
+   	}
     </script>
 </head>
 <body>
@@ -50,7 +92,6 @@
     <!-- ============== 헤더 =============== -->
         <!-- ↓↓start class wrap -->
         <div class="wrap"> 
-        <a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
             <div class="info_header">
                 <h6 class="page_font">Premium Liquor.</h6>
             </div>
@@ -69,13 +110,11 @@
                 <!-- 607x569 -->
                 <div class="product_col" href="javascript:test()">
                     <div class="mySlides" id="mainSlide">
-                        <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" style="width: 100%">
-                        <div class="text">1 / 3</div>
+                        <img src="/ex/resources/img/shopping/${boardDtoShop1.product_img }" style="width:100%; height:100%;">
                     </div>
             
                     <div class="mySlides">
                         <img src="/ex/resources/img/shopping/이미지선택.gif" style="width: 100%">
-                        <div class="text">2 / 3</div>
                     </div>
             
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
@@ -178,8 +217,11 @@
 			<span class="review_board_menu2"> Event</span> <span
 				class="review_event">스타일후기 작성 시 2,000원의 적립금을 드립니다.</span>
 		</h5>
+		
+		
+		<div class="review_button">		
 
-		<div class="review_button">
+		
 			<select name="searchType">
 				<option value="n"
 					<c:out value="${pageMaker.searchType==null?'selected':'' }"/>>전체</option>
@@ -191,10 +233,21 @@
 					<c:out value="${pageMaker.searchType eq 'c'?'selected':'' }"/>>추천</option>
 				<option value="w"
 					<c:out value="${pageMaker.searchType eq 'w'?'selected':'' }"/>>유저아이디</option>
-			</select> <input type="text" name="keyword" id="keywordInput"
+			</select> 
+							
+			<input type="text" name="keyword" id="keywordInput"
 				value="${pageMaker.keyword}">
+				
+				
 			<button id="searchBtn">검색하기</button>
-			<button id="writeBtn" style="float: right;" >글쓰기</button>
+				
+			<c:if test="${Check eq 'showBasket'}">
+				<button id="writeBtn" style="float: right;" >
+				글쓰기
+				</button>
+			</c:if>
+				
+					
 		</div>
 
 		<table class=customers width=100% border="1">
@@ -207,14 +260,27 @@
 
 			<c:forEach items="${list}" var="dto">
 				<tr>
-					<td>${dto.what_product }</td>
+					<td>${dto.what_product } 
+						<br>
+						<br>
+						<input type="hidden" class="thisRate" value="${dto.rating }">
+					    <fieldset class="starFieldset">
+					            <label class="rate5">★</label>
+					            <label class="rate4">★</label> 
+					            <label class="rate3">★</label> 
+					            <label class="rate2">★</label> 
+					            <label class="rate1">★</label> 
+					    </fieldset></td>
 					<td>${dto.review }</td>
 					<td>
 						<p>${dto.recommand } <br><br>
 							${dto.recommand2 }</p>
 					</td>
-					<td>${dto.userid }
-						<button id="remove_btn" onclick="removeIt(${dto.bno }, ${boardDtoShop1.pno })">삭제</button>
+					<td>
+					<p class="userName">${dto.userid } </p>
+					<br>
+					<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${dto.regdate }" />
+						<button class="remove_btn" onclick="removeIt(${dto.bno }, ${boardDtoShop1.pno })">삭제</button>
 					</td>
 				</tr>
 			</c:forEach>

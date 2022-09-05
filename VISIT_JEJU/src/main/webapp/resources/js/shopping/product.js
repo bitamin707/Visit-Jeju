@@ -2,16 +2,7 @@ const min_qty = 1;
 var product_max_qty = 0;
 var max_qty = 0;
 var price = 0;
-
-
-window.onload = function() {
-	price = document.getElementById("share").innerHTML;
-	document.getElementById("stock_price").value = price;
-	
-	product_max_qty = document.getElementById("product_max_qty").value;
-	max_qty = product_max_qty;
-}
-
+   	
 function minus_qty() {
 	var this_qty = $("#stock").val();
 	if (this_qty == min_qty) {
@@ -99,4 +90,3 @@ for (i = 0; i < dots.length; i++) {
 slides[slideIndex-1].style.display = "block";  
 dots[slideIndex-1].className += " active";
 }
-

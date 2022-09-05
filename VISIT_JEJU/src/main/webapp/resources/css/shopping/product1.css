@@ -142,21 +142,11 @@
 /* ======================= 헤더 ======================= */
 
 
-/* 헤더를 재외한 웹페이지 width:1280px 고정. */
+/* 헤더를 재외한 웹페이지 width:1280px 고정  */
 .wrap {
     position:relative;
     width:1280px;
     margin: 0 auto;
-}
-
-#link_side{
-    margin-left: -102px;
-    margin-top: 200px;
-    height: 140px;
-    width: 100px;
-    text-align: center;
-    position:fixed;
-    background-color: grey;
 }
 
 .info_header {

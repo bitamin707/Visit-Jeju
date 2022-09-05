@@ -36,8 +36,12 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value = "/main/Main", method = RequestMethod.GET)
-	public void Main(Model model, BoardDtoShop1 dto, Principal principal, Authentication authentication) throws Exception {
-		model.addAttribute("list",service.listInsert());	
+	public void Main(Model model, BoardDtoShop1 dto
+					, Principal principal, Authentication authentication
+					) throws Exception {
+		
+		model.addAttribute("list",service.listInsert());
+
 		
         if(principal == null) {
 				model.addAttribute("userid","비회원");
@@ -47,18 +51,19 @@ public class ShoppingController {
 				model.addAttribute("userid",userid);
 			
 			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
-				model.addAttribute("Check","관리자");
+				model.addAttribute("Check","showBasket");
 			}else if(authentic.contains("[ROLE_MEMBER]")){
 				model.addAttribute("Check","회원");
 			}
 			}
+        
 	}	
 	
 	
 	@RequestMapping(value = "/product/Product", method = RequestMethod.GET)
 	public void Product(@RequestParam("pno") int pno 
-			,Model model
-			, PageMaker pm) 
+			,Model model, PageMaker pm
+			, Principal principal, Authentication authentication) 
 					throws Exception {
 		
 		System.out.println(pno);
@@ -66,8 +71,25 @@ public class ShoppingController {
 		model.addAttribute(service.listPlus(pno));
 		
 		System.out.println(pm);
+		System.out.println(bm.listSearchCriteria(pm));
 		model.addAttribute("list",bm.listSearchCriteria(pm));
 		pm.setTotalCount(bm.listSearchCount(pm));
+		
+		
+        if(principal == null) {
+				model.addAttribute("userid","비회원");
+			}else {
+				String userid=principal.getName();
+				String authentic = String.valueOf(authentication.getAuthorities());
+				model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","showBasket");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+			}
+		
 	}
 	
 	@RequestMapping(value = "product/list", method = RequestMethod.GET)
@@ -157,7 +179,6 @@ public class ShoppingController {
 	public String Modify_post(BoardDtoShop1 dto, RedirectAttributes rttr) throws Exception {
 		System.out.println("Modify");
 		System.out.println(dto);
-		rttr.addFlashAttribute("keeping","success");
 		service.update(dto);
 		return "redirect:/shopping/main/Remocon_bag";
 	}
@@ -206,19 +227,40 @@ public class ShoppingController {
 			, RedirectAttributes rttr
 			,@RequestParam(defaultValue = "pno", required = false) int pno
 			) throws Exception {
+		
+		
 		bm.create(dto);
 		System.out.println("Write_Review");
 		System.out.println(dto);
 		rttr.addFlashAttribute("write","success");
 		return "redirect:/shopping/product/Product?pno="+pno;
+		
 	}
 	
 	
 	
 	@RequestMapping(value = "/main/ShoppingBasket", method = RequestMethod.GET)
-	public void ShoppingBasket(Model model, BoardDtoShop1 dto) throws Exception {
+	public void ShoppingBasket(Model model, BoardDtoShop1 dto
+								, Principal principal, Authentication authentication
+								) throws Exception {
+	
 		System.out.println(service.basket());
 		model.addAttribute("list",service.basket());
+		
+		
+        if(principal == null) {
+				model.addAttribute("userid","비회원");
+			}else {
+				String userid=principal.getName();
+				String authentic = String.valueOf(authentication.getAuthorities());
+				model.addAttribute("userid",userid);
+			
+			if(authentic.contains("[ROLE_ADMIN, ROLE_MEMBER]")) {
+				model.addAttribute("Check","showBasket");
+			}else if(authentic.contains("[ROLE_MEMBER]")){
+				model.addAttribute("Check","회원");
+			}
+			}
 	}
 	
 	@RequestMapping(value = "/main/MakeBasket", method = RequestMethod.GET)

@@ -8,13 +8,15 @@ public class festival_detailDto {
 	private String fhomepage;
 	private String fcontent;
 	private int flike_count;
-	private int freview_count;
+	private float freview_count;
 	private String fbg;
 	private String fimg1;
 	private String fimg2;
 	private String fimg3;
 	private String fimg4;
 	private String fimg5;
+	private String fwordCloud;
+	
 	public Integer getFno() {
 		return fno;
 	}
@@ -57,10 +59,10 @@ public class festival_detailDto {
 	public void setFlike_count(int flike_count) {
 		this.flike_count = flike_count;
 	}
-	public int getFreview_count() {
+	public float getFreview_count() {
 		return freview_count;
 	}
-	public void setFreview_count(int freview_count) {
+	public void setFreview_count(float freview_count) {
 		this.freview_count = freview_count;
 	}
 	public String getFbg() {
@@ -99,13 +101,18 @@ public class festival_detailDto {
 	public void setFimg5(String fimg5) {
 		this.fimg5 = fimg5;
 	}
+	public String getFwordCloud() {
+		return fwordCloud;
+	}
+	public void setFwordCloud(String fwordCloud) {
+		this.fwordCloud = fwordCloud;
+	}
+	
 	@Override
 	public String toString() {
 		return "festival_detailDto [fno=" + fno + ", fname=" + fname + ", faddress=" + faddress + ", ftel=" + ftel
 				+ ", fhomepage=" + fhomepage + ", fcontent=" + fcontent + ", flike_count=" + flike_count
 				+ ", freview_count=" + freview_count + ", fbg=" + fbg + ", fimg1=" + fimg1 + ", fimg2=" + fimg2
-				+ ", fimg3=" + fimg3 + ", fimg4=" + fimg4 + ", fimg5=" + fimg5 + "]";
+				+ ", fimg3=" + fimg3 + ", fimg4=" + fimg4 + ", fimg5=" + fimg5 + ", fwordCloud=" + fwordCloud + "]";
 	}
-
-	
 }

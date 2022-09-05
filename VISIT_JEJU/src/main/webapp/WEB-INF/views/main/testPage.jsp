@@ -72,7 +72,8 @@ window.onload=function(){
 	</tr>
 	<c:forEach items="${listTest }" var="boardDtoTest">
 	<tr>
-		<td>${boardDtoTest.title }</a></td>
+	
+		<td><a href='/ex/main/testPage3?title=${boardDtoTest.title}'>${boardDtoTest.title }</a></td>
 		<td>${boardDtoTest.spring }</td>
 		<td>${boardDtoTest.summer }</td>
 		<td>${boardDtoTest.autumn }</td>

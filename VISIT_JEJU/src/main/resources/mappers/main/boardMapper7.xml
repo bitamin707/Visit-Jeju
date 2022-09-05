@@ -8,23 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <insert id="createTest">
 insert into test values(#{title},#{spring},#{summer},#{autumn},#{winter},#{male},#{female})
 </insert>
-<select id="springTest" resultType="BoardDtoTest">
-select title, sum(spring) from test group by title;
-</select>
-<select id="summerTest" resultType="BoardDtoTest">
-select title, sum(summer) from test group by title;
-</select>
-<select id="autumnTest" resultType="BoardDtoTest">
-select title, sum(autumn) from test group by title;
-</select>
-<select id="winterTest" resultType="BoardDtoTest">
-select title, sum(winter) from test group by title;
-</select>
-<select id="maleTest" resultType="BoardDtoTest">
-select title, sum(male) from test group by title;
-</select>
-<select id="femaleTest" resultType="BoardDtoTest">
-select title, sum(female) from test group by title;
+<select id="readTest" resultType="BoardDtoTest">
+select * from test where title = #{title}
 </select>
 <select id="listAllTest" resultType="com.human.dto.main.BoardDtoTest">
 select * from test

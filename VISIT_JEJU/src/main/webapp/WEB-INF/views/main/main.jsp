@@ -54,38 +54,12 @@ window.onload=function(){
 	.addEventListener("click",function(){
 		location.href="/ex/main/testPage";
 	});
+	document.getElementsByClassName("MerchDataBT")[0]
+	.addEventListener("click",function(){
+		location.href="/ex/main/merchRecommend";
+	});
 }
 
-let slideIndex = 2;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-let i;
-let slides = document.getElementsByClassName("mySlides");
-let dots = document.getElementsByClassName("dot");
-if (n > slides.length) {
-    slideIndex = 1
-}    
-if (n < 1) {
-    slideIndex = slides.length
-}
-for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-}
-for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex-1].style.display = "block";  
-dots[slideIndex-1].className += " active";
-}
 
 </script>
 </head>
@@ -156,6 +130,9 @@ dots[slideIndex-1].className += " active";
         <br><button class="TestBT">
             <h2>구입테스트</h2>
         </button>
+        <br><button class="MerchDataBT">
+            <h2>상품 추천</h2>
+        </button>
     </div>
     <div class="wrap2">
         <div class="best">
@@ -164,7 +141,7 @@ dots[slideIndex-1].className += " active";
         </div>
         <div class="mainRecommend">
             <div class="recommend1">
-                <a href="../festival/detail/휴애리 봄 수국축제.html">
+                <a href="/ex/festival/detail/festivalDetail?fno=21">
                     <div class="recommend1_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202105/17/5ffe6841-1401-4282-9d40-2cf9d5447f2a.jpg">
                     </div>
@@ -174,7 +151,7 @@ dots[slideIndex-1].className += " active";
                 </a>
             </div>
             <div class="recommend2">
-                <a href="../festival/detail/마노르블랑 수국축제.html">
+                <a href="ex/festival/detail/festivalDetail?fno=3">
                     <div class="recommend2_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202204/18/e86e6d5d-de1c-4436-95ab-7d2732cedcc4.jpg">
                     </div>
@@ -184,7 +161,7 @@ dots[slideIndex-1].className += " active";
                 </a>
             </div>
             <div class="recommend3">
-                <a href="../festival/detail/제주국제관악제제.html">
+                <a href="/ex/festival/detail/festivalDetail?fno=8">
                     <div class="recommend3_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202205/26/fecde995-8c79-4ed3-88b2-e8eb9b9517ab.jpg">
                     </div>
@@ -194,7 +171,7 @@ dots[slideIndex-1].className += " active";
                 </a>
             </div>
             <div class="recommend4">
-                <a href="../festival/detail/제주 문화유산 체험프로그램.html">
+                <a href="/ex/festival/detail/festivalDetail?fno=2">
                     <div class="recommend4_1"><img
                             src="https://api.cdn.visitjeju.net/photomng/thumbnailpath/202205/03/c63c24f5-c17c-4909-b960-c3f5d9d2dc64.jpg">
                     </div>
@@ -210,7 +187,7 @@ dots[slideIndex-1].className += " active";
         </div>
                 <!-- ============== 하단 =============== -->
                 <div class="mainContainerin1">
-                    <a href="#">
+                    <a href="/ex/food/Detail">
                         <div class="mainContainerin1_1">
                             <img src="${listFoodBest[0].imgLink}">
                         </div>
@@ -245,7 +222,7 @@ dots[slideIndex-1].className += " active";
                         </a>
                     </div>
                     <div class="gallerylist3">
-                        <a href="#" class="in2_a1">
+                        <a href="/ex/food/Detail5" class="in2_a1">
                             <div class="screen">
                                 <div class="top">${listFood[2].name}</div>
                                 <div class="bottom"></div>
@@ -254,7 +231,7 @@ dots[slideIndex-1].className += " active";
                         </a>
                     </div>
                     <div class="gallerylist4">
-                        <a href="#" class="in2_a1">
+                        <a href="/ex/food/Detail3" class="in2_a1">
                             <div class="screen">
                                 <div class="top">${listFood[3].name}</div>
                                 <div class="bottom"></div>
@@ -329,6 +306,38 @@ var check = "${Check}"
 	}else {
 		document.getElementById("remocon").style.display = "none";	
 	}
+	
+let slideIndex = 2;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {
+    slideIndex = 1
+}    
+if (n < 1) {
+    slideIndex = slides.length
+}
+for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+}
+for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";  
+dots[slideIndex-1].className += " active";
+}
+
 </script>
 
     

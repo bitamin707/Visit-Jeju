@@ -12,6 +12,7 @@
 			location.href="/ex/main/sighup";
 		})
 	}
+    
 </script>
 </head>
     <style>
@@ -30,7 +31,7 @@
         border-radius: 1rem;
         border:3px solid;
         width:500px;
-        height:300px;
+        height:400px;
         background-color:white;
         }
 
@@ -61,7 +62,7 @@
 <c:if test="${param.error != null}">
 	<script type="text/javascript">
 		alert('아이디나 비밀번호가 잘못되었습니다.')
-		location.href='/ex/main/main';
+		location.href='/ex/main/loginPage';
 	</script>
 </c:if>
 <c:if test="${param.logout != null}">
@@ -73,6 +74,8 @@
         <img src="https://api.cdn.visitjeju.net/photomng/imgpath/201902/26/b08349e7-88f1-4517-8969-78e9a07e78e9.jpg" style="width:100%; opacity:0.5;">
         <div class="login">
             <div class="interface">
+            <a href="/ex/main/main"><img style="width:210px; height:75px;" id="img1" src="/ex/resources/img/main/jeju.png"></a>
+            <br><br><br>
             <c:url value="/login" var="loginUrl"/>
                 <form method="POST" action="${loginUrl}" name="infor">
                 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>

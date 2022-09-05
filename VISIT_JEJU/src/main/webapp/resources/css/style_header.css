@@ -1,4 +1,4 @@
-/*================== 헤더 ==================*/
+/*================== �뿤�뜑 ==================*/
 #header{
     height: 100px;
     background: rgba(0,0,0,.3);
@@ -15,7 +15,7 @@
     
 }
 
-/* 헤더 안에 컨테이너 박스 */
+/* �뿤�뜑 �븞�뿉 而⑦뀒�씠�꼫 諛뺤뒪 */
 #container{
     margin: 0 auto;
     height: 100px;
@@ -26,7 +26,7 @@
     justify-content: space-between;
 }
 
-/* 좌측 박스 (h1 태그로 감싼 로고 이미지) */
+/* 醫뚯륫 諛뺤뒪 (h1 �깭洹몃줈 媛먯떬 濡쒓퀬 �씠誘몄�) */
 .logo{
     display: block;
     height: 100px;
@@ -41,13 +41,13 @@
 }
 
 
-/* 중앙 카테고리 박스 */
+/* 以묒븰 移댄뀒怨좊━ 諛뺤뒪 */
 .menu{
     list-style: none;
     display: block;
 }
 
-/* 중앙 카테고리 (ul박스) */
+/* 以묒븰 移댄뀒怨좊━ (ul諛뺤뒪) */
 .depth{
     width: 540px;
     display: -webkit-box;
@@ -56,7 +56,7 @@
     list-style: none;
 }
 
-/* 중앙 카테고리 박스 (폰트 스타일) */
+/* 以묒븰 移댄뀒怨좊━ 諛뺤뒪 (�룿�듃 �뒪���씪) */
 .menu_a{
     font-weight: 700;
     color: #191919;
@@ -68,19 +68,23 @@
     position:relative;
 }
 
-/* 우측 박스 */
+/* �슦痢� 諛뺤뒪 */
 .language-wrap{
     float: right;
-    width: 222px;
     height: 100px;
     display: -webkit-box;
     -webkit-box-align: center;
-    opacity: 70%;
-    
+    opacity: 70%;   
 }
 
-#logout {
-	cursor: pointer;
-	margin-left: 10px;
+.language-wrap a{
+	font-size:16px;
 }
-/*================== 헤더 끝==================*/
+
+#logout h3 {
+	cursor: pointer;
+    margin: 1px;
+    font-size: 15px;
+}
+
+/*================== �뿤�뜑 �걹==================*/

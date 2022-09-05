@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -15,12 +15,6 @@
     <link rel="stylesheet" type="text/css" href="/ex/resources/css/festival/slideShow.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>${festival_detailDto.fname }</title>
-	<script>
-	var check_result='${msg}';
-	if(check_result=='overlap'){
-		alert('이미 등록된 리뷰가 존재 합니다.');
-	}
-	</script>
 </head>
 
 <body>
@@ -55,8 +49,15 @@
                             <p><a href="${festival_detailDto.fhomepage }" target="_blank">${festival_detailDto.fhomepage }</a></p>
                         </div>
                     </div>
+                    
                     <div class="info_btn">
-                        <button type="button" class="like_btn" onclick="ClickLike()">
+                        <button type="button" class="like_btn" 
+	                        <c:if test="${userid eq '비회원' }">
+	                        onclick="requireLogin()"
+	                        </c:if>
+	                        <c:if test="${userid ne '비회원' }">
+	                        onclick="ClickLike()"
+	                        </c:if>>
                             <div id="icon_like"></div>
                             <div id="icon_like_click"></div>
                             <p>좋아요</p>
@@ -71,48 +72,42 @@
                         </button>
                     </div>
                 </div>
+                
                 <div class="detail">
                     <div class="detail_cont">
                         ${festival_detailDto.fcontent }
                     </div>
-
-                    <div class="detail_slideShow">
-                        <ul class="slides">
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg1 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg2 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg3 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg4 }"></li>
-                            <li><img class="slideImgs" src="${festival_detailDto.fimg5 }"></li>
-                        </ul>
-                        <p class="controller">
-                            <span class="prev">&lang;</span>
-                            <span class="next">&rang;</span>
-                        </p>
-                    </div>
+                    <c:if test="${festival_detailDto.fwordCloud != null || festival_detailDto.fimg1 != null}">
+						<div class="imgContent">
+		                    <div class="detail_slideShow">
+		                        <ul class="slides">
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg1 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg2 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg3 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg4 }"></li>
+		                            <li><img class="slideImgs" src="${festival_detailDto.fimg5 }"></li>
+		                        </ul>
+		                        <p class="controller">
+		                            <span class="prev">&lang;</span>
+		                            <span class="next">&rang;</span>
+		                        </p>
+		                    </div>
+		                    
+		                    <div class="WordCloudImg">
+		                    	<img src="/ex/resources/img/festival/${festival_detailDto.fwordCloud }" style="width: 500px; height: 500px;" onerror="this.style.display='none';">
+		                    </div>
+	                    </div>
+                    </c:if>
+                    
                     <hr style="margin: 100px 0 30px">
+                    
                     <div id="review">
                         <h2>리뷰</h2>
                         <br>
                         <%@include file="festival_reviewCRUD.jsp"%>
 						<br>
                         <hr>
-                        <div class="review_div">
-							<table class="review_table">
-								<c:forEach items="${reviews }" var="festival_reviewDto">
-									<tr>
-										<td class="reviewer">${festival_reviewDto.username }</td>
-										<td class="rating">${festival_reviewDto.rating }</td>
-										<td class="review_date">${festival_reviewDto.rdate }</td>
-									</tr>
-									<tr>
-										<td class="review_content">${festival_reviewDto.rcontent }</td>
-									</tr>
-									<tr>
-										<td class="review_underline"></td>
-									</tr>
-								</c:forEach>
-							</table>
-						</div>
+                        <%@include file="festival_reviewContent.jsp"%>
                     </div>
                 </div>
             </div>

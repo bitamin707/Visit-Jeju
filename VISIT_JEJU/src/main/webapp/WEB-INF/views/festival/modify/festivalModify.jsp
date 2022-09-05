@@ -84,7 +84,7 @@
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<table>
 					<tr>
-						<th colspan="2"><h2 style="text-align:center; font-size:30px;">컨텐츠 수정 페이지</h2> </th>
+						<th colspan="2"><h2 style="text-align:center; font-size:30px;">축제 수정 페이지</h2> </th>
 					</tr>
 					<tr>
 						<th>번호</th>

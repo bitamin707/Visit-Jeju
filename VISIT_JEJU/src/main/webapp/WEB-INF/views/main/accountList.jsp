@@ -51,12 +51,16 @@ window.onload=function(){
 	<th>아이디</th>
 	<th>패스워드</th>
 	<th>Enable</th>
+	<th>성별</th>
+	<th>나이</th>
 	</tr>
 	<c:forEach items="${listAccount }" var="boardDtoAccount">
 	<tr>
 		<td><a href='/ex/main/accountModify?username=${boardDtoAccount.username}'>${boardDtoAccount.username }</a></td>
 		<td>${boardDtoAccount.password }</td>
 		<td>${boardDtoAccount.enabled }</td>
+		<td>1</td>
+		<td>20</td>
 	</tr>
 	</c:forEach>
 </table>

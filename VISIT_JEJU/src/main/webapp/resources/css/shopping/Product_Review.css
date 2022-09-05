@@ -62,7 +62,7 @@ body {
 
 #newBtn, #searchBtn {
 	background-color: #fafafa;
-	border: 1.5px solid #cc880a;
+	border: 1.5px solid #c28616;
 	border-radius: 5px;
 	color: #c28616;
 	font-weight: 700;
@@ -70,6 +70,18 @@ body {
 	cursor: pointer;
 	margin-right: 20px;
 	margin-top: 10px;
+}
+
+#writeBtn {
+	background-color: #fafafa;
+    border: 1.5px solid #c28616;
+    border-radius: 5px;
+    color: #c28616;
+    font-weight: 700;
+    padding: 3px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
 }
 
 /* Style the top navigation bar */
@@ -171,21 +183,25 @@ body {
 
 td:nth-child(1) {
 	text-align: left;
-	font-weight: 720;
 	vertical-align: middle;
-	height: 200px;
+	height: 150px;
+	line-height: 23px;
+    font-size: 16px;
 }
 
 td:nth-child(2) {
 	text-align: left;
 	vertical-align: top;
+	line-height: 23px;
+    font-size: 16px;
 }
 
 td:nth-child(3) p {
-	border: 1px solid #dd9309;
 	border-radius: 15px;
 	padding: 5px;
 	margin: 3px auto;
+    line-height: 23px;
+    font-size: 16px;
 }
 
 td {
@@ -194,18 +210,18 @@ td {
 	position: relative;
 }
 
-#remove_btn {
+.remove_btn {
 	position: absolute;
-	bottom: 0px;
-	right: 0px;
+	bottom: 1px;
+	right: 1px;
 }
 
-.customers tr:nth-child(even) {
-	background-color: #f2f2f2;
+.customers tr {
+	background-color: rgba(23,23,23,0.03);
 }
 
 .customers tr:hover {
-	background-color: #ddd;
+	background-color: #f2f2f2;
 }
 
 .customers th {
@@ -215,6 +231,33 @@ td {
 	background-color: #dd9309;
 	color: white;
 }
+
+.userName {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+    color:#d08a09;	
+}
+
+
+/* review_star*/
+    .starDiv{
+    }
+    .starFieldset{
+        width: 140px;
+        display: inline-block;
+        direction: rtl;
+        border:0;
+        padding: -50px;
+    }
+    .starFieldset label{
+        font-size: 22px;
+        color: transparent;
+        color: rgb(110, 110, 110);
+        cursor:pointer;
+        margin:0px;
+    }
+
 
 /*pagination*/
 .pagination {
@@ -246,3 +289,4 @@ td {
 .pagination a:hover:not (.active ) {
 	background-color: #ddd;
 }
+

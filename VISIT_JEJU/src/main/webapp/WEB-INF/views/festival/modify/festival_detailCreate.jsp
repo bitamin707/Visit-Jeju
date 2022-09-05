@@ -59,7 +59,7 @@ button {
 				<table>
 					<tr>
 						<th colspan="2"><h2
-								style="text-align: center; font-size: 30px;">컨텐츠 세부 페이지 추가</h2>
+								style="text-align: center; font-size: 30px;">축제 세부 페이지 추가</h2>
 						</th>
 					</tr>
 					<tr>
@@ -108,6 +108,10 @@ button {
 					<tr>
 						<th>이미지 5</th>
 						<td><input type="text" name="fimg5" value="${festival_detailDto.fimg5 }" placeholder="이미지5"></td>
+					</tr>
+					<tr>
+						<th>워드클라우드 이미지</th>
+						<td><input type="text" name="fimg5" value="${festival_detailDto.fwordCloud }" placeholder="워드클라우드 이미지"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="button"

@@ -28,10 +28,7 @@
 		</button>
 		<br>
 		<button class="Remocon_bag">
-			<a href=""><h2>리뷰 수정</h2></a>
-		</button>
-		<button>
-			<a href=""><h2>상품</h2></a>
+			<a href="Rating"><h2>판매량 측정</h2></a>
 		</button>
 	</div>
 
@@ -84,7 +81,7 @@
             var remocon = document.getElementsByClassName("remocon");
     		var check = "${Check}"
     		
-    			if (check == "관리자") {
+    			if (check == "showBasket") {
     				for(let i = 0; i < remocon.length; i++)
     					remocon[i].style.display = "";
     			} else {
@@ -117,14 +114,13 @@
 
 	</div>
 	<!-- ============== 이미지 =============== -->
-
+	
 	<!-- ↓↓start class wrap -->
 	<div class="wrap">
-		<a href="/ex/shopping/main/ShoppingBasket"><div id="link_side"></div></a>
 		<section style="margin-bottom: 100px;">
 			<!-- ============= 태그 ================ -->
 			<ul class="month">
-				<p>샴페인 태그:</p>
+				<p>상품 태그:</p>
 				<p>
 					빈티지<input type="checkbox" name="tag" value="vintage">
 				</p>
@@ -148,7 +144,7 @@
 							<span class="link_fontColor"> (온라인구매)</span>
 					</a></li>
 					<li id="tab_2"><a href="Shop_page2.html"> <strong
-							class="link_fontColor" style="color: lightblue;">2</strong> <span
+							class="link_fontColor" style="color: #8f8f8f;">2</strong> <span
 							class="link_fontColor">렌트카</span> <span class="link_fontColor">
 								(온라인구매)</span>
 					</a></li>
@@ -223,12 +219,15 @@
 										</div>
 									</span>
 								</c:if>
-								<!-- 72047
-								Hermes canvas and leather shoulder bag
-								376,698
-								280EUR
-								가방, 가성비
-								가방6.jpg -->
+								<!-- 
+								Champagne Dom Perignon, Vintage 2010
+								250130
+								186
+								limited
+								돔페리뇽은 그 해 재배된 독특한 개성을 해석해 최상급 포도로만 제조합니다. 최소 8년에 걸친 창조의 과정 끝에 완벽한 균형을 실현한 맛을 느껴보세요. 
+								최대수량 2
+								술1.jpg
+								-->
 							</c:forEach>
 
 						</div>

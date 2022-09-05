@@ -8,8 +8,10 @@ public class BoardDtoShop2 {
 	private String what_product;
 	private String review;
 	private String recommand;
-	private String userid;
 	private String recommand2;
+	private String userid;
+	private Date regdate;
+	private int rating;
 	public int getBno() {
 		return bno;
 	}
@@ -34,22 +36,36 @@ public class BoardDtoShop2 {
 	public void setRecommand(String recommand) {
 		this.recommand = recommand;
 	}
-	public String getUserid() {
-		return userid;
-	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
 	public String getRecommand2() {
 		return recommand2;
 	}
 	public void setRecommand2(String recommand2) {
 		this.recommand2 = recommand2;
 	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
 	@Override
 	public String toString() {
 		return "BoardDtoShop2 [bno=" + bno + ", what_product=" + what_product + ", review=" + review + ", recommand="
-				+ recommand + ", userid=" + userid + ", recommand2=" + recommand2 + "]";
+				+ recommand + ", recommand2=" + recommand2 + ", userid=" + userid + ", regdate=" + regdate + ", rating="
+				+ rating + "]";
 	}
-
+	
+	
 }
