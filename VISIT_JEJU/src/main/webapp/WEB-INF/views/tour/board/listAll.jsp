@@ -115,7 +115,7 @@ window.onload=function(){
         <div class="footer_intro">
             <div class="footer_box">
                 <table class="footer_table">
-                    <tr><th>메인gg</th><td>gg누구</td><th>숙박gg</th><td>누구gg</td></tr>
+                    <tr><th>메인</th><td>누구</td><th>숙박</th><td>누구</td></tr>
                     <tr><th>축제</th><td>누구</td><th>쇼핑</th><td>누구</td></tr>
                     <tr><th>관광지</th><td>누구</td><th>음식</th><td>누구</td></tr>
                     <tr><th>일정공유</th><td>누구</td></tr>
