@@ -1,7 +1,7 @@
 package com.human.ex;
 
 import java.security.Principal;
-
+import java.util.Locale;
 
 import javax.inject.Inject;
 
@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.human.dto.tour.TourBoardDto;
 import com.human.dto.tour.TourReviewsDto;
 import com.human.dto.tour.tourDto;
+import com.human.service.tour.ITourBoardService;
 import com.human.service.tour.TourReviewsService;
 import com.human.service.tour.tourService;
 
@@ -26,6 +28,11 @@ public class TourController {
 	private tourService service;
 	@Inject
 	private TourReviewsService service2;
+	@Inject
+	private ITourBoardService service3;
+	
+	
+	/* main */
 	
 	@RequestMapping(value = "/tour/main1", method = RequestMethod.GET)
 	public void Main1(Model model, tourDto dto,Principal principal,Authentication authentication) throws Exception {
@@ -52,12 +59,11 @@ public class TourController {
 	@RequestMapping(value = "/tour/main3", method = RequestMethod.GET)
 	public void main3(Model model) {
 	}
-	@RequestMapping(value = "/tour/data1", method = RequestMethod.GET)
-	public void data1(Model model) {
-	}
-	
-	
 
+	
+	
+	/* data */
+	
 	@RequestMapping(value = "/tour/data2", method = RequestMethod.GET)
 	public void data2(Model model) throws Exception {
 		model.addAttribute("list",service2.listAll());
@@ -69,23 +75,53 @@ public class TourController {
 	}
 	
 	
-	/* 테스트 */
 	
-	@RequestMapping(value = "/tour/test", method = RequestMethod.GET)
-	public void test(Model model) throws Exception {
-		model.addAttribute("list",service2.listAll());
+	/* review */
+	
+	
+	@RequestMapping(value = "/tour/board/modify", method = RequestMethod.POST)
+	public String modify(TourBoardDto Dto,Model model
+			,RedirectAttributes rttr) throws Exception {
+		service3.update(Dto);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/tour/board/listAll";
 	}
 	
-	
-	@RequestMapping(value = "/tour/mainCreate", method = RequestMethod.GET)
-	public void create_get(Model mode1) throws Exception{
+	@RequestMapping(value = "/tour/board/modify", method = RequestMethod.GET)
+	public void modify(@RequestParam("bno")int bno,Model model) throws Exception {
+		model.addAttribute("TourBoardDto",service3.read(bno));
 	}
 	
-	@RequestMapping(value = "/tour/mainCreate", method = RequestMethod.POST)
-	public String create_post(tourDto Dto,Model model) throws Exception {
-		service.create(Dto);
-		return "redirect:/tour/data1";
+	@RequestMapping(value = "/tour/board/remove", method = RequestMethod.GET)
+	public String rmove(@RequestParam("bno")int bno
+			,RedirectAttributes rttr) throws Exception {
+		service3.delete(bno);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/tour/board/listAll";
 	}
+	
+	@RequestMapping(value = "/tour/board/read", method = RequestMethod.GET)
+	public void read(@RequestParam("bno")int bno,Model model) throws Exception {
+		model.addAttribute("TourBoardDto",service3.read(bno));
+	}
+	
+	@RequestMapping(value = "/tour/board/register", method = RequestMethod.GET)
+	public void register(Model model) throws Exception {	
+	}
+	@RequestMapping(value = "/tour/board/register", method = RequestMethod.POST)
+	public String register(TourBoardDto Dto,Model model
+			,RedirectAttributes rttr) throws Exception {
+		service3.create(Dto);
+		rttr.addFlashAttribute("msg","success");
+		return "redirect:/tour/board/listAll";
+	}
+	
+	@RequestMapping(value = "/tour/board/listAll", method = RequestMethod.GET)
+	public void listAll(Model model) throws Exception {
+		model.addAttribute("list",service3.listAll());
+	}
+	
+
 }
 
 	

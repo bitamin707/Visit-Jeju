@@ -283,6 +283,7 @@ img {
   right: -40px;
   position: absolute;
   display: inline-block;
+  margin-top:7%;
   
 }
 
@@ -387,11 +388,52 @@ img {
   right: -40px;
   position: absolute;
   display: inline-block;
+  margin-top:6%;
+  
 }
 
 .tour_word h2{
   font-size: 30px;
 }
+
+.tour_word img{
+	margin-top:4%;
+	margin-left:70px;
+}
+
+
+
+
+.tour_comt{
+	width:660px;
+	font-family: 'NanumSquareRound';
+	margin-bottom: 9%;
+	margin-top: 10px;
+
+}
+
+.tour_comt h2{
+	font-size: 30px;	
+}
+
+.tour_comt button{
+	margin-top:35px;
+	margin-left:20px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	width:100px;
+	padding: 15px 0;
+ 	border-color: rgb(228, 166, 52);
+  	color: black;
+}
+
+.tour_comt button:hover{
+ 	 background: rgb(228, 166, 52);
+}
+
+
+
 
 
 
