@@ -17,8 +17,9 @@
 
 
 .tour_bor{
-	margin-top:150px;
-	margin-bottom:100px;
+	position: relative;
+    width: 1200px;
+    margin: 150px auto;
 }
 
 .tour_bor h2{
